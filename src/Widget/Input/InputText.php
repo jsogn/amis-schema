@@ -7,12 +7,12 @@ use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * InputText 文本输入框组件
- * 
+ *
  * 用于输入文本内容，支持各种文本输入场景
  *
  * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-text
  *
- * @method $this options(array $value) 设置选项组
+ * @method $this options(string[]|array[] $value) 设置选项组
  * @method $this source(string|array $value) 设置动态选项组
  * @method $this autoComplete(string|array $value) 设置自动补全
  * @method $this multiple(bool $value) 设置是否多选
@@ -38,7 +38,7 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this nativeInputClassName(string $value) 设置原生 input 标签的 CSS 类名
  * @method $this nativeAutoComplete(string $value) 设置原生 input 标签的 autoComplete 属性
  */
-class InputText extends Widget
+class InputText extends FormItem
 {
     protected string $type = 'input-text';
 }

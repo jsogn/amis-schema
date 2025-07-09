@@ -20,8 +20,6 @@ abstract class Widget extends Schema
 
     public function getAttribute(): array
     {
-        unset($this->attribute['type']);
-
         return [
             'type' => $this->type,
             ...$this->attribute

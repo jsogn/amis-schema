@@ -13,8 +13,6 @@ composer.lock
 
 # Code style / meta
 .php-cs-fixer.php
-.phpstorm.meta.php
-
 # PHPUnit
 /phpunit.xml
 
