@@ -1,0 +1,51 @@
+# Editor directories and files
+.idea/
+*.iml
+
+# Vendor directory (composer packages)
+vendor/
+
+# OS generated files
+.DS_Store
+
+# Composer generated
+composer.lock
+
+# Code style / meta
+.php-cs-fixer.php
+.phpstorm.meta.php
+
+# PHPUnit
+/phpunit.xml
+
+# Examples
+/examples/
+
+# Logs and debug
+*.log
+
+# Ignore node/npm stuff (if any, for PHP+JS projects)
+node_modules/
+
+# Ignore other Python, Ruby, etc. runtime packages
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore build/output folders
+dist/
+build/
+
+# Ignore environment files
+.env*
+
+# Ignore test result coverage
+coverage/
+
+# Ignore IDE folder
+.vscode/
+
+# Git itself
+.git/
+

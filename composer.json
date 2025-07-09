@@ -1,0 +1,36 @@
+{
+    "name": "jiangwang/amis-schema",
+    "description": "一个提高amis schema编写效率的库",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jiangwang\\AmisSchema\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "jiangwang",
+            "email": "jbanxian@gmail.com",
+            "homepage": "https://github.com/jsogn"
+        }
+    ],
+    "keywords": [
+        "php",
+        "amis"
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.0"
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    }
+}
