@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Jiangwang\AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Schema;
+use Jiangwang\AmisSchema\Definition\API;
 use Jiangwang\AmisSchema\Widget\Display\Remark;
 use Jiangwang\AmisSchema\Widget\Widget;
 
@@ -19,7 +19,7 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this inputClassName(string $value) 设置表单控制器类名。
  * @method $this labelClassName(string $value) 设置 label 类名。
  * @method $this name(string $value) 设置字段名，指定该表单项提交时的 key。
- * @method $this label(string $value) 设置表单项标签。
+ * @method $this label(string|false $value) 设置表单项标签。
  * @method $this labelAlign(string $value) 设置表单项标签对齐方式，可选值：'left'、'center'、'right'。
  * @method $this labelWidth(int|string $value) 设置表单项标签宽度。
  * @method $this description(string $value) 设置表单项描述。
@@ -34,7 +34,7 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this requiredOn(string $value) 设置通过表达式来配置当前表单项是否为必填。
  * @method $this validations(string|array $value) 设置表单项值格式验证。
  * @method $this validationErrors(array $value) 设置表单项值验证失败时的错误信息。
- * @method $this validateApi(string|array $value) 设置表单校验接口。
+ * @method $this validateApi(string|API $value) 设置表单校验接口。
  * @method $this clearValueOnHidden(bool $value) 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @method $this autoFocus(bool $value) 设置是否自动获取焦点。
  * @method $this size(string $value) 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -50,18 +50,17 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this visibleOn(string $value) 设置当前表单项是否显示的条件。
  * @method $this hiddenOn(string $value) 设置当前表单项是否隐藏的条件。
  * @method $this row(int $value) 设置如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
- * @method $this quickEdit(bool|array $value) 设置是否可快速编辑。
- * @method $this quickEditEnabledOn(string $value) 设置开启快速编辑条件。
  * @method $this static (bool $value) 设置是否静态展示。
  * @method $this staticOn(string $value) 设置是否静态展示表达式。
  * @method $this staticPlaceholder(string $value) 设置静态展示时的占位符。
  * @method $this strictMode(bool $value) 设置是否严格模式，false 可及时获取所有表单数据。
- * @method $this visible(string $value) 设置当前表单项是否可见的条件。
+ * @method $this visible(bool $value) 设置当前表单项是否可见。
  * @method $this autoFill(Widget|Widget[]|string $value) 设置数据录入配置，自动填充或参照录入。
  * @method $this staticClassName(string $value) 设置静态展示时的类名。
  * @method $this staticLabelClassName(string $value) 设置静态展示时的 Label 的类名。
  * @method $this staticInputClassName(string $value) 设置静态展示时的 value 的类名。
- * @method $this staticSchema(Widget|Widget[]|string|array $value) 设置自定义静态展示方式。
+ * @method $this staticSchema(Widget|Widget[]|string $value) 设置自定义静态展示方式。
+ * @method $this validateOnChange(bool $value) 设置表单项值发生变化时就校验。
  */
 class FormItem extends Widget
 {
