@@ -48,6 +48,7 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this defaultValue(mixed $value) 设置默认值。
  * @method $this showErrorMsg(bool $value) 设置是否显示验证错误信息。
  * @method $this visibleOn(string $value) 设置当前表单项是否显示的条件。
+ * @method $this hidden(bool $value) 设置当前表单项是否隐藏。
  * @method $this hiddenOn(string $value) 设置当前表单项是否隐藏的条件。
  * @method $this row(int $value) 设置如果是水平排版，这个属性可以细化水平排版的左右宽度占比。
  * @method $this static (bool $value) 设置是否静态展示。
