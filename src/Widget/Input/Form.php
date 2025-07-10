@@ -18,7 +18,6 @@ use Jiangwang\AmisSchema\Widget\Widget;
  *
  * @method $this title(string $value) 设置表单标题。
  * @method $this mode(string $value) 设置表单展示方式，可选值：'normal'、'horizontal'、'inline'。
- * @method $this horizontal(array $value) {"left":2, "right":10, "justify": false},设置水平布局的配置。
  * @method $this body(FormItem[]|Widget[] $value) 设置表单项集合。
  * @method $this actions(Action[]|Widget[] $value) 设置表单按钮组。
  * @method $this messages(FormMessages $value) 设置消息提示覆盖。
@@ -75,4 +74,18 @@ use Jiangwang\AmisSchema\Widget\Widget;
 class Form extends Widget
 {
     protected string $type = 'form';
+
+    /**
+     * 当 mode 为 horizontal 时有用，用来控制 label 的展示占比
+     * @param array{
+     *     left: int,
+     *     right: int,
+     *     justify: bool
+     * } $value
+     * @return self
+     */
+    public function horizontal(array $value): self
+    {
+        return $this->__call(__METHOD__, $value);
+    }
 }

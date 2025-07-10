@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Jiangwang\AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Definition\FormMessages;
+use Jiangwang\AmisSchema\Schema;
 use Jiangwang\AmisSchema\Widget\Display\Remark;
 use Jiangwang\AmisSchema\Widget\Widget;
 
@@ -65,5 +65,5 @@ use Jiangwang\AmisSchema\Widget\Widget;
  */
 class FormItem extends Widget
 {
-    protected string $type = 'form-item';
+    protected string $type = 'input-text';
 }
