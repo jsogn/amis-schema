@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Jiangwang\AmisSchema\Widget\Input;
 
 use Jiangwang\AmisSchema\Widget\Function\Action;
-use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * ButtonToolbar 按钮工具栏组件
@@ -15,7 +14,7 @@ use Jiangwang\AmisSchema\Widget\Widget;
  *
  * @method $this buttons(array|Action[] $value) 设置按钮组
  */
-class ButtonToolbar extends Widget
+class ButtonToolbar extends FormItem
 {
     protected string $type = 'button-toolbar';
 }

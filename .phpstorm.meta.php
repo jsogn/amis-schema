@@ -6,6 +6,7 @@ namespace PHPSTORM_META {
     registerArgumentsSet('direction', 'horizontal', 'vertical');
     registerArgumentsSet('align', 'right', 'left', 'center');
     registerArgumentsSet('mode', 'normal', 'horizontal', 'inline');
+    registerArgumentsSet('buttonLevel', 'link', 'primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
 
     expectedArguments(\Jiangwang\AmisSchema\Widget\Layout\Page::asidePosition(), 0, 'left', 'right');
 
@@ -15,4 +16,6 @@ namespace PHPSTORM_META {
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputText::borderMode(), 0, argumentsSet('mode'));
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
 }
