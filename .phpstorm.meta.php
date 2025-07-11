@@ -12,10 +12,15 @@ namespace PHPSTORM_META {
 
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
+
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
+
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputText::borderMode(), 0, argumentsSet('mode'));
+
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
+
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
 }

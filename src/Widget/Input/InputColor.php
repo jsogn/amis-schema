@@ -7,18 +7,27 @@ use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * InputColor 颜色选择器组件
- * 
- * 颜色选择器
  *
- * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-color
+ * 颜色选择器，支持多种颜色格式
  *
- * @method $this format(string $value) 设置请选择 hex、hls、rgb或者rgba
- * @method $this presetColors(array $value) 设置选择器底部的默认颜色，数组内为字符串或者对象格式
- * @method $this allowCustomColor(bool $value) 设置为false时只能选择颜色，使用 presetColors 设定颜色选择范围
- * @method $this clearable(bool $value) 设置是否显示清除按钮
- * @method $this resetValue(string $value) 设置清除后设置此配置项给定的值
+ * @link https://baidu.github.io/amis/zh-CN/components/form/input-color
+ *
+ * @method $this format(string $value = 'hex') 设置颜色格式，支持 hex、hexa、hls、rgb、rgba，默认为 hex
+ * @method $this allowCustomColor(bool $value = true) 设置是否允许自定义颜色，为 false 时只能选择颜色，使用 presetColors 设定颜色选择范围，默认为 true
+ * @method $this clearable(bool $value = 'label') 设置是否显示清除按钮
+ * @method $this resetValue(string $value) 设置清除后表单项值调整成该值，默认为空字符串
  */
-class InputColor extends Widget
+class InputColor extends Options
 {
     protected string $type = 'input-color';
+
+    /**
+     * 设置选择器底部的预设颜色值，数组内为字符串或者对象格式，数组内为空则不显示默认颜色
+     * @param array<string|array{color: string, title: string}> $value
+     * @return self
+     */
+    public function presetColors(array $value): self
+    {
+        return $this->__call(__METHOD__, $value);
+    }
 }
