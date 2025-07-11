@@ -62,6 +62,8 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this staticInputClassName(string $value) 设置静态展示时的 value 的类名。
  * @method $this staticSchema(Widget|Widget[]|string $value) 设置自定义静态展示方式。
  * @method $this validateOnChange(bool $value) 设置表单项值发生变化时就校验。
+ * @method $this columnClassName(string $value) 列的类名，可以用它配置列宽度。默认平均分配。
+ * @method $this unique(bool $value) 设置当前列值是否唯一，即不允许重复选择。
  */
 class FormItem extends Widget
 {

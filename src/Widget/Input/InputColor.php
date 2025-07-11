@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Jiangwang\AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Widget\Widget;
-
 /**
  * InputColor 颜色选择器组件
  *

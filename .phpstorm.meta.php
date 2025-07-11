@@ -23,4 +23,7 @@ namespace PHPSTORM_META {
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
 
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
+
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
 }
