@@ -7,19 +7,15 @@ use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * InputCity 城市选择器组件
- * 
- * 城市选择器，可用于选择城市
  *
- * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-city
+ * 城市选择器，方便输入城市，可以理解为自动配置了国内城市选项的 Select，支持到县级别
  *
- * @method $this allowCity(bool $value) 设置允许选择城市，默认为 true
- * @method $this allowDistrict(bool $value) 设置允许选择区域，默认为 true
- * @method $this searchable(bool $value) 设置是否出搜索框，默认为 false
- * @method $this extractValue(bool $value) 设置是否抽取值，如果设置成 false 值格式会变成对象，包含 code、province、city 和 district 字段
- * @method $this joinValues(bool $value) 设置是否拼接值，默认为 true
- * @method $this delimiter(string $value) 设置拼接值时的分隔符，默认为英文逗号
+ * @link https://baidu.github.io/amis/zh-CN/components/form/input-city
+ *
+ * @method $this allowCity(bool $value=true) 设置允许选择城市，默认为 true
+ * @method $this allowDistrict(bool $value=true) 设置允许选择区域，默认为 true
  */
-class InputCity extends Widget
+class InputCity extends Options
 {
     protected string $type = 'input-city';
 }
