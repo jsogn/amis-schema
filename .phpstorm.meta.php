@@ -26,4 +26,6 @@ namespace PHPSTORM_META {
 
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
+
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ConditionBuilder::selectMode(), 0, 'list', 'tree', 'chained');
 }
