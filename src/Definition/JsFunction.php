@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
-use Jiangwang\AmisSchema\Trait\Schemaable;
+use AmisSchema\Schema;
+use AmisSchema\Trait\Schemaable;
 
 /**
  * @property string $name 方法名称

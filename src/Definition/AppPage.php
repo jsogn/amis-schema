@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
-use Jiangwang\AmisSchema\Widget\Layout\Page;
+use AmisSchema\Schema;
+use AmisSchema\Widget\Layout\Page;
 
 /**
  * App 具体的页面配置

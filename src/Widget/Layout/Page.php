@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Layout;
+namespace AmisSchema\Widget\Layout;
 
-use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Remark;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\API;
+use Jiangwang\AmisSchema\Widget\Display\Remark;
+use AmisSchema\Widget\Widget;
 
 /**
  * Page 组件，AMis 页面布局容器。

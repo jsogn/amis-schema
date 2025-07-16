@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Widget\Widget;
-use Jiangwang\AmisSchema\Definition\AnchorNavLink;
+use AmisSchema\Widget\Widget;
+use AmisSchema\Definition\AnchorNavLink;
 
 /**
  * 锚点导航容器组件

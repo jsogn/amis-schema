@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Definition\BreadcrumbItem;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\BreadcrumbItem;
+use AmisSchema\Widget\Widget;
 
 /**
  * Breadcrumb 面包屑

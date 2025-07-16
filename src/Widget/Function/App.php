@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Definition\AppPage;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\AppPage;
+use AmisSchema\Widget\Widget;
 
 /**
  * App 组件，AMis 多页应用渲染器。

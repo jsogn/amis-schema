@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Layout;
+namespace AmisSchema\Widget\Layout;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Tabs 组件，AMis 选项卡渲染器。

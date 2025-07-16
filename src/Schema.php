@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema;
+namespace AmisSchema;
 
-use Jiangwang\AmisSchema\Contract\Arrayable;
-use Jiangwang\AmisSchema\Contract\Jsonable;
-use Jiangwang\AmisSchema\Trait\Schemaable;
+use AmisSchema\Contract\Arrayable;
+use AmisSchema\Contract\Jsonable;
+use AmisSchema\Trait\Schemaable;
 
 class Schema implements \JsonSerializable, Arrayable, Jsonable, \ArrayAccess
 {

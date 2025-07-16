@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Layout;
+namespace AmisSchema\Widget\Layout;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Grid2D 组件，AMis Grid 2D 布局渲染器。

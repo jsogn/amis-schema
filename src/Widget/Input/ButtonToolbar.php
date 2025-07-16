@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Widget\Function\Action;
+use AmisSchema\Widget\Function\Action;
 
 /**
  * ButtonToolbar 按钮工具栏组件

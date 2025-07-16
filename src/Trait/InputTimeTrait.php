@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Trait;
+namespace AmisSchema\Trait;
 
 /**
  * @method $this value(string $value) 设置默认值，支持时间戳、日期字符串或相对值（如 "+1days"）

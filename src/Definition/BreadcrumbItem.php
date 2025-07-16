@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
-use Jiangwang\AmisSchema\Widget\Function\DropDownButton;
+use AmisSchema\Schema;
+use AmisSchema\Widget\Function\DropDownButton;
 
 /**
  * @method $this label(string $label) 文本

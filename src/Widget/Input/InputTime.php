@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Trait\InputTimeTrait;
+use AmisSchema\Trait\InputTimeTrait;
 
 /**
  * InputTime 时间选择器

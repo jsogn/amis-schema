@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
+use AmisSchema\Schema;
 
 /**
  * @method $this enable(bool $enable) 是否开启响应式收纳

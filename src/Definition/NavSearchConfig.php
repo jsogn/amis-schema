@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
+use AmisSchema\Schema;
 
 /**
  * @method $this matchFunc(string $matchFunc) 自定义匹配函数, 默认模糊匹配导航对象中的label, title 和 key 字段

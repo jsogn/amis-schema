@@ -1,8 +1,8 @@
 <?php
 
-namespace Jiangwang\Jiangwang\AmisSchema\Widget\Display;
+namespace Jiangwang\AmisSchema\Widget\Display;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Audio 音频

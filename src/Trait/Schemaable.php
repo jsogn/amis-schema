@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Trait;
+namespace AmisSchema\Trait;
 
-use Jiangwang\AmisSchema\Contract\Arrayable;
+use AmisSchema\Contract\Arrayable;
 
 trait Schemaable
 {

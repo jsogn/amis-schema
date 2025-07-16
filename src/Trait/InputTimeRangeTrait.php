@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Trait;
+namespace AmisSchema\Trait;
 
 /**
  * @method $this minDuration(string $value) 设置限制最小跨度，如：2days

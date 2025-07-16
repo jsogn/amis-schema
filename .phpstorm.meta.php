@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace PHPSTORM_META {
 
-    use Jiangwang\AmisSchema\Widget\Input\FormItem;
+    use AmisSchema\Widget\Input\FormItem;
 
     registerArgumentsSet('size', 'xs', 'sm', 'md', 'lg', 'full');
     registerArgumentsSet('direction', 'horizontal', 'vertical');
@@ -11,31 +11,38 @@ namespace PHPSTORM_META {
     registerArgumentsSet('mode', 'normal', 'horizontal', 'inline');
     registerArgumentsSet('buttonLevel', 'link', 'primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Layout\Page::asidePosition(), 0, 'left', 'right');
+    expectedArguments(\AmisSchema\Widget\Layout\Divider::lineStyle(), 0, 'dashed', 'solid');
+    expectedArguments(\AmisSchema\Widget\Layout\Divider::direction(), 0, 'horizontal', 'vertical');
+    expectedArguments(\AmisSchema\Widget\Layout\Divider::titlePosition(), 0, 'left', 'center', 'right');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
+    expectedArguments(\AmisSchema\Widget\Layout\Flex::justify(), 0, 'start', 'flex-start', 'center', 'end', 'flex-end', 'space-around', 'space-between', 'space-evenly');
+    expectedArguments(\AmisSchema\Widget\Layout\Flex::alignItems(), 0, 'stretch', 'start', 'flex-start', 'flex-end', 'end', 'center', 'baseline');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::labelAlign(), 0, argumentsSet('align'));
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
+    expectedArguments(\AmisSchema\Widget\Layout\Page::asidePosition(), 0, 'left', 'right');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputText::borderMode(), 0, argumentsSet('mode'));
+    expectedArguments(\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
+    expectedArguments(\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\AmisSchema\Widget\Input\FormItem::labelAlign(), 0, argumentsSet('align'));
+    expectedArguments(\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
+    expectedArguments(\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
+    expectedArguments(\AmisSchema\Widget\Input\InputText::borderMode(), 0, argumentsSet('mode'));
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
+    expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ConditionBuilder::selectMode(), 0, 'list', 'tree', 'chained');
+    expectedArguments(\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::variableMode(), 0, 'list', 'tree', 'tabs');
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::inputMode(), 0, 'button', 'input-button', 'input-group');
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
+    expectedArguments(\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
+    expectedArguments(\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FieldSet::titlePosition(), 0, 'top', 'bottom');
+    expectedArguments(\AmisSchema\Widget\Input\ConditionBuilder::selectMode(), 0, 'list', 'tree', 'chained');
+
+    expectedArguments(\AmisSchema\Widget\Input\InputFormula::variableMode(), 0, 'list', 'tree', 'tabs');
+    expectedArguments(\AmisSchema\Widget\Input\InputFormula::inputMode(), 0, 'button', 'input-button', 'input-group');
+    expectedArguments(\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
+    expectedArguments(\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
+
+    expectedArguments(\AmisSchema\Widget\Input\FieldSet::titlePosition(), 0, 'top', 'bottom');
 }

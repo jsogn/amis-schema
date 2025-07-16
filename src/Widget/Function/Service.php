@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Definition\ServiceMessage;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\API;
+use AmisSchema\Definition\ServiceMessage;
+use AmisSchema\Widget\Widget;
 
 /**
  * Service 功能型容器

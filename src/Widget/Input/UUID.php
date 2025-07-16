@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * UUID 随机 ID 组件

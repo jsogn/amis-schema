@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Layout;
+namespace AmisSchema\Widget\Layout;
 
-use Jiangwang\AmisSchema\Definition\JsFunction;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\JsFunction;
+use AmisSchema\Widget\Widget;
 
 /**
  * Pagination 组件，AMis 分页渲染器。

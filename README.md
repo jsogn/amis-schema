@@ -15,8 +15,8 @@ composer require jiangwang/amis-schema
 ### 使用静态方法
 
 ```php
-use Jiangwang\AmisSchema\Widget\Layout\Page;
-use Jiangwang\AmisSchema\Widget\Function\Button;
+use AmisSchema\Widget\Layout\Page;
+use AmisSchema\Widget\Function\Button;
 
 $page = Page::make()
     ->title('我的页面')

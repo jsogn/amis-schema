@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Definition;
+namespace AmisSchema\Definition;
 
-use Jiangwang\AmisSchema\Schema;
+use AmisSchema\Schema;
 
 /**
  * @method $this fetchSuccess(string $fetchSuccess) 接口请求成功时的 toast 提示文字

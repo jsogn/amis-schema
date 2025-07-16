@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Custom 自定义组件

@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Function;
 
-use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Definition\NavLink;
-use Jiangwang\AmisSchema\Definition\NavOverflow;
-use Jiangwang\AmisSchema\Definition\NavSearchConfig;
-use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Icon;
-use Jiangwang\AmisSchema\Widget\Extra\Badge;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\API;
+use AmisSchema\Definition\NavLink;
+use AmisSchema\Definition\NavOverflow;
+use AmisSchema\Definition\NavSearchConfig;
+use Jiangwang\AmisSchema\Widget\Display\Icon;
+use AmisSchema\Widget\Extra\Badge;
+use AmisSchema\Widget\Widget;
 
 /**
  * Nav 导航

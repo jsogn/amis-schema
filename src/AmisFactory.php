@@ -1,38 +1,38 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema;
+namespace AmisSchema;
 
-use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Icon;
-use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Remark;
-use Jiangwang\AmisSchema\Widget\Extra\Badge;
-use Jiangwang\AmisSchema\Widget\Function\Action;
-use Jiangwang\AmisSchema\Widget\Function\AnchorNav;
-use Jiangwang\AmisSchema\Widget\Function\App;
-use Jiangwang\AmisSchema\Widget\Function\Breadcrumb;
-use Jiangwang\AmisSchema\Widget\Function\Button;
-use Jiangwang\AmisSchema\Widget\Function\ButtonGroup;
-use Jiangwang\AmisSchema\Widget\Function\Custom;
-use Jiangwang\AmisSchema\Widget\Function\DropDownButton;
-use Jiangwang\AmisSchema\Widget\Function\Nav;
-use Jiangwang\AmisSchema\Widget\Function\Service;
-use Jiangwang\AmisSchema\Widget\Function\TooltipWrapper;
-use Jiangwang\AmisSchema\Widget\Input\Form;
-use Jiangwang\AmisSchema\Widget\Input\FormItem;
-use Jiangwang\AmisSchema\Widget\Layout\Collapse;
-use Jiangwang\AmisSchema\Widget\Layout\Container;
-use Jiangwang\AmisSchema\Widget\Layout\Divider;
-use Jiangwang\AmisSchema\Widget\Layout\Flex;
-use Jiangwang\AmisSchema\Widget\Layout\Grid;
-use Jiangwang\AmisSchema\Widget\Layout\Grid2D;
-use Jiangwang\AmisSchema\Widget\Layout\HBox;
-use Jiangwang\AmisSchema\Widget\Layout\Page;
-use Jiangwang\AmisSchema\Widget\Layout\Pagination;
-use Jiangwang\AmisSchema\Widget\Layout\PaginationWrapper;
-use Jiangwang\AmisSchema\Widget\Layout\Panel;
-use Jiangwang\AmisSchema\Widget\Layout\Portlet;
-use Jiangwang\AmisSchema\Widget\Layout\Tabs;
-use Jiangwang\AmisSchema\Widget\Layout\Wrapper;
+use Jiangwang\AmisSchema\Widget\Display\Icon;
+use Jiangwang\AmisSchema\Widget\Display\Remark;
+use AmisSchema\Widget\Extra\Badge;
+use AmisSchema\Widget\Function\Action;
+use AmisSchema\Widget\Function\AnchorNav;
+use AmisSchema\Widget\Function\App;
+use AmisSchema\Widget\Function\Breadcrumb;
+use AmisSchema\Widget\Function\Button;
+use AmisSchema\Widget\Function\ButtonGroup;
+use AmisSchema\Widget\Function\Custom;
+use AmisSchema\Widget\Function\DropDownButton;
+use AmisSchema\Widget\Function\Nav;
+use AmisSchema\Widget\Function\Service;
+use AmisSchema\Widget\Function\TooltipWrapper;
+use AmisSchema\Widget\Input\Form;
+use AmisSchema\Widget\Input\FormItem;
+use AmisSchema\Widget\Layout\Collapse;
+use AmisSchema\Widget\Layout\Container;
+use AmisSchema\Widget\Layout\Divider;
+use AmisSchema\Widget\Layout\Flex;
+use AmisSchema\Widget\Layout\Grid;
+use AmisSchema\Widget\Layout\Grid2D;
+use AmisSchema\Widget\Layout\HBox;
+use AmisSchema\Widget\Layout\Page;
+use AmisSchema\Widget\Layout\Pagination;
+use AmisSchema\Widget\Layout\PaginationWrapper;
+use AmisSchema\Widget\Layout\Panel;
+use AmisSchema\Widget\Layout\Portlet;
+use AmisSchema\Widget\Layout\Tabs;
+use AmisSchema\Widget\Layout\Wrapper;
 
 /**
  * Amis Schema 工厂类

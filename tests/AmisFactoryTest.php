@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Tests;
+namespace AmisSchema\Tests;
 
-use Jiangwang\AmisSchema\AmisFactory;
-use Jiangwang\AmisSchema\Widget\Layout\Page;
+use AmisSchema\AmisFactory;
+use AmisSchema\Widget\Layout\Page;
 
 /**
  * 测试 Amis 工厂类

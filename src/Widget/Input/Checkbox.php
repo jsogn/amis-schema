@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
 /**
  * Checkbox 勾选框组件

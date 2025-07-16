@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Contract;
+namespace AmisSchema\Contract;
 
 use Stringable;
 

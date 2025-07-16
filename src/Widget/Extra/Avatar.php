@@ -1,8 +1,8 @@
 <?php
 
-namespace Jiangwang\AmisSchema\Widget\Extra;
+namespace AmisSchema\Widget\Extra;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Avatar 头像

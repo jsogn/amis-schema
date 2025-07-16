@@ -1,8 +1,8 @@
 <?php
 
-namespace Jiangwang\AmisSchema\Widget\Feedback;
+namespace AmisSchema\Widget\Feedback;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Dialog 对话框

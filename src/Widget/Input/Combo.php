@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Widget\Function\Button;
+use AmisSchema\Definition\API;
+use AmisSchema\Widget\Function\Button;
 
 /**
  * Combo 组合组件

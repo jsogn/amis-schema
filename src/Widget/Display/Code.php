@@ -1,8 +1,8 @@
 <?php
 
-namespace Jiangwang\AmisSchema\Widget\Display;
+namespace AmisSchema\Widget\Display;
 
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Widget;
 
 /**
  * Code 代码高亮

@@ -79,7 +79,7 @@ tests/
 
 ## 特性优势
 
-1. **便捷的调用方式**: `amis()->Page()` 比 `\Jiangwang\AmisSchema\Widget\Layout\Page::make()` 更简洁
+1. **便捷的调用方式**: `amis()->Page()` 比 `\AmisSchema\Widget\Layout\Page::make()` 更简洁
 2. **完整的 IDE 支持**: 通过 PHPDoc 提供智能补全
 3. **链式调用**: 所有方法都返回 `$this`，支持链式设置属性
 4. **类型安全**: 基于 PHP 8.2+ 严格类型

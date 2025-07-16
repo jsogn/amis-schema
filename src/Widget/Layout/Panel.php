@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Layout;
+namespace AmisSchema\Widget\Layout;
 
-use Jiangwang\AmisSchema\Widget\Function\Action;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Widget\Function\Action;
+use AmisSchema\Widget\Widget;
 
 /**
  * Panel 组件，AMis 面板渲染器。

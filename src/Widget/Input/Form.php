@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Jiangwang\AmisSchema\Widget\Input;
+namespace AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Definition\FormMessages;
-use Jiangwang\AmisSchema\Definition\FormRules;
-use Jiangwang\AmisSchema\Widget\Function\Action;
-use Jiangwang\AmisSchema\Widget\Widget;
+use AmisSchema\Definition\API;
+use AmisSchema\Definition\FormMessages;
+use AmisSchema\Definition\FormRules;
+use AmisSchema\Widget\Function\Action;
+use AmisSchema\Widget\Widget;
 
 /**
  * Form 表单组件。
