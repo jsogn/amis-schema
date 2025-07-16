@@ -2,6 +2,9 @@
 declare(strict_types=1);
 
 namespace PHPSTORM_META {
+
+    use Jiangwang\AmisSchema\Widget\Input\FormItem;
+
     registerArgumentsSet('size', 'xs', 'sm', 'md', 'lg', 'full');
     registerArgumentsSet('direction', 'horizontal', 'vertical');
     registerArgumentsSet('align', 'right', 'left', 'center');
@@ -34,5 +37,5 @@ namespace PHPSTORM_META {
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
 
-    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Editor::size(), 0, argumentsSet('size'));
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\FieldSet::titlePosition(), 0, 'top', 'bottom');
 }
