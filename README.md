@@ -12,45 +12,6 @@ composer require jiangwang/amis-schema
 
 ## 快速开始
 
-### 使用工厂助手函数（推荐）
-
-```php
-<?php
-require_once 'vendor/autoload.php';
-
-// 创建一个完整的页面
-$page = amis()->Page()
-    ->title('用户管理')
-    ->subTitle('管理系统用户信息')
-    ->body([
-        amis()->Container()->body([
-            amis()->Button()
-                ->label('新增用户')
-                ->level('primary')
-                ->actionType('dialog'),
-            
-            amis()->Panel()
-                ->title('用户列表')
-                ->body([
-                    amis()->Form()->body([
-                        amis()->FormItem()
-                            ->type('input-text')
-                            ->label('用户名')
-                            ->name('username'),
-                        
-                        amis()->FormItem()
-                            ->type('input-email')
-                            ->label('邮箱')
-                            ->name('email'),
-                    ]),
-                ])
-        ])
-    ]);
-
-// 输出 JSON
-echo $page->toJson();
-```
-
 ### 使用静态方法
 
 ```php
