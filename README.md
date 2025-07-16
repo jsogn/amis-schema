@@ -1,6 +1,6 @@
 # Amis Schema PHP SDK
 
-一个用于构建 Amis JSON Schema 的 PHP SDK，提供了面向对象的组件创建方式和便捷的工厂函数。
+一个用于构建 Amis JSON Schema 的 PHP SDK。
 
 ## 安装
 
