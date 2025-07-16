@@ -11,7 +11,6 @@ namespace Jiangwang\AmisSchema\Widget\Input;
  * @link https://baidu.github.io/amis/zh-CN/components/form/editor
  *
  * @method $this language(string $value = 'javascript') 编辑器高亮的语言，默认为 'javascript'
- * @method $this size(string $value = 'md') 编辑器高度，取值可以是 md、lg、xl、xxl，默认为 'md'
  * @method $this allowFullscreen(bool $value = false) 是否显示全屏模式开关，默认为 false
  * @method $this options(array $value) monaco 编辑器的其它配置，比如是否显示行号等
  * @method $this editorDidMount(string $value) 编辑器挂载完成后的回调函数
