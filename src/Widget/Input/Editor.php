@@ -3,22 +3,20 @@ declare(strict_types=1);
 
 namespace Jiangwang\AmisSchema\Widget\Input;
 
-use Jiangwang\AmisSchema\Widget\Widget;
-
 /**
- * Editor 代码编辑器组件
+ * Editor 代码编辑器
  * 
- * 基于 Monaco Editor 的代码编辑器
+ * 基于 Monaco Editor 的代码编辑器，用于实现代码编辑功能
  *
- * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/editor
+ * @link https://baidu.github.io/amis/zh-CN/components/form/editor
  *
- * @method $this language(string $value) 设置编辑器高亮的语言，支持通过 ${xxx} 变量获取
- * @method $this size(string $value) 设置编辑器高度，取值可以是 md、lg、xl、xxl
- * @method $this allowFullscreen(bool $value) 设置是否显示全屏模式开关
- * @method $this placeholder(string $value) 设置占位符
- * @method $this options(array $value) 设置monaco编辑器的其它配置，比如 {"fontSize": 14}，请参考这里，不过无法设置 readOnly，只读模式需要使用 disabled: true
+ * @method $this language(string $value = 'javascript') 编辑器高亮的语言，默认为 'javascript'
+ * @method $this size(string $value = 'md') 编辑器高度，取值可以是 md、lg、xl、xxl，默认为 'md'
+ * @method $this allowFullscreen(bool $value = false) 是否显示全屏模式开关，默认为 false
+ * @method $this options(array $value) monaco 编辑器的其它配置，比如是否显示行号等
+ * @method $this editorDidMount(string $value) 编辑器挂载完成后的回调函数
  */
-class Editor extends Widget
+class Editor extends FormItem
 {
     protected string $type = 'editor';
 }

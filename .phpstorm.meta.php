@@ -33,4 +33,6 @@ namespace PHPSTORM_META {
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::inputMode(), 0, 'button', 'input-button', 'input-group');
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
+
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Editor::size(), 0, argumentsSet('size'));
 }
