@@ -1,8 +1,8 @@
 <?php
 
-namespace AmisSchema\Widget\Function;
+namespace Jiangwang\AmisSchema\Widget\Function;
 
-use AmisSchema\Widget\Widget;
+use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * WebComponent Web组件
@@ -13,7 +13,7 @@ use AmisSchema\Widget\Widget;
  * @method self className(string $className) 外层 CSS 类名
  * @method self tag(string $tag) 标签名
  * @method self props(array $props) 属性对象
- * @method self body(Widget|Widget[]|string $body) 子内容
+ * @method self body(Widget|Widget[]|string|array $body) 子内容
  */
 class WebComponent extends Widget
 {

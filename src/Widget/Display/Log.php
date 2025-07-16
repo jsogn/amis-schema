@@ -1,8 +1,8 @@
 <?php
 
-namespace AmisSchema\Widget\Display;
+namespace Jiangwang\AmisSchema\Widget\Display;
 
-use AmisSchema\Widget\Widget;
+use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * Log 实时日志

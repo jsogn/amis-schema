@@ -24,7 +24,6 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this inline(bool $inline) 内容区是否内联显示，默认值: false
  * @method $this wrapperComponent(string $wrapperComponent) 容器标签名，可选值："div" | "span"
  * @method $this body(mixed $body) 内容容器
- * @method $this style(mixed $style) 内容区自定义样式
  * @method $this tooltipStyle(mixed $tooltipStyle) 浮层自定义样式
  * @method $this className(string $className) 内容区类名
  * @method $this tooltipClassName(string $tooltipClassName) 文字提示浮层类名

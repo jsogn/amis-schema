@@ -7,7 +7,7 @@ use Jiangwang\AmisSchema\Definition\API;
 use Jiangwang\AmisSchema\Definition\NavLink;
 use Jiangwang\AmisSchema\Definition\NavOverflow;
 use Jiangwang\AmisSchema\Definition\NavSearchConfig;
-use Jiangwang\AmisSchema\Widget\Display\Icon;
+use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Icon;
 use Jiangwang\AmisSchema\Widget\Extra\Badge;
 use Jiangwang\AmisSchema\Widget\Widget;
 

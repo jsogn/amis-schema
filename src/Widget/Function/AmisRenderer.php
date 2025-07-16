@@ -1,8 +1,8 @@
 <?php
 
-namespace AmisSchema\Widget\Function;
+namespace Jiangwang\AmisSchema\Widget\Function;
 
-use AmisSchema\Widget\Widget;
+use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * AmisRenderer Amis渲染器

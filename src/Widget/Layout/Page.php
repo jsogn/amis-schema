@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Jiangwang\AmisSchema\Widget\Layout;
 
 use Jiangwang\AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Widget\Display\Remark;
+use Jiangwang\Jiangwang\AmisSchema\Widget\Display\Remark;
 use Jiangwang\AmisSchema\Widget\Widget;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace Slowlyo\AmisSchema\Widget\Display;
+namespace Jiangwang\AmisSchema\Widget\Display;
 
-use Slowlyo\AmisSchema\Widget\Widget;
+use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
  * Tag 标签

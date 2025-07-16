@@ -16,7 +16,6 @@ use Jiangwang\AmisSchema\Definition\JsFunction;
  * @method $this height(string $height) 高度。
  * @method $this width(string $width) 宽度。
  * @method $this className(string $className) CSS 类名。
- * @method $this style(array $style) 自定义样式。
  * @method $this title(string $title) Iframe 的标题。
  * @method $this name(string $name) Iframe 名称。
  * @method $this sandbox(string $sandbox) 是否启用 sandbox。
