@@ -28,4 +28,9 @@ namespace PHPSTORM_META {
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
 
     expectedArguments(\Jiangwang\AmisSchema\Widget\Input\ConditionBuilder::selectMode(), 0, 'list', 'tree', 'chained');
+
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::variableMode(), 0, 'list', 'tree', 'tabs');
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::inputMode(), 0, 'button', 'input-button', 'input-group');
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
+    expectedArguments(\Jiangwang\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
 }
