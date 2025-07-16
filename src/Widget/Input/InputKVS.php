@@ -6,19 +6,20 @@ namespace Jiangwang\AmisSchema\Widget\Input;
 use Jiangwang\AmisSchema\Widget\Widget;
 
 /**
- * InputKVS 键值对象组件
- * 
- * 用于支持对象值的键值对编辑器
+ * InputKVS 键值对象
  *
- * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-kvs
+ * 键值对象输入组件，支持对象和数组的深层结构编辑
  *
- * @method $this keyItem(array $value) 设置key 的配置
- * @method $this valueItems(array $value) 设置value 的配置，请注意：这里是复数，需要配置成数组。支持任意表单项
- * @method $this draggable(bool $value) 设置是否可拖拽排序
- * @method $this defaultValue(array $value) 设置默认值
- * @method $this addButtonText(string $value) 设置新增按钮文字，默认为"新增"
+ * @link https://baidu.github.io/amis/zh-CN/components/form/input-kvs
+ *
+ * @method $this keyItem(array|Widget $value) key 的配置项，可以设置 key 值控件类型
+ * @method $this valueItems(array|Widget[] $value) value 的配置项，配置成数组，支持任意表单项
+ * @method $this addButtonText(string $value = '新增') 新增按钮文字，默认为"新增"
+ * @method $this draggable(bool $value = true) 是否可拖拽排序，默认为 true
+ * @method $this defaultValue(array $value) 默认值
+ * @method $this valueIsArray(bool $value = false) 值是否为数组类型，默认为 false
  */
-class InputKVS extends Widget
+class InputKVS extends FormItem
 {
     protected string $type = 'input-kvs';
 }
