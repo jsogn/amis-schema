@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Display;
 
-use AmisSchema\Widget\Widget;
 use AmisSchema\Definition\JsFunction;
+use AmisSchema\Widget\Widget;
 
 /**
  * Iframe 组件，用于渲染 iframe。

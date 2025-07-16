@@ -38,6 +38,44 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Layout\Wrapper::size(), 0, 'xs', 'sm', 'md', 'lg');
 
+    expectedArguments(\AmisSchema\Widget\Function\Action::actionType(), 0, 'ajax', 'link', 'url', 'drawer', 'dialog', 'confirm', 'cancel', 'prev', 'next', 'copy', 'close', 'download', 'saveAs', 'email', 'reload', 'submit', 'reset', 'clear', 'reset-and-submit', 'clear-and-submit');
+    expectedArguments(\AmisSchema\Widget\Function\Action::level(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\AmisSchema\Widget\Function\Action::activeLevel(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\AmisSchema\Widget\Function\Action::size(), 0, 'xs', 'sm', 'md', 'lg');
+    expectedArguments(\AmisSchema\Widget\Function\Action::tooltipPlacement(), 0, 'top', 'bottom', 'left', 'right');
+
+    expectedArguments(\AmisSchema\Widget\Function\Button::size(), 0, 'xs', 'sm', 'md', 'lg');
+    expectedArguments(\AmisSchema\Widget\Function\Button::actionType(), 0, 'button', 'reset', 'submit', 'clear', 'url');
+    expectedArguments(\AmisSchema\Widget\Function\Button::level(), 0, 'link', 'primary', 'enhance', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
+    expectedArguments(\AmisSchema\Widget\Function\Button::tooltipPlacement(), 0, 'top', 'right', 'bottom', 'left');
+    expectedArguments(\AmisSchema\Widget\Function\Button::tooltipTrigger(), 0, 'hover', 'focus');
+
+    expectedArguments(\AmisSchema\Widget\Function\ButtonGroup::btnLevel(), 0, argumentsSet('buttonLevel'));
+    expectedArguments(\AmisSchema\Widget\Function\ButtonGroup::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
+
+    expectedArguments(\AmisSchema\Widget\Function\Breadcrumb::tooltipPosition(), 0, 'top', 'bottom', 'left', 'right');
+
+    expectedArguments(\AmisSchema\Widget\Function\DropDownButton::size(), 0, 'xs', 'sm', 'md', 'lg');
+    expectedArguments(\AmisSchema\Widget\Function\DropDownButton::align(), 0, 'left', 'right');
+    expectedArguments(\AmisSchema\Widget\Function\DropDownButton::trigger(), 0, 'click', 'hover');
+
+    expectedArguments(\AmisSchema\Widget\Function\Nav::mode(), 0, 'inline', 'float', 'panel');
+    expectedArguments(\AmisSchema\Widget\Function\Nav::expandPosition(), 0, 'before', 'after');
+
+    expectedArguments(\AmisSchema\Widget\Function\AnchorNav::direction(), 0, 'vertical', 'horizontal');
+
+    expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::placement(), 0, 'top', 'left', 'right', 'bottom');
+    expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::tooltipTheme(), 0, 'light', 'dark');
+    expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::trigger(), 0, 'hover', 'click', 'focus');
+    expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::wrapperComponent(), 0, 'div', 'span');
+
+    expectedArguments(\AmisSchema\Definition\PopOver::mode(), 0, 'popOver', 'dialog', 'drawer');
+    expectedArguments(\AmisSchema\Definition\PopOver::trigger(), 0, 'click', 'hover');
+    expectedArguments(\AmisSchema\Definition\PopOver::position(), 0, 'center', 'left-top', 'right-top', 'left-bottom', 'right-bottom', 'fixed-center', 'fixed-left-top', 'fixed-right-top', 'fixed-left-bottom', 'fixed-right-bottom');
+
+    expectedArguments(\AmisSchema\Definition\NavLink::mode(), 0, 'group', 'divider');
+    expectedArguments(\AmisSchema\Definition\NavOverflow::mode(), 0, 'swipe', 'popup');
+
     expectedArguments(\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
 

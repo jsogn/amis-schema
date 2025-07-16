@@ -1,6 +1,6 @@
 <?php
 
-namespace AmisSchema\Widget\Function;
+namespace AmisSchema\Widget\Extra;
 
 use AmisSchema\Widget\Widget;
 
