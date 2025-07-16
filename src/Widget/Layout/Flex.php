@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  *
  * @method $this justify(string $value = 'center') 主轴对齐方式，支持: start、flex-start、center、end、flex-end、space-around、space-between、space-evenly
  * @method $this alignItems(string $value = 'center') 交叉轴对齐方式，支持: stretch、start、flex-start、flex-end、end、center、baseline
- * @method $this items(array|Widget|Widget[] $value = []) Flex 子项
+ * @method $this items(array|Widget[] $value = []) Flex 子项
  */
 class Flex extends Widget
 {

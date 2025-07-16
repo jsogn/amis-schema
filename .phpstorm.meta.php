@@ -15,10 +15,28 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Layout\Divider::direction(), 0, 'horizontal', 'vertical');
     expectedArguments(\AmisSchema\Widget\Layout\Divider::titlePosition(), 0, 'left', 'center', 'right');
 
+    expectedArguments(\AmisSchema\Widget\Layout\Grid::gap(), 0, 'xs', 'sm', 'base', 'none', 'md', 'lg');
+    expectedArguments(\AmisSchema\Widget\Layout\Grid::valign(), 0, 'top', 'middle', 'bottom', 'between');
+    expectedArguments(\AmisSchema\Widget\Layout\Grid::align(), 0, 'left', 'right', 'between', 'center');
+
+    expectedArguments(\AmisSchema\Widget\Layout\Hbox::gap(), 0, 'xs', 'sm', 'base', 'none', 'md', 'lg');
+    expectedArguments(\AmisSchema\Widget\Layout\Hbox::valign(), 0, 'top', 'middle', 'bottom', 'between');
+    expectedArguments(\AmisSchema\Widget\Layout\Hbox::align(), 0, 'left', 'right', 'between', 'center');
+
     expectedArguments(\AmisSchema\Widget\Layout\Flex::justify(), 0, 'start', 'flex-start', 'center', 'end', 'flex-end', 'space-around', 'space-between', 'space-evenly');
     expectedArguments(\AmisSchema\Widget\Layout\Flex::alignItems(), 0, 'stretch', 'start', 'flex-start', 'flex-end', 'end', 'center', 'baseline');
 
     expectedArguments(\AmisSchema\Widget\Layout\Page::asidePosition(), 0, 'left', 'right');
+
+    expectedArguments(\AmisSchema\Widget\Layout\Pagination::mode(), 0, 'normal', 'simple');
+    expectedArguments(\AmisSchema\Widget\Layout\Pagination::size(), 0, 'sm', 'md');
+
+    expectedArguments(\AmisSchema\Widget\Layout\PaginationWrapper::position(), 0, 'top', 'bottom', 'none');
+
+    expectedArguments(\AmisSchema\Widget\Layout\Tabs::tabsMode(), 0, 'line', 'card', 'radio', 'vertical', 'chrome', 'simple', 'strong', 'tiled', 'sidebar');
+    expectedArguments(\AmisSchema\Widget\Layout\Tabs::sidePosition(), 0, 'left', 'right');
+
+    expectedArguments(\AmisSchema\Widget\Layout\Wrapper::size(), 0, 'xs', 'sm', 'md', 'lg');
 
     expectedArguments(\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
