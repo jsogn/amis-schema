@@ -109,7 +109,7 @@ trait Schemaable
         return $this->attribute;
     }
 
-    public function addAttribute(string $key, mixed $value): static
+    public function setAttribute(string $key, mixed $value): static
     {
         $this->offsetSet($key, $value);
 
