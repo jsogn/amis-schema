@@ -16,7 +16,6 @@ use Jiangwang\AmisSchema\Widget\Widget;
  * @method $this valueItems(array|Widget[] $value) value 的配置项，配置成数组，支持任意表单项
  * @method $this addButtonText(string $value = '新增') 新增按钮文字，默认为"新增"
  * @method $this draggable(bool $value = true) 是否可拖拽排序，默认为 true
- * @method $this defaultValue(array $value) 默认值
  * @method $this valueIsArray(bool $value = false) 值是否为数组类型，默认为 false
  */
 class InputKVS extends FormItem

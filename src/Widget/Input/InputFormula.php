@@ -22,8 +22,6 @@ namespace Jiangwang\AmisSchema\Widget\Input;
  * @method $this allowInput(bool $value) 输入框是否可输入
  * @method $this btnSize(string $value) 按钮大小，可选值：xs、sm、md、lg
  * @method $this borderMode(string $value) 输入框边框模式，可选值：full、half、none
- * @method $this placeholder(string $value = '暂无数据') 输入框占位符，默认为 '暂无数据'
- * @method $this className(string $value) 控件外层 CSS 样式类名
  * @method $this variableClassName(string $value) 变量面板 CSS 样式类名
  * @method $this functionClassName(string $value) 函数面板 CSS 样式类名
  * @method $this mixedMode(bool $value) 是否启用混合模式，支持输入文本和输入公式
