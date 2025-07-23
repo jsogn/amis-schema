@@ -105,4 +105,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\InputExcel::parseMode(), 0, 'array', 'object');
 
     expectedArguments(\AmisSchema\Widget\Input\InputFile::useChunk(), 0, 'auto', true, false);
+
+    expectedArguments(\AmisSchema\Widget\Input\Group::gap(), 0, 'xs', 'sm', 'normal');
+    expectedArguments(\AmisSchema\Widget\Input\Group::direction(), 0, 'horizontal', 'vertical');
 }
