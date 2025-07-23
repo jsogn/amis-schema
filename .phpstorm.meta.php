@@ -110,4 +110,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\Group::direction(), 0, 'horizontal', 'vertical');
 
     expectedArguments(\AmisSchema\Widget\Input\InputImage::cropFormat(), 0, 'image/png', 'image/jpeg', 'image/webp');
+
+    expectedArguments(\AmisSchema\Widget\Input\LocationPicker::vendor(), 0, 'baidu', 'gaode');
+    expectedArguments(\AmisSchema\Widget\Input\LocationPicker::coordinatesType(), 0, 'bd09', 'gcj02');
 }
