@@ -25,6 +25,6 @@ trait InputTimeRangeTrait
      */
     public function shortcuts(array|string $value = 'yesterday,7daysago,prevweek,thismonth,prevmonth,prevquarter'): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

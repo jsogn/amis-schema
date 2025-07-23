@@ -65,7 +65,7 @@ class Combo extends FormItem
      */
     public function conditions(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 
     /**
@@ -79,6 +79,6 @@ class Combo extends FormItem
      */
     public function subFormHorizontal(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

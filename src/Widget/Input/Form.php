@@ -86,6 +86,6 @@ class Form extends Widget
      */
     public function horizontal(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

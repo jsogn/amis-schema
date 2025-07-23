@@ -42,6 +42,6 @@ class InputFormula extends FormItem
      */
     public function variables(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

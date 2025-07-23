@@ -26,6 +26,6 @@ class InputColor extends Options
      */
     public function presetColors(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

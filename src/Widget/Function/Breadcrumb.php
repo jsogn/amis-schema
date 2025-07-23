@@ -38,6 +38,6 @@ class Breadcrumb extends Widget
      */
     public function items(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

@@ -51,7 +51,7 @@ class InputText extends FormItem
      */
     public function addOn(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 
     /**
@@ -64,6 +64,6 @@ class InputText extends FormItem
      */
     public function transform(array $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }

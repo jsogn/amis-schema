@@ -30,7 +30,7 @@ trait InputTimeTrait
      */
     public function shortcuts(array|string $value): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 
     /**
@@ -44,6 +44,6 @@ trait InputTimeTrait
      */
     public function timeConstraints(array|bool $value = true): self
     {
-        return $this->__call(__METHOD__, $value);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }
