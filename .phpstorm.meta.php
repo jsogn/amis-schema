@@ -101,4 +101,6 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
 
     expectedArguments(\AmisSchema\Widget\Input\FieldSet::titlePosition(), 0, 'top', 'bottom');
+
+    expectedArguments(\AmisSchema\Widget\Input\InputExcel::parseMode(), 0, 'array', 'object');
 }

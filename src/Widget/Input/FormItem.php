@@ -56,7 +56,7 @@ use AmisSchema\Widget\Widget;
  * @method $this staticPlaceholder(string $value) 设置静态展示时的占位符。
  * @method $this strictMode(bool $value) 设置是否严格模式，false 可及时获取所有表单数据。
  * @method $this visible(bool $value) 设置当前表单项是否可见。
- * @method $this autoFill(Widget|Widget[]|string $value) 设置数据录入配置，自动填充或参照录入。
+ * @method $this autoFill(Widget|Widget[]|string|array $value) 设置数据录入配置，自动填充或参照录入。
  * @method $this staticClassName(string $value) 设置静态展示时的类名。
  * @method $this staticLabelClassName(string $value) 设置静态展示时的 Label 的类名。
  * @method $this staticInputClassName(string $value) 设置静态展示时的 value 的类名。
