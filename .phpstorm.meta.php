@@ -108,4 +108,6 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\Group::gap(), 0, 'xs', 'sm', 'normal');
     expectedArguments(\AmisSchema\Widget\Input\Group::direction(), 0, 'horizontal', 'vertical');
+
+    expectedArguments(\AmisSchema\Widget\Input\InputImage::cropFormat(), 0, 'image/png', 'image/jpeg', 'image/webp');
 }
