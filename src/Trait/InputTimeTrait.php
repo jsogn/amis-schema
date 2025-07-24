@@ -16,6 +16,8 @@ namespace AmisSchema\Trait;
  * @method $this disabledDate(string $value) 设置用字符函数来控制哪些天不可以被点选
  * @method $this popOverContainerSelector(string $value) 设置弹层挂载位置选择器，会通过querySelector获取（6.4.0）
  * @method $this isEndDate(bool $value = false) 设置如果配置为 true，会自动默认为 23:59:59 秒，默认为 false
+ * @method $this format(string $value) 更多格式类型请参考 moment
+ * @method $this inputFormat(string $value) 更多格式类型请参考 moment
  *
  * @phpstan-type timeConstraintsItem array{min: int, max: int, step: int}
  */
