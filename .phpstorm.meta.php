@@ -116,4 +116,7 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::singleSelectMode(), 0, 'cell', 'row', 'column');
     expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::textAlign(), 0, 'left', 'center', 'right');
+
+    expectedArguments(\AmisSchema\Widget\Input\InputNumber::displayMode(), 0, 'base', 'enhance');
+    expectedArguments(\AmisSchema\Widget\Input\InputNumber::borderMode(), 0, 'full', 'half', 'none');
 }
