@@ -113,4 +113,7 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\LocationPicker::vendor(), 0, 'baidu', 'gaode');
     expectedArguments(\AmisSchema\Widget\Input\LocationPicker::coordinatesType(), 0, 'bd09', 'gcj02');
+
+    expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::singleSelectMode(), 0, 'cell', 'row', 'column');
+    expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::textAlign(), 0, 'left', 'center', 'right');
 }
