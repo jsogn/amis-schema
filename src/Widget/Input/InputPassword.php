@@ -5,7 +5,7 @@ namespace AmisSchema\Widget\Input;
 
 /**
  * InputPassword 密码输入框组件
- * 
+ *
  * 密码输入框，用于输入密码
  *
  * @link https://baidu.github.io/amis/zh-CN/components/form/input-password

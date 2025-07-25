@@ -121,4 +121,5 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\InputNumber::borderMode(), 0, 'full', 'half', 'none');
 
     expectedArguments(\AmisSchema\Widget\Input\Picker::modalMode(), 0, 'dialog', 'drawer');
+    expectedArguments(\AmisSchema\Widget\Input\InputRating::textPosition(), 0, 'right', 'left');
 }
