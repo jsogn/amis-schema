@@ -122,4 +122,5 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\Picker::modalMode(), 0, 'dialog', 'drawer');
     expectedArguments(\AmisSchema\Widget\Input\InputRating::textPosition(), 0, 'right', 'left');
+    expectedArguments(\AmisSchema\Widget\Input\InputRange::tooltipPlacement(), 0, 'auto', 'bottom', 'left', 'right', 'top');
 }
