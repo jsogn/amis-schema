@@ -3,24 +3,23 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Widget\Widget;
+use AmisSchema\Definition\API;
 
 /**
  * InputRichText 富文本编辑器组件
- * 
+ *
  * 富文本编辑器
  *
  * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-rich-text
  *
- * @method $this vendor(string $value) 设置使用哪个版本的富文本编辑器，tinymce 或者 froala
- * @method $this receiver(string|array $value) 设置默认的图片保存 API
- * @method $this videoReceiver(string|array $value) 设置默认的视频保存 API
- * @method $this size(string $value) 设置框的大小，可以设置成 md或者lg让输入框变大
- * @method $this buttons(array $value) 设置自定义工具栏，默认为全部
- * @method $this options(array $value) 设置需要参考 tinymce 或 froala 的文档
- * @method $this placeholder(string $value) 设置占位符
+ * @method $this saveAsUbb(bool $value) 设置是否保存为 ubb 格式
+ * @method $this receiver(string|array|API $value) 设置默认的图片保存 API
+ * @method $this videoReceiver(string|array|API $value) 设置默认的视频保存 API，仅支持 froala 编辑器
+ * @method $this fileField(string $value) 设置上传文件时的字段名
+ * @method $this options(array $value) 设置 tinymce 或 froala 的配置选项
+ * @method $this buttons(string[] $value) 设置 froala 专用按钮配置，配置显示的按钮，tinymce 可以通过 options 设置 toolbar 字符串
  */
-class InputRichText extends Widget
+class InputRichText extends FormItem
 {
     protected string $type = 'input-rich-text';
 }
