@@ -143,4 +143,6 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\Select::rightMode(), 0, 'list', 'table', 'tree', 'chained');
 
     expectedArguments(\AmisSchema\Widget\Input\SwitchControl::size(), 0, 'sm', 'md');
+
+    expectedArguments(\AmisSchema\Widget\Input\InputTree::nodeBehavior(), 0, 'unfold', 'check');
 }
