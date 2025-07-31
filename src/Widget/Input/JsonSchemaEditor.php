@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Widget\Input\FormItem;
-
 /**
  * JsonSchemaEditor 组件
  * 
