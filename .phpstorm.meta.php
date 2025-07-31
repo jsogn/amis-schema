@@ -90,13 +90,13 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
 
-        expectedArguments(\AmisSchema\Widget\Input\InputTag::separator(), 0, '-', ',', ';', '|');
-    
+    expectedArguments(\AmisSchema\Widget\Input\InputTag::separator(), 0, '-', ',', ';', '|');
+
     expectedArguments(\AmisSchema\Widget\Input\Transfer::selectMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::searchResultMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::rightMode(), 0, 'list', 'table', 'tree', 'chained');
-    
+
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::selectMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::searchResultMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::leftMode(), 0, 'list', 'tree');

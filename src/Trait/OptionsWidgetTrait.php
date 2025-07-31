@@ -43,7 +43,7 @@ use AmisSchema\Definition\API;
  * @method $this removable(bool $value = false) 设置删除选项，默认为 false
  * @method $this deleteApi(string|array|API $value) 设置删除选项接口
  * @method $this autoFill(array|string[] $value) 设置自动填充配置，将当前已选中的选项的某个字段的值，自动填充到表单中某个表单项中
- * @method $this initAutoFill(string|bool $value) 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
+ * @method $this initAutoFill(string|bool $value = "fillIfNotSet") 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
  * @method $this optionLabel(string $value) 设置选项标识文字，用于新增、编辑等操作的标题显示
  */
 trait OptionsWidgetTrait
