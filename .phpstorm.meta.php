@@ -83,7 +83,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
 
-    expectedArguments(\AmisSchema\Widget\Input\InputText::borderMode(), 0, argumentsSet('mode'));
+    expectedArguments(\AmisSchema\Widget\Input\InputText::borderMode(), 0, 'full', 'half', 'none');
 
     expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
