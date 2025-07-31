@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Trait\OptionsWidgetTrait;
-
 /**
  * TabsTransfer 组合穿梭器组件
  * 
@@ -14,7 +12,5 @@ use AmisSchema\Trait\OptionsWidgetTrait;
  */
 class TabsTransfer extends Transfer
 {
-    use OptionsWidgetTrait;
-
     protected string $type = 'tabs-transfer';
 }
