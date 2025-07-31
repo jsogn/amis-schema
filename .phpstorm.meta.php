@@ -123,11 +123,11 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\Picker::modalMode(), 0, 'dialog', 'drawer');
     expectedArguments(\AmisSchema\Widget\Input\InputRating::textPosition(), 0, 'right', 'left');
     expectedArguments(\AmisSchema\Widget\Input\InputRange::tooltipPlacement(), 0, 'auto', 'bottom', 'left', 'right', 'top');
-    
+
     expectedArguments(\AmisSchema\Widget\Input\Select::selectMode(), 0, 'group', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Select::searchResultMode(), 0, 'group', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Select::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\Select::rightMode(), 0, 'list', 'table', 'tree', 'chained');
-    
+
     expectedArguments(\AmisSchema\Widget\Input\SwitchControl::size(), 0, 'sm', 'md');
 }
