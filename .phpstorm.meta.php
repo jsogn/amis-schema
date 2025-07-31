@@ -90,6 +90,8 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
 
+    expectedArguments(\AmisSchema\Widget\Input\InputTag::separator(), 0, '-', ',', ';', '|');
+
     expectedArguments(\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
     expectedArguments(\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
 
