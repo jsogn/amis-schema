@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Trait\InputTimeRangeTrait;
+use AmisSchema\Trait\InputTimeRangeWidgetTrait;
 
 /**
  * InputMonthRange 月份范围选择器
@@ -17,7 +17,7 @@ use AmisSchema\Trait\InputTimeRangeTrait;
  */
 class InputMonthRange extends FormItem
 {
-    use InputTimeRangeTrait;
+    use InputTimeRangeWidgetTrait;
 
     protected string $type = 'input-month-range';
 }

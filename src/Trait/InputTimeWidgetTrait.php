@@ -21,7 +21,7 @@ namespace AmisSchema\Trait;
  *
  * @phpstan-type timeConstraintsItem array{min: int, max: int, step: int}
  */
-trait InputTimeTrait
+trait InputTimeWidgetTrait
 {
     /**
      * 设置日期快捷键，字符串格式为预设值，对象格式支持写表达式（3.1.0版本后支持表达式）

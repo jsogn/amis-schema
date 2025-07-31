@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Trait\InputTimeTrait;
+use AmisSchema\Trait\InputTimeWidgetTrait;
 
 /**
  * InputDatetime 日期时间选择器
@@ -14,7 +14,7 @@ use AmisSchema\Trait\InputTimeTrait;
  */
 class InputDatetime extends FormItem
 {
-    use InputTimeTrait;
+    use InputTimeWidgetTrait;
 
     protected string $type = 'input-datetime';
 }

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Trait\InputTimeRangeTrait;
+use AmisSchema\Trait\InputTimeRangeWidgetTrait;
 
 /**
  * InputDateRange 日期范围选择器
@@ -14,7 +14,7 @@ use AmisSchema\Trait\InputTimeRangeTrait;
  */
 class InputDateRange extends FormItem
 {
-    use InputTimeRangeTrait;
+    use InputTimeRangeWidgetTrait;
 
     protected string $type = 'input-date-range';
 }

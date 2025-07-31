@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Trait\InputTimeRangeTrait;
+use AmisSchema\Trait\InputTimeRangeWidgetTrait;
 
 /**
  * InputQuarterRange 季度范围选择器组件
@@ -14,7 +14,7 @@ use AmisSchema\Trait\InputTimeRangeTrait;
  */
 class InputQuarterRange extends FormItem
 {
-    use InputTimeRangeTrait;
+    use InputTimeRangeWidgetTrait;
 
     protected string $type = 'input-quarter-range';
 }

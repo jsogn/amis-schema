@@ -10,9 +10,9 @@ namespace AmisSchema\Trait;
  * @method $this extraName(string $value) 设置是否存成两个字段（3.3.0）
  * @method $this transform(string $value) 设置日期数据处理函数，用来处理选择日期之后的的值，返回值为 Moment对象（3.5.0）
  */
-trait InputTimeRangeTrait
+trait InputTimeRangeWidgetTrait
 {
-    use InputTimeTrait;
+    use InputTimeWidgetTrait;
 
     /**
      * 日期范围快捷键（3.1.0版本后支持表达式）
