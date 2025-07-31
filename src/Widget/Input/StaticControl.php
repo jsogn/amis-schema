@@ -3,28 +3,22 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
-use AmisSchema\Widget\Widget;
+use AmisSchema\Definition\PopOver;
 
 /**
  * Static 静态展示组件
- * 
- * 纯用来展现数据，可用来展示用户填写的某个表单项数据
  *
- * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/static
+ * 用来在表单中，展示静态数据
  *
- * @method $this tpl(string $value) 设置模板
- * @method $this text(string $value) 设置文字模板
- * @method $this placeholder(string $value) 设置占位符
- * @method $this className(string $value) 设置表单最外层类名
- * @method $this inputClassName(string $value) 设置表单控制器类名
- * @method $this labelClassName(string $value) 设置label类名
- * @method $this name(string $value) 设置字段名
- * @method $this value(mixed $value) 设置字段值，函数签名如下：(value: any, name: string, data: any) => any
- * @method $this popOver(bool|array $value) 设置是否显示一个小图标，鼠标放上去的时候显示提示内容
- * @method $this quickEdit(bool|array $value) 设置在Table中调整宽度
- * @method $this copyable(bool|array $value) 设置是否可复制
+ * @link https://baidu.github.io/amis/zh-CN/components/form/static
+ *
+ * @method $this value(mixed $value) 设置显示的静态值
+ * @method $this tpl(string $value) 设置如果想显示成其他文字，请设置此字段。支持模板语法如: $xxx
+ * @method $this quickEdit(bool|array $value) 设置快速编辑，支持布尔值或配置对象
+ * @method $this popOver(bool|array|PopOver $value) 设置弹出框配置
+ * @method $this type(string $value = 'static') 支持通过配置type为static-xxx的形式，展示其他非表单项组件
  */
-class StaticControl extends Widget
+class StaticControl extends FormItem
 {
     protected string $type = 'static';
 }
