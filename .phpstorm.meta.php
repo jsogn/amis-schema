@@ -145,4 +145,8 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\SwitchControl::size(), 0, 'sm', 'md');
 
     expectedArguments(\AmisSchema\Widget\Input\InputTree::nodeBehavior(), 0, 'unfold', 'check');
+
+    expectedArguments(\AmisSchema\Widget\Display\Table::columnsTogglable(), 0, 'auto', true, false);
+    expectedArguments(\AmisSchema\Widget\Display\Table::tableLayout(), 0, 'auto', 'fixed');
+    expectedArguments(\AmisSchema\Widget\Display\Table::reUseRow(), 0, false, 'match');
 }
