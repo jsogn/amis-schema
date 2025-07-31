@@ -8,7 +8,7 @@ use AmisSchema\Trait\OptionsWidgetTrait;
 
 /**
  * InputTree 树形选择框组件
- * 
+ *
  * 树形结构选择框
  *
  * @link https://baidu.github.io/amis/zh-CN/components/form/input-tree
@@ -47,6 +47,7 @@ use AmisSchema\Trait\OptionsWidgetTrait;
  * @method $this toolbarClassName(string $value) 设置工具栏区域类名
  * @method $this itemActions(mixed $value) 设置节点操作栏区域
  * @method $this deferApi(array|API|string $value)
+ * @method $this clearable(bool $value) 设置单选模式下是否支持清空
  */
 class InputTree extends FormItem
 {
