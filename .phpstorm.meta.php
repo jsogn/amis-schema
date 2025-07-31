@@ -129,5 +129,5 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Input\Select::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\Select::rightMode(), 0, 'list', 'table', 'tree', 'chained');
     
-    expectedArguments(\AmisSchema\Widget\Input\InputSwitch::size(), 0, 'sm', 'md');
+    expectedArguments(\AmisSchema\Widget\Input\SwitchControl::size(), 0, 'sm', 'md');
 }
