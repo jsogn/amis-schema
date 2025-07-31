@@ -3,11 +3,12 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Input;
 
+use AmisSchema\Trait\InputTimeWidgetTrait;
 use AmisSchema\Widget\Widget;
 
 /**
  * InputYear 年份选择器组件
- * 
+ *
  * 年份选择器
  *
  * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-year
@@ -25,5 +26,7 @@ use AmisSchema\Widget\Widget;
  */
 class InputYear extends Widget
 {
+    use InputTimeWidgetTrait;
+
     protected string $type = 'input-year';
 }
