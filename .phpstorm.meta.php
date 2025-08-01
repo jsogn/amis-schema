@@ -149,4 +149,8 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Table::columnsTogglable(), 0, 'auto', true, false);
     expectedArguments(\AmisSchema\Widget\Display\Table::tableLayout(), 0, 'auto', 'fixed');
     expectedArguments(\AmisSchema\Widget\Display\Table::reUseRow(), 0, false, 'match');
+
+    expectedArguments(\AmisSchema\Widget\Display\Table2::columnsTogglable(), 0, 'auto', true, false);
+    expectedArguments(\AmisSchema\Widget\Display\Table2::lineHeight(), 0, 'large', 'middle');
+    expectedArguments(\AmisSchema\Widget\Display\Table2::size(), 0, 'large', 'default', 'small');
 }
