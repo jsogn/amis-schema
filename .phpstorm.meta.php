@@ -153,4 +153,9 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Table2::columnsTogglable(), 0, 'auto', true, false);
     expectedArguments(\AmisSchema\Widget\Display\Table2::lineHeight(), 0, 'large', 'middle');
     expectedArguments(\AmisSchema\Widget\Display\Table2::size(), 0, 'large', 'default', 'small');
+
+    expectedArguments(\AmisSchema\Widget\Display\TableView::captionSide(), 0, 'top', 'bottom');
+
+    expectedArguments(\AmisSchema\Widget\Display\CRUD::mode(), 0, 'table', 'cards', 'list');
+    expectedArguments(\AmisSchema\Widget\Display\CRUD::orderDir(), 0, 'asc', 'desc');
 }
