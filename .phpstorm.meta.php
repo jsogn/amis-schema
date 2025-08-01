@@ -156,4 +156,8 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Display\CRUD::mode(), 0, 'table', 'cards', 'list');
     expectedArguments(\AmisSchema\Widget\Display\CRUD::orderDir(), 0, 'asc', 'desc');
+
+    expectedArguments(\AmisSchema\Widget\Display\Carousel::controlsTheme(), 0, 'light', 'dark');
+    expectedArguments(\AmisSchema\Widget\Display\Carousel::animation(), 0, 'fade', 'slide', 'marquee');
+    expectedArguments(\AmisSchema\Widget\Display\Carousel::thumbMode(), 0, 'cover', 'contain');
 }

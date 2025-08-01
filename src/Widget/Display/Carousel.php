@@ -7,26 +7,41 @@ use AmisSchema\Widget\Widget;
 /**
  * Carousel 轮播图
  *
- * @method self type(string $value) 指定为 carousel 渲染器
- * @method self className(string $value) 外层CSS类名
- * @method self options(array $value) 轮播面板数据
- * @method self itemSchema($value) 自定义schema来展示数据
- * @method self auto(bool $value) 是否自动轮播
- * @method self interval(int $value) 切换时间间隔，仅在auto为true时有效
- * @method self duration(int $value) 切换动画时长
- * @method self width(int $value) 宽度
- * @method self height(int $value) 高度
- * @method self controls(array $value) 显示箭头、底部圆点索引
- * @method self controlsTheme(string $value) 左右箭头、底部圆点索引颜色主题
- * @method self placeholder(string $value) 占位
- * @method self multiple($value) 多图展示
- * @method self alwaysShowArrow(bool $value) 是否一直显示箭头
- * @method self icons($value) 自定义箭头图标
- * @method self thumbMode(string $value) 图片默认缩放模式
- * @method self animation(string $value) 切换动画效果
- * @method self onEvent($value) 事件
+ * @method $this type(string $value = 'carousel') 指定为 carousel 渲染器，默认 'carousel'
+ * @method $this itemSchema(array $value = []) 自定义schema来展示数据，默认 []
+ * @method $this auto(bool $value = true) 是否自动轮播，默认 true
+ * @method $this interval(string $value = '5s') 切换动画间隔，默认 '5s'
+ * @method $this duration(int $value = 500) 切换动画时长（ms），默认 500
+ * @method $this width(string $value = 'auto') 宽度，默认 'auto'
+ * @method $this height(string $value = '200px') 高度，默认 '200px'
+ * @method $this controls(array $value = ['dots', 'arrows']) 显示左右箭头、底部圆点索引，默认 ['dots', 'arrows']
+ * @method $this controlsTheme(string $value = 'light') 左右箭头、底部圆点索引颜色，默认 'light'
+ * @method $this animation(string $value = 'fade') 切换动画效果，默认 'fade'
+ * @method $this thumbMode(string $value = 'cover') 图片默认缩放模式，默认 'cover'
+ * @method $this multiple(array $value = ['count' => 1]) 多图展示，默认 ['count' => 1]
+ * @method $this alwaysShowArrow(bool $value = false) 是否一直显示箭头，默认 false
+ * @method $this icons(array $value = []) 自定义箭头图标，默认 []
  */
 class Carousel extends Widget
 {
     protected string $type = 'carousel';
+
+    /**
+     * 轮播面板数据
+     * @param array{
+     *     image?: string,
+     *     href?: string,
+     *     imageClassName?: string,
+     *     title?: string,
+     *     titleClassName?: string,
+     *     description?: string,
+     *     descriptionClassName?: string,
+     *     html?: string
+     * }[] $value
+     * @return self
+     */
+    public function options(array $value): self
+    {
+        return $this->setAttribute(__FUNCTION__, $value);
+    }
 }
