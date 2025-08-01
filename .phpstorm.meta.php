@@ -160,4 +160,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Carousel::controlsTheme(), 0, 'light', 'dark');
     expectedArguments(\AmisSchema\Widget\Display\Carousel::animation(), 0, 'fade', 'slide', 'marquee');
     expectedArguments(\AmisSchema\Widget\Display\Carousel::thumbMode(), 0, 'cover', 'contain');
+
+    expectedArguments(\AmisSchema\Widget\Display\Code::language(), 0, 'bat', 'c', 'coffeescript', 'cpp', 'csharp', 'css', 'dockerfile', 'fsharp', 'go', 'handlebars', 'html', 'ini', 'java', 'javascript', 'json', 'less', 'lua', 'markdown', 'msdax', 'objective-c', 'php', 'plaintext', 'postiats', 'powershell', 'pug', 'python', 'r', 'razor', 'ruby', 'sb', 'scss', 'shell', 'sol', 'sql', 'swift', 'typescript', 'vb', 'xml', 'yaml');
+    expectedArguments(\AmisSchema\Widget\Display\Code::editorTheme(), 0, 'vs', 'vs-dark');
 }
