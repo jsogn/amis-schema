@@ -163,4 +163,8 @@ namespace PHPSTORM_META {
 
     expectedArguments(\AmisSchema\Widget\Display\Code::language(), 0, 'bat', 'c', 'coffeescript', 'cpp', 'csharp', 'css', 'dockerfile', 'fsharp', 'go', 'handlebars', 'html', 'ini', 'java', 'javascript', 'json', 'less', 'lua', 'markdown', 'msdax', 'objective-c', 'php', 'plaintext', 'postiats', 'powershell', 'pug', 'python', 'r', 'razor', 'ruby', 'sb', 'scss', 'shell', 'sol', 'sql', 'swift', 'typescript', 'vb', 'xml', 'yaml');
     expectedArguments(\AmisSchema\Widget\Display\Code::editorTheme(), 0, 'vs', 'vs-dark');
+
+    expectedArguments(\AmisSchema\Widget\Display\Icon::vendor(), 0, 'fa', 'iconfont', '');
+
+    expectedArguments(\AmisSchema\Widget\Display\Iframe::referrerpolicy(), 0, 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url');
 }

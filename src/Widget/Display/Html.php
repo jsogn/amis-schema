@@ -7,9 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Html HTML 渲染器
  *
- * @method self type(string $value) 指定为 html 渲染器
- * @method self html(string $value) html 代码
- * @method self onEvent($value) 事件
+ * @method $this type(string $value = 'html') 指定为 html 渲染器，默认 'html'
+ * @method $this html(string $value = '') html 代码，默认 ''
  */
 class Html extends Widget
 {
