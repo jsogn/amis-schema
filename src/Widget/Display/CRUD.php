@@ -58,7 +58,7 @@ use AmisSchema\Widget\Widget;
  * @method $this resetPageAfterAjaxItemAction(bool $value = false) 单条数据 ajax 操作后是否重置页码为第一页，默认 false
  * @method $this autoFillHeight(bool $value = false) 内容区域自适应高度，默认 false
  * @method $this canAccessSuperData(bool $value = false) 指定是否可以自动获取上层的数据，默认 false
- * @method $this matchFunc($value) 自定义匹配函数
+ * @method $this matchFunc(string $value) 自定义匹配函数
  * @method $this parsePrimitiveQuery(bool $value = true) 是否开启 Query 信息转换，默认 true
  * @method $this columns(array $value = []) 列配置（table 模式下），默认 []
  * @method $this card($value) 卡片配置（cards 模式下）
