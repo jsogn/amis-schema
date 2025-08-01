@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace PHPSTORM_META {
 
-    use AmisSchema\Widget\Input\FormItem;
-
     registerArgumentsSet('size', 'xs', 'sm', 'md', 'lg', 'full');
     registerArgumentsSet('direction', 'horizontal', 'vertical');
     registerArgumentsSet('align', 'right', 'left', 'center');

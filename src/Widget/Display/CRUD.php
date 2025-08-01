@@ -12,7 +12,6 @@ use AmisSchema\Widget\Widget;
  * @method $this type(string $value = 'crud') 指定为 CRUD 渲染器，默认 'crud'
  * @method $this mode(string $value = 'table') 展示模式 'table'|'cards'|'list'，默认 'table'
  * @method $this title(string $value = '列表') 可设置成空，当设置成空时，没有标题栏，默认 '列表'
- * @method $this className(string $value = '') 表格外层 Dom 的类名，默认 ''
  * @method $this api(API|string $value) CRUD 用来获取列表数据的 api
  * @method $this deferApi(API|string $value) 当行数据中有 defer 属性时，用此接口进一步加载内容
  * @method $this loadDataOnce(bool $value = false) 是否一次性加载所有数据（前端分页），默认 false
@@ -69,7 +68,6 @@ use AmisSchema\Widget\Widget;
  * @method $this itemAction($value) 单行点击操作
  * @method $this selectable(bool $value = true) 支持勾选，默认 true
  * @method $this multiple(bool $value = true) 勾选 icon 是否为多选样式，默认 true
- * @method $this onEvent($value) 事件
  **/
 class CRUD extends Widget
 {
