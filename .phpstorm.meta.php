@@ -167,4 +167,8 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Icon::vendor(), 0, 'fa', 'iconfont', '');
 
     expectedArguments(\AmisSchema\Widget\Display\Iframe::referrerpolicy(), 0, 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url');
+
+    expectedArguments(\AmisSchema\Widget\Display\Image::thumbMode(), 0, 'w-full', 'h-full', 'contain', 'cover');
+    expectedArguments(\AmisSchema\Widget\Display\Image::thumbRatio(), 0, '1:1', '4:3', '16:9');
+    expectedArguments(\AmisSchema\Widget\Display\Image::imageMode(), 0, 'thumb', 'original');
 }
