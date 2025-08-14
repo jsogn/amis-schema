@@ -6,19 +6,20 @@ use AmisSchema\Widget\Widget;
 
 /**
  * Video 视频
+ * 
+ * 视频播放组件，支持普通视频和直播流（flv、hls）播放
  *
- * @method self type(string $value) 指定为 video 渲染器
- * @method self className(string $value) 外层CSS类名
- * @method self src(string $value) 视频地址
- * @method self isLive(bool $value) 是否为直播，视频为直播时需要添加 live 属性
- * @method self poster(string $value) 视频封面地址
- * @method self muted(bool $value) 是否静音
- * @method self autoPlay(bool $value) 是否自动播放
- * @method self rates(array $value) 倍数，格式为数组，如：[1.0, 1.5, 2.0]
- * @method self frames($value) 设置后，可以显示切帧按钮
- * @method self jumpFrame(bool $value) 是否显示跳帧按钮，需要frames配置
- * @method self aspectRatio(string $value) 视频比例，格式为数字，如：1.33
- * @method self onEvent($value) 事件
+ * @method $this src(string $value = '') 视频地址
+ * @method $this isLive(bool $value = false) 是否为直播，支持 flv 和 hls 格式
+ * @method $this videoType(string $value = '') 指定直播视频格式，可选：video/x-flv、application/x-mpegURL
+ * @method $this poster(string $value = '') 视频封面地址
+ * @method $this muted(bool $value = false) 是否静音
+ * @method $this loop(bool $value = false) 是否循环播放
+ * @method $this autoPlay(bool $value = false) 是否自动播放
+ * @method $this rates(array $value = []) 播放速度倍数，格式为 [1.0, 1.5, 2.0]
+ * @method $this frames(array $value = []) 视频帧配置，key 为时刻信息，value 为图片地址
+ * @method $this jumpBufferDuration(int $value = 0) 点击帧时提前跳转的秒数
+ * @method $this stopOnNextFrame(bool $value = false) 到达下一帧时是否自动停止
  */
 class Video extends Widget
 {
