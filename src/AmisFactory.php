@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace AmisSchema;
 
-use Jiangwang\AmisSchema\Widget\Display\Icon;
-use Jiangwang\AmisSchema\Widget\Display\Remark;
 use AmisSchema\Widget\Extra\Badge;
 use AmisSchema\Widget\Function\Action;
 use AmisSchema\Widget\Function\AnchorNav;

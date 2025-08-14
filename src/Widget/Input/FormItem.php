@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace AmisSchema\Widget\Input;
 
 use AmisSchema\Definition\API;
-use Jiangwang\AmisSchema\Widget\Display\Remark;
+use AmisSchema\Widget\Display\Remark;
 use AmisSchema\Widget\Widget;
 
 /**
