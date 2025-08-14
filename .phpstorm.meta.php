@@ -196,4 +196,9 @@ namespace PHPSTORM_META {
     
     expectedArguments(\AmisSchema\Widget\Feedback\Toast::level(), 0, 'info', 'success', 'error', 'warning');
     expectedArguments(\AmisSchema\Widget\Feedback\Toast::position(), 0, 'top-right', 'top-center', 'top-left', 'bottom-center', 'bottom-left', 'bottom-right', 'center');
+    
+    expectedArguments(\AmisSchema\Widget\Extra\Avatar::fit(), 0, 'contain', 'cover', 'fill', 'none', 'scale-down');
+    expectedArguments(\AmisSchema\Widget\Extra\Avatar::shape(), 0, 'circle', 'square', 'rounded');
+    expectedArguments(\AmisSchema\Widget\Extra\Avatar::size(), 0, 'default', 'normal', 'small');
+    expectedArguments(\AmisSchema\Widget\Extra\Avatar::crossOrigin(), 0, 'anonymous', 'use-credentials', '');
 }
