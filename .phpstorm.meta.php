@@ -190,4 +190,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Feedback\Alert::level(), 0, 'info', 'success', 'warning', 'danger');
     
     expectedArguments(\AmisSchema\Widget\Feedback\Dialog::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl', 'full');
+    
+    expectedArguments(\AmisSchema\Widget\Feedback\Drawer::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl');
+    expectedArguments(\AmisSchema\Widget\Feedback\Drawer::position(), 0, 'left', 'right', 'top', 'bottom');
 }
