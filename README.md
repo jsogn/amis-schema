@@ -15,16 +15,16 @@ composer require jiangwang/amis-schema
 ### 方式一：使用工厂类（推荐）
 
 ```php
-// 使用全局函数
-$page = amis()->Page([
-    'title' => '用户管理',
-    'subTitle' => '系统用户管理页面'
-])->body([
-    amis()->Form()->body([
-        amis()->InputText(['name' => 'username', 'label' => '用户名']),
-        amis()->Button(['label' => '提交', 'type' => 'submit'])
-    ])
-]);
+// 使用全局函数和链式调用
+$page = amis()->Page()
+    ->title('用户管理')
+    ->subTitle('系统用户管理页面')
+    ->body([
+        amis()->Form()->body([
+            amis()->InputText()->name('username')->label('用户名'),
+            amis()->Button()->label('提交')->type('submit')
+        ])
+    ]);
 ```
 
 ### 方式二：使用静态方法
@@ -36,62 +36,45 @@ use AmisSchema\Widget\Function\Button;
 $page = Page::make()
     ->title('我的页面')
     ->body([
-        Button::make(['label' => '点击我'])
+        Button::make()->label('点击我')
     ]);
 ```
-
-## 工厂类
-
-`AmisFactory` 工厂类提供了便捷的方法来创建所有 Amis 组件，包含 **151 个组件**：
-
-- **Display 显示组件** (42 个)：`BarCode()`, `Calendar()`, `Chart()`, `Table()`, `Image()` 等
-- **Input 输入组件** (71 个)：`InputText()`, `Select()`, `Form()`, `Checkbox()` 等
-- **Layout 布局组件** (14 个)：`Page()`, `Container()`, `Grid()`, `Flex()` 等
-- **Function 功能组件** (11 个)：`Button()`, `Nav()`, `Action()`, `Service()` 等
-- **Feedback 反馈组件** (5 个)：`Dialog()`, `Alert()`, `Toast()`, `Drawer()` 等
-- **Extra 扩展组件** (8 个)：`Audio()`, `Video()`, `Avatar()`, `Badge()` 等
 
 ### 使用工厂类
 
 ```php
 // 直接实例化
 $factory = new AmisFactory();
-$page = $factory->Page(['title' => '我的页面']);
+$page = $factory->Page()->title('我的页面');
 
 // 使用全局函数（推荐）
-$page = amis()->Page(['title' => '我的页面']);
+$page = amis()->Page()->title('我的页面');
 ```
 
 ### 完整示例
 
 ```php
-// 构建一个完整的用户管理页面
-$userPage = amis()->Page(['title' => '用户管理'])->body([
-    // 搜索表单
-    amis()->Form(['title' => '搜索条件'])->body([
-        amis()->InputText(['name' => 'keywords', 'label' => '关键字']),
-        amis()->Select(['name' => 'status', 'label' => '状态', 'options' => [
-            ['label' => '启用', 'value' => 1],
-            ['label' => '禁用', 'value' => 0]
-        ]]),
-        amis()->Button(['label' => '搜索', 'type' => 'submit'])
-    ]),
-
-    // 数据表格
-    amis()->CRUD(['api' => '/api/users'])->columns([
-        ['name' => 'id', 'label' => 'ID'],
-        ['name' => 'username', 'label' => '用户名'],
-        ['name' => 'email', 'label' => '邮箱'],
-        [
-            'type' => 'operation',
-            'label' => '操作',
-            'buttons' => [
-                amis()->Button(['label' => '编辑']),
-                amis()->Button(['label' => '删除', 'level' => 'danger'])
-            ]
-        ]
-    ])
-]);
+$userPage = amis()->Page()
+    ->title('用户管理')
+    ->body([
+        amis()->Form()
+            ->title('搜索条件')
+            ->body([
+                amis()->InputText()
+                    ->name('keywords')
+                    ->label('关键字'),
+                amis()->Select()
+                    ->name('status')
+                    ->label('状态')
+                    ->options([
+                        ['label' => '启用', 'value' => 1],
+                        ['label' => '禁用', 'value' => 0]
+                    ]),
+                amis()->Button()
+                    ->label('搜索')
+                    ->type('submit')
+            ]),
+    ]);
 ```
 
 ## 特性
