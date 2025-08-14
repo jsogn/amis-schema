@@ -2,21 +2,20 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\API;
 use AmisSchema\Widget\Widget;
 
 /**
  * Mapping 映射
- * 
- * 映射展示组件
  *
- * @method self type(string $type) 指定为 Mapping 渲染器
- * @method self className(string $className) 外层 CSS 类名
- * @method self placeholder(string $placeholder) 占位文本
- * @method self map(array|object $map) 映射配置
- * @method self source(string|array $source) API 或 数据映射
- * @method self valueField(string $valueField) map 或 source 为Array<object>时，用来匹配映射的字段名，默认为 "value"
- * @method self labelField(string $labelField) map 或 source 为Array<object>时，用来展示的字段名，默认为 "label"。注：配置后映射值无法作为schema组件渲染
- * @method self itemSchema(string|Widget|Widget[]|array $itemSchema) 自定义渲染模板，支持html或schemaNode；当映射值是非object时，可使用${item}获取映射值；当映射值是object时，可使用映射语法: ${xxx}获取object的值；也可使用数据映射语法：${xxx}获取数据域中变量值。
+ * 映射展示组件，将值通过映射配置转换后展示
+ *
+ * @method $this placeholder(string $value = '') 占位文本，默认 ''
+ * @method $this map(array $value = []) 映射配置，支持k-v对象或对象数组格式，默认 []
+ * @method $this source(string|array|API $value = '') 远程数据源接口(since 1.1.6)或数据映射，默认 ''
+ * @method $this valueField(string $value = 'value') 映射匹配字段名(since 2.5.2)，默认 value
+ * @method $this labelField(string $value = 'label') 映射显示字段名(since 2.5.2)，配置后映射值无法作为schema渲染，默认 label
+ * @method $this itemSchema(string|array|Widget $value = null) 自定义渲染模板(since 2.5.2)，支持html或schema，非object使用${item}，object使用${xxx}，默认 null
  */
 class Mapping extends Widget
 {
