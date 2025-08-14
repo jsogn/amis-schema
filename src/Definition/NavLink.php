@@ -16,7 +16,7 @@ use AmisSchema\Schema;
  * @method $this active(bool $active) 是否高亮
  * @method $this activeOn(string $activeOn) 是否高亮的条件，留空将自动分析链接地址
  * @method $this defer(bool $defer) 标记是否为懒加载项
- * @method $this deferApi(API $deferApi) 懒加载接口，配置优先级更高
+ * @method $this deferApi(array|string|API $deferApi) 懒加载接口，配置优先级更高
  * @method $this disabled(bool $disabled) 是否禁用
  * @method $this disabledTip(string $disabledTip) 禁用提示信息
  * @method $this className(string $className) 菜单项自定义样式
