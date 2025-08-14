@@ -22,22 +22,6 @@ use AmisSchema\Schema;
  * @method $this className(string $className) 菜单项自定义样式
  * @method $this mode(string $mode) 菜单项模式，分组模式：group、分割线：divider
  * @method $this overflow(NavOverflow $overflow) 导航项响应式收纳配置
- *
- * @property string $label 名称
- * @property string $to 链接地址
- * @property string $target 链接关系
- * @property string $icon 图标
- * @property array $children 子链接
- * @property bool $unfolded 初始是否展开
- * @property bool $active 是否高亮
- * @property string $activeOn 是否高亮的条件，留空将自动分析链接地址
- * @property bool $defer 标记是否为懒加载项
- * @property API $deferApi 懒加载接口，配置优先级更高
- * @property bool $disabled 是否禁用
- * @property string $disabledTip 禁用提示信息
- * @property string $className 菜单项自定义样��
- * @property string $mode 菜单项模式，分组模式：group、分割线：divider
- * @property NavOverflow $overflow 导航项响应式收纳配置
  */
 class NavLink extends Schema
 {

@@ -26,23 +26,6 @@ use AmisSchema\Schema;
  * @method $this responseData(array $responseData) 配置返回数据，对返回结果做映射
  * @method $this trackExpression(string $trackExpression) 配置跟踪变量表达式
  * @method $this messages(array $messages) 配置接口请求的提示信息，messages.success/failed
- *
- * @property string $method 请求方式 支持：get、post、put、delete
- * @property string $url 请求地址 模板字符串
- * @property array|string $data 请求数据 对象或字符串 支持数据映射
- * @property string $dataType 数据体格式 默认为 json，可配置 form 或 form-data
- * @property array|string $qsOptions qs参数配置，form/form-data时有用
- * @property array $headers 请求头
- * @property string $sendOn 请求条件 表达式
- * @property int $cache 接口缓存时间
- * @property string $requestAdaptor 发送适配器
- * @property string $adaptor 接收适配器
- * @property bool $replaceData 替换当前数据，默认为 false
- * @property string $responseType 返回类型，如下载用 blob
- * @property bool $autoRefresh 是否自动刷新
- * @property array $responseData 配置返回数据，对返回结果做映射
- * @property string $trackExpression 跟踪变量表达式
- * @property array $messages 提示信息，messages.success/failed
  */
 class API extends Schema
 {
