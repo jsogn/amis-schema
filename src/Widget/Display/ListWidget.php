@@ -7,20 +7,41 @@ use AmisSchema\Widget\Widget;
 /**
  * List 列表
  *
- * @method self type(string $value) 指定为 List 渲染器
- * @method self title($value) 标题
- * @method self source(string $value) 数据源, 获取当前数据域中的变量
- * @method self placeholder($value) 当没数据的时候的文字提示
- * @method self className(string $value) 外层 CSS 类名
- * @method self headerClassName(string $value) 顶部外层 CSS 类名
- * @method self footerClassName(string $value) 底部外层 CSS 类名
- * @method self listItem($value) 配置单个列表项
- * @method self selectable(bool $value) 列表项是否可选
- * @method self multiple(bool $value) 列表项是否为多选
- * @method self checkOnItemClick(bool $value) 点击列表项内容是否选中列表项
- * @method self onEvent($value) 事件
- */
+ * 列表展示组件，不支持配置初始化接口初始化数据域，需要搭配 Service 等组件使用
+*
+ * @method $this type(string $value = 'list') 指定为列表展示，默认 'list'
+* @method $this title(string $value = '') 标题，默认 ''
+* @method $this source(string $value = '${items}') 数据源，获取当前数据域变量，支持数据映射，默认 '${items}'
+* @method $this placeholder(string $value = '暂无数据') 当没数据的时候的文字提示，默认 '暂无数据'
+* @method $this selectable(bool $value = false) 列表是否可选，默认 false
+* @method $this multiple(bool $value = true) 列表是否为多选，默认 true
+* @method $this headerClassName(string $value = 'amis-list-header') 顶部外层 CSS 类名，默认 'amis-list-header'
+* @method $this footerClassName(string $value = 'amis-list-footer') 底部外层 CSS 类名，默认 'amis-list-footer'
+* @method $this checkOnItemClick(bool $value = false) 点击列表项内容是否选中列表项，默认 false
+* @method $this itemAction(array $value = []) 单行点击操作配置（1.4.0+），默认 []
+* @method $this innerClassName(string $value = '') 内层组件的CSS类名，默认 ''
+*/
 class ListWidget extends Widget
 {
     protected string $type = 'list';
+
+    /**
+     * 配置单条信息
+     * @param array{
+     *     title?: string,
+     *     titleClassName?: string,
+     *     subTitle?: string,
+     *     avatar?: string,
+     *     avatarClassName?: string,
+     *     desc?: string,
+     *     body?: array,
+     *     actions?: array,
+     *     actionsPosition?: 'left'|'right'
+     * } $value
+     * @return self
+     */
+    public function listItem(array $value): self
+    {
+        return $this->setAttribute('listItem', $value);
+    }
 }
