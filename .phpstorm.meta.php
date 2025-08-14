@@ -186,4 +186,8 @@ namespace PHPSTORM_META {
     
     expectedArguments(\AmisSchema\Widget\Display\Shape::shapeType(), 0, 'rect', 'circle', 'triangle', 'polygon', 'line', 'arrow', 'star', 'diamond', 'ellipse');
     expectedArguments(\AmisSchema\Widget\Display\Shape::borderStyle(), 0, 'solid', 'dashed', 'dotted');
+    
+    expectedArguments(\AmisSchema\Widget\Feedback\Alert::level(), 0, 'info', 'success', 'warning', 'danger');
+    
+    expectedArguments(\AmisSchema\Widget\Feedback\Dialog::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl', 'full');
 }
