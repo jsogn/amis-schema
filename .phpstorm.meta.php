@@ -180,4 +180,7 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Json::jsonTheme(), 0, 'twilight', 'eighties');
     
     expectedArguments(\AmisSchema\Widget\Display\ListWidget::actionsPosition(), 0, 'left', 'right');
+    
+    expectedArguments(\AmisSchema\Widget\Display\Timeline::mode(), 0, 'left', 'right', 'alternate');
+    expectedArguments(\AmisSchema\Widget\Display\Timeline::direction(), 0, 'vertical', 'horizontal');
 }
