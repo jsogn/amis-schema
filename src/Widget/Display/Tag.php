@@ -6,16 +6,16 @@ use AmisSchema\Widget\Widget;
 
 /**
  * Tag 标签
+ * 
+ * 用于标记和选择的标签组件，支持多种展示模式和颜色主题
  *
- * @method self type(string $value) 指定为 tag 渲染器
- * @method self className(string $value) 外层CSS类名
- * @method self label(string $value) 标签内容
- * @method self color(string $value) 标签颜色
- * @method self icon(string $value) 图标
- * @method self closable(bool $value) 是否展示关闭按钮
- * @method self style($value) 自定义样式
- * @method self displayMode(string $value) 设置标签的展示模式
- * @method self onEvent($value) 事件
+ * @method $this displayMode(string $value = 'normal') 展现模式，可选：normal、rounded、status
+ * @method $this color(string $value = '') 颜色主题，支持预设主题或自定义色值
+ * @method $this label(string $value = '') 标签内容
+ * @method $this icon(string $value = '') status 模式下的前置图标
+ * @method $this closable(bool $value = false) 是否展示关闭按钮
+ * 
+ * @version 2.6.1 支持 click、mouseenter、mouseleave、close 事件
  */
 class Tag extends Widget
 {
