@@ -201,4 +201,10 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::shape(), 0, 'circle', 'square', 'rounded');
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::size(), 0, 'default', 'normal', 'small');
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::crossOrigin(), 0, 'anonymous', 'use-credentials', '');
+    
+    expectedArguments(\AmisSchema\Widget\Extra\Badge::mode(), 0, 'dot', 'text', 'ribbon');
+    expectedArguments(\AmisSchema\Widget\Extra\Badge::level(), 0, 'info', 'success', 'warning', 'danger');
+    expectedArguments(\AmisSchema\Widget\Extra\Badge::position(), 0, 'top-right', 'top-left', 'bottom-right', 'bottom-left');
+    
+    expectedArguments(\AmisSchema\Widget\Extra\Wizard::mode(), 0, 'horizontal', 'vertical');
 }
