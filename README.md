@@ -40,51 +40,56 @@ $page = Page::make()
     ]);
 ```
 
-### 使用工厂类
+### 方式三：Flutter 风格的函数调用（推荐）
 
 ```php
-// 直接实例化
-$factory = new AmisFactory();
-$page = $factory->Page()->title('我的页面');
-
-// 使用全局函数（推荐）
-$page = amis()->Page()->title('我的页面');
-```
-
-### 完整示例
-
-```php
-$userPage = amis()->Page()
-    ->title('用户管理')
-    ->body([
-        amis()->Form()
-            ->title('搜索条件')
-            ->body([
-                amis()->InputText()
-                    ->name('keywords')
-                    ->label('关键字'),
-                amis()->Select()
-                    ->name('status')
-                    ->label('状态')
-                    ->options([
+// 使用 Flutter 风格的全局函数，参数更直观
+$page = AmisPage(
+    title: '用户管理',
+    body: [
+        AmisForm(
+            title: '搜索条件',
+            body: [
+                AmisInputText(
+                    name: 'keywords',
+                    label: '关键字',
+                    placeholder: '请输入关键字'
+                ),
+                AmisSelect(
+                    name: 'status',
+                    label: '状态',
+                    options: [
                         ['label' => '启用', 'value' => 1],
                         ['label' => '禁用', 'value' => 0]
-                    ]),
-                amis()->Button()
-                    ->label('搜索')
-                    ->type('submit')
-            ]),
-    ]);
+                    ]
+                ),
+                AmisButton(
+                    label: '搜索',
+                    actionType: 'submit',
+                    level: 'primary'
+                )
+            ]
+        )
+    ]
+);
 ```
 
-## 特性
+## 三种调用方式对比
 
-- **链式调用**：所有组件都支持链式调用，让代码更简洁
-- **类型安全**：基于 PHP 8.2+ 的严格类型
-- **智能补全**：通过 PHPDoc 注释提供 IDE 智能补全
-- **灵活配置**：支持数组和对象两种初始化方式
-- **JSON 输出**：直接转换为 Amis 所需的 JSON 格式
-- **工厂模式**：提供便捷的工厂类快速创建组件
+| 特性 | 工厂类调用 | 静态方法调用 | Flutter 风格调用 |
+|------|------------|--------------|------------------|
+| **代码风格** | 链式调用 | 链式调用 | 函数式调用 |
+| **参数传递** | 方法调用 | 方法调用 | 命名参数 |
+| **可读性** | 良好 | 良好 | 优秀 |
+| **IDE 支持** | 完整 | 完整 | 完整 |
+| **性能** | 高 | 高 | 高 |
+| **推荐度** | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+
+### 选择建议
+
+- **Flutter 风格调用**：推荐使用，参数清晰直观，特别适合复杂组件配置
+- **工厂类调用**：适合喜欢链式调用的开发者，代码简洁
+- **静态方法调用**：适合习惯传统 OOP 风格的开发者
 
 ## 许可证
 
