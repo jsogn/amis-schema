@@ -32,16 +32,16 @@ use AmisSchema\Widget\Widget;
 class Images extends Widget
 {
     protected string $type = 'images';
-    
+
     /**
      * 图片工具栏配置
-     * @param array{
+     * @param array<array{
      *     key: 'rotateRight'|'rotateLeft'|'zoomIn'|'zoomOut'|'scaleOrigin',
      *     label?: string,
      *     icon?: string,
      *     iconClassName?: string,
      *     disabled?: bool
-     * }[] $value
+     * }> $value
      * @return $this
      */
     public function toolbarActions(array $value): self

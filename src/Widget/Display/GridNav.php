@@ -30,14 +30,14 @@ class GridNav extends Widget
 
     /**
      * 宫格选项配置
-     * @param array{
+     * @param array<array{
      *     icon?: string,
      *     text?: string,
      *     badge?: array,
      *     link?: string,
      *     blank?: bool,
      *     clickAction?: array
-     * }[] $value
+     * }> $value
      * @return self
      */
     public function options(array $value): self

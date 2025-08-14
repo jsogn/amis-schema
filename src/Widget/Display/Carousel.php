@@ -28,7 +28,7 @@ class Carousel extends Widget
 
     /**
      * 轮播面板数据
-     * @param array{
+     * @param array<array{
      *     image?: string,
      *     href?: string,
      *     imageClassName?: string,
@@ -37,7 +37,7 @@ class Carousel extends Widget
      *     description?: string,
      *     descriptionClassName?: string,
      *     html?: string
-     * }[] $value
+     * }> $value
      * @return self
      */
     public function options(array $value): self
