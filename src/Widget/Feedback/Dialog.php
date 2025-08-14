@@ -21,8 +21,8 @@ use AmisSchema\Widget\Widget;
  * @method $this disabled(bool $value = false) 如果设置此属性，则该 Dialog 只读没有提交操作
  * @method $this actions(array $value = []) 自定义按钮配置，默认为【确认】和【取消】
  * @method $this data(array $value = null) 支持数据映射，如果不设定将默认继承触发按钮的上下文数据
- * @method $this width(int $value) 容器的宽度
- * @method $this height(int $value) 容器的高度
+ * @method $this width(int|string $value) 容器的宽度
+ * @method $this height(int|string $value) 容器的高度
  * @method $this headerClassName(string $value = '') 头部区域的样式类名
  * @method $this bodyStyle(string $value) Dialog body 区域的样式
  * @method $this draggable(bool $value = false) 是否可拖拽
