@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PHPSTORM_META {
@@ -9,270 +10,202 @@ namespace PHPSTORM_META {
     registerArgumentsSet('mode', 'normal', 'horizontal', 'inline');
     registerArgumentsSet('buttonLevel', 'link', 'primary', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
 
-    // Widget 类方法配置
     expectedArguments(\AmisSchema\Widget\Layout\Divider::lineStyle(), 0, 'dashed', 'solid');
     expectedArguments(\AmisSchema\Widget\Layout\Divider::direction(), 0, 'horizontal', 'vertical');
     expectedArguments(\AmisSchema\Widget\Layout\Divider::titlePosition(), 0, 'left', 'center', 'right');
+
     expectedArguments(\AmisSchema\Widget\Layout\Grid::gap(), 0, 'xs', 'sm', 'base', 'none', 'md', 'lg');
     expectedArguments(\AmisSchema\Widget\Layout\Grid::valign(), 0, 'top', 'middle', 'bottom', 'between');
     expectedArguments(\AmisSchema\Widget\Layout\Grid::align(), 0, 'left', 'right', 'between', 'center');
+
     expectedArguments(\AmisSchema\Widget\Layout\Hbox::gap(), 0, 'xs', 'sm', 'base', 'none', 'md', 'lg');
     expectedArguments(\AmisSchema\Widget\Layout\Hbox::valign(), 0, 'top', 'middle', 'bottom', 'between');
     expectedArguments(\AmisSchema\Widget\Layout\Hbox::align(), 0, 'left', 'right', 'between', 'center');
+
     expectedArguments(\AmisSchema\Widget\Layout\Flex::justify(), 0, 'start', 'flex-start', 'center', 'end', 'flex-end', 'space-around', 'space-between', 'space-evenly');
     expectedArguments(\AmisSchema\Widget\Layout\Flex::alignItems(), 0, 'stretch', 'start', 'flex-start', 'flex-end', 'end', 'center', 'baseline');
+
     expectedArguments(\AmisSchema\Widget\Layout\Page::asidePosition(), 0, 'left', 'right');
+
     expectedArguments(\AmisSchema\Widget\Layout\Pagination::mode(), 0, 'normal', 'simple');
     expectedArguments(\AmisSchema\Widget\Layout\Pagination::size(), 0, 'sm', 'md');
+
     expectedArguments(\AmisSchema\Widget\Layout\PaginationWrapper::position(), 0, 'top', 'bottom', 'none');
+
     expectedArguments(\AmisSchema\Widget\Layout\Tabs::tabsMode(), 0, 'line', 'card', 'radio', 'vertical', 'chrome', 'simple', 'strong', 'tiled', 'sidebar');
     expectedArguments(\AmisSchema\Widget\Layout\Tabs::sidePosition(), 0, 'left', 'right');
+
     expectedArguments(\AmisSchema\Widget\Layout\Wrapper::size(), 0, 'xs', 'sm', 'md', 'lg');
+
     expectedArguments(\AmisSchema\Widget\Function\Action::actionType(), 0, 'ajax', 'link', 'url', 'drawer', 'dialog', 'confirm', 'cancel', 'prev', 'next', 'copy', 'close', 'download', 'saveAs', 'email', 'reload', 'submit', 'reset', 'clear', 'reset-and-submit', 'clear-and-submit');
     expectedArguments(\AmisSchema\Widget\Function\Action::level(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\AmisSchema\Widget\Function\Action::activeLevel(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\AmisSchema\Widget\Function\Action::size(), 0, 'xs', 'sm', 'md', 'lg');
     expectedArguments(\AmisSchema\Widget\Function\Action::tooltipPlacement(), 0, 'top', 'bottom', 'left', 'right');
+
     expectedArguments(\AmisSchema\Widget\Function\Button::size(), 0, 'xs', 'sm', 'md', 'lg');
     expectedArguments(\AmisSchema\Widget\Function\Button::actionType(), 0, 'button', 'reset', 'submit', 'clear', 'url');
     expectedArguments(\AmisSchema\Widget\Function\Button::level(), 0, 'link', 'primary', 'enhance', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
     expectedArguments(\AmisSchema\Widget\Function\Button::tooltipPlacement(), 0, 'top', 'right', 'bottom', 'left');
     expectedArguments(\AmisSchema\Widget\Function\Button::tooltipTrigger(), 0, 'hover', 'focus');
+
     expectedArguments(\AmisSchema\Widget\Function\ButtonGroup::btnLevel(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\AmisSchema\Widget\Function\ButtonGroup::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
+
     expectedArguments(\AmisSchema\Widget\Function\Breadcrumb::tooltipPosition(), 0, 'top', 'bottom', 'left', 'right');
+
     expectedArguments(\AmisSchema\Widget\Function\DropDownButton::size(), 0, 'xs', 'sm', 'md', 'lg');
     expectedArguments(\AmisSchema\Widget\Function\DropDownButton::align(), 0, 'left', 'right');
     expectedArguments(\AmisSchema\Widget\Function\DropDownButton::trigger(), 0, 'click', 'hover');
+
     expectedArguments(\AmisSchema\Widget\Function\Nav::mode(), 0, 'inline', 'float', 'panel');
     expectedArguments(\AmisSchema\Widget\Function\Nav::expandPosition(), 0, 'before', 'after');
+
     expectedArguments(\AmisSchema\Widget\Function\AnchorNav::direction(), 0, 'vertical', 'horizontal');
+
     expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::placement(), 0, 'top', 'left', 'right', 'bottom');
     expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::tooltipTheme(), 0, 'light', 'dark');
     expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::trigger(), 0, 'hover', 'click', 'focus');
     expectedArguments(\AmisSchema\Widget\Function\TooltipWrapper::wrapperComponent(), 0, 'div', 'span');
+
+    expectedArguments(\AmisSchema\Definition\PopOver::mode(), 0, 'popOver', 'dialog', 'drawer');
+    expectedArguments(\AmisSchema\Definition\PopOver::trigger(), 0, 'click', 'hover');
+    expectedArguments(\AmisSchema\Definition\PopOver::position(), 0, 'center', 'left-top', 'right-top', 'left-bottom', 'right-bottom', 'fixed-center', 'fixed-left-top', 'fixed-right-top', 'fixed-left-bottom', 'fixed-right-bottom');
+
+    expectedArguments(\AmisSchema\Definition\NavLink::mode(), 0, 'group', 'divider');
+    expectedArguments(\AmisSchema\Definition\NavOverflow::mode(), 0, 'swipe', 'popup');
+
     expectedArguments(\AmisSchema\Widget\Input\Form::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\Form::mode(), 0, argumentsSet('mode'));
+
     expectedArguments(\AmisSchema\Widget\Input\FormItem::labelAlign(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\FormItem::mode(), 0, argumentsSet('align'));
     expectedArguments(\AmisSchema\Widget\Input\FormItem::size(), 0, argumentsSet('size'));
+
     expectedArguments(\AmisSchema\Widget\Input\InputText::borderMode(), 0, 'full', 'half', 'none');
+
     expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnLevel(), 0, argumentsSet('buttonLevel'));
     expectedArguments(\AmisSchema\Widget\Input\ButtonGroupSelect::btnActiveLevel(), 0, argumentsSet('buttonLevel'));
+
     expectedArguments(\AmisSchema\Widget\Input\InputColor::format(), 0, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
+
     expectedArguments(\AmisSchema\Widget\Input\InputTag::separator(), 0, '-', ',', ';', '|');
+
     expectedArguments(\AmisSchema\Widget\Input\Transfer::selectMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::searchResultMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\Transfer::rightMode(), 0, 'list', 'table', 'tree', 'chained');
+
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::selectMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::searchResultMode(), 0, 'list', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::rightMode(), 0, 'list', 'table', 'tree', 'chained');
     expectedArguments(\AmisSchema\Widget\Input\TransferPicker::modalMode(), 0, 'dialog', 'drawer');
+
     expectedArguments(\AmisSchema\Widget\Input\Combo::tabsStyle(), 0, 'line', 'card', 'radio', 'vertical');
     expectedArguments(\AmisSchema\Widget\Input\Combo::subFormMode(), 0, argumentsSet('mode'));
+
     expectedArguments(\AmisSchema\Widget\Input\ConditionBuilder::selectMode(), 0, 'list', 'tree', 'chained');
+
     expectedArguments(\AmisSchema\Widget\Input\InputFormula::variableMode(), 0, 'list', 'tree', 'tabs');
     expectedArguments(\AmisSchema\Widget\Input\InputFormula::inputMode(), 0, 'button', 'input-button', 'input-group');
     expectedArguments(\AmisSchema\Widget\Input\InputFormula::btnSize(), 0, argumentsSet('size'));
     expectedArguments(\AmisSchema\Widget\Input\InputFormula::borderMode(), 0, 'full', 'half', 'none');
+
     expectedArguments(\AmisSchema\Widget\Input\FieldSet::titlePosition(), 0, 'top', 'bottom');
+
     expectedArguments(\AmisSchema\Widget\Input\InputExcel::parseMode(), 0, 'array', 'object');
+
     expectedArguments(\AmisSchema\Widget\Input\InputFile::useChunk(), 0, 'auto', true, false);
+
     expectedArguments(\AmisSchema\Widget\Input\Group::gap(), 0, 'xs', 'sm', 'normal');
     expectedArguments(\AmisSchema\Widget\Input\Group::direction(), 0, 'horizontal', 'vertical');
+
     expectedArguments(\AmisSchema\Widget\Input\InputImage::cropFormat(), 0, 'image/png', 'image/jpeg', 'image/webp');
+
     expectedArguments(\AmisSchema\Widget\Input\LocationPicker::vendor(), 0, 'baidu', 'gaode');
     expectedArguments(\AmisSchema\Widget\Input\LocationPicker::coordinatesType(), 0, 'bd09', 'gcj02');
+
     expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::singleSelectMode(), 0, 'cell', 'row', 'column');
     expectedArguments(\AmisSchema\Widget\Input\MatrixCheckboxes::textAlign(), 0, 'left', 'center', 'right');
+
     expectedArguments(\AmisSchema\Widget\Input\InputNumber::displayMode(), 0, 'base', 'enhance');
     expectedArguments(\AmisSchema\Widget\Input\InputNumber::borderMode(), 0, 'full', 'half', 'none');
+
     expectedArguments(\AmisSchema\Widget\Input\Picker::modalMode(), 0, 'dialog', 'drawer');
     expectedArguments(\AmisSchema\Widget\Input\InputRating::textPosition(), 0, 'right', 'left');
     expectedArguments(\AmisSchema\Widget\Input\InputRange::tooltipPlacement(), 0, 'auto', 'bottom', 'left', 'right', 'top');
+
     expectedArguments(\AmisSchema\Widget\Input\Select::selectMode(), 0, 'group', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Select::searchResultMode(), 0, 'group', 'table', 'tree', 'chained', 'associated');
     expectedArguments(\AmisSchema\Widget\Input\Select::leftMode(), 0, 'list', 'tree');
     expectedArguments(\AmisSchema\Widget\Input\Select::rightMode(), 0, 'list', 'table', 'tree', 'chained');
+
     expectedArguments(\AmisSchema\Widget\Input\SwitchWidget::size(), 0, 'sm', 'md');
+
     expectedArguments(\AmisSchema\Widget\Input\InputTree::nodeBehavior(), 0, 'unfold', 'check');
+
     expectedArguments(\AmisSchema\Widget\Display\Table::columnsTogglable(), 0, 'auto', true, false);
     expectedArguments(\AmisSchema\Widget\Display\Table::tableLayout(), 0, 'auto', 'fixed');
     expectedArguments(\AmisSchema\Widget\Display\Table::reUseRow(), 0, false, 'match');
+
     expectedArguments(\AmisSchema\Widget\Display\Table2::columnsTogglable(), 0, 'auto', true, false);
     expectedArguments(\AmisSchema\Widget\Display\Table2::lineHeight(), 0, 'large', 'middle');
     expectedArguments(\AmisSchema\Widget\Display\Table2::size(), 0, 'large', 'default', 'small');
+
     expectedArguments(\AmisSchema\Widget\Display\TableView::captionSide(), 0, 'top', 'bottom');
+
     expectedArguments(\AmisSchema\Widget\Display\CRUD::mode(), 0, 'table', 'cards', 'list');
     expectedArguments(\AmisSchema\Widget\Display\CRUD::orderDir(), 0, 'asc', 'desc');
+
     expectedArguments(\AmisSchema\Widget\Display\Carousel::controlsTheme(), 0, 'light', 'dark');
     expectedArguments(\AmisSchema\Widget\Display\Carousel::animation(), 0, 'fade', 'slide', 'marquee');
     expectedArguments(\AmisSchema\Widget\Display\Carousel::thumbMode(), 0, 'cover', 'contain');
+
     expectedArguments(\AmisSchema\Widget\Display\Code::language(), 0, 'bat', 'c', 'coffeescript', 'cpp', 'csharp', 'css', 'dockerfile', 'fsharp', 'go', 'handlebars', 'html', 'ini', 'java', 'javascript', 'json', 'less', 'lua', 'markdown', 'msdax', 'objective-c', 'php', 'plaintext', 'postiats', 'powershell', 'pug', 'python', 'r', 'razor', 'ruby', 'sb', 'scss', 'shell', 'sol', 'sql', 'swift', 'typescript', 'vb', 'xml', 'yaml');
     expectedArguments(\AmisSchema\Widget\Display\Code::editorTheme(), 0, 'vs', 'vs-dark');
+
     expectedArguments(\AmisSchema\Widget\Display\Icon::vendor(), 0, 'fa', 'iconfont', '');
+
     expectedArguments(\AmisSchema\Widget\Display\Iframe::referrerpolicy(), 0, 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url');
+
     expectedArguments(\AmisSchema\Widget\Display\Image::thumbMode(), 0, 'w-full', 'h-full', 'contain', 'cover');
     expectedArguments(\AmisSchema\Widget\Display\Image::thumbRatio(), 0, '1:1', '4:3', '16:9');
     expectedArguments(\AmisSchema\Widget\Display\Image::imageMode(), 0, 'thumb', 'original');
+
     expectedArguments(\AmisSchema\Widget\Display\Images::thumbMode(), 0, 'w-full', 'h-full', 'contain', 'cover');
     expectedArguments(\AmisSchema\Widget\Display\Images::thumbRatio(), 0, '1:1', '4:3', '16:9');
+
     expectedArguments(\AmisSchema\Widget\Display\GridNav::direction(), 0, 'vertical', 'horizontal');
+
     expectedArguments(\AmisSchema\Widget\Display\Json::jsonTheme(), 0, 'twilight', 'eighties');
+
     expectedArguments(\AmisSchema\Widget\Display\ListWidget::actionsPosition(), 0, 'left', 'right');
+
     expectedArguments(\AmisSchema\Widget\Display\Timeline::mode(), 0, 'left', 'right', 'alternate');
     expectedArguments(\AmisSchema\Widget\Display\Timeline::direction(), 0, 'vertical', 'horizontal');
+
     expectedArguments(\AmisSchema\Widget\Display\Shape::shapeType(), 0, 'rect', 'circle', 'triangle', 'polygon', 'line', 'arrow', 'star', 'diamond', 'ellipse');
     expectedArguments(\AmisSchema\Widget\Display\Shape::borderStyle(), 0, 'solid', 'dashed', 'dotted');
+
     expectedArguments(\AmisSchema\Widget\Feedback\Alert::level(), 0, 'info', 'success', 'warning', 'danger');
+
     expectedArguments(\AmisSchema\Widget\Feedback\Dialog::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl', 'full');
+
     expectedArguments(\AmisSchema\Widget\Feedback\Drawer::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl');
     expectedArguments(\AmisSchema\Widget\Feedback\Drawer::position(), 0, 'left', 'right', 'top', 'bottom');
+
     expectedArguments(\AmisSchema\Widget\Feedback\Toast::level(), 0, 'info', 'success', 'error', 'warning');
     expectedArguments(\AmisSchema\Widget\Feedback\Toast::position(), 0, 'top-right', 'top-center', 'top-left', 'bottom-center', 'bottom-left', 'bottom-right', 'center');
+
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::fit(), 0, 'contain', 'cover', 'fill', 'none', 'scale-down');
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::shape(), 0, 'circle', 'square', 'rounded');
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::size(), 0, 'default', 'normal', 'small');
     expectedArguments(\AmisSchema\Widget\Extra\Avatar::crossOrigin(), 0, 'anonymous', 'use-credentials', '');
+
     expectedArguments(\AmisSchema\Widget\Extra\Badge::mode(), 0, 'dot', 'text', 'ribbon');
     expectedArguments(\AmisSchema\Widget\Extra\Badge::level(), 0, 'info', 'success', 'warning', 'danger');
     expectedArguments(\AmisSchema\Widget\Extra\Badge::position(), 0, 'top-right', 'top-left', 'bottom-right', 'bottom-left');
+
     expectedArguments(\AmisSchema\Widget\Extra\Wizard::mode(), 0, 'horizontal', 'vertical');
-
-    // Definition 类配置
-    expectedArguments(\AmisSchema\Definition\PopOver::mode(), 0, 'popOver', 'dialog', 'drawer');
-    expectedArguments(\AmisSchema\Definition\PopOver::trigger(), 0, 'click', 'hover');
-    expectedArguments(\AmisSchema\Definition\PopOver::position(), 0, 'center', 'left-top', 'right-top', 'left-bottom', 'right-bottom', 'fixed-center', 'fixed-left-top', 'fixed-right-top', 'fixed-left-bottom', 'fixed-right-bottom');
-    expectedArguments(\AmisSchema\Definition\NavLink::mode(), 0, 'group', 'divider');
-    expectedArguments(\AmisSchema\Definition\NavOverflow::mode(), 0, 'swipe', 'popup');
-
-    // 全局组件函数配置
-    expectedArguments(\AmisCRUD(), 9, 'table', 'cards', 'list');
-    expectedArguments(\AmisCRUD(), 33, 'asc', 'desc');
-    expectedArguments(\AmisCarousel(), 14, 'light', 'dark');
-    expectedArguments(\AmisCarousel(), 15, 'fade', 'slide', 'marquee');
-    expectedArguments(\AmisCarousel(), 16, 'cover', 'contain');
-    expectedArguments(\AmisCode(), 9, 'bat', 'c', 'coffeescript', 'cpp', 'csharp', 'css', 'dockerfile', 'fsharp', 'go', 'handlebars', 'html', 'ini', 'java', 'javascript', 'json', 'less', 'lua', 'markdown', 'msdax', 'objective-c', 'php', 'plaintext', 'postiats', 'powershell', 'pug', 'python', 'r', 'razor', 'ruby', 'sb', 'scss', 'shell', 'sol', 'sql', 'swift', 'typescript', 'vb', 'xml', 'yaml');
-    expectedArguments(\AmisCode(), 11, 'vs', 'vs-dark');
-    expectedArguments(\AmisGridNav(), 18, 'vertical', 'horizontal');
-    expectedArguments(\AmisIcon(), 8, 'fa', 'iconfont', '');
-    expectedArguments(\AmisIframe(), 12, 'no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin', 'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url');
-    expectedArguments(\AmisImage(), 22, 'w-full', 'h-full', 'contain', 'cover');
-    expectedArguments(\AmisImage(), 23, '1:1', '4:3', '16:9');
-    expectedArguments(\AmisImage(), 24, 'thumb', 'original');
-    expectedArguments(\AmisImages(), 18, 'w-full', 'h-full', 'contain', 'cover');
-    expectedArguments(\AmisImages(), 19, '1:1', '4:3', '16:9');
-    expectedArguments(\AmisJson(), 12, 'twilight', 'eighties');
-    expectedArguments(\AmisShape(), 6, 'rect', 'circle', 'triangle', 'polygon', 'line', 'arrow', 'star', 'diamond', 'ellipse');
-    expectedArguments(\AmisShape(), 13, 'solid', 'dashed', 'dotted');
-    expectedArguments(\AmisTable(), 13, 'auto', true, false);
-    expectedArguments(\AmisTable(), 36, 'auto', 'fixed');
-    expectedArguments(\AmisTable(), 42, false, 'match');
-    expectedArguments(\AmisTable2(), 14, 'auto', true, false);
-    expectedArguments(\AmisTable2(), 18, 'large', 'middle');
-    expectedArguments(\AmisTable2(), 2, 'large', 'default', 'small');
-    expectedArguments(\AmisTableView(), 14, 'top', 'bottom');
-    expectedArguments(\AmisTimeline(), 7, 'left', 'right', 'alternate');
-    expectedArguments(\AmisTimeline(), 8, 'vertical', 'horizontal');
-    expectedArguments(\AmisButtonGroupSelect(), 85, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisButtonGroupSelect(), 86, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisCombo(), 80, 'line', 'card', 'radio', 'vertical');
-    expectedArguments(\AmisCombo(), 84, argumentsSet('mode'));
-    expectedArguments(\AmisConditionBuilder(), 61, 'list', 'tree', 'chained');
-    expectedArguments(\AmisFieldSet(), 59, 'top', 'bottom');
-    expectedArguments(\AmisForm(), 53, argumentsSet('align'));
-    expectedArguments(\AmisForm(), 12, argumentsSet('mode'));
-    expectedArguments(\AmisFormItem(), 17, argumentsSet('align'));
-    expectedArguments(\AmisFormItem(), 30, argumentsSet('align'));
-    expectedArguments(\AmisFormItem(), 4, argumentsSet('size'));
-    expectedArguments(\AmisGroup(), 53, 'xs', 'sm', 'normal');
-    expectedArguments(\AmisGroup(), 54, 'horizontal', 'vertical');
-    expectedArguments(\AmisInputColor(), 83, 'hex', 'hexa', 'hls', 'rgb', 'rgba');
-    expectedArguments(\AmisInputExcel(), 53, 'array', 'object');
-    expectedArguments(\AmisInputFile(), 72, 'auto', true, false);
-    expectedArguments(\AmisInputFormula(), 57, 'list', 'tree', 'tabs');
-    expectedArguments(\AmisInputFormula(), 59, 'button', 'input-button', 'input-group');
-    expectedArguments(\AmisInputFormula(), 62, argumentsSet('size'));
-    expectedArguments(\AmisInputFormula(), 63, 'full', 'half', 'none');
-    expectedArguments(\AmisInputImage(), 64, 'image/png', 'image/jpeg', 'image/webp');
-    expectedArguments(\AmisInputNumber(), 63, 'base', 'enhance');
-    expectedArguments(\AmisInputNumber(), 64, 'full', 'half', 'none');
-    expectedArguments(\AmisInputRange(), 89, 'auto', 'bottom', 'left', 'right', 'top');
-    expectedArguments(\AmisInputRating(), 56, 'right', 'left');
-    expectedArguments(\AmisInputTag(), 90, '-', ',', ';', '|');
-    expectedArguments(\AmisInputText(), 61, 'full', 'half', 'none');
-    expectedArguments(\AmisInputTree(), 80, 'unfold', 'check');
-    expectedArguments(\AmisLocationPicker(), 52, 'baidu', 'gaode');
-    expectedArguments(\AmisLocationPicker(), 57, 'bd09', 'gcj02');
-    expectedArguments(\AmisMatrixCheckboxes(), 57, 'cell', 'row', 'column');
-    expectedArguments(\AmisMatrixCheckboxes(), 58, 'left', 'center', 'right');
-    expectedArguments(\AmisPicker(), 84, 'dialog', 'drawer');
-    expectedArguments(\AmisSelect(), 89, 'group', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisSelect(), 90, 'group', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisSelect(), 93, 'list', 'tree');
-    expectedArguments(\AmisSelect(), 94, 'list', 'table', 'tree', 'chained');
-    expectedArguments(\AmisSwitchWidget(), 4, 'sm', 'md');
-    expectedArguments(\AmisTransfer(), 59, 'list', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisTransfer(), 60, 'list', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisTransfer(), 64, 'list', 'tree');
-    expectedArguments(\AmisTransfer(), 65, 'list', 'table', 'tree', 'chained');
-    expectedArguments(\AmisTransferPicker(), 59, 'list', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisTransferPicker(), 60, 'list', 'table', 'tree', 'chained', 'associated');
-    expectedArguments(\AmisTransferPicker(), 64, 'list', 'tree');
-    expectedArguments(\AmisTransferPicker(), 65, 'list', 'table', 'tree', 'chained');
-    expectedArguments(\AmisTransferPicker(), 71, 'dialog', 'drawer');
-    expectedArguments(\AmisDivider(), 7, 'dashed', 'solid');
-    expectedArguments(\AmisDivider(), 8, 'horizontal', 'vertical');
-    expectedArguments(\AmisDivider(), 12, 'left', 'center', 'right');
-    expectedArguments(\AmisFlex(), 6, 'start', 'flex-start', 'center', 'end', 'flex-end', 'space-around', 'space-between', 'space-evenly');
-    expectedArguments(\AmisFlex(), 7, 'stretch', 'start', 'flex-start', 'flex-end', 'end', 'center', 'baseline');
-    expectedArguments(\AmisGrid(), 6, 'xs', 'sm', 'base', 'none', 'md', 'lg');
-    expectedArguments(\AmisGrid(), 7, 'top', 'middle', 'bottom', 'between');
-    expectedArguments(\AmisGrid(), 8, 'left', 'right', 'between', 'center');
-    expectedArguments(\AmisPage(), 15, 'left', 'right');
-    expectedArguments(\AmisPagination(), 8, 'normal', 'simple');
-    expectedArguments(\AmisPagination(), 0, 'sm', 'md');
-    expectedArguments(\AmisPaginationWrapper(), 12, 'top', 'bottom', 'none');
-    expectedArguments(\AmisTabs(), 10, 'line', 'card', 'radio', 'vertical', 'chrome', 'simple', 'strong', 'tiled', 'sidebar');
-    expectedArguments(\AmisTabs(), 25, 'left', 'right');
-    expectedArguments(\AmisWrapper(), 1, 'xs', 'sm', 'md', 'lg');
-    expectedArguments(\AmisAction(), 2, 'ajax', 'link', 'url', 'drawer', 'dialog', 'confirm', 'cancel', 'prev', 'next', 'copy', 'close', 'download', 'saveAs', 'email', 'reload', 'submit', 'reset', 'clear', 'reset-and-submit', 'clear-and-submit');
-    expectedArguments(\AmisAction(), 6, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisAction(), 32, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisAction(), 7, 'xs', 'sm', 'md', 'lg');
-    expectedArguments(\AmisAction(), 36, 'top', 'bottom', 'left', 'right');
-    expectedArguments(\AmisAnchorNav(), 9, 'vertical', 'horizontal');
-    expectedArguments(\AmisBreadcrumb(), 12, 'top', 'bottom', 'left', 'right');
-    expectedArguments(\AmisButton(), 7, 'xs', 'sm', 'md', 'lg');
-    expectedArguments(\AmisButton(), 2, 'button', 'reset', 'submit', 'clear', 'url');
-    expectedArguments(\AmisButton(), 6, 'link', 'primary', 'enhance', 'secondary', 'info', 'success', 'warning', 'danger', 'light', 'dark', 'default');
-    expectedArguments(\AmisButton(), 36, 'top', 'right', 'bottom', 'left');
-    expectedArguments(\AmisButton(), 48, 'hover', 'focus');
-    expectedArguments(\AmisButtonGroup(), 8, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisButtonGroup(), 9, argumentsSet('buttonLevel'));
-    expectedArguments(\AmisDropDownButton(), 1, 'xs', 'sm', 'md', 'lg');
-    expectedArguments(\AmisDropDownButton(), 11, 'left', 'right');
-    expectedArguments(\AmisDropDownButton(), 17, 'click', 'hover');
-    expectedArguments(\AmisNav(), 7, 'inline', 'float', 'panel');
-    expectedArguments(\AmisNav(), 13, 'before', 'after');
-    expectedArguments(\AmisTooltipWrapper(), 10, 'top', 'left', 'right', 'bottom');
-    expectedArguments(\AmisTooltipWrapper(), 11, 'light', 'dark');
-    expectedArguments(\AmisTooltipWrapper(), 15, 'hover', 'click', 'focus');
-    expectedArguments(\AmisTooltipWrapper(), 20, 'div', 'span');
-    expectedArguments(\AmisAlert(), 2, 'info', 'success', 'warning', 'danger');
-    expectedArguments(\AmisDialog(), 3, 'xs', 'sm', 'md', 'lg', 'xl', 'full');
-    expectedArguments(\AmisDrawer(), 3, 'xs', 'sm', 'md', 'lg', 'xl');
-    expectedArguments(\AmisDrawer(), 10, 'left', 'right', 'top', 'bottom');
-    expectedArguments(\AmisToast(), 2, 'info', 'success', 'error', 'warning');
-    expectedArguments(\AmisToast(), 9, 'top-right', 'top-center', 'top-left', 'bottom-center', 'bottom-left', 'bottom-right', 'center');
-    expectedArguments(\AmisAvatar(), 11, 'contain', 'cover', 'fill', 'none', 'scale-down');
-    expectedArguments(\AmisAvatar(), 12, 'circle', 'square', 'rounded');
-    expectedArguments(\AmisAvatar(), 0, 'default', 'normal', 'small');
-    expectedArguments(\AmisAvatar(), 16, 'anonymous', 'use-credentials', '');
-    expectedArguments(\AmisBadge(), 8, 'dot', 'text', 'ribbon');
-    expectedArguments(\AmisBadge(), 0, 'info', 'success', 'warning', 'danger');
-    expectedArguments(\AmisBadge(), 11, 'top-right', 'top-left', 'bottom-right', 'bottom-left');
-    expectedArguments(\AmisWizard(), 9, 'horizontal', 'vertical');
 }
