@@ -20,7 +20,7 @@ use AmisSchema\Widget\Widget;
  * @method $this size(string $value = 'md') 设置开关大小，默认为 md
  * @method $this loading(bool $value = false) 设置是否处于加载状态，默认为 false
  */
-class SwitchControl extends FormItem
+class SwitchWidget extends FormItem
 {
     protected string $type = 'switch';
 }

@@ -8,7 +8,7 @@
             "AmisSchema\\": "src/"
         },
         "files": [
-            "src/helpers.php"
+            "src/functions.php"
         ]
     },
     "authors": [

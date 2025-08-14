@@ -18,7 +18,7 @@ use AmisSchema\Definition\PopOver;
  * @method $this popOver(bool|array|PopOver $value) 设置弹出框配置
  * @method $this type(string $value = 'static') 支持通过配置type为static-xxx的形式，展示其他非表单项组件
  */
-class StaticControl extends FormItem
+class StaticWidget extends FormItem
 {
     protected string $type = 'static';
 }

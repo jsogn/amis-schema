@@ -96,7 +96,9 @@ trait Schemaable
 
     public function offsetSet(mixed $offset, mixed $value): void
     {
-        $this->attribute[$offset] = is_callable($value) ? $value() : $value;
+        // 只有当 value 是一个真正的闭包/匿名函数时才调用它
+        // 避免将字符串形式的函数名当作可调用对象
+        $this->attribute[$offset] = (is_callable($value) && $value instanceof \Closure) ? $value() : $value;
     }
 
     public function offsetUnset(mixed $offset): void
