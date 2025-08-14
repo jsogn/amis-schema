@@ -2,18 +2,20 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\API;
 use AmisSchema\Widget\Widget;
 
 /**
  * Markdown 渲染
- * 
- * Markdown渲染组件
  *
- * @method self type(string $type) 指定为 Markdown 渲染器
- * @method self name(string $name) 名称
- * @method self value(string $value) 静态值
- * @method self className(string $className) 类名
- * @method self src(string|array $src) 外部地址
+ * Markdown 渲染组件(since 1.1.6)，支持静态内容、动态数据、外部文件加载
+ *
+ * @method $this name(string $value = '') 变量映射名称，默认 ''
+ * @method $this value(string $value = '') 静态markdown内容，默认 ''
+ * @method $this src(string|API|array $value = '') 外部markdown文件地址(since 1.6.5)，默认 ''
+ * @method $this html(bool $value = false) 是否支持html标签(since 1.8.1)，默认 false
+ * @method $this linkify(bool $value = true) 是否自动识别链接(since 1.8.1)，默认 true
+ * @method $this breaks(bool $value = false) 是否回车就是换行(since 1.8.1)，默认 false
  */
 class Markdown extends Widget
 {

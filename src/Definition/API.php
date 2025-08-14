@@ -3,10 +3,7 @@ declare(strict_types=1);
 
 namespace AmisSchema\Definition;
 
-use AmisSchema\Contract\Arrayable;
-use AmisSchema\Contract\Jsonable;
 use AmisSchema\Schema;
-use AmisSchema\Trait\Schemaable;
 
 /**
  * API 类型用于配置请求接口的格式，涉及请求方式、请求地址、请求数据体等等相关配置
