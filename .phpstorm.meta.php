@@ -176,4 +176,6 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Images::thumbRatio(), 0, '1:1', '4:3', '16:9');
     
     expectedArguments(\AmisSchema\Widget\Display\GridNav::direction(), 0, 'vertical', 'horizontal');
+    
+    expectedArguments(\AmisSchema\Widget\Display\Json::jsonTheme(), 0, 'twilight', 'eighties');
 }
