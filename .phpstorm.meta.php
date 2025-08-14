@@ -183,4 +183,7 @@ namespace PHPSTORM_META {
     
     expectedArguments(\AmisSchema\Widget\Display\Timeline::mode(), 0, 'left', 'right', 'alternate');
     expectedArguments(\AmisSchema\Widget\Display\Timeline::direction(), 0, 'vertical', 'horizontal');
+    
+    expectedArguments(\AmisSchema\Widget\Display\Shape::shapeType(), 0, 'rect', 'circle', 'triangle', 'polygon', 'line', 'arrow', 'star', 'diamond', 'ellipse');
+    expectedArguments(\AmisSchema\Widget\Display\Shape::borderStyle(), 0, 'solid', 'dashed', 'dotted');
 }
