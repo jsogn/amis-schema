@@ -21,7 +21,7 @@ use AmisSchema\Schema;
  * @method $this disabledTip(string $disabledTip) 禁用提示信息
  * @method $this className(string $className) 菜单项自定义样式
  * @method $this mode(string $mode) 菜单项模式，分组模式：group、分割线：divider
- * @method $this overflow(NavOverflow $overflow) 导航项响应式收纳配置
+ * @method $this overflow(array|NavOverflow $overflow) 导航项响应式收纳配置
  */
 class NavLink extends Schema
 {
