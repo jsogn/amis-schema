@@ -171,8 +171,6 @@ use AmisSchema\Widget\Layout\Wrapper;
  * Amis Schema 工厂类
  *
  * 提供简洁的组件创建方法，支持链式调用
- *
- * @example amis()->Page()->title('首页')->body([...])
  */
 class AmisFactory
 {
