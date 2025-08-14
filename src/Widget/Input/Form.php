@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace AmisSchema\Widget\Input;
 
 use AmisSchema\Definition\API;
-use AmisSchema\Definition\FormRules;
 use AmisSchema\Widget\Function\Action;
 use AmisSchema\Widget\Widget;
 
