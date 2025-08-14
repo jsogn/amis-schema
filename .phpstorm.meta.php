@@ -171,4 +171,9 @@ namespace PHPSTORM_META {
     expectedArguments(\AmisSchema\Widget\Display\Image::thumbMode(), 0, 'w-full', 'h-full', 'contain', 'cover');
     expectedArguments(\AmisSchema\Widget\Display\Image::thumbRatio(), 0, '1:1', '4:3', '16:9');
     expectedArguments(\AmisSchema\Widget\Display\Image::imageMode(), 0, 'thumb', 'original');
+    
+    expectedArguments(\AmisSchema\Widget\Display\Images::thumbMode(), 0, 'w-full', 'h-full', 'contain', 'cover');
+    expectedArguments(\AmisSchema\Widget\Display\Images::thumbRatio(), 0, '1:1', '4:3', '16:9');
+    
+    expectedArguments(\AmisSchema\Widget\Display\GridNav::direction(), 0, 'vertical', 'horizontal');
 }

@@ -45,11 +45,11 @@ class Image extends Widget
      *     icon?: string,
      *     iconClassName?: string,
      *     disabled?: bool
-     * }[] $actions
+     * }[] $value
      * @return self
      */
-    public function toolbarActions(array $actions): self
+    public function toolbarActions(array $value): self
     {
-        return $this->setAttribute(__FUNCTION__, $actions);
+        return $this->setAttribute(__FUNCTION__, $value);
     }
 }
