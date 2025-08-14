@@ -193,4 +193,7 @@ namespace PHPSTORM_META {
     
     expectedArguments(\AmisSchema\Widget\Feedback\Drawer::size(), 0, 'xs', 'sm', 'md', 'lg', 'xl');
     expectedArguments(\AmisSchema\Widget\Feedback\Drawer::position(), 0, 'left', 'right', 'top', 'bottom');
+    
+    expectedArguments(\AmisSchema\Widget\Feedback\Toast::level(), 0, 'info', 'success', 'error', 'warning');
+    expectedArguments(\AmisSchema\Widget\Feedback\Toast::position(), 0, 'top-right', 'top-center', 'top-left', 'bottom-center', 'bottom-left', 'bottom-right', 'center');
 }
