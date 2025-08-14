@@ -25,8 +25,6 @@ $page = amis()->Page([
         amis()->Button(['label' => '提交', 'type' => 'submit'])
     ])
 ]);
-
-echo json_encode($page, JSON_UNESCAPED_UNICODE);
 ```
 
 ### 方式二：使用静态方法
@@ -40,20 +38,18 @@ $page = Page::make()
     ->body([
         Button::make(['label' => '点击我'])
     ]);
-
-echo $page->toJson();
 ```
 
 ## 工厂类
 
-`AmisFactory` 工厂类提供了便捷的方法来创建所有 Amis 组件，包含 **151个组件**：
+`AmisFactory` 工厂类提供了便捷的方法来创建所有 Amis 组件，包含 **151 个组件**：
 
-- **Display 显示组件** (42个)：`BarCode()`, `Calendar()`, `Chart()`, `Table()`, `Image()` 等
-- **Input 输入组件** (71个)：`InputText()`, `Select()`, `Form()`, `Checkbox()` 等  
-- **Layout 布局组件** (14个)：`Page()`, `Container()`, `Grid()`, `Flex()` 等
-- **Function 功能组件** (11个)：`Button()`, `Nav()`, `Action()`, `Service()` 等
-- **Feedback 反馈组件** (5个)：`Dialog()`, `Alert()`, `Toast()`, `Drawer()` 等
-- **Extra 扩展组件** (8个)：`Audio()`, `Video()`, `Avatar()`, `Badge()` 等
+- **Display 显示组件** (42 个)：`BarCode()`, `Calendar()`, `Chart()`, `Table()`, `Image()` 等
+- **Input 输入组件** (71 个)：`InputText()`, `Select()`, `Form()`, `Checkbox()` 等
+- **Layout 布局组件** (14 个)：`Page()`, `Container()`, `Grid()`, `Flex()` 等
+- **Function 功能组件** (11 个)：`Button()`, `Nav()`, `Action()`, `Service()` 等
+- **Feedback 反馈组件** (5 个)：`Dialog()`, `Alert()`, `Toast()`, `Drawer()` 等
+- **Extra 扩展组件** (8 个)：`Audio()`, `Video()`, `Avatar()`, `Badge()` 等
 
 ### 使用工厂类
 
@@ -80,7 +76,7 @@ $userPage = amis()->Page(['title' => '用户管理'])->body([
         ]]),
         amis()->Button(['label' => '搜索', 'type' => 'submit'])
     ]),
-    
+
     // 数据表格
     amis()->CRUD(['api' => '/api/users'])->columns([
         ['name' => 'id', 'label' => 'ID'],
@@ -96,14 +92,7 @@ $userPage = amis()->Page(['title' => '用户管理'])->body([
         ]
     ])
 ]);
-
-echo json_encode($userPage, JSON_UNESCAPED_UNICODE);
 ```
-
-查看更多示例：
-- [工厂类测试](examples/factory_test.php)
-- [用户管理页面](examples/user_management.php)
-- [工厂类文档](docs/AmisFactory.md)
 
 ## 特性
 
