@@ -2,17 +2,18 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\API;
 use AmisSchema\Widget\Widget;
 
 /**
  * OfficeViewer Office文档查看器
- * 
- * 用于渲染Office文档（Word、Excel等）
  *
- * @method self type(string $type) 指定为 OfficeViewer 渲染器
- * @method self className(string $className) 外层 CSS 类名
- * @method self src(string|array $src) 文档地址
- * @method self name(string $name) 在其他组件中，时，用作变量映射
+ * 用于渲染Office文档(since 2.9.0)，目前支持docx和xlsx格式
+ *
+ * @method $this src(string|API|array $value = '') 文档地址，默认 ''
+ * @method $this loading(bool $value = false) 是否显示loading图标，默认 false
+ * @method $this enableVar(bool $value = true) 是否开启变量替换功能，默认 true
+ * @method $this wordOptions(array $value = []) Word渲染配置选项，默认 []
  */
 class OfficeViewer extends Widget
 {
