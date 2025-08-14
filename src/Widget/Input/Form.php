@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace AmisSchema\Widget\Input;
 
 use AmisSchema\Definition\API;
-use AmisSchema\Definition\FormMessages;
 use AmisSchema\Definition\FormRules;
 use AmisSchema\Widget\Function\Action;
 use AmisSchema\Widget\Widget;
@@ -14,13 +13,12 @@ use AmisSchema\Widget\Widget;
  *
  * 支持各种表单项配置、数据提交、验证等功能。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form
+ * @link https://baidu.github.io/amis/zh-CN/components/form/index
  *
  * @method $this title(string $value) 设置表单标题。
  * @method $this mode(string $value) 设置表单展示方式，可选值：'normal'、'horizontal'、'inline'。
  * @method $this body(FormItem[]|Widget[] $value) 设置表单项集合。
  * @method $this actions(Action[]|Widget[] $value) 设置表单按钮组。
- * @method $this messages(FormMessages $value) 设置消息提示覆盖。
  * @method $this wrapWithPanel(bool $value) 设置是否让表单用 panel 包裹。
  * @method $this panelClassName(string $value) 设置外层 panel 的类名。
  * @method $this api(string|API $value) 设置表单提交接口。
@@ -52,7 +50,6 @@ use AmisSchema\Widget\Widget;
  * @method $this resetAfterSubmit(bool $value) 设置提交后是否重置表单。
  * @method $this primaryField(string $value) 设置设置主键 id，当设置后，检测表单是否完成时（asyncApi），只会携带此数据。
  * @method $this target(string $value) 设置默认表单提交自己会通过发送 api 保存数据，但是也可以设定另外一个 form 的 name 值，或者另外一个 `CRUD` 模型上的 name 值。
- * @method $this rules(FormRules[] $value) 设置组合校验规则。
  * @method $this columnCount(int $value) 设置表单项显示为几列。
  * @method $this inherit(bool $value) 设置默认表单是独立的，如果想要看到上层数据，需要明确指定这个属性。
  * @method $this staticOn(string $value) 设置是否静态展示表达式。
@@ -85,6 +82,36 @@ class Form extends Widget
      * @return self
      */
     public function horizontal(array $value): self
+    {
+        return $this->setAttribute(__FUNCTION__, $value);
+    }
+
+    /**
+     * 消息提示覆写，默认消息读取的是 API 返回的消息，但是在此可以覆写它。
+     * @param array{
+     *     fetchSuccess?: string,
+     *     fetchFailed?: string,
+     *     saveSuccess?: string,
+     *     saveFailed?: string,
+     *     validateFailed?: string
+     * } $value
+     * @return self
+     */
+    public function messages(array $value): self
+    {
+        return $this->setAttribute(__FUNCTION__, $value);
+    }
+
+    /**
+     * 设置组合校验规则
+     * @param array<array{
+     *     rule: string,
+     *     message: string,
+     *     name: array
+     * }> $value
+     * @return self
+     */
+    public function rules(array $value): self
     {
         return $this->setAttribute(__FUNCTION__, $value);
     }

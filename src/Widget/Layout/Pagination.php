@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace AmisSchema\Widget\Layout;
 
-use AmisSchema\Definition\JsFunction;
 use AmisSchema\Widget\Widget;
 
 /**
@@ -23,7 +22,7 @@ use AmisSchema\Widget\Widget;
  * @method $this perPageAvailable(int[] $value = [10, 20, 50, 100]) 指定每页可以显示多少条
  * @method $this showPageInput(bool $value = false) 是否显示快速跳转输入框
  * @method $this disabled(bool $value = false) 是否禁用
- * @method $this onPageChange(JsFunction|string $value = null) 分页改变触发, (page: number, perPage: number) => void
+ * @method $this onPageChange(string $value = null) 分页改变触发, (page: number, perPage: number) => void
  */
 class Pagination extends Widget
 {
