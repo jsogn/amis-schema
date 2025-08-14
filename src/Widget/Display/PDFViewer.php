@@ -2,19 +2,19 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\API;
 use AmisSchema\Widget\Widget;
 
 /**
  * PDFViewer PDF查看器
- * 
- * 用于渲染PDF文档
  *
- * @method self type(string $type) 指定为 PDFViewer 渲染器
- * @method self className(string $className) 外层 CSS 类名
- * @method self src(string|array $src) PDF文档地址
- * @method self name(string $name) 在其他组件中，时，用作变量映射
- * @method self width(string|int $width) 宽度
- * @method self height(string|int $height) 高度
+ * 用于渲染PDF文档，支持文件上传预览功能
+ *
+ * @method $this src(string|API|array $value = '') PDF文档地址，默认 ''
+ * @method $this width(int $value = null) 宽度，默认 null
+ * @method $this height(int $value = null) 高度，默认 null
+ * @method $this background(string $value = '#fff') PDF背景色，默认 '#fff'
+ * @method $this name(string $value = '') 变量映射名称，配合文件上传使用，默认 ''
  */
 class PDFViewer extends Widget
 {
