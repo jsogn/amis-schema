@@ -2,6 +2,7 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\GridNavOption;
 use AmisSchema\Widget\Widget;
 
 /**
@@ -25,25 +26,9 @@ use AmisSchema\Widget\Widget;
  * @method $this iconRatio(int $value = 60) 图标宽度占比，单位%，默认 60
  * @method $this direction(string $value = 'vertical') 列表项内容排列的方向，可选值为 horizontal、vertical，默认 'vertical'
  * @method $this columnNum(int $value = 4) 列数，默认 4
+ * @method $this options(array|GridNavOption[] $value = []) 宫格选项配置，默认 []
  */
 class GridNav extends Widget
 {
     protected string $type = 'grid-nav';
-
-    /**
-     * 宫格选项配置
-     * @param array<array{
-     *     icon?: string,
-     *     text?: string,
-     *     badge?: array,
-     *     link?: string,
-     *     blank?: bool,
-     *     clickAction?: array
-     * }> $value
-     * @return self
-     */
-    public function options(array $value): self
-    {
-        return $this->setAttribute('options', $value);
-    }
 }

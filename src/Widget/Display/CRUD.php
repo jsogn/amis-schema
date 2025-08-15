@@ -3,6 +3,7 @@
 namespace AmisSchema\Widget\Display;
 
 use AmisSchema\Definition\API;
+use AmisSchema\Definition\CRUDMessages;
 use AmisSchema\Widget\Input\Form;
 use AmisSchema\Widget\Widget;
 
@@ -70,24 +71,9 @@ use AmisSchema\Widget\Widget;
  * @method $this itemAction($value) 单行点击操作
  * @method $this selectable(bool $value = true) 支持勾选，默认 true
  * @method $this multiple(bool $value = true) 勾选 icon 是否为多选样式，默认 true
+ * @method $this messages(array|CRUDMessages $value) 覆盖消息提示，如果不指定，将采用 api 返回的 message
  **/
 class CRUD extends Widget
 {
     protected string $type = 'crud';
-
-    /**
-     * 覆盖消息提示，如果不指定，将采用 api 返回的 message
-     * @param array{
-     *     fetchFailed: string,
-     *     saveOrderFailed: string,
-     *     saveOrderSuccess: string,
-     *     quickSaveFailed: string,
-     *     quickSaveSuccess: string,
-     * } $value
-     * @return self
-     */
-    public function messages(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace AmisSchema\Widget\Display;
 
+use AmisSchema\Definition\ListListItem;
 use AmisSchema\Widget\Widget;
 
 /**
@@ -22,28 +23,9 @@ use AmisSchema\Widget\Widget;
 * @method $this checkOnItemClick(bool $value = false) 点击列表项内容是否选中列表项，默认 false
 * @method $this itemAction(array $value = []) 单行点击操作配置（1.4.0+），默认 []
 * @method $this innerClassName(string $value = '') 内层组件的CSS类名，默认 ''
+* @method $this listItem(array|ListListItem $value) 配置单条信息
 */
 class ListWidget extends Widget
 {
     protected string $type = 'list';
-
-    /**
-     * 配置单条信息
-     * @param array{
-     *     title?: string,
-     *     titleClassName?: string,
-     *     subTitle?: string,
-     *     avatar?: string,
-     *     avatarClassName?: string,
-     *     desc?: string,
-     *     body?: array,
-     *     actions?: array,
-     *     actionsPosition?: 'left'|'right'
-     * } $value
-     * @return self
-     */
-    public function listItem(array $value): self
-    {
-        return $this->setAttribute('listItem', $value);
-    }
 }
