@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Amis Schema 组件助手函数
  * 
  * 提供类似 Flutter 的组件调用方式
- * 生成时间: 2025-08-15 15:00:43
+ * 生成时间: 2025-08-15 15:41:56
  */
 
 /**
@@ -58,6 +58,7 @@ function AmisBarCode(
  * @param \AmisSchema\Definition\API|string $api CRUD 用来获取列表数据的 api
  * @param string $className CSS类名
  * @param mixed $style 
+ * @param array|\AmisSchema\Definition\CRUDMessages $messages 覆盖消息提示，如果不指定，将采用 api 返回的 message
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -128,6 +129,7 @@ function AmisCRUD(
     mixed $api = null,
     mixed $className = null,
     mixed $style = null,
+    mixed $messages = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -196,6 +198,7 @@ function AmisCRUD(
     $api !== null && $args['api'] = $api;
     $className !== null && $args['className'] = $className;
     $style !== null && $args['style'] = $style;
+    $messages !== null && $args['messages'] = $messages;
     $onEvent !== null && $args['onEvent'] = $onEvent;
     $visibleOn !== null && $args['visibleOn'] = $visibleOn;
     $disabledOn !== null && $args['disabledOn'] = $disabledOn;
@@ -870,6 +873,7 @@ function AmisEach(
  * @param int $iconRatio 图标宽度占比，单位%，默认 60
  * @param string $direction 列表项内容排列的方向，可选值为 horizontal、vertical，默认 'vertical'
  * @param int $columnNum 列数，默认 4
+ * @param array|\AmisSchema\Definition\GridNavOption[] $options 宫格选项配置，默认 []
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\GridNav
@@ -895,6 +899,7 @@ function AmisGridNav(
     mixed $iconRatio = null,
     mixed $direction = null,
     mixed $columnNum = null,
+    mixed $options = null,
     ...$args
 ): \AmisSchema\Widget\Display\GridNav
 {
@@ -918,6 +923,7 @@ function AmisGridNav(
     $iconRatio !== null && $args['iconRatio'] = $iconRatio;
     $direction !== null && $args['direction'] = $direction;
     $columnNum !== null && $args['columnNum'] = $columnNum;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Display\GridNav::make($args);
 }
 
@@ -1402,6 +1408,7 @@ function AmisLink(
  * @param bool $checkOnItemClick 点击列表项内容是否选中列表项，默认 false
  * @param array $itemAction 单行点击操作配置（1.4.0+），默认 []
  * @param string $innerClassName 内层组件的CSS类名，默认 ''
+ * @param array|\AmisSchema\Definition\ListListItem $listItem 配置单条信息
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\ListWidget
@@ -1424,6 +1431,7 @@ function AmisList(
     mixed $checkOnItemClick = null,
     mixed $itemAction = null,
     mixed $innerClassName = null,
+    mixed $listItem = null,
     ...$args
 ): \AmisSchema\Widget\Display\ListWidget
 {
@@ -1444,6 +1452,7 @@ function AmisList(
     $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
     $itemAction !== null && $args['itemAction'] = $itemAction;
     $innerClassName !== null && $args['innerClassName'] = $innerClassName;
+    $listItem !== null && $args['listItem'] = $listItem;
     return \AmisSchema\Widget\Display\ListWidget::make($args);
 }
 
