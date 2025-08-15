@@ -367,7 +367,7 @@ class ComponentHelperGenerator
         $methods       = $component['methods'];
 
         // 添加Amis前缀，并保持类名的大小写
-        $functionName = 'Amis' . $className;
+        $widgetFnName = 'Amis' . preg_replace('/Widget$/', '', $className);
 
         // 获取最重要的参数作为函数参数
         $parameters     = $this->getTopParameters($methods);
@@ -376,7 +376,7 @@ class ComponentHelperGenerator
         $docComment     = $this->generateDocComment($className, $fullClassName, $parameters, $methods);
 
         $output = $docComment;
-        $output .= "function $functionName($paramSignature): \\$fullClassName\n";
+        $output .= "function $widgetFnName($paramSignature): \\$fullClassName\n";
         $output .= "{\n";
         $output .= $functionBody;
         $output .= "}\n";

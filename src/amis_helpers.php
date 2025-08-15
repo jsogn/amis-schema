@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Amis Schema 组件助手函数
  * 
  * 提供类似 Flutter 的组件调用方式
- * 生成时间: 2025-08-15 10:25:43
+ * 生成时间: 2025-08-15 11:45:40
  */
 
 /**
@@ -1385,7 +1385,7 @@ function AmisLink(
  * 
  * @return \AmisSchema\Widget\Display\ListWidget
  */
-function AmisListWidget(
+function AmisList(
     mixed $type = null,
     mixed $title = null,
     mixed $placeholder = null,
@@ -1552,7 +1552,7 @@ function AmisMapping(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
- * @param string|\AmisSchema\Definition\API|array $src 外部markdown文件地址(since 1.6.5)，默认 ''
+ * @param string|array|\AmisSchema\Definition\API $src 外部markdown文件地址(since 1.6.5)，默认 ''
  * @param bool $html 是否支持html标签(since 1.8.1)，默认 false
  * @param bool $linkify 是否自动识别链接(since 1.8.1)，默认 true
  * @param bool $breaks 是否回车就是换行(since 1.8.1)，默认 false
@@ -1657,7 +1657,7 @@ function AmisNumber(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
- * @param string|\AmisSchema\Definition\API|array $src 文档地址，默认 ''
+ * @param string|array|\AmisSchema\Definition\API $src 文档地址，默认 ''
  * @param bool $enableVar 是否开启变量替换功能，默认 true
  * @param array $wordOptions Word渲染配置选项，默认 []
  * @param array $excelOptions Excel渲染配置选项(since 6.3.0)，默认 []
@@ -1704,7 +1704,7 @@ function AmisOfficeViewer(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
- * @param string|\AmisSchema\Definition\API|array $src PDF文档地址，默认 ''
+ * @param string|array|\AmisSchema\Definition\API $src PDF文档地址，默认 ''
  * @param int $width 宽度，默认 null
  * @param int $height 高度，默认 null
  * @param string $background PDF背景色，默认 '#fff'
@@ -2171,7 +2171,7 @@ function AmisStatus(
  * @param mixed $disabledOn 
  * @param mixed $data 
  * @param array $steps 步骤数据配置，默认 []
- * @param string|\AmisSchema\Definition\API|array $source 数据源，支持API或数据映射(since 1.9.1)，默认 ''
+ * @param string|array|\AmisSchema\Definition\API $source 数据源，支持API或数据映射(since 1.9.1)，默认 ''
  * @param string $mode 步骤条模式，horizontal/vertical/simple，默认 'horizontal'
  * @param string $labelPlacement 标签放置位置，horizontal/vertical，默认 'horizontal'
  * @param bool $progressDot 点状步骤条，默认 false
@@ -2257,7 +2257,7 @@ function AmisSteps(
  * @param mixed $footable 底部展示配置
  * @param mixed $itemAction 单行点击操作
  * @param bool $canAccessSuperData 是否可以访问父级数据
- * @param bool|string|\AmisSchema\Definition\API $reUseRow 默认当 API 返回数据与当前一致时不会触发表格行重渲染，为 false 总会触发重渲染，尽量复用返回数据中 id 一致的对象
+ * @param bool|string|array|\AmisSchema\Definition\API $reUseRow 默认当 API 返回数据与当前一致时不会触发表格行重渲染，为 false 总会触发重渲染，尽量复用返回数据中 id 一致的对象
  * @param string $persistKey 用于配置列排序、列显示的本地缓存所使用的 key
  * @param string $prefixRowClassName 顶部总结行 CSS 类名
  * @param string $prefixRowClassNameExpr 顶部总结行 CSS 类名表达式
@@ -2679,7 +2679,7 @@ function AmisTag(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
- * @param string|\AmisSchema\Definition\API|array $source 设置远程数据源
+ * @param string|array|\AmisSchema\Definition\API $source 设置远程数据源
  * @param string $mode 展示模式：left-左侧显示、right-右侧显示、alternate-交替显示
  * @param string $direction 时间轴方向：vertical-垂直、horizontal-水平
  * @param bool $reverse 是否反向展示时间轴
@@ -2853,7 +2853,7 @@ function AmisVideo(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -3134,7 +3134,7 @@ function AmisButtonGroupSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -3307,7 +3307,7 @@ function AmisButtonToolbar(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -3570,7 +3570,7 @@ function AmisChainedSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -3749,7 +3749,7 @@ function AmisChartRadios(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -3931,7 +3931,7 @@ function AmisCheckbox(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -4206,7 +4206,7 @@ function AmisCheckboxes(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -4482,7 +4482,7 @@ function AmisCombo(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -4508,7 +4508,7 @@ function AmisCombo(
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param string $fieldClassName 设置输入字段的类名
- * @param string|\AmisSchema\Definition\API $source 设置通过远程拉取配置项
+ * @param string|array|\AmisSchema\Definition\API $source 设置通过远程拉取配置项
  * @param bool $embed 设置内嵌展示，默认为 true
  * @param array $fields 设置字段配置
  * @param bool $showANDOR 设置用于 simple 模式下显示切换按钮
@@ -4737,7 +4737,7 @@ function AmisControl(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -4916,7 +4916,7 @@ function AmisDiffEditor(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -5100,7 +5100,7 @@ function AmisEditor(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -5268,7 +5268,7 @@ function AmisFieldSet(
  * @param string $name 设置表单名称，方便其他组件通信。
  * @param string $title 设置表单标题。
  * @param \AmisSchema\Widget\Input\FormItem[]|\AmisSchema\Widget\Widget[] $body 设置表单项集合。
- * @param string|\AmisSchema\Definition\API $api 设置表单提交接口。
+ * @param string|array|\AmisSchema\Definition\API $api 设置表单提交接口。
  * @param string $className 设置外层 dom 类名。
  * @param mixed $style 
  * @param string $reload 设置提交成功后刷新目标对象。
@@ -5281,16 +5281,16 @@ function AmisFieldSet(
  * @param \AmisSchema\Widget\Function\Action[]|\AmisSchema\Widget\Widget[] $actions 设置表单按钮组。
  * @param bool $wrapWithPanel 设置是否让表单用 panel 包裹。
  * @param string $panelClassName 设置外层 panel 的类名。
- * @param string|\AmisSchema\Definition\API $initApi 设置初始数据接口。
+ * @param string|array|\AmisSchema\Definition\API $initApi 设置初始数据接口。
  * @param int $interval 设置刷新时间间隔（毫秒）。
  * @param bool $silentPolling 设置配置刷新时是否静默。
  * @param string $stopAutoRefreshWhen 设置停止自动刷新的条件。
- * @param string|\AmisSchema\Definition\API $initAsyncApi 设置异步初始数据接口。
+ * @param string|array|\AmisSchema\Definition\API $initAsyncApi 设置异步初始数据接口。
  * @param bool $initFetch 设置是否初始拉取数据。
  * @param string $initFetchOn 设置初始是否拉取数据的表达式。
  * @param string $initFinishedField 设置异步请求完成后的字段名。
  * @param int $initCheckInterval 设置异步请求轮询间隔。
- * @param string|\AmisSchema\Definition\API $asyncApi 设置设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
+ * @param string|array|\AmisSchema\Definition\API $asyncApi 设置设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
  * @param int $checkInterval 设置轮询请求的时间间隔。
  * @param string $finishedField 设置如果决定结束的字段名不是 finished 请设置此属性。
  * @param string $submitText 设置默认的提交按钮名称。
@@ -5474,7 +5474,7 @@ function AmisForm(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -5644,7 +5644,7 @@ function AmisFormItem(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -5830,7 +5830,7 @@ function AmisFormula(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -6008,7 +6008,7 @@ function AmisGroup(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -6178,7 +6178,7 @@ function AmisHidden(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -6375,7 +6375,7 @@ function AmisInputArray(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -6644,7 +6644,7 @@ function AmisInputCity(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -6919,7 +6919,7 @@ function AmisInputColor(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -7089,7 +7089,7 @@ function AmisInputDate(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -7259,7 +7259,7 @@ function AmisInputDateRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -7429,7 +7429,7 @@ function AmisInputDatetime(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -7599,7 +7599,7 @@ function AmisInputDatetimeRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -7787,7 +7787,7 @@ function AmisInputExcel(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -8053,7 +8053,7 @@ function AmisInputFile(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -8266,7 +8266,7 @@ function AmisInputFormula(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -8438,7 +8438,7 @@ function AmisInputGroup(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -8686,7 +8686,7 @@ function AmisInputImage(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -8877,7 +8877,7 @@ function AmisInputKV(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -9062,7 +9062,7 @@ function AmisInputKVS(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -9232,7 +9232,7 @@ function AmisInputMonth(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -9408,7 +9408,7 @@ function AmisInputMonthRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -9623,7 +9623,7 @@ function AmisInputNumber(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -9835,7 +9835,7 @@ function AmisInputPassword(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -10005,7 +10005,7 @@ function AmisInputQuarter(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -10175,7 +10175,7 @@ function AmisInputQuarterRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -10471,7 +10471,7 @@ function AmisInputRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -10671,7 +10671,7 @@ function AmisInputRating(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -10844,7 +10844,7 @@ function AmisInputRepeat(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -11032,7 +11032,7 @@ function AmisInputRichText(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -11241,7 +11241,7 @@ function AmisInputSignature(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -11450,7 +11450,7 @@ function AmisInputSubForm(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -11481,9 +11481,9 @@ function AmisInputSubForm(
  * @param bool $removable 设置是否可删除
  * @param bool $showTableAddBtn 设置是否显示表格操作栏添加按钮
  * @param bool $showFooterAddBtn 设置是否显示表格下方添加按钮
- * @param string|\AmisSchema\Definition\API $addApi 设置新增时提交的API
- * @param string|\AmisSchema\Definition\API $updateApi 设置修改时提交的API
- * @param string|\AmisSchema\Definition\API $deleteApi 设置删除时提交的API
+ * @param string|array|\AmisSchema\Definition\API $addApi 设置新增时提交的API
+ * @param string|array|\AmisSchema\Definition\API $updateApi 设置修改时提交的API
+ * @param string|array|\AmisSchema\Definition\API $deleteApi 设置删除时提交的API
  * @param string $addBtnLabel 设置增加按钮名称
  * @param string $addBtnIcon 设置增加按钮图标
  * @param string $copyBtnLabel 设置复制按钮文字
@@ -11734,7 +11734,7 @@ function AmisInputTable(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -12021,7 +12021,7 @@ function AmisInputTag(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -12230,7 +12230,7 @@ function AmisInputText(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -12400,7 +12400,7 @@ function AmisInputTime(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -12570,7 +12570,7 @@ function AmisInputTimeRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -12845,7 +12845,7 @@ function AmisInputTree(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -13163,7 +13163,7 @@ function AmisInputYearRange(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -13342,7 +13342,7 @@ function AmisJsonSchema(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -13533,7 +13533,7 @@ function AmisJsonSchemaEditor(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -13799,7 +13799,7 @@ function AmisListSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -13987,7 +13987,7 @@ function AmisLocationPicker(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -14015,7 +14015,7 @@ function AmisLocationPicker(
  * @param array $columns 列信息，数组中 label 字段是必须给出的
  * @param array $rows 行信息，数组中 label 字段是必须给出的
  * @param string $rowLabel 行标题说明
- * @param string|\AmisSchema\Definition\API $source Api 地址，如果选项组不固定，可以通过配置 source 动态拉取
+ * @param string|array|\AmisSchema\Definition\API $source Api 地址，如果选项组不固定，可以通过配置 source 动态拉取
  * @param bool $multiple 是否多选
  * @param string $singleSelectMode 设置单选模式，multiple为false时有效，可设置为cell, row, column 分别为全部选项中只能单选某个单元格、每行只能单选某个单元格，每列只能单选某个单元格
  * @param string $textAlign 当开启多选+全选时，默认为'left'
@@ -14184,7 +14184,7 @@ function AmisMatrixCheckboxes(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -14471,7 +14471,7 @@ function AmisNestedSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -14734,7 +14734,7 @@ function AmisOptions(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15015,7 +15015,7 @@ function AmisPicker(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15194,7 +15194,7 @@ function AmisRadio(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15460,7 +15460,7 @@ function AmisRadios(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15777,7 +15777,7 @@ function AmisSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15809,7 +15809,7 @@ function AmisSelect(
  * 
  * @return \AmisSchema\Widget\Input\StaticWidget
  */
-function AmisStaticWidget(
+function AmisStatic(
     mixed $type = null,
     mixed $name = null,
     mixed $label = null,
@@ -15957,7 +15957,7 @@ function AmisStaticWidget(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -15991,7 +15991,7 @@ function AmisStaticWidget(
  * 
  * @return \AmisSchema\Widget\Input\SwitchWidget
  */
-function AmisSwitchWidget(
+function AmisSwitch(
     mixed $type = null,
     mixed $name = null,
     mixed $label = null,
@@ -16144,7 +16144,7 @@ function AmisSwitchWidget(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -16368,7 +16368,7 @@ function AmisTabsTransfer(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -16610,7 +16610,7 @@ function AmisTabsTransferPicker(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -16801,7 +16801,7 @@ function AmisTextarea(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -17025,7 +17025,7 @@ function AmisTransfer(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -17267,7 +17267,7 @@ function AmisTransferPicker(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -17542,7 +17542,7 @@ function AmisTreeSelect(
  * @param string $requiredOn 设置通过表达式来配置当前表单项是否为必填。
  * @param string|array $validations 设置表单项值格式验证。
  * @param array $validationErrors 设置表单项值验证失败时的错误信息。
- * @param string|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
+ * @param string|array|\AmisSchema\Definition\API $validateApi 设置表单校验接口。
  * @param bool $clearValueOnHidden 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @param bool $autoFocus 设置是否自动获取焦点。
  * @param string $mode 设置配置当前表单项展示模式，可选值：'normal'、'inline'、'horizontal'。
@@ -18779,7 +18779,7 @@ function AmisApp(
  * @param string $separator 分隔符
  * @param int $labelMaxLength 最大展示长度
  * @param string $tooltipPosition 浮窗提示位置
- * @param string|\AmisSchema\Definition\API|array $source 动态数据
+ * @param string|array|\AmisSchema\Definition\API $source 动态数据
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Breadcrumb
@@ -19173,12 +19173,12 @@ function AmisDropDownButton(
  * @param string $expandPosition 展开按钮位置，可选：before、after，默认 before
  * @param bool $stacked 设置成 false 可以以 tabs 的形式展示
  * @param bool $accordion 是否开启手风琴模式
- * @param array|string|\AmisSchema\Definition\API $source 可以通过变量或 API 接口动态创建导航
- * @param array|string|\AmisSchema\Definition\API $deferApi 用来延时加载选项详情的接口，可以不配置，不配置公用 source 接口
+ * @param string|array|\AmisSchema\Definition\API $source 可以通过变量或 API 接口动态创建导航
+ * @param string|array|\AmisSchema\Definition\API $deferApi 用来延时加载选项详情的接口，可以不配置，不配置公用 source 接口
  * @param array|\AmisSchema\Widget\Widget[] $itemActions 更多操作相关配置
  * @param bool $draggable 是否支持拖拽排序
  * @param bool $dragOnSameLevel 仅允许同层级内拖拽
- * @param string|\AmisSchema\Definition\API $saveOrderApi 保存排序的 api
+ * @param string|array|\AmisSchema\Definition\API $saveOrderApi 保存排序的 api
  * @param \AmisSchema\Widget\Extra\Badge $itemBadge 角标
  * @param array|\AmisSchema\Definition\NavLink[] $links 链接集合
  * @param array|\AmisSchema\Definition\NavOverflow $overflow 响应式收纳配置
