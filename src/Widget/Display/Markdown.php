@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  *
  * @method $this name(string $value = '') 变量映射名称，默认 ''
  * @method $this value(string $value = '') 静态markdown内容，默认 ''
- * @method $this src(string|API|array $value = '') 外部markdown文件地址(since 1.6.5)，默认 ''
+ * @method $this src(string|array|API $value = '') 外部markdown文件地址(since 1.6.5)，默认 ''
  * @method $this html(bool $value = false) 是否支持html标签(since 1.8.1)，默认 false
  * @method $this linkify(bool $value = true) 是否自动识别链接(since 1.8.1)，默认 true
  * @method $this breaks(bool $value = false) 是否回车就是换行(since 1.8.1)，默认 false

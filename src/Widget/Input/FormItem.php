@@ -34,7 +34,7 @@ use AmisSchema\Widget\Widget;
  * @method $this requiredOn(string $value) 设置通过表达式来配置当前表单项是否为必填。
  * @method $this validations(string|array $value) 设置表单项值格式验证。
  * @method $this validationErrors(array $value) 设置表单项值验证失败时的错误信息。
- * @method $this validateApi(string|API $value) 设置表单校验接口。
+ * @method $this validateApi(string|array|API $value) 设置表单校验接口。
  * @method $this clearValueOnHidden(bool $value) 设置表单项隐藏时，是否在当前 Form 中删除掉该表单项值。
  * @method $this autoFocus(bool $value) 设置是否自动获取焦点。
  * @method $this size(string $value) 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。

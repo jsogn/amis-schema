@@ -20,7 +20,7 @@ use AmisSchema\Widget\Widget;
  * @method $this separator(string $separator) 分隔符
  * @method $this labelMaxLength(int $labelMaxLength = 16) 最大展示长度
  * @method $this tooltipPosition(string $tooltipPosition = 'top') 浮窗提示位置
- * @method $this source(string|API|array $source) 动态数据
+ * @method $this source(string|array|API $source) 动态数据
  */
 class Breadcrumb extends Widget
 {

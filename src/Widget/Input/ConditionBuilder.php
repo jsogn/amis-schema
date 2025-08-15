@@ -13,7 +13,7 @@ use AmisSchema\Definition\API;
  * @link https://baidu.github.io/amis/zh-CN/components/form/condition-builder
  *
  * @method $this fieldClassName(string $value) 设置输入字段的类名
- * @method $this source(string|API $value) 设置通过远程拉取配置项
+ * @method $this source(string|array|API $value) 设置通过远程拉取配置项
  * @method $this embed(bool $value = true) 设置内嵌展示，默认为 true
  * @method $this title(string $value) 设置弹窗配置的顶部标题
  * @method $this fields(array $value) 设置字段配置

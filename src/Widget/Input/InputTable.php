@@ -19,9 +19,9 @@ use AmisSchema\Definition\API;
  * @method $this removable(bool $value = false) 设置是否可删除
  * @method $this showTableAddBtn(bool $value = true) 设置是否显示表格操作栏添加按钮
  * @method $this showFooterAddBtn(bool $value = true) 设置是否显示表格下方添加按钮
- * @method $this addApi(string|API $value) 设置新增时提交的API
- * @method $this updateApi(string|API $value) 设置修改时提交的API
- * @method $this deleteApi(string|API $value) 设置删除时提交的API
+ * @method $this addApi(string|array|API $value) 设置新增时提交的API
+ * @method $this updateApi(string|array|API $value) 设置修改时提交的API
+ * @method $this deleteApi(string|array|API $value) 设置删除时提交的API
  * @method $this addBtnLabel(string $value = "新增") 设置增加按钮名称
  * @method $this addBtnIcon(string $value = "plus") 设置增加按钮图标
  * @method $this copyBtnLabel(string $value = "复制") 设置复制按钮文字

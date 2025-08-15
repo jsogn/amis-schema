@@ -45,7 +45,7 @@ use AmisSchema\Widget\Widget;
  * @method $this footable($value) 底部展示配置
  * @method $this itemAction($value) 单行点击操作
  * @method $this canAccessSuperData(bool $value) 是否可以访问父级数据
- * @method $this reUseRow(bool|string|API $value) 默认当 API 返回数据与当前一致时不会触发表格行重渲染，为 false 总会触发重渲染，尽量复用返回数据中 id 一致的对象
+ * @method $this reUseRow(bool|string|array|API $value) 默认当 API 返回数据与当前一致时不会触发表格行重渲染，为 false 总会触发重渲染，尽量复用返回数据中 id 一致的对象
  * @method $this persistKey(string $value) 用于配置列排序、列显示的本地缓存所使用的 key
  * @method $this prefixRowClassName(string $value) 顶部总结行 CSS 类名
  * @method $this prefixRowClassNameExpr(string $value) 顶部总结行 CSS 类名表达式

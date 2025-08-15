@@ -20,17 +20,17 @@ use AmisSchema\Widget\Widget;
  * @method $this actions(Action[]|Widget[] $value) 设置表单按钮组。
  * @method $this wrapWithPanel(bool $value) 设置是否让表单用 panel 包裹。
  * @method $this panelClassName(string $value) 设置外层 panel 的类名。
- * @method $this api(string|API $value) 设置表单提交接口。
- * @method $this initApi(string|API $value) 设置初始数据接口。
+ * @method $this api(string|array|API $value) 设置表单提交接口。
+ * @method $this initApi(string|array|API $value) 设置初始数据接口。
  * @method $this interval(int $value) 设置刷新时间间隔（毫秒）。
  * @method $this silentPolling(bool $value) 设置配置刷新时是否静默。
  * @method $this stopAutoRefreshWhen(string $value) 设置停止自动刷新的条件。
- * @method $this initAsyncApi(string|API $value) 设置异步初始数据接口。
+ * @method $this initAsyncApi(string|array|API $value) 设置异步初始数据接口。
  * @method $this initFetch(bool $value) 设置是否初始拉取数据。
  * @method $this initFetchOn(string $value) 设置初始是否拉取数据的表达式。
  * @method $this initFinishedField(string $value) 设置异步请求完成后的字段名。
  * @method $this initCheckInterval(int $value) 设置异步请求轮询间隔。
- * @method $this asyncApi(string|API $value) 设置设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
+ * @method $this asyncApi(string|array|API $value) 设置设置此属性后，表单提交发送保存接口后，还会继续轮询请求该接口，直到返回 finished 属性为 true 才 结束。
  * @method $this checkInterval(int $value) 设置轮询请求的时间间隔。
  * @method $this finishedField(string $value) 设置如果决定结束的字段名不是 finished 请设置此属性。
  * @method $this submitText(string $value) 设置默认的提交按钮名称。

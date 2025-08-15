@@ -12,7 +12,7 @@ use AmisSchema\Widget\Layout\Page;
  * @method $this icon(string $icon) 菜单图标，比如：fa fa-file
  * @method $this url(string $url) 页面路由路径，支持参数和父级路径拼接
  * @method $this schema(Page $schema) 页面的配置，具体配置参考 Page 页面
- * @method $this schemaApi(string|API $schemaApi) 通过接口拉取页面配置，返回路径为 json>data
+ * @method $this schemaApi(string|array|API $schemaApi) 通过接口拉取页面配置，返回路径为 json>data
  * @method $this link(string $link) 外部链接菜单
  * @method $this redirect(string $redirect) 命中当前页面时跳转到目标页面
  * @method $this rewrite(string $rewrite) 渲染其他路径的页面，地址不变
