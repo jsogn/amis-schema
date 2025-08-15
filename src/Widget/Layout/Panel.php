@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 可以把相关信息以面板的形式展示到一块。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/panel
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/panel
  *
  * @method $this className(string $value = 'panel-default') 外层 Dom 的类名
  * @method $this headerClassName(string $value = 'panel-heading') header 区域的类名

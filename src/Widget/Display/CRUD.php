@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
 /**
  * CRUD 增删改查
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/crud
+ *
  * @method $this type(string $value = 'crud') 指定为 CRUD 渲染器，默认 'crud'
  * @method $this mode(string $value = 'table') 展示模式 'table'|'cards'|'list'，默认 'table'
  * @method $this title(string $value = '列表') 可设置成空，当设置成空时，没有标题栏，默认 '列表'

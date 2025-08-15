@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Card 卡片
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/card
+ *
  * @method $this type(string $value = 'card') 指定为 Card 渲染器，默认 'card'
  * @method $this href(string $value = '') 外部链接，默认 ''
  * @method $this body(array $value = []) 内容容器，主要用来放置非表单项组件，默认 []

@@ -11,7 +11,7 @@ use AmisSchema\Widget\Widget;
  *
  * 用于展示页面层级关系，帮助用户快速定位和导航
  *
- * @link https://baidu.github.io/amis/zh-CN/components/breadcrumb
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/breadcrumb
  *
  * @method $this itemClassName(string $itemClassName) 导航项类名
  * @method $this separatorClassName(string $separatorClassName) 分割符类名

@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 视频播放组件，支持普通视频和直播流（flv、hls）播放
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/video
+ *
  * @method $this src(string $value = '') 视频地址
  * @method $this isLive(bool $value = false) 是否为直播，支持 flv 和 hls 格式
  * @method $this videoType(string $value = '') 指定直播视频格式，可选：video/x-flv、application/x-mpegURL

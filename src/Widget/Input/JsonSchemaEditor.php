@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  * 
  * JSON Schema 编辑器，用于可视化编辑 JSON Schema
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/json-schema-editor
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema-editor
  *
  * @method $this rootTypeMutable(bool $value = false) 设置顶级类型是否可配置
  * @method $this showRootInfo(bool $value = false) 设置是否显示顶级类型信息

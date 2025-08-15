@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Cards 卡片组
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/cards
+ *
  * @method $this type(string $value = 'cards') 指定为卡片组，默认 'cards'
  * @method $this title(string $value = '') 标题，默认 ''
  * @method $this source(string $value = '${items}') 数据源, 获取当前数据域中的变量，默认 '${items}'

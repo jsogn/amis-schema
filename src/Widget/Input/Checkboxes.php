@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 用于实现多选，通过 options 配置选项
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/checkboxes
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/checkboxes
  *
  * @method $this columnsCount(int|array $value) 设置选项按几列显示，默认为1，支持数组形式手动控制每行显示的列数
  * @method $this menuTpl(string $value) 设置支持自定义选项渲染

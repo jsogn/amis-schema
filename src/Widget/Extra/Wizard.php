@@ -13,6 +13,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 表单向导，能够配置多个步骤引导用户一步一步完成表单提交
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard
+ *
  * @method $this mode(string $value = 'horizontal') 展示模式：horizontal-水平、vertical-垂直
  * @method $this api(string|array|API $value = null) 最后一步保存的接口
  * @method $this initApi(string|array|API $value = null) 初始化数据接口

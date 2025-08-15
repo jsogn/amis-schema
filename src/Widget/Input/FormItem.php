@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  *
  * 表单项是组成一个表单的基本单位，它具有的一些特性会帮助我们更好地实现表单操作。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/formitem
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/formitem
  *
  * @method $this type(string $value) 设置指定表单项类型。
  * @method $this className(string $value) 设置表单最外层类名。

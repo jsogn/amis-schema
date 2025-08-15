@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 树形结构选择器，支持 [树形结构选择器] 的所有配置
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/treeselect
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/treeselect
  */
 class TreeSelect extends InputTree
 {

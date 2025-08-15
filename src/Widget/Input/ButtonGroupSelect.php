@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 一般用来作为选项选择器，按钮集合当 select 点选用
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/button-group-select
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/button-group-select
  *
  * @method $this vertical(bool $value=false) 设置是否使用垂直模式，默认为 false
  * @method $this tiled(bool $value=false) 设置是否使用平铺模式，默认为 false

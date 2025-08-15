@@ -10,6 +10,8 @@ use AmisSchema\Widget\Widget;
  *
  * 用于渲染PDF文档，支持文件上传预览功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/pdf-viewer
+ *
  * @method $this src(string|array|API $value = '') PDF文档地址，默认 ''
  * @method $this width(int $value = null) 宽度，默认 null
  * @method $this height(int $value = null) 高度，默认 null

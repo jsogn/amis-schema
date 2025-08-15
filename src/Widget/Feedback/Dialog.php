@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * Dialog 弹框主要由 Action 触发，主要展示一个对话框以供用户操作
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/dialog
+ *
  * @method $this title(string|Widget $value = '') 弹出层标题，支持 SchemaNode
  * @method $this body(array|Widget|Widget[] $value = '') 往 Dialog 内容区加内容，支持 SchemaNode
  * @method $this size(string $value = '') 指定 dialog 大小：xs、sm、md、lg、xl、full

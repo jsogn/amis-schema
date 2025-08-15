@@ -9,7 +9,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Grid2D 组件，AMis Grid 2D 布局渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/grid-2d
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-2d
  *
  * @method $this gridClassName(string $value = '') 外层 Dom 的类名
  * @method $this gap(int|string $value = 0) 格子间距，包括水平和垂直

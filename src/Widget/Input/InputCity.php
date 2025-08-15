@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 城市选择器，方便输入城市，可以理解为自动配置了国内城市选项的 Select，支持到县级别
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-city
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-city
  *
  * @method $this allowCity(bool $value=true) 设置允许选择城市，默认为 true
  * @method $this allowDistrict(bool $value=true) 设置允许选择区域，默认为 true

@@ -11,7 +11,7 @@ use AmisSchema\Widget\Widget;
  *
  * 基于 JSON Schema 生成表单项
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/json-schema
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/json-schema
  *
  * @method $this schema(array|string|Widget $value) 设置指定 json-schema
  * @method $this schemaApi(API|string|array $value) 设置远程获取 schema 的接口

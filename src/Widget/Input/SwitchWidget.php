@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 开关控件
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/switch
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/switch
  *
  * @method $this option(string $value) 设置选项说明
  * @method $this onText(string|array|Widget $value) 设置开启时开关显示的内容，3.6.0支持 Schema

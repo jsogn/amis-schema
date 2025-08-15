@@ -10,7 +10,7 @@ use AmisSchema\Definition\API;
  *
  * 用于设置复杂组合条件，支持添加条件，添加分组，设置组合方式，拖拽排序等功能
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/condition-builder
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/condition-builder
  *
  * @method $this fieldClassName(string $value) 设置输入字段的类名
  * @method $this source(string|array|API $value) 设置通过远程拉取配置项

@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 评分组件，支持半星、自定义颜色、字符、提示文字等
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-rating
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-rating
  *
  * @method $this half(bool $value = false) 是否使用半星选择
  * @method $this count(int $value = 5) 总星数

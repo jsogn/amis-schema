@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 用于选择地理位置
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/location-picker
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/location-picker
  *
  * @method $this vendor(string $vendor = 'baidu') 地图厂商，目前只实现了百度地图和高德地图
  * @method $this ak(string $ak) 百度/高德地图的 ak

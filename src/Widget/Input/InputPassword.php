@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 密码输入框，用于输入密码
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-password
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-password
  *
  * @method $this revealPassword(bool $value = true) 是否展示密码显/隐按钮
  */

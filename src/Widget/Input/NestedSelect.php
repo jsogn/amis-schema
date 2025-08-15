@@ -10,7 +10,7 @@ use AmisSchema\Widget\Function\TooltipWrapper;
  *
  * 级联选择器，适合选择具有级联关系的选项
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/nestedselect
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/nestedselect
  *
  * @method $this cascade(bool $value = false) 设置 true时，当选中父节点时不自动选择子节点
  * @method $this withChildren(bool $value = false) 设置 true时，选中父节点时，值里面将包含子节点的值，否则只会保留父节点的值

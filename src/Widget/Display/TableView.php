@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Table View 表格展现
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/table-view
+ *
  * @method $this type(string $value) 指定为 table-view 渲染器
  * @method $this width(int|string $value = '100%') 表格宽度
  * @method $this padding(int|string $value = 'var(--TableCell-paddingY) var(--TableCell-paddingX)') 单元格默认内间距

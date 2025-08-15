@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 链接展示组件
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/link
+ *
  * @method $this type(string $value = 'link') 如果在 Table、Card 和 List 中，为"link"；在 Form 中用作静态展示，为"static-link"，默认 'link'
  * @method $this body(string $value = '') 标签内文本，默认 ''
  * @method $this href(string $value = '') 链接地址，默认 ''

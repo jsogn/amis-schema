@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 可以设置公式，将公式结果设置到指定表单项上
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/formula
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/formula
  *
  * @method $this formula(string $formula) 应用的公式
  * @method $this condition(string $condition) 公式作用条件

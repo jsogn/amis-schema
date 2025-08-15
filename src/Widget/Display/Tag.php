@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 用于标记和选择的标签组件，支持多种展示模式和颜色主题
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/tag
+ *
  * @method $this displayMode(string $value = 'normal') 展现模式，可选：normal、rounded、status
  * @method $this color(string $value = '') 颜色主题，支持预设主题或自定义色值
  * @method $this label(string $value = '') 标签内容

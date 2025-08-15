@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 用于展示数字，支持千分位、精度控制、百分比、前后缀等功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/number
+ *
  * @method $this value(string|int|float $value = '') 数值，默认 ''
  * @method $this name(string $value = '') 变量映射名称，默认 ''
  * @method $this placeholder(string $value = '-') 占位内容，默认 '-'

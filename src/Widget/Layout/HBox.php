@@ -8,7 +8,7 @@ use AmisSchema\Widget\Widget;
 /**
  * HBox 组件，AMis HBox 布局渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/hbox
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/hbox
  *
  * @method $this gap(string $value = '') 水平间距，可选值：'xs'、'sm'、'base'、'none'、'md'、'lg'
  * @method $this valign(string $value = '') 垂直对齐方式，可选值：'top'、'middle'、'bottom'、'between'

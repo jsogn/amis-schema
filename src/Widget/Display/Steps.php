@@ -10,6 +10,8 @@ use AmisSchema\Widget\Widget;
  *
  * 步骤条组件，支持水平、垂直、简单三种模式，数据映射、状态配置等功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/steps
+ *
  * @method $this steps(array $value = []) 步骤数据配置，默认 []
  * @method $this source(string|array|API $value = '') 数据源，支持API或数据映射(since 1.9.1)，默认 ''
  * @method $this name(string $value = '') 关联上下文变量，默认 ''

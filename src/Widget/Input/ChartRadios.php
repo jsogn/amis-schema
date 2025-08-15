@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  * 
  * 图表点选功能，用来做多个图表联动
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/chart-radios
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/chart-radios
  *
  * @method $this config(array $value) echart 图表配置
  * @method $this showTooltipOnHighlight(bool $value = false) 高亮的时候是否显示 tooltip

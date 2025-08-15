@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 列表展示组件，不支持配置初始化接口初始化数据域，需要搭配 Service 等组件使用
 *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/list
+ *
  * @method $this type(string $value = 'list') 指定为列表展示，默认 'list'
 * @method $this title(string $value = '') 标题，默认 ''
 * @method $this source(string $value = '${items}') 数据源，获取当前数据域变量，支持数据映射，默认 '${items}'

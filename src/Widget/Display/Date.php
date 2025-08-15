@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Date 日期时间
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/date
+ *
  * @method $this type(string $value = 'date') 指定为 date 渲染器，在 Table、Card 和 List 中为 "date"；在 Form 中用作静态展示为 "static-date"，默认 'date'
  * @method $this value(string $value = '') 显示的日期数值，默认 ''
  * @method $this name(string $value = '') 在其他组件中，时，用作变量映射，默认 ''

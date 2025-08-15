@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Color 颜色
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/color
+ *
  * @method $this type(string $value = 'color') 指定为 color 渲染器，在 Table、Card 和 List 中为 "color"；在 Form 中用作静态展示为 "static-color"，默认 'color'
  * @method $this value(string $value = '') 显示的颜色值，默认 ''
  * @method $this name(string $value = '') 在其他组件中，时，用作变量映射，默认 ''

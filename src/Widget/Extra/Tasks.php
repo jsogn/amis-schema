@@ -12,6 +12,8 @@ use AmisSchema\Widget\Widget;
  *
  * 任务操作集合，类似于 orp 上线
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
+ *
  * @method $this tableClassName(string $value = '') table Dom 的类名
  * @method $this checkApi(string|array|API $value = null) 返回任务列表，返回的数据请参考 items
  * @method $this submitApi(string|array|API $value = null) 提交任务使用的 API

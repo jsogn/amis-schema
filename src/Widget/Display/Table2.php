@@ -10,6 +10,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Table2 表格
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/table2
+ *
  * @method $this type(string $value) 指定为 table2 渲染器
  * @method $this title(string $value) 标题
  * @method $this source(string $value = '${items}') 数据源, 绑定当前环境变量

@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 用于分组展示表单项的一种容器型组件，可以折叠
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/fieldset
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/fieldset
  *
  * @method $this headingClassName(string $value) 标题 CSS 类名
  * @method $this bodyClassName(string $value) 内容区域 CSS 类名

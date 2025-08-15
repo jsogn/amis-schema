@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 公式编辑器，用来输入公式，基于 formula.js 实现
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-formula
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-formula
  *
  * @method $this title(string $value = '公式编辑器') 弹框标题，默认为 '公式编辑器'
  * @method $this header(string $value) 编辑器 header 标题，如果不设置，默认使用表单项label字段

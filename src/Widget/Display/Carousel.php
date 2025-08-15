@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Carousel 轮播图
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel
+ *
  * @method $this type(string $value = 'carousel') 指定为 carousel 渲染器，默认 'carousel'
  * @method $this itemSchema(array $value = []) 自定义schema来展示数据，默认 []
  * @method $this auto(bool $value = true) 是否自动轮播，默认 true

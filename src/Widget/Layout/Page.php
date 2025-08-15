@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  *
  * 支持页面标题、副标题、边栏、工具栏、内容区等丰富配置。
  * 通过 initApi 可拉取初始数据，支持自动刷新、下拉刷新等功能。
- * @link https://baidu.github.io/amis/zh-CN/components/page
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/page
  *
  * @method $this title(Widget|Widget[]|string $value = '') 设置页面标题
  * @method $this subTitle(Widget|Widget[]|string $value = '') 设置页面副标题

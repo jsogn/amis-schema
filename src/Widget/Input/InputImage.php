@@ -11,7 +11,7 @@ use AmisSchema\Widget\Widget;
  *
  * 图片格式输入，需要实现接收器，提交时将以 url 的方式提交，如果需要以表单方式提交请使用 InputFile
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-image
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-image
  *
  * @method $this receiver(string|array|API $receiver) 上传文件接口
  * @method $this accept(string $accept = '.jpeg,.jpg,.png,.gif') 支持的图片类型格式，请配置此属性为图片后缀，例如.jpg, .png

@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  * 专门为展示组件而生，配置初始化接口，进行数据域的初始化，然后在内容容器中配置子组件，
  * 这些子组件通过数据链的方法，获取 Service 所拉取到的数据
  *
- * @link https://baidu.github.io/amis/zh-CN/components/service
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/service
  *
  * @method $this className(string $className) 外层 Dom 的类名
  * @method $this body(array|Widget[]|Widget|string $body) 内容容器

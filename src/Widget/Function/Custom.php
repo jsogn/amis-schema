@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 用于实现自定义组件，它解决了之前 JS SDK 和可视化编辑器中难以支持自定义组件的问题
  *
- * @link https://baidu.github.io/amis/zh-CN/components/custom
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/custom
  *
  * @method $this id(string $id) 节点 id
  * @method $this name(string $name) 节点名称

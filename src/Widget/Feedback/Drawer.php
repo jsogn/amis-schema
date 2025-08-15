@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 抽屉组件，从屏幕边缘滑出的浮层面板
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
+ *
  * @method $this title(string|Widget $value = '') 弹出层标题，支持 SchemaNode
  * @method $this body(array|Widget|Widget[] $value = '') 往 Drawer 内容区加内容，支持 SchemaNode
  * @method $this size(string $value = '') 指定 Drawer 大小：xs、sm、md、lg、xl

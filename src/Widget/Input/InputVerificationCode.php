@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  * 
  * 验证码输入框，支持多种模式和自定义配置
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-verification-code
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-verification-code
  *
  * @method $this length(int $value = 6) 设置验证码的长度，根据长度渲染对应个数的输入框
  * @method $this masked(bool $value = false) 设置是否是密码模式

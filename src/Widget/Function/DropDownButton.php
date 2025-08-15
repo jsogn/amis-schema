@@ -7,7 +7,7 @@ use AmisSchema\Widget\Widget;
 
 /**
  * 下拉菜单按钮组件
- * @link https://baidu.github.io/amis/zh-CN/components/dropdown-button
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/dropdown-button
  *
  * @method $this label(string $label) 按钮文本
  * @method $this btnClassName(string $btnClassName) 按钮 CSS 类名

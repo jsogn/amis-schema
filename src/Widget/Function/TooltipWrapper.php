@@ -7,7 +7,7 @@ use AmisSchema\Widget\Widget;
 
 /**
  * 文字提示容器组件
- * @link https://baidu.github.io/amis/zh-CN/components/tooltip
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/tooltip
  *
  * @method $this title(string $title = '') 文字提示标题
  * @method $this content(string $content = '') 文字提示内容, 兼容之前的 tooltip 属性

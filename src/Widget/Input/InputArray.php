@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * InputArray 是一种简化的 Combo，用于输入多个某种类型的表单项，提交的时将以数组的形式提交
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-array
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-array
  *
  * @method $this items(array|Widget[] $value) 设置成员渲染器配置，配置单项表单类型
  * @method $this addable(bool $value) 设置是否可新增

@@ -8,7 +8,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Divider 组件，AMis 分割线。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/divider
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/divider
  *
  * @method $this lineStyle(string $value = 'solid') 分割线的样式，支持 dashed 和 solid
  * @method $this direction(string $value = 'horizontal') 分割线的方向，支持 horizontal 和 vertical

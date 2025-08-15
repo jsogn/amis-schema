@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 键值对输入组件，用于支持对象形式的数据编辑
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-kv
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-kv
  *
  * @method $this valueType(string $value = 'input-text') 值类型，默认为 "input-text"
  * @method $this keyPlaceholder(string $value) key 的提示信息

@@ -10,7 +10,7 @@ use AmisSchema\Definition\API;
  *
  * 列表选择器，在功能上和 Select 类似，但它能显示更复杂的信息
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/picker
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/picker
  *
  * @method $this modalTitle(string $value = "请选择") 设置模态框的标题
  * @method $this modalMode(string $value = "dialog") 设置 dialog 或者 drawer，用来配置弹出方式

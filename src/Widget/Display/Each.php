@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Each 循环渲染器
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/each
+ *
  * @method $this type(string $value = 'each') 指定为 Each 组件，默认 'each'
  * @method $this value(array $value = []) 用于循环的值，默认 []
  * @method $this name(string $value = '') 获取数据域中变量，默认 ''

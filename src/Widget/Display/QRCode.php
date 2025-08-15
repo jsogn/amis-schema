@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 二维码生成组件，根据 QR 码国际标准，二进制模式最多可存储 2953 字节的内容（1 中文汉字=2 字节）
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/qrcode
+ *
  * @method $this qrcodeClassName(string $value = '') 二维码的类名
  * @method $this codeSize(int $value = 128) 二维码的宽高大小
  * @method $this backgroundColor(string $value = '#fff') 二维码背景色

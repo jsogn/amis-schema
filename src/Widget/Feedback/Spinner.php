@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Spinner 加载中
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/spinner
+ *
  * @method $this type(string $value) 指定为 Spinner 渲染器
  * @method $this className(string $value) 外层CSS类名
  * @method $this size(string $value) 大小 sm、lg

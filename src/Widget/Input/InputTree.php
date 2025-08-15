@@ -11,7 +11,7 @@ use AmisSchema\Trait\OptionsWidgetTrait;
  *
  * 树形结构选择框
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-tree
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-tree
  *
  * @method $this iconField(string $value = 'icon') 设置图标值字段
  * @method $this searchApi(API $value) 设置检索接口

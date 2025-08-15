@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
 /**
  * App 组件，AMis 多页应用渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/app
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/app
  *
  * @method $this api(string|array|API $value) 页面配置接口，如果想远程拉取页面配置请配置。返回配置路径 json>data>pages
  * @method $this brandName(string $value) 应用名称

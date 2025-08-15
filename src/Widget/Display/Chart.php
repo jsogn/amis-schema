@@ -8,6 +8,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Chart 图表
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/chart
+ *
  * @method $this type(string $value = 'chart') 指定为 chart 渲染器，默认 'chart'
  * @method $this body(array $value = []) 内容容器，默认 []
  * @method $this api(API|string|array $value = '') 配置项接口地址，默认 ''

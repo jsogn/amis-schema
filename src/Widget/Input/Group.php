@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 表单项，默认都是一行显示一个，Group 组件用于在一行展示多个表单项，会自动根据表单项数量均分宽度
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/group
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/group
  *
  * @method $this label(string $label) group 的标签
  * @method $this body(array|Widget|Widget[] $body) 表单项集合

@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * iFrame 组件，用于内嵌外部站点
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/iframe
+ *
  * @method $this type(string $value = 'iframe') 指定为 iFrame 渲染器，默认 'iframe'
  * @method $this src(string $value = '') iframe 地址，支持动态数据和 base64 格式，默认 ''
  * @method $this frameBorder(array $value = []) frameBorder 配置，默认 []

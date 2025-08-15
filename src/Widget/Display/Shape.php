@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 形状组件，用于展示各种几何图形
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/shape
+ *
  * @method $this shapeType(string $value = '') 图形类型，如：rect、circle、triangle、polygon、line、arrow、star 等
  * @method $this color(string $value = '') 填充颜色，支持十六进制颜色值
  * @method $this width(int $value = 200) 图形宽度（像素）

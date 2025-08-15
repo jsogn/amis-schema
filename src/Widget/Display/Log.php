@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 用于实时显示日志或程序输出结果
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/log
+ *
  * @method $this type(string $value = 'log') 指定为 Log 渲染器，默认 'log'
  * @method $this height(int $value = 500) 展示区域高度，默认 500
  * @method $this autoScroll(bool $value = true) 是否自动滚动，默认 true

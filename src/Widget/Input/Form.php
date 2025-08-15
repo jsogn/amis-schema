@@ -12,7 +12,7 @@ use AmisSchema\Widget\Widget;
  *
  * 支持各种表单项配置、数据提交、验证等功能。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/index
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/index
  *
  * @method $this title(string $value) 设置表单标题。
  * @method $this mode(string $value) 设置表单展示方式，可选值：'normal'、'horizontal'、'inline'。

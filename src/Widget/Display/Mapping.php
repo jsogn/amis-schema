@@ -10,6 +10,8 @@ use AmisSchema\Widget\Widget;
  *
  * 映射展示组件，将值通过映射配置转换后展示
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/mapping
+ *
  * @method $this placeholder(string $value = '') 占位文本，默认 ''
  * @method $this map(array $value = []) 映射配置，支持k-v对象或对象数组格式，默认 []
  * @method $this source(string|array|API $value = '') 远程数据源接口(since 1.1.6)或数据映射，默认 ''

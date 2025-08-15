@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 进度条组件，支持线形、圆形、仪表盘三种模式，颜色映射、阈值、动画等功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/progress
+ *
  * @method $this mode(string $value = 'line') 进度条类型，line/circle/dashboard，默认 'line'
  * @method $this value(string $value = 0) 进度值，默认 0
  * @method $this name(string $value = '') 变量映射名称，默认 ''

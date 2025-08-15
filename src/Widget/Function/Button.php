@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 注意：button 实际上是 action 的别名，更多用法见 action。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/button
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/button
  */
 class Button extends Action
 {

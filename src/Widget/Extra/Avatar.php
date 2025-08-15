@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 用来显示用户头像，支持图片、文字和图标三种显示方式
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/avatar
+ *
  * @method $this src(string $value = '') 图片地址，支持变量
  * @method $this defaultAvatar(string $value = '') 占位图地址
  * @method $this text(string $value = '') 文字内容，支持变量

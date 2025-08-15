@@ -10,7 +10,7 @@ use AmisSchema\Definition\API;
  *
  * 矩阵类型的输入框
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/matrix-checkboxes
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/matrix-checkboxes
  *
  * @method $this columns(array $value) 列信息，数组中 label 字段是必须给出的
  * @method $this rows(array $value) 行信息，数组中 label 字段是必须给出的

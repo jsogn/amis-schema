@@ -10,7 +10,7 @@ use AmisSchema\Definition\PopOver;
  *
  * 用来在表单中，展示静态数据
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/static
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/static
  *
  * @method $this value(mixed $value) 设置显示的静态值
  * @method $this tpl(string $value) 设置如果想显示成其他文字，请设置此字段。支持模板语法如: $xxx

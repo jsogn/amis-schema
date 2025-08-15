@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 输入框组合选择器 可用于输入框与其他组件进行组合
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-group
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-group
  *
  * @method $this body(array|Widget[]|Widget $body) 表单项集合
  * @method $this validationConfig(array|\AmisSchema\Definition\InputGroupValidationConfig $value) InputGroup 输入框组合验证配置

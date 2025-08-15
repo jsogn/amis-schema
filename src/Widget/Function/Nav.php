@@ -16,7 +16,7 @@ use AmisSchema\Widget\Widget;
  *
  * 用于展示链接导航，支持多层级、动态加载、响应式收纳等功能
  *
- * @link https://baidu.github.io/amis/zh-CN/components/nav
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/nav
  *
  * @method $this mode(string $mode = 'inline') 导航模式，可选：inline、float、panel
  * @method $this collapsed(bool $collapsed) 控制导航是否缩起

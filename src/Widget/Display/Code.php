@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Code 代码高亮
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/code
+ *
  * @method $this type(string $value = 'code') 指定为 code 渲染器，默认 'code'
  * @method $this value(string $value = '') 显示的代码内容，默认 ''
  * @method $this name(string $value = '') 在其他组件中，时，用作变量映射，默认 ''

@@ -9,7 +9,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Action 组件，AMis 行为按钮渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/action
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/action
  *
  * @method $this actionType(string $value = '') 【必填】指定该 action 的作用类型，支持：ajax、link、url、drawer、dialog、confirm、cancel、prev、next、copy、close等
  * @method $this label(string $value = '') 按钮文本，可用 ${xxx} 取值

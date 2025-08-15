@@ -10,7 +10,7 @@ use AmisSchema\Definition\API;
  * 
  * 签名面板，用户可以在这里输入签名
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-signature
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-signature
  *
  * @method $this width(int $value) 设置组件宽度，最小 300
  * @method $this height(int $value) 设置组件高度，最小 160

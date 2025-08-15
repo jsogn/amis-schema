@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 图片集展示，不支持配置初始化接口初始化数据域，需要搭配 Service、Form 或 CRUD 等组件使用
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/images
+ *
  * @method $this type(string $value = 'images') 如果在 Table、Card 和 List 中，为"images"；在 Form 中用作静态展示，为"static-images"，默认 'images'
  * @method $this className(string $value = '') 外层 CSS 类名，默认 ''
  * @method $this defaultImage(string $value = '') 默认展示图片，默认 ''

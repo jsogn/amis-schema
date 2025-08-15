@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 音频播放组件，提供完整的音频播放控制功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/audio
+ *
  * @method $this src(string $value = '') 音频地址，支持各种音频格式
  * @method $this inline(bool $value = true) 是否是内联模式
  * @method $this loop(bool $value = false) 是否循环播放

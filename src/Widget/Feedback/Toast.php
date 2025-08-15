@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 轻量级的消息通知组件，用于显示简短的提示信息
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/toast
+ *
  * @method $this position(string $value = 'top-center') 提示显示位置：top-right、top-center、top-left、bottom-center、bottom-left、bottom-right、center
  * @method $this closeButton(bool $value = false) 是否展示关闭按钮，移动端不展示
  * @method $this showIcon(bool $value = true) 是否展示图标

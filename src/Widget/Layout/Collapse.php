@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 折叠器组件，用于内容的折叠展开
  *
- * @link https://baidu.github.io/amis/zh-CN/components/collapse
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse
  *
  * @method $this disabled(bool $value = false) 禁用，默认为 false
  * @method $this collapsed(bool $value = true) 初始状态是否折叠，默认为 true

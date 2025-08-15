@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 状态显示组件，最适合的用法是放在列表类组件（CRUD，Table，List 等）的列中，用来表示状态
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/status
+ *
  * @version 2.3.0 支持 map 和 labelMap 动态数据映射
  * @version 2.8.0 支持 source 自定义状态配置
  *

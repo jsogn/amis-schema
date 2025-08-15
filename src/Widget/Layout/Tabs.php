@@ -8,7 +8,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Tabs 组件，AMis 选项卡渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/tabs
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/tabs
  *
  * @method $this defaultKey(string|int $value = '') 组件初始化时激活的选项卡，hash 值或索引值，支持使用表达式
  * @method $this activeKey(string|int $value = '') 激活的选项卡，hash 值或索引值，支持使用表达式，可响应上下文数据变化

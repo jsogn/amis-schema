@@ -7,6 +7,8 @@ use AmisSchema\Widget\Widget;
 /**
  * Image 图片
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/image
+ *
  * @method $this type(string $value = 'image') 指定为 image 渲染器，在 Table、Card 和 List 中为 "image"；在 Form 中用作静态展示为 "static-image"，默认 'image'
  * @method $this innerClassName(string $value = '') 组件内层 CSS 类名，默认 ''
  * @method $this imageClassName(string $value = '') 图片 CSS 类名，默认 ''

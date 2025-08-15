@@ -10,7 +10,7 @@ use AmisSchema\Trait\InputTimeWidgetTrait;
  *
  * 时间选择器，用于选择时间
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-time
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-time
  */
 class InputTime extends FormItem
 {

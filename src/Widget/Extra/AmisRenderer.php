@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 动态渲染Amis Schema
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/amis
+ *
  * @method self type(string $type) 指定为 AmisRenderer 渲染器  
  * @method self className(string $className) 外层 CSS 类名
  * @method self schema(array|string $schema) amis Schema配置

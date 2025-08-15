@@ -8,7 +8,7 @@ namespace AmisSchema\Widget\Input;
  *
  * 数字输入框，用于输入数字，支持精度、范围等配置
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-number
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-number
  *
  * @method $this min(int|string $value) 最小值
  * @method $this max(int|string $value) 最大值

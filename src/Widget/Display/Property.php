@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 使用表格的方式显示只读信息，支持表格和简易两种模式，动态内容、样式控制等功能
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/property
+ *
  * @method $this title(string $value = '') 标题，默认 ''
  * @method $this source(string|array $value = '') 数据源，默认 ''
  * @method $this mode(string $value = 'table') 显示模式，table/simple，默认 'table'

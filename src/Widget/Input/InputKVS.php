@@ -10,7 +10,7 @@ use AmisSchema\Widget\Widget;
  *
  * 键值对象输入组件，支持对象和数组的深层结构编辑
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-kvs
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-kvs
  *
  * @method $this keyItem(array|Widget $value) key 的配置项，可以设置 key 值控件类型
  * @method $this valueItems(array|Widget[] $value) value 的配置项，配置成数组，支持任意表单项

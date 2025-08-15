@@ -10,7 +10,7 @@ use AmisSchema\Trait\InputTimeRangeWidgetTrait;
  *
  * 日期时间范围选择器，支持选择日期时间范围
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-datetime-range
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-datetime-range
  */
 class InputDatetimeRange extends FormItem
 {

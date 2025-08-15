@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Amis Schema 组件助手函数
  * 
  * 提供类似 Flutter 的组件调用方式
- * 生成时间: 2025-08-15 11:45:40
+ * 生成时间: 2025-08-15 15:00:43
  */
 
 /**
@@ -20,6 +20,7 @@ declare(strict_types=1);
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
+ * @param array|\AmisSchema\Definition\BarCodeOptions $options BarCode 条形码选项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\BarCode
@@ -33,6 +34,7 @@ function AmisBarCode(
     mixed $visibleOn = null,
     mixed $disabledOn = null,
     mixed $data = null,
+    mixed $options = null,
     ...$args
 ): \AmisSchema\Widget\Display\BarCode
 {
@@ -44,6 +46,7 @@ function AmisBarCode(
     $visibleOn !== null && $args['visibleOn'] = $visibleOn;
     $disabledOn !== null && $args['disabledOn'] = $disabledOn;
     $data !== null && $args['data'] = $data;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Display\BarCode::make($args);
 }
 
@@ -331,6 +334,8 @@ function AmisCalendar(
  * @param bool $hideCheckToggler 卡片选择按钮是否隐藏，默认 false
  * @param bool $multiple 卡片是否为多选，默认 false
  * @param bool $useCardLabel 卡片内容区的表单项 label 是否使用 Card 内部的样式，默认 true
+ * @param array|\AmisSchema\Definition\CardHeader $header Card 卡片头部配置
+ * @param array|\AmisSchema\Definition\CardMedia $media Card 多媒体部内容设置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Card
@@ -358,6 +363,8 @@ function AmisCard(
     mixed $hideCheckToggler = null,
     mixed $multiple = null,
     mixed $useCardLabel = null,
+    mixed $header = null,
+    mixed $media = null,
     ...$args
 ): \AmisSchema\Widget\Display\Card
 {
@@ -383,6 +390,8 @@ function AmisCard(
     $hideCheckToggler !== null && $args['hideCheckToggler'] = $hideCheckToggler;
     $multiple !== null && $args['multiple'] = $multiple;
     $useCardLabel !== null && $args['useCardLabel'] = $useCardLabel;
+    $header !== null && $args['header'] = $header;
+    $media !== null && $args['media'] = $media;
     return \AmisSchema\Widget\Display\Card::make($args);
 }
 
@@ -480,6 +489,7 @@ function AmisCards(
  * @param array $multiple 多图展示，默认 ['count' => 1]
  * @param bool $alwaysShowArrow 是否一直显示箭头，默认 false
  * @param array $icons 自定义箭头图标，默认 []
+ * @param array|\AmisSchema\Definition\CarouselOptions $options Carousel 轮播图选项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Carousel
@@ -505,6 +515,7 @@ function AmisCarousel(
     mixed $multiple = null,
     mixed $alwaysShowArrow = null,
     mixed $icons = null,
+    mixed $options = null,
     ...$args
 ): \AmisSchema\Widget\Display\Carousel
 {
@@ -528,6 +539,7 @@ function AmisCarousel(
     $multiple !== null && $args['multiple'] = $multiple;
     $alwaysShowArrow !== null && $args['alwaysShowArrow'] = $alwaysShowArrow;
     $icons !== null && $args['icons'] = $icons;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Display\Carousel::make($args);
 }
 
@@ -628,6 +640,7 @@ function AmisChart(
  * @param string $editorTheme 主题，还有 'vs-dark'，默认 'vs'
  * @param bool $wordWrap 是否折行，默认 true
  * @param string|int $maxHeight 最大高度，超出滚动，默认 ''
+ * @param array|\AmisSchema\Definition\CodeCustomLang $customLang Code 代码高亮自定义语言配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Code
@@ -647,6 +660,7 @@ function AmisCode(
     mixed $editorTheme = null,
     mixed $wordWrap = null,
     mixed $maxHeight = null,
+    mixed $customLang = null,
     ...$args
 ): \AmisSchema\Widget\Display\Code
 {
@@ -664,6 +678,7 @@ function AmisCode(
     $editorTheme !== null && $args['editorTheme'] = $editorTheme;
     $wordWrap !== null && $args['wordWrap'] = $wordWrap;
     $maxHeight !== null && $args['maxHeight'] = $maxHeight;
+    $customLang !== null && $args['customLang'] = $customLang;
     return \AmisSchema\Widget\Display\Code::make($args);
 }
 
@@ -1081,6 +1096,7 @@ function AmisIframe(
  * @param float|string $maxScale 执行调整图片比例动作时的最大百分比，默认 ''
  * @param float|string $minScale 执行调整图片比例动作时的最小百分比，默认 ''
  * @param array $clickAction 自定义点击行为，默认 []
+ * @param array|\AmisSchema\Definition\ImageToolbarActionsItem[] $toolbarActions Image 图片工具栏动作配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Image
@@ -1117,6 +1133,7 @@ function AmisImage(
     mixed $maxScale = null,
     mixed $minScale = null,
     mixed $clickAction = null,
+    mixed $toolbarActions = null,
     ...$args
 ): \AmisSchema\Widget\Display\Image
 {
@@ -1151,6 +1168,7 @@ function AmisImage(
     $maxScale !== null && $args['maxScale'] = $maxScale;
     $minScale !== null && $args['minScale'] = $minScale;
     $clickAction !== null && $args['clickAction'] = $clickAction;
+    $toolbarActions !== null && $args['toolbarActions'] = $toolbarActions;
     return \AmisSchema\Widget\Display\Image::make($args);
 }
 
@@ -1181,6 +1199,7 @@ function AmisImage(
  * @param string $listClassName 图片集外层 CSS 类名，默认 ''
  * @param string $itemClassName 单个图片外层 CSS 类名，默认 ''
  * @param array $options 图片选项配置，默认 []
+ * @param array|\AmisSchema\Definition\ImageToolbarActionsItem[] $toolbarActions Images 图片集工具栏动作配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Images
@@ -1210,6 +1229,7 @@ function AmisImages(
     mixed $listClassName = null,
     mixed $itemClassName = null,
     mixed $options = null,
+    mixed $toolbarActions = null,
     ...$args
 ): \AmisSchema\Widget\Display\Images
 {
@@ -1237,6 +1257,7 @@ function AmisImages(
     $listClassName !== null && $args['listClassName'] = $listClassName;
     $itemClassName !== null && $args['itemClassName'] = $itemClassName;
     $options !== null && $args['options'] = $options;
+    $toolbarActions !== null && $args['toolbarActions'] = $toolbarActions;
     return \AmisSchema\Widget\Display\Images::make($args);
 }
 
@@ -1763,6 +1784,7 @@ function AmisPDFViewer(
  * @param int $strokeWidth 进度条线宽度，line类型默认10，circle/dashboard类型默认6，默认 null
  * @param int $gapDegree 仪表盘缺角角度(0~295)，默认 75
  * @param string $gapPosition 仪表盘缺口位置，top/bottom/left/right，默认 'bottom'
+ * @param array|\AmisSchema\Definition\ProgressThreshold|\AmisSchema\Definition\ProgressThreshold[] $threshold Progress 进度条阈值配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Progress
@@ -1787,6 +1809,7 @@ function AmisProgress(
     mixed $strokeWidth = null,
     mixed $gapDegree = null,
     mixed $gapPosition = null,
+    mixed $threshold = null,
     ...$args
 ): \AmisSchema\Widget\Display\Progress
 {
@@ -1809,6 +1832,7 @@ function AmisProgress(
     $strokeWidth !== null && $args['strokeWidth'] = $strokeWidth;
     $gapDegree !== null && $args['gapDegree'] = $gapDegree;
     $gapPosition !== null && $args['gapPosition'] = $gapPosition;
+    $threshold !== null && $args['threshold'] = $threshold;
     return \AmisSchema\Widget\Display\Progress::make($args);
 }
 
@@ -1828,6 +1852,7 @@ function AmisProgress(
  * @param int $column 每行几列，默认 3
  * @param array $labelStyle 属性名的样式，默认 []
  * @param array $contentStyle 属性值的样式，默认 []
+ * @param array|\AmisSchema\Definition\PropertyItem[] $items 属性项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Property
@@ -1846,6 +1871,7 @@ function AmisProperty(
     mixed $column = null,
     mixed $labelStyle = null,
     mixed $contentStyle = null,
+    mixed $items = null,
     ...$args
 ): \AmisSchema\Widget\Display\Property
 {
@@ -1862,6 +1888,7 @@ function AmisProperty(
     $column !== null && $args['column'] = $column;
     $labelStyle !== null && $args['labelStyle'] = $labelStyle;
     $contentStyle !== null && $args['contentStyle'] = $contentStyle;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Display\Property::make($args);
 }
 
@@ -1880,6 +1907,7 @@ function AmisProperty(
  * @param int $codeSize 二维码的宽高大小
  * @param string $backgroundColor 二维码背景色
  * @param string $foregroundColor 二维码前景色
+ * @param array|\AmisSchema\Definition\QRCodeImageSettings $imageSettings QRCode 二维码图片设置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\QRCode
@@ -1897,6 +1925,7 @@ function AmisQRCode(
     mixed $codeSize = null,
     mixed $backgroundColor = null,
     mixed $foregroundColor = null,
+    mixed $imageSettings = null,
     ...$args
 ): \AmisSchema\Widget\Display\QRCode
 {
@@ -1912,6 +1941,7 @@ function AmisQRCode(
     $codeSize !== null && $args['codeSize'] = $codeSize;
     $backgroundColor !== null && $args['backgroundColor'] = $backgroundColor;
     $foregroundColor !== null && $args['foregroundColor'] = $foregroundColor;
+    $imageSettings !== null && $args['imageSettings'] = $imageSettings;
     return \AmisSchema\Widget\Display\QRCode::make($args);
 }
 
@@ -2130,6 +2160,7 @@ function AmisSparkline(
  * @param mixed $data 
  * @param array $map 映射图标配置
  * @param array $labelMap 映射文本配置
+ * @param array|\AmisSchema\Definition\StatusSource $source Status 状态源配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Status
@@ -2144,6 +2175,7 @@ function AmisStatus(
     mixed $data = null,
     mixed $map = null,
     mixed $labelMap = null,
+    mixed $source = null,
     ...$args
 ): \AmisSchema\Widget\Display\Status
 {
@@ -2156,6 +2188,7 @@ function AmisStatus(
     $data !== null && $args['data'] = $data;
     $map !== null && $args['map'] = $map;
     $labelMap !== null && $args['labelMap'] = $labelMap;
+    $source !== null && $args['source'] = $source;
     return \AmisSchema\Widget\Display\Status::make($args);
 }
 
@@ -2175,6 +2208,7 @@ function AmisStatus(
  * @param string $mode 步骤条模式，horizontal/vertical/simple，默认 'horizontal'
  * @param string $labelPlacement 标签放置位置，horizontal/vertical，默认 'horizontal'
  * @param bool $progressDot 点状步骤条，默认 false
+ * @param string|array|\AmisSchema\Definition\StepsStatus $status Steps 步骤状态配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Steps
@@ -2193,6 +2227,7 @@ function AmisSteps(
     mixed $mode = null,
     mixed $labelPlacement = null,
     mixed $progressDot = null,
+    mixed $status = null,
     ...$args
 ): \AmisSchema\Widget\Display\Steps
 {
@@ -2209,6 +2244,7 @@ function AmisSteps(
     $mode !== null && $args['mode'] = $mode;
     $labelPlacement !== null && $args['labelPlacement'] = $labelPlacement;
     $progressDot !== null && $args['progressDot'] = $progressDot;
+    $status !== null && $args['status'] = $status;
     return \AmisSchema\Widget\Display\Steps::make($args);
 }
 
@@ -2685,6 +2721,7 @@ function AmisTag(
  * @param bool $reverse 是否反向展示时间轴
  * @param string $itemTitleClassName 节点标题的类名
  * @param string $itemDetailClassName 节点详情的类名
+ * @param array|\AmisSchema\Definition\TimelineItem[] $items Timeline 时间轴项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Timeline
@@ -2702,6 +2739,7 @@ function AmisTimeline(
     mixed $reverse = null,
     mixed $itemTitleClassName = null,
     mixed $itemDetailClassName = null,
+    mixed $items = null,
     ...$args
 ): \AmisSchema\Widget\Display\Timeline
 {
@@ -2717,6 +2755,7 @@ function AmisTimeline(
     $reverse !== null && $args['reverse'] = $reverse;
     $itemTitleClassName !== null && $args['itemTitleClassName'] = $itemTitleClassName;
     $itemDetailClassName !== null && $args['itemDetailClassName'] = $itemDetailClassName;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Display\Timeline::make($args);
 }
 
@@ -4266,6 +4305,8 @@ function AmisCheckboxes(
  * @param string $subFormMode 设置子表单模式，可选normal、horizontal、inline，默认为 "normal"
  * @param string $itemClassName 设置单组 CSS 类
  * @param string $itemsWrapperClassName 设置组合区域 CSS 类
+ * @param array|\AmisSchema\Definition\ComboConditions $conditions Combo 组合组件条件配置
+ * @param array|\AmisSchema\Definition\ComboSubFormHorizontal $subFormHorizontal 设置当 subFormMode 为 horizontal 时有用，用来控制 label 的展示占比
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Combo
@@ -4358,6 +4399,8 @@ function AmisCombo(
     mixed $subFormMode = null,
     mixed $itemClassName = null,
     mixed $itemsWrapperClassName = null,
+    mixed $conditions = null,
+    mixed $subFormHorizontal = null,
     ...$args
 ): \AmisSchema\Widget\Input\Combo
 {
@@ -4448,6 +4491,8 @@ function AmisCombo(
     $subFormMode !== null && $args['subFormMode'] = $subFormMode;
     $itemClassName !== null && $args['itemClassName'] = $itemClassName;
     $itemsWrapperClassName !== null && $args['itemsWrapperClassName'] = $itemsWrapperClassName;
+    $conditions !== null && $args['conditions'] = $conditions;
+    $subFormHorizontal !== null && $args['subFormHorizontal'] = $subFormHorizontal;
     return \AmisSchema\Widget\Input\Combo::make($args);
 }
 
@@ -4521,6 +4566,7 @@ function AmisCombo(
  * @param array $formula 设置字段输入控件变成公式编辑器
  * @param bool $showIf 设置开启后条件中额外还能配置启动条件
  * @param array $formulaForIf 设置给 showIF 表达式用的公式信息
+ * @param array|\AmisSchema\Definition\ConditionBuilderInputSettings $inputSettings ConditionBuilder 条件组合组件输入设置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ConditionBuilder
@@ -4593,6 +4639,7 @@ function AmisConditionBuilder(
     mixed $formula = null,
     mixed $showIf = null,
     mixed $formulaForIf = null,
+    mixed $inputSettings = null,
     ...$args
 ): \AmisSchema\Widget\Input\ConditionBuilder
 {
@@ -4663,6 +4710,7 @@ function AmisConditionBuilder(
     $formula !== null && $args['formula'] = $formula;
     $showIf !== null && $args['showIf'] = $showIf;
     $formulaForIf !== null && $args['formulaForIf'] = $formulaForIf;
+    $inputSettings !== null && $args['inputSettings'] = $inputSettings;
     return \AmisSchema\Widget\Input\ConditionBuilder::make($args);
 }
 
@@ -5273,6 +5321,7 @@ function AmisFieldSet(
  * @param mixed $style 
  * @param string $reload 设置提交成功后刷新目标对象。
  * @param string $redirect 设置提交成功后跳转到的地址。
+ * @param array|\AmisSchema\Definition\FormMessages $messages 消息提示覆写，默认消息读取的是 API 返回的消息，但是在此可以覆写它
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -5321,6 +5370,8 @@ function AmisFieldSet(
  * @param string $labelAlign "right" | "left" 设置表单项标签对齐方式，仅在 horizontal 时生效。
  * @param int|string $labelWidth 设置表单项标签自定义宽度。
  * @param bool $inheritData 设置是否共用上层数据域。
+ * @param array|\AmisSchema\Definition\FormHorizontal $horizontal 当 mode 为 horizontal 时有用，用来控制 label 的展示占比
+ * @param array|\AmisSchema\Definition\FormRule[] $rules 设置组合校验规则
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Form
@@ -5334,6 +5385,7 @@ function AmisForm(
     mixed $style = null,
     mixed $reload = null,
     mixed $redirect = null,
+    mixed $messages = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -5382,6 +5434,8 @@ function AmisForm(
     mixed $labelAlign = null,
     mixed $labelWidth = null,
     mixed $inheritData = null,
+    mixed $horizontal = null,
+    mixed $rules = null,
     ...$args
 ): \AmisSchema\Widget\Input\Form
 {
@@ -5393,6 +5447,7 @@ function AmisForm(
     $style !== null && $args['style'] = $style;
     $reload !== null && $args['reload'] = $reload;
     $redirect !== null && $args['redirect'] = $redirect;
+    $messages !== null && $args['messages'] = $messages;
     $onEvent !== null && $args['onEvent'] = $onEvent;
     $visibleOn !== null && $args['visibleOn'] = $visibleOn;
     $disabledOn !== null && $args['disabledOn'] = $disabledOn;
@@ -5441,6 +5496,8 @@ function AmisForm(
     $labelAlign !== null && $args['labelAlign'] = $labelAlign;
     $labelWidth !== null && $args['labelWidth'] = $labelWidth;
     $inheritData !== null && $args['inheritData'] = $inheritData;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $rules !== null && $args['rules'] = $rules;
     return \AmisSchema\Widget\Input\Form::make($args);
 }
 
@@ -6704,6 +6761,7 @@ function AmisInputCity(
  * @param bool $allowCustomColor 设置是否允许自定义颜色，为 false 时只能选择颜色
  * @param bool $clearable 设置是否显示清除按钮
  * @param string $resetValue 设置清除后表单项值调整成该值
+ * @param array|string[]|\AmisSchema\Definition\InputColorPresetColor[] $presetColors InputColor 颜色选择器预设颜色配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputColor
@@ -6796,6 +6854,7 @@ function AmisInputColor(
     mixed $allowCustomColor = null,
     mixed $clearable = null,
     mixed $resetValue = null,
+    mixed $presetColors = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputColor
 {
@@ -6886,6 +6945,7 @@ function AmisInputColor(
     $allowCustomColor !== null && $args['allowCustomColor'] = $allowCustomColor;
     $clearable !== null && $args['clearable'] = $clearable;
     $resetValue !== null && $args['resetValue'] = $resetValue;
+    $presetColors !== null && $args['presetColors'] = $presetColors;
     return \AmisSchema\Widget\Input\InputColor::make($args);
 }
 
@@ -7843,6 +7903,7 @@ function AmisInputExcel(
  * @param bool $initAutoFill 初始表单反显时是否执行
  * @param string $invalidTypeMessage 校验格式失败后的提示信息
  * @param string $invalidSizeMessage 校验文件大小失败时显示的文字信息
+ * @param array|\AmisSchema\Definition\InputFileStateTextMap $stateTextMap InputFile 文件上传状态文本映射
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputFile
@@ -7931,6 +7992,7 @@ function AmisInputFile(
     mixed $initAutoFill = null,
     mixed $invalidTypeMessage = null,
     mixed $invalidSizeMessage = null,
+    mixed $stateTextMap = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputFile
 {
@@ -8017,6 +8079,7 @@ function AmisInputFile(
     $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
     $invalidTypeMessage !== null && $args['invalidTypeMessage'] = $invalidTypeMessage;
     $invalidSizeMessage !== null && $args['invalidSizeMessage'] = $invalidSizeMessage;
+    $stateTextMap !== null && $args['stateTextMap'] = $stateTextMap;
     return \AmisSchema\Widget\Input\InputFile::make($args);
 }
 
@@ -8090,6 +8153,7 @@ function AmisInputFile(
  * @param string $variableClassName 变量面板 CSS 样式类名
  * @param string $functionClassName 函数面板 CSS 样式类名
  * @param bool $mixedMode 是否启用混合模式，支持输入文本和输入公式
+ * @param array|\AmisSchema\Definition\InputFormulaVariable[] $variables InputFormula 公式编辑器变量配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputFormula
@@ -8162,6 +8226,7 @@ function AmisInputFormula(
     mixed $variableClassName = null,
     mixed $functionClassName = null,
     mixed $mixedMode = null,
+    mixed $variables = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputFormula
 {
@@ -8232,6 +8297,7 @@ function AmisInputFormula(
     $variableClassName !== null && $args['variableClassName'] = $variableClassName;
     $functionClassName !== null && $args['functionClassName'] = $functionClassName;
     $mixedMode !== null && $args['mixedMode'] = $mixedMode;
+    $variables !== null && $args['variables'] = $variables;
     return \AmisSchema\Widget\Input\InputFormula::make($args);
 }
 
@@ -8291,6 +8357,7 @@ function AmisInputFormula(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param array|\AmisSchema\Definition\InputGroupValidationConfig $validationConfig InputGroup 输入框组合验证配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputGroup
@@ -8349,6 +8416,7 @@ function AmisInputGroup(
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
     mixed $unique = null,
+    mixed $validationConfig = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputGroup
 {
@@ -8405,6 +8473,7 @@ function AmisInputGroup(
     $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
     $columnClassName !== null && $args['columnClassName'] = $columnClassName;
     $unique !== null && $args['unique'] = $unique;
+    $validationConfig !== null && $args['validationConfig'] = $validationConfig;
     return \AmisSchema\Widget\Input\InputGroup::make($args);
 }
 
@@ -8489,6 +8558,8 @@ function AmisInputGroup(
  * @param bool $showErrorModal 校验失败后是否弹窗提醒
  * @param string $invalidTypeMessage 校验格式失败后的提示信息
  * @param string $invalidSizeMessage 校验文件大小失败时显示的文字信息
+ * @param bool|array|\AmisSchema\Definition\InputImageCrop $crop InputImage 图片裁剪配置
+ * @param array|\AmisSchema\Definition\InputImageLimit $limit 限制图片大小，超出不让上传
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputImage
@@ -8572,6 +8643,8 @@ function AmisInputImage(
     mixed $showErrorModal = null,
     mixed $invalidTypeMessage = null,
     mixed $invalidSizeMessage = null,
+    mixed $crop = null,
+    mixed $limit = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputImage
 {
@@ -8653,6 +8726,8 @@ function AmisInputImage(
     $showErrorModal !== null && $args['showErrorModal'] = $showErrorModal;
     $invalidTypeMessage !== null && $args['invalidTypeMessage'] = $invalidTypeMessage;
     $invalidSizeMessage !== null && $args['invalidSizeMessage'] = $invalidSizeMessage;
+    $crop !== null && $args['crop'] = $crop;
+    $limit !== null && $args['limit'] = $limit;
     return \AmisSchema\Widget\Input\InputImage::make($args);
 }
 
@@ -9661,6 +9736,8 @@ function AmisInputNumber(
  * @param string $inputControlClassName 设置 control 节点的 CSS 类名
  * @param string $nativeInputClassName 设置原生 input 标签的 CSS 类名
  * @param string $nativeAutoComplete 设置原生 input 标签的 autoComplete 属性
+ * @param array|\AmisSchema\Definition\InputTextAddOn $addOn InputText 文本输入框附加组件配置
+ * @param array|\AmisSchema\Definition\InputTextTransform $transform 设置自动转换值
  * @param bool $revealPassword 是否展示密码显/隐按钮
  * @param mixed ...$args 其他参数
  * 
@@ -9732,6 +9809,8 @@ function AmisInputPassword(
     mixed $inputControlClassName = null,
     mixed $nativeInputClassName = null,
     mixed $nativeAutoComplete = null,
+    mixed $addOn = null,
+    mixed $transform = null,
     mixed $revealPassword = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputPassword
@@ -9801,6 +9880,8 @@ function AmisInputPassword(
     $inputControlClassName !== null && $args['inputControlClassName'] = $inputControlClassName;
     $nativeInputClassName !== null && $args['nativeInputClassName'] = $nativeInputClassName;
     $nativeAutoComplete !== null && $args['nativeAutoComplete'] = $nativeAutoComplete;
+    $addOn !== null && $args['addOn'] = $addOn;
+    $transform !== null && $args['transform'] = $transform;
     $revealPassword !== null && $args['revealPassword'] = $revealPassword;
     return \AmisSchema\Widget\Input\InputPassword::make($args);
 }
@@ -10206,7 +10287,7 @@ function AmisInputQuarterRange(
  * @param string $labelField 设置标识选项中哪个字段是label值，默认为 "label"
  * @param string $valueField 设置标识选项中哪个字段是value值，默认为 "value"
  * @param string $deferField 设置标识选项中哪个字段是defer值，默认为 "defer"
- * @param bool $joinValues 设置默认为 true，选择的 value 会通过 delimiter 连接起来，否则直接将以{ * min: 1, max: 100 * }的形式提交
+ * @param bool $joinValues 设置默认为 true，选择的 value 会通过 delimiter 连接起来，否则直接将以{ min: 1, max: 100 }的形式提交
  * @param bool $extractValue 设置是否将value值抽取出来组成新的数组，只有在joinValues是false时生效，默认为 false
  * @param string $delimiter 设置分隔符，默认为,
  * @param int $itemHeight 设置每个选项的高度，用于虚拟渲染，默认为 32
@@ -10242,6 +10323,7 @@ function AmisInputQuarterRange(
  * @param bool $clearable 设置是否可清除
  * @param bool $showInput 设置是否显示输入框
  * @param bool $showInputUnit 设置是否显示输入框单位
+ * @param array|\AmisSchema\Definition\InputRangeMark[] $marks InputRange 滑块标记配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputRange
@@ -10341,6 +10423,7 @@ function AmisInputRange(
     mixed $clearable = null,
     mixed $showInput = null,
     mixed $showInputUnit = null,
+    mixed $marks = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputRange
 {
@@ -10438,6 +10521,7 @@ function AmisInputRange(
     $clearable !== null && $args['clearable'] = $clearable;
     $showInput !== null && $args['showInput'] = $showInput;
     $showInputUnit !== null && $args['showInputUnit'] = $showInputUnit;
+    $marks !== null && $args['marks'] = $marks;
     return \AmisSchema\Widget\Input\InputRange::make($args);
 }
 
@@ -11513,6 +11597,7 @@ function AmisInputSubForm(
  * @param string $deleteConfirmText 设置删除确认文字
  * @param string $valueField 设置可以用来设置在什么字段上保存数组信息
  * @param string $subAddBtnIcon 
+ * @param array|\AmisSchema\Definition\InputTableColumn[] $columns InputTable 表格列配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTable
@@ -11608,6 +11693,7 @@ function AmisInputTable(
     mixed $deleteConfirmText = null,
     mixed $valueField = null,
     mixed $subAddBtnIcon = null,
+    mixed $columns = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputTable
 {
@@ -11701,6 +11787,7 @@ function AmisInputTable(
     $deleteConfirmText !== null && $args['deleteConfirmText'] = $deleteConfirmText;
     $valueField !== null && $args['valueField'] = $valueField;
     $subAddBtnIcon !== null && $args['subAddBtnIcon'] = $subAddBtnIcon;
+    $columns !== null && $args['columns'] = $columns;
     return \AmisSchema\Widget\Input\InputTable::make($args);
 }
 
@@ -11798,6 +11885,7 @@ function AmisInputTable(
  * @param int $maxTagCount 设置标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
  * @param bool $enableBatchAdd 设置是否开启批量添加模式
  * @param string $separator 设置开启批量添加后，输入多个标签的分隔符，支持传入多个符号
+ * @param array|\AmisSchema\Definition\InputTagOverflowTagPopover|\AmisSchema\Widget\Function\TooltipWrapper $overflowTagPopover InputTag 标签溢出弹窗配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTag
@@ -11894,6 +11982,7 @@ function AmisInputTag(
     mixed $maxTagCount = null,
     mixed $enableBatchAdd = null,
     mixed $separator = null,
+    mixed $overflowTagPopover = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputTag
 {
@@ -11988,6 +12077,7 @@ function AmisInputTag(
     $maxTagCount !== null && $args['maxTagCount'] = $maxTagCount;
     $enableBatchAdd !== null && $args['enableBatchAdd'] = $enableBatchAdd;
     $separator !== null && $args['separator'] = $separator;
+    $overflowTagPopover !== null && $args['overflowTagPopover'] = $overflowTagPopover;
     return \AmisSchema\Widget\Input\InputTag::make($args);
 }
 
@@ -12059,6 +12149,8 @@ function AmisInputTag(
  * @param string $inputControlClassName 设置 control 节点的 CSS 类名
  * @param string $nativeInputClassName 设置原生 input 标签的 CSS 类名
  * @param string $nativeAutoComplete 设置原生 input 标签的 autoComplete 属性
+ * @param array|\AmisSchema\Definition\InputTextAddOn $addOn InputText 文本输入框附加组件配置
+ * @param array|\AmisSchema\Definition\InputTextTransform $transform 设置自动转换值
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputText
@@ -12129,6 +12221,8 @@ function AmisInputText(
     mixed $inputControlClassName = null,
     mixed $nativeInputClassName = null,
     mixed $nativeAutoComplete = null,
+    mixed $addOn = null,
+    mixed $transform = null,
     ...$args
 ): \AmisSchema\Widget\Input\InputText
 {
@@ -12197,6 +12291,8 @@ function AmisInputText(
     $inputControlClassName !== null && $args['inputControlClassName'] = $inputControlClassName;
     $nativeInputClassName !== null && $args['nativeInputClassName'] = $nativeInputClassName;
     $nativeAutoComplete !== null && $args['nativeAutoComplete'] = $nativeAutoComplete;
+    $addOn !== null && $args['addOn'] = $addOn;
+    $transform !== null && $args['transform'] = $transform;
     return \AmisSchema\Widget\Input\InputText::make($args);
 }
 
@@ -13775,7 +13871,7 @@ function AmisListSelect(
  * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param string $label 设置表单项标签。
- * @param mixed $value 设置默认值。
+ * @param array|\AmisSchema\Definition\LocationPickerValue $value LocationPicker 地理位置值配置
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
  * @param bool $disabled 设置当前表单项是否为禁用状态。
@@ -13820,7 +13916,7 @@ function AmisListSelect(
  * @param string $staticClassName 设置静态展示时的类名。
  * @param string $staticLabelClassName 设置静态展示时的 Label 的类名。
  * @param string $staticInputClassName 设置静态展示时的 value 的类名。
- * @param \AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[]|string $staticSchema 设置自定义静态展示方式。
+ * @param array|\AmisSchema\Definition\LocationPickerStaticSchema $staticSchema 静态展示，内嵌模式时的额外配置
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
@@ -14248,6 +14344,7 @@ function AmisMatrixCheckboxes(
  * @param bool $hideNodePathLabel 是否隐藏选择框中已选择节点的路径 label 信息
  * @param bool $onlyLeaf 只允许选择叶子节点
  * @param int $maxTagCount 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
+ * @param array|\AmisSchema\Definition\NestedSelectOverflowTagPopover $overflowTagPopover NestedSelect 级联选择器溢出标签弹窗配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\NestedSelect
@@ -14344,6 +14441,7 @@ function AmisNestedSelect(
     mixed $hideNodePathLabel = null,
     mixed $onlyLeaf = null,
     mixed $maxTagCount = null,
+    mixed $overflowTagPopover = null,
     ...$args
 ): \AmisSchema\Widget\Input\NestedSelect
 {
@@ -14438,6 +14536,7 @@ function AmisNestedSelect(
     $hideNodePathLabel !== null && $args['hideNodePathLabel'] = $hideNodePathLabel;
     $onlyLeaf !== null && $args['onlyLeaf'] = $onlyLeaf;
     $maxTagCount !== null && $args['maxTagCount'] = $maxTagCount;
+    $overflowTagPopover !== null && $args['overflowTagPopover'] = $overflowTagPopover;
     return \AmisSchema\Widget\Input\NestedSelect::make($args);
 }
 
@@ -14796,6 +14895,7 @@ function AmisOptions(
  * @param array $pickerSchema 即用 List 类型的渲染，来展示列表信息。更多配置参考 CRUD
  * @param bool $embed 是否使用内嵌模式
  * @param bool $itemClearable 用于控制是否显示选中项的删除图标
+ * @param array|\AmisSchema\Definition\PickerOverflowConfig $overflowConfig Picker 列表选择器溢出配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Picker
@@ -14890,6 +14990,7 @@ function AmisPicker(
     mixed $pickerSchema = null,
     mixed $embed = null,
     mixed $itemClearable = null,
+    mixed $overflowConfig = null,
     ...$args
 ): \AmisSchema\Widget\Input\Picker
 {
@@ -14982,6 +15083,7 @@ function AmisPicker(
     $pickerSchema !== null && $args['pickerSchema'] = $pickerSchema;
     $embed !== null && $args['embed'] = $embed;
     $itemClearable !== null && $args['itemClearable'] = $itemClearable;
+    $overflowConfig !== null && $args['overflowConfig'] = $overflowConfig;
     return \AmisSchema\Widget\Input\Picker::make($args);
 }
 
@@ -15534,6 +15636,7 @@ function AmisRadios(
  * @param string $popOverContainerSelector 设置弹层挂载位置选择器，会通过querySelector获取
  * @param bool $showInvalidMatch 设置选项值与选项组不匹配时选项值是否飘红，默认为 false
  * @param string $noResultsText 设置无结果时的文本，默认为 未找到任何结果
+ * @param array|\AmisSchema\Definition\SelectOverlay $overlay Select 下拉框覆盖层配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Select
@@ -15640,6 +15743,7 @@ function AmisSelect(
     mixed $popOverContainerSelector = null,
     mixed $showInvalidMatch = null,
     mixed $noResultsText = null,
+    mixed $overlay = null,
     ...$args
 ): \AmisSchema\Widget\Input\Select
 {
@@ -15744,6 +15848,7 @@ function AmisSelect(
     $popOverContainerSelector !== null && $args['popOverContainerSelector'] = $popOverContainerSelector;
     $showInvalidMatch !== null && $args['showInvalidMatch'] = $showInvalidMatch;
     $noResultsText !== null && $args['noResultsText'] = $noResultsText;
+    $overlay !== null && $args['overlay'] = $overlay;
     return \AmisSchema\Widget\Input\Select::make($args);
 }
 
@@ -16187,6 +16292,7 @@ function AmisSwitch(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param array|\AmisSchema\Definition\TransferPagination $pagination Transfer 穿梭器分页配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\TabsTransfer
@@ -16262,6 +16368,7 @@ function AmisTabsTransfer(
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
     mixed $valueTpl = null,
+    mixed $pagination = null,
     ...$args
 ): \AmisSchema\Widget\Input\TabsTransfer
 {
@@ -16335,6 +16442,7 @@ function AmisTabsTransfer(
     $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
     $menuTpl !== null && $args['menuTpl'] = $menuTpl;
     $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $pagination !== null && $args['pagination'] = $pagination;
     return \AmisSchema\Widget\Input\TabsTransfer::make($args);
 }
 
@@ -16411,6 +16519,7 @@ function AmisTabsTransfer(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param array|\AmisSchema\Definition\TransferPagination $pagination Transfer 穿梭器分页配置
  * @param string $borderMode 设置边框模式，全边框，还是半边框，或者没边框
  * @param string $modalMode 设置弹出方式，dialog 或者 drawer
  * @param string $modalTitle 设置弹窗标题
@@ -16492,6 +16601,7 @@ function AmisTabsTransferPicker(
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
     mixed $valueTpl = null,
+    mixed $pagination = null,
     mixed $borderMode = null,
     mixed $modalMode = null,
     mixed $modalTitle = null,
@@ -16571,6 +16681,7 @@ function AmisTabsTransferPicker(
     $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
     $menuTpl !== null && $args['menuTpl'] = $menuTpl;
     $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $pagination !== null && $args['pagination'] = $pagination;
     $borderMode !== null && $args['borderMode'] = $borderMode;
     $modalMode !== null && $args['modalMode'] = $modalMode;
     $modalTitle !== null && $args['modalTitle'] = $modalTitle;
@@ -16844,6 +16955,7 @@ function AmisTextarea(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param array|\AmisSchema\Definition\TransferPagination $pagination Transfer 穿梭器分页配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Transfer
@@ -16919,6 +17031,7 @@ function AmisTransfer(
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
     mixed $valueTpl = null,
+    mixed $pagination = null,
     ...$args
 ): \AmisSchema\Widget\Input\Transfer
 {
@@ -16992,6 +17105,7 @@ function AmisTransfer(
     $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
     $menuTpl !== null && $args['menuTpl'] = $menuTpl;
     $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $pagination !== null && $args['pagination'] = $pagination;
     return \AmisSchema\Widget\Input\Transfer::make($args);
 }
 
@@ -17068,6 +17182,7 @@ function AmisTransfer(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param array|\AmisSchema\Definition\TransferPagination $pagination Transfer 穿梭器分页配置
  * @param string $borderMode 设置边框模式，全边框，还是半边框，或者没边框
  * @param string $modalMode 设置弹出方式，dialog 或者 drawer
  * @param string $modalTitle 设置弹窗标题
@@ -17149,6 +17264,7 @@ function AmisTransferPicker(
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
     mixed $valueTpl = null,
+    mixed $pagination = null,
     mixed $borderMode = null,
     mixed $modalMode = null,
     mixed $modalTitle = null,
@@ -17228,6 +17344,7 @@ function AmisTransferPicker(
     $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
     $menuTpl !== null && $args['menuTpl'] = $menuTpl;
     $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $pagination !== null && $args['pagination'] = $pagination;
     $borderMode !== null && $args['borderMode'] = $borderMode;
     $modalMode !== null && $args['modalMode'] = $modalMode;
     $modalTitle !== null && $args['modalTitle'] = $modalTitle;
@@ -18676,6 +18793,7 @@ function AmisAction(
  * @param string $linkClassName 导航 Dom 的类名
  * @param string $sectionClassName 锚点区域 Dom 的类名
  * @param string $direction 可以配置导航水平展示还是垂直展示。对应的配置项分别是：vertical、horizontal
+ * @param array|\AmisSchema\Definition\AnchorNavLink[] $links 锚点导航链接配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\AnchorNav
@@ -18691,6 +18809,7 @@ function AmisAnchorNav(
     mixed $linkClassName = null,
     mixed $sectionClassName = null,
     mixed $direction = null,
+    mixed $links = null,
     ...$args
 ): \AmisSchema\Widget\Function\AnchorNav
 {
@@ -18704,6 +18823,7 @@ function AmisAnchorNav(
     $linkClassName !== null && $args['linkClassName'] = $linkClassName;
     $sectionClassName !== null && $args['sectionClassName'] = $sectionClassName;
     $direction !== null && $args['direction'] = $direction;
+    $links !== null && $args['links'] = $links;
     return \AmisSchema\Widget\Function\AnchorNav::make($args);
 }
 
@@ -18780,6 +18900,7 @@ function AmisApp(
  * @param int $labelMaxLength 最大展示长度
  * @param string $tooltipPosition 浮窗提示位置
  * @param string|array|\AmisSchema\Definition\API $source 动态数据
+ * @param \AmisSchema\Definition\BreadcrumbItem $items Breadcrumb 面包屑项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Breadcrumb
@@ -18799,6 +18920,7 @@ function AmisBreadcrumb(
     mixed $labelMaxLength = null,
     mixed $tooltipPosition = null,
     mixed $source = null,
+    mixed $items = null,
     ...$args
 ): \AmisSchema\Widget\Function\Breadcrumb
 {
@@ -18816,6 +18938,7 @@ function AmisBreadcrumb(
     $labelMaxLength !== null && $args['labelMaxLength'] = $labelMaxLength;
     $tooltipPosition !== null && $args['tooltipPosition'] = $tooltipPosition;
     $source !== null && $args['source'] = $source;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Function\Breadcrumb::make($args);
 }
 
@@ -19256,6 +19379,7 @@ function AmisNav(
  * @param array|\AmisSchema\Definition\API|string $api 初始化数据域接口地址
  * @param string $className 外层 Dom 的类名
  * @param mixed $style 
+ * @param \AmisSchema\Definition\ServiceMessages $messages Service 功能型容器消息配置
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -19278,6 +19402,7 @@ function AmisService(
     mixed $api = null,
     mixed $className = null,
     mixed $style = null,
+    mixed $messages = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -19298,6 +19423,7 @@ function AmisService(
     $api !== null && $args['api'] = $api;
     $className !== null && $args['className'] = $className;
     $style !== null && $args['style'] = $style;
+    $messages !== null && $args['messages'] = $messages;
     $onEvent !== null && $args['onEvent'] = $onEvent;
     $visibleOn !== null && $args['visibleOn'] = $visibleOn;
     $disabledOn !== null && $args['disabledOn'] = $disabledOn;
@@ -19701,6 +19827,7 @@ function AmisSpinner(
  * @param bool $showIcon 是否展示图标
  * @param int $timeout 持续时间，error类型为6000，移动端为3000
  * @param bool $allowHtml 是否会被当作 HTML 片段处理
+ * @param array|\AmisSchema\Definition\ToastItem[] $items Toast 轻提示项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Toast
@@ -19720,6 +19847,7 @@ function AmisToast(
     mixed $showIcon = null,
     mixed $timeout = null,
     mixed $allowHtml = null,
+    mixed $items = null,
     ...$args
 ): \AmisSchema\Widget\Feedback\Toast
 {
@@ -19737,6 +19865,7 @@ function AmisToast(
     $showIcon !== null && $args['showIcon'] = $showIcon;
     $timeout !== null && $args['timeout'] = $timeout;
     $allowHtml !== null && $args['allowHtml'] = $allowHtml;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Feedback\Toast::make($args);
 }
 
@@ -20011,6 +20140,7 @@ function AmisBadge(
  * @param string $retryBtnClassName 配置容器重试按钮 className
  * @param array $statusLabelMap 状态显示对应的类名配置
  * @param array $statusTextMap 状态显示对应的文字显示配置
+ * @param array|\AmisSchema\Definition\TasksItem[] $items Tasks 任务项配置
  * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Tasks
@@ -20037,6 +20167,7 @@ function AmisTasks(
     mixed $retryBtnClassName = null,
     mixed $statusLabelMap = null,
     mixed $statusTextMap = null,
+    mixed $items = null,
     ...$args
 ): \AmisSchema\Widget\Extra\Tasks
 {
@@ -20061,6 +20192,7 @@ function AmisTasks(
     $retryBtnClassName !== null && $args['retryBtnClassName'] = $retryBtnClassName;
     $statusLabelMap !== null && $args['statusLabelMap'] = $statusLabelMap;
     $statusTextMap !== null && $args['statusTextMap'] = $statusTextMap;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Extra\Tasks::make($args);
 }
 

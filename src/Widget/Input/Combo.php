@@ -11,7 +11,7 @@ use AmisSchema\Widget\Function\Button;
  *
  * 用于将多个表单项组合到一起，实现深层结构的数据编辑
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/combo
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/combo
  *
  * @method $this formClassName(string $value) 设置单组表单项的类名
  * @method $this items(array|FormItem[] $value) 设置组合展示的表单项

@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 用于展示日历和日程
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/calendar
+ *
  * @method $this type(string $value = 'calendar') 指定为 calendar 渲染器，默认 'calendar'
  * @method $this schedules(array|string $value = []) 日历中展示日程，可设置静态数据或从上下文中取数据，默认 []
  * @method $this scheduleClassNames(array $value = ['bg-warning', 'bg-danger', 'bg-success', 'bg-info', 'bg-secondary']) 日历中展示日程的颜色，参考背景色，默认 ['bg-warning', 'bg-danger', 'bg-success', 'bg-info', 'bg-secondary']

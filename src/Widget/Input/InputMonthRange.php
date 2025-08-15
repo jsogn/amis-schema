@@ -10,7 +10,7 @@ use AmisSchema\Trait\InputTimeRangeWidgetTrait;
  *
  * 月份范围选择器，支持选择月份范围
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-month-range
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-month-range
  *
  * @method $this format(string $value = 'X') 设置日期选择器值格式，默认为 "X"
  * @method $this inputFormat(string $value = 'YYYY-DD') 设置日期选择器显示格式，默认为 "YYYY-DD"

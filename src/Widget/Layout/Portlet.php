@@ -8,7 +8,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Portlet 组件，AMis 门户栏目渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/portlet
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/portlet
  *
  * @method $this tabsClassName(string $value = '') Tabs Dom 的类名
  * @method $this contentClassName(string $value = '') Tabs content Dom 的类名

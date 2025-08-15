@@ -10,7 +10,7 @@ use AmisSchema\Trait\InputTimeWidgetTrait;
  *
  * 月份选择器，用于选择月份
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-month
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-month
  */
 class InputMonth extends FormItem
 {

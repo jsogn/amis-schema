@@ -8,7 +8,7 @@ use AmisSchema\Widget\Widget;
 /**
  * Pagination 组件，AMis 分页渲染器。
  *
- * @link https://baidu.github.io/amis/zh-CN/components/pagination
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/pagination
  *
  * @method $this mode(string $value = 'normal') 迷你版本/简易版本，可选值：'normal'、'simple'
  * @method $this layout(string|string[] $value = ['pager']) 通过控制 layout 属性的顺序，调整分页结构布局

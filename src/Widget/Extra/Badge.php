@@ -11,6 +11,8 @@ use AmisSchema\Widget\Widget;
  * 
  * 部分组件可以设置 badge 属性来显示角标
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/badge
+ *
  * @method $this mode(string $value = 'dot') 角标类型：dot-点状、text-文字、ribbon-缎带
  * @method $this text(string|int $value = '') 角标文案，支持字符串和数字，在 mode='dot' 下设置无效
  * @method $this size(int $value = null) 角标大小

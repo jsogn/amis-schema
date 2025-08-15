@@ -9,6 +9,8 @@ use AmisSchema\Widget\Widget;
  *
  * 宫格菜单导航，不支持配置初始化接口初始化数据域，需要搭配 Service、Form 或 CRUD 等组件使用
  *
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/grid-nav
+ *
  * @method $this type(string $value = 'grid-nav') 指定为 GridNav 渲染器，默认 'grid-nav'
  * @method $this itemClassName(string $value = '') 列表项 css 类名，默认 ''
  * @method $this contentClassName(string $value = '') 列表项内容 css 类名，默认 ''

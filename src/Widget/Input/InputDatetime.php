@@ -10,7 +10,7 @@ use AmisSchema\Trait\InputTimeWidgetTrait;
  *
  * 日期时间选择器，在日期选择器的基础上增加了时间选择
  *
- * @link https://baidu.github.io/amis/zh-CN/components/form/input-datetime
+ * @link https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-datetime
  */
 class InputDatetime extends FormItem
 {
