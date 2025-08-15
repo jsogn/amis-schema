@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Amis Schema 组件助手函数
  * 
  * 提供类似 Flutter 的组件调用方式
- * 生成时间: 2025-08-14 18:59:50
+ * 生成时间: 2025-08-15 10:25:43
  */
 
 /**
@@ -20,6 +20,7 @@ declare(strict_types=1);
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\BarCode
  */
@@ -31,29 +32,29 @@ function AmisBarCode(
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
-    mixed $data = null
+    mixed $data = null,
+    ...$args
 ): \AmisSchema\Widget\Display\BarCode
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
     return \AmisSchema\Widget\Display\BarCode::make($args);
 }
 
 /**
  * 创建 CRUD 组件
  * 
+ * @param string $type 指定为 CRUD 渲染器，默认 'crud'
  * @param string $title 可设置成空，当设置成空时，没有标题栏，默认 '列表'
  * @param \AmisSchema\Definition\API|string $api CRUD 用来获取列表数据的 api
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 CRUD 渲染器，默认 'crud'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -114,15 +115,16 @@ function AmisBarCode(
  * @param mixed $itemAction 单行点击操作
  * @param bool $selectable 支持勾选，默认 true
  * @param bool $multiple 勾选 icon 是否为多选样式，默认 true
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\CRUD
  */
 function AmisCRUD(
+    mixed $type = null,
     mixed $title = null,
     mixed $api = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -182,84 +184,84 @@ function AmisCRUD(
     mixed $checkOnItemClick = null,
     mixed $itemAction = null,
     mixed $selectable = null,
-    mixed $multiple = null
+    mixed $multiple = null,
+    ...$args
 ): \AmisSchema\Widget\Display\CRUD
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($deferApi !== null) $args['deferApi'] = $deferApi;
-    if ($loadDataOnce !== null) $args['loadDataOnce'] = $loadDataOnce;
-    if ($loadDataOnceFetchOnFilter !== null) $args['loadDataOnceFetchOnFilter'] = $loadDataOnceFetchOnFilter;
-    if ($source !== null) $args['source'] = $source;
-    if ($filter !== null) $args['filter'] = $filter;
-    if ($filterTogglable !== null) $args['filterTogglable'] = $filterTogglable;
-    if ($filterDefaultVisible !== null) $args['filterDefaultVisible'] = $filterDefaultVisible;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($silentPolling !== null) $args['silentPolling'] = $silentPolling;
-    if ($stopAutoRefreshWhen !== null) $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
-    if ($stopAutoRefreshWhenModalIsOpen !== null) $args['stopAutoRefreshWhenModalIsOpen'] = $stopAutoRefreshWhenModalIsOpen;
-    if ($syncLocation !== null) $args['syncLocation'] = $syncLocation;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($resizable !== null) $args['resizable'] = $resizable;
-    if ($itemDraggableOn !== null) $args['itemDraggableOn'] = $itemDraggableOn;
-    if ($saveOrderApi !== null) $args['saveOrderApi'] = $saveOrderApi;
-    if ($quickSaveApi !== null) $args['quickSaveApi'] = $quickSaveApi;
-    if ($quickSaveItemApi !== null) $args['quickSaveItemApi'] = $quickSaveItemApi;
-    if ($bulkActions !== null) $args['bulkActions'] = $bulkActions;
-    if ($primaryField !== null) $args['primaryField'] = $primaryField;
-    if ($perPage !== null) $args['perPage'] = $perPage;
-    if ($orderBy !== null) $args['orderBy'] = $orderBy;
-    if ($orderDir !== null) $args['orderDir'] = $orderDir;
-    if ($defaultParams !== null) $args['defaultParams'] = $defaultParams;
-    if ($pageField !== null) $args['pageField'] = $pageField;
-    if ($perPageField !== null) $args['perPageField'] = $perPageField;
-    if ($perPageAvailable !== null) $args['perPageAvailable'] = $perPageAvailable;
-    if ($orderField !== null) $args['orderField'] = $orderField;
-    if ($hideQuickSaveBtn !== null) $args['hideQuickSaveBtn'] = $hideQuickSaveBtn;
-    if ($autoJumpToTopOnPagerChange !== null) $args['autoJumpToTopOnPagerChange'] = $autoJumpToTopOnPagerChange;
-    if ($syncResponse2Query !== null) $args['syncResponse2Query'] = $syncResponse2Query;
-    if ($keepItemSelectionOnPageChange !== null) $args['keepItemSelectionOnPageChange'] = $keepItemSelectionOnPageChange;
-    if ($labelTpl !== null) $args['labelTpl'] = $labelTpl;
-    if ($maxKeepItemSelectionLength !== null) $args['maxKeepItemSelectionLength'] = $maxKeepItemSelectionLength;
-    if ($maxItemSelectionLength !== null) $args['maxItemSelectionLength'] = $maxItemSelectionLength;
-    if ($headerToolbar !== null) $args['headerToolbar'] = $headerToolbar;
-    if ($footerToolbar !== null) $args['footerToolbar'] = $footerToolbar;
-    if ($alwaysShowPagination !== null) $args['alwaysShowPagination'] = $alwaysShowPagination;
-    if ($affixHeader !== null) $args['affixHeader'] = $affixHeader;
-    if ($affixFooter !== null) $args['affixFooter'] = $affixFooter;
-    if ($autoGenerateFilter !== null) $args['autoGenerateFilter'] = $autoGenerateFilter;
-    if ($resetPageAfterAjaxItemAction !== null) $args['resetPageAfterAjaxItemAction'] = $resetPageAfterAjaxItemAction;
-    if ($autoFillHeight !== null) $args['autoFillHeight'] = $autoFillHeight;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
-    if ($matchFunc !== null) $args['matchFunc'] = $matchFunc;
-    if ($parsePrimitiveQuery !== null) $args['parsePrimitiveQuery'] = $parsePrimitiveQuery;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($card !== null) $args['card'] = $card;
-    if ($listItem !== null) $args['listItem'] = $listItem;
-    if ($itemCheckableOn !== null) $args['itemCheckableOn'] = $itemCheckableOn;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($itemAction !== null) $args['itemAction'] = $itemAction;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($multiple !== null) $args['multiple'] = $multiple;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $deferApi !== null && $args['deferApi'] = $deferApi;
+    $loadDataOnce !== null && $args['loadDataOnce'] = $loadDataOnce;
+    $loadDataOnceFetchOnFilter !== null && $args['loadDataOnceFetchOnFilter'] = $loadDataOnceFetchOnFilter;
+    $source !== null && $args['source'] = $source;
+    $filter !== null && $args['filter'] = $filter;
+    $filterTogglable !== null && $args['filterTogglable'] = $filterTogglable;
+    $filterDefaultVisible !== null && $args['filterDefaultVisible'] = $filterDefaultVisible;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $interval !== null && $args['interval'] = $interval;
+    $silentPolling !== null && $args['silentPolling'] = $silentPolling;
+    $stopAutoRefreshWhen !== null && $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
+    $stopAutoRefreshWhenModalIsOpen !== null && $args['stopAutoRefreshWhenModalIsOpen'] = $stopAutoRefreshWhenModalIsOpen;
+    $syncLocation !== null && $args['syncLocation'] = $syncLocation;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $resizable !== null && $args['resizable'] = $resizable;
+    $itemDraggableOn !== null && $args['itemDraggableOn'] = $itemDraggableOn;
+    $saveOrderApi !== null && $args['saveOrderApi'] = $saveOrderApi;
+    $quickSaveApi !== null && $args['quickSaveApi'] = $quickSaveApi;
+    $quickSaveItemApi !== null && $args['quickSaveItemApi'] = $quickSaveItemApi;
+    $bulkActions !== null && $args['bulkActions'] = $bulkActions;
+    $primaryField !== null && $args['primaryField'] = $primaryField;
+    $perPage !== null && $args['perPage'] = $perPage;
+    $orderBy !== null && $args['orderBy'] = $orderBy;
+    $orderDir !== null && $args['orderDir'] = $orderDir;
+    $defaultParams !== null && $args['defaultParams'] = $defaultParams;
+    $pageField !== null && $args['pageField'] = $pageField;
+    $perPageField !== null && $args['perPageField'] = $perPageField;
+    $perPageAvailable !== null && $args['perPageAvailable'] = $perPageAvailable;
+    $orderField !== null && $args['orderField'] = $orderField;
+    $hideQuickSaveBtn !== null && $args['hideQuickSaveBtn'] = $hideQuickSaveBtn;
+    $autoJumpToTopOnPagerChange !== null && $args['autoJumpToTopOnPagerChange'] = $autoJumpToTopOnPagerChange;
+    $syncResponse2Query !== null && $args['syncResponse2Query'] = $syncResponse2Query;
+    $keepItemSelectionOnPageChange !== null && $args['keepItemSelectionOnPageChange'] = $keepItemSelectionOnPageChange;
+    $labelTpl !== null && $args['labelTpl'] = $labelTpl;
+    $maxKeepItemSelectionLength !== null && $args['maxKeepItemSelectionLength'] = $maxKeepItemSelectionLength;
+    $maxItemSelectionLength !== null && $args['maxItemSelectionLength'] = $maxItemSelectionLength;
+    $headerToolbar !== null && $args['headerToolbar'] = $headerToolbar;
+    $footerToolbar !== null && $args['footerToolbar'] = $footerToolbar;
+    $alwaysShowPagination !== null && $args['alwaysShowPagination'] = $alwaysShowPagination;
+    $affixHeader !== null && $args['affixHeader'] = $affixHeader;
+    $affixFooter !== null && $args['affixFooter'] = $affixFooter;
+    $autoGenerateFilter !== null && $args['autoGenerateFilter'] = $autoGenerateFilter;
+    $resetPageAfterAjaxItemAction !== null && $args['resetPageAfterAjaxItemAction'] = $resetPageAfterAjaxItemAction;
+    $autoFillHeight !== null && $args['autoFillHeight'] = $autoFillHeight;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
+    $matchFunc !== null && $args['matchFunc'] = $matchFunc;
+    $parsePrimitiveQuery !== null && $args['parsePrimitiveQuery'] = $parsePrimitiveQuery;
+    $columns !== null && $args['columns'] = $columns;
+    $card !== null && $args['card'] = $card;
+    $listItem !== null && $args['listItem'] = $listItem;
+    $itemCheckableOn !== null && $args['itemCheckableOn'] = $itemCheckableOn;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $itemAction !== null && $args['itemAction'] = $itemAction;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $multiple !== null && $args['multiple'] = $multiple;
     return \AmisSchema\Widget\Display\CRUD::make($args);
 }
 
 /**
  * 创建 Calendar 组件
  * 
+ * @param string $type 指定为 calendar 渲染器，默认 'calendar'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 calendar 渲染器，默认 'calendar'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -269,13 +271,14 @@ function AmisCRUD(
  * @param array|\AmisSchema\Widget\Widget $scheduleAction 自定义日程展示
  * @param bool $largeMode 放大模式，默认 false
  * @param array $todayActiveStyle 今日激活时的自定义样式，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Calendar
  */
 function AmisCalendar(
+    mixed $type = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -284,32 +287,32 @@ function AmisCalendar(
     mixed $scheduleClassNames = null,
     mixed $scheduleAction = null,
     mixed $largeMode = null,
-    mixed $todayActiveStyle = null
+    mixed $todayActiveStyle = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Calendar
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($schedules !== null) $args['schedules'] = $schedules;
-    if ($scheduleClassNames !== null) $args['scheduleClassNames'] = $scheduleClassNames;
-    if ($scheduleAction !== null) $args['scheduleAction'] = $scheduleAction;
-    if ($largeMode !== null) $args['largeMode'] = $largeMode;
-    if ($todayActiveStyle !== null) $args['todayActiveStyle'] = $todayActiveStyle;
+    $type !== null && $args['type'] = $type;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $schedules !== null && $args['schedules'] = $schedules;
+    $scheduleClassNames !== null && $args['scheduleClassNames'] = $scheduleClassNames;
+    $scheduleAction !== null && $args['scheduleAction'] = $scheduleAction;
+    $largeMode !== null && $args['largeMode'] = $largeMode;
+    $todayActiveStyle !== null && $args['todayActiveStyle'] = $todayActiveStyle;
     return \AmisSchema\Widget\Display\Calendar::make($args);
 }
 
 /**
  * 创建 Card 组件
  * 
+ * @param string $type 指定为 Card 渲染器，默认 'card'
  * @param array $body 内容容器，主要用来放置非表单项组件，默认 []
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 Card 渲染器，默认 'card'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -328,14 +331,15 @@ function AmisCalendar(
  * @param bool $hideCheckToggler 卡片选择按钮是否隐藏，默认 false
  * @param bool $multiple 卡片是否为多选，默认 false
  * @param bool $useCardLabel 卡片内容区的表单项 label 是否使用 Card 内部的样式，默认 true
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Card
  */
 function AmisCard(
+    mixed $type = null,
     mixed $body = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -353,43 +357,43 @@ function AmisCard(
     mixed $selected = null,
     mixed $hideCheckToggler = null,
     mixed $multiple = null,
-    mixed $useCardLabel = null
+    mixed $useCardLabel = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Card
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($href !== null) $args['href'] = $href;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($actions !== null) $args['actions'] = $actions;
-    if ($actionsCount !== null) $args['actionsCount'] = $actionsCount;
-    if ($itemAction !== null) $args['itemAction'] = $itemAction;
-    if ($secondary !== null) $args['secondary'] = $secondary;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($dragging !== null) $args['dragging'] = $dragging;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($checkable !== null) $args['checkable'] = $checkable;
-    if ($selected !== null) $args['selected'] = $selected;
-    if ($hideCheckToggler !== null) $args['hideCheckToggler'] = $hideCheckToggler;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($useCardLabel !== null) $args['useCardLabel'] = $useCardLabel;
+    $type !== null && $args['type'] = $type;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $href !== null && $args['href'] = $href;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $actions !== null && $args['actions'] = $actions;
+    $actionsCount !== null && $args['actionsCount'] = $actionsCount;
+    $itemAction !== null && $args['itemAction'] = $itemAction;
+    $secondary !== null && $args['secondary'] = $secondary;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $dragging !== null && $args['dragging'] = $dragging;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $checkable !== null && $args['checkable'] = $checkable;
+    $selected !== null && $args['selected'] = $selected;
+    $hideCheckToggler !== null && $args['hideCheckToggler'] = $hideCheckToggler;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $useCardLabel !== null && $args['useCardLabel'] = $useCardLabel;
     return \AmisSchema\Widget\Display\Card::make($args);
 }
 
 /**
  * 创建 Cards 组件
  * 
+ * @param string $type 指定为卡片组，默认 'cards'
  * @param string $title 标题，默认 ''
  * @param string $placeholder 当没数据的时候的文字提示，默认 '暂无数据'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为卡片组，默认 'cards'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -404,15 +408,16 @@ function AmisCard(
  * @param bool $checkOnItemClick 点选卡片内容是否选中卡片，默认 false
  * @param bool $masonryLayout 是否开启瀑布流布局，默认 false
  * @param int $columnsCount 瀑布流布局的固定列数，默认 0（自适应）
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Cards
  */
 function AmisCards(
+    mixed $type = null,
     mixed $title = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -426,38 +431,38 @@ function AmisCards(
     mixed $multiple = null,
     mixed $checkOnItemClick = null,
     mixed $masonryLayout = null,
-    mixed $columnsCount = null
+    mixed $columnsCount = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Cards
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($card !== null) $args['card'] = $card;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($masonryLayout !== null) $args['masonryLayout'] = $masonryLayout;
-    if ($columnsCount !== null) $args['columnsCount'] = $columnsCount;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $card !== null && $args['card'] = $card;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $masonryLayout !== null && $args['masonryLayout'] = $masonryLayout;
+    $columnsCount !== null && $args['columnsCount'] = $columnsCount;
     return \AmisSchema\Widget\Display\Cards::make($args);
 }
 
 /**
  * 创建 Carousel 组件
  * 
+ * @param string $type 指定为 carousel 渲染器，默认 'carousel'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 carousel 渲染器，默认 'carousel'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -475,13 +480,14 @@ function AmisCards(
  * @param array $multiple 多图展示，默认 ['count' => 1]
  * @param bool $alwaysShowArrow 是否一直显示箭头，默认 false
  * @param array $icons 自定义箭头图标，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Carousel
  */
 function AmisCarousel(
+    mixed $type = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -498,41 +504,41 @@ function AmisCarousel(
     mixed $thumbMode = null,
     mixed $multiple = null,
     mixed $alwaysShowArrow = null,
-    mixed $icons = null
+    mixed $icons = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Carousel
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($itemSchema !== null) $args['itemSchema'] = $itemSchema;
-    if ($auto !== null) $args['auto'] = $auto;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($duration !== null) $args['duration'] = $duration;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($controls !== null) $args['controls'] = $controls;
-    if ($controlsTheme !== null) $args['controlsTheme'] = $controlsTheme;
-    if ($animation !== null) $args['animation'] = $animation;
-    if ($thumbMode !== null) $args['thumbMode'] = $thumbMode;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($alwaysShowArrow !== null) $args['alwaysShowArrow'] = $alwaysShowArrow;
-    if ($icons !== null) $args['icons'] = $icons;
+    $type !== null && $args['type'] = $type;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $itemSchema !== null && $args['itemSchema'] = $itemSchema;
+    $auto !== null && $args['auto'] = $auto;
+    $interval !== null && $args['interval'] = $interval;
+    $duration !== null && $args['duration'] = $duration;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $controls !== null && $args['controls'] = $controls;
+    $controlsTheme !== null && $args['controlsTheme'] = $controlsTheme;
+    $animation !== null && $args['animation'] = $animation;
+    $thumbMode !== null && $args['thumbMode'] = $thumbMode;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $alwaysShowArrow !== null && $args['alwaysShowArrow'] = $alwaysShowArrow;
+    $icons !== null && $args['icons'] = $icons;
     return \AmisSchema\Widget\Display\Carousel::make($args);
 }
 
 /**
  * 创建 Chart 组件
  * 
+ * @param string $type 指定为 chart 渲染器，默认 'chart'
  * @param array $body 内容容器，默认 []
  * @param \AmisSchema\Definition\API|string|array $api 配置项接口地址，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 chart 渲染器，默认 'chart'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -550,15 +556,16 @@ function AmisCarousel(
  * @param string $mapName 地图名称，默认 ''
  * @param bool $loadBaiduMap 加载百度地图，默认 false
  * @param array $clickAction 点击行为，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Chart
  */
 function AmisChart(
+    mixed $type = null,
     mixed $body = null,
     mixed $api = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -575,43 +582,43 @@ function AmisChart(
     mixed $mapURL = null,
     mixed $mapName = null,
     mixed $loadBaiduMap = null,
-    mixed $clickAction = null
+    mixed $clickAction = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Chart
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($config !== null) $args['config'] = $config;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($replaceChartOption !== null) $args['replaceChartOption'] = $replaceChartOption;
-    if ($trackExpression !== null) $args['trackExpression'] = $trackExpression;
-    if ($dataFilter !== null) $args['dataFilter'] = $dataFilter;
-    if ($mapURL !== null) $args['mapURL'] = $mapURL;
-    if ($mapName !== null) $args['mapName'] = $mapName;
-    if ($loadBaiduMap !== null) $args['loadBaiduMap'] = $loadBaiduMap;
-    if ($clickAction !== null) $args['clickAction'] = $clickAction;
+    $type !== null && $args['type'] = $type;
+    $body !== null && $args['body'] = $body;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $interval !== null && $args['interval'] = $interval;
+    $config !== null && $args['config'] = $config;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $replaceChartOption !== null && $args['replaceChartOption'] = $replaceChartOption;
+    $trackExpression !== null && $args['trackExpression'] = $trackExpression;
+    $dataFilter !== null && $args['dataFilter'] = $dataFilter;
+    $mapURL !== null && $args['mapURL'] = $mapURL;
+    $mapName !== null && $args['mapName'] = $mapName;
+    $loadBaiduMap !== null && $args['loadBaiduMap'] = $loadBaiduMap;
+    $clickAction !== null && $args['clickAction'] = $clickAction;
     return \AmisSchema\Widget\Display\Chart::make($args);
 }
 
 /**
  * 创建 Code 组件
  * 
+ * @param string $type 指定为 code 渲染器，默认 'code'
  * @param string $name 在其他组件中，时，用作变量映射，默认 ''
  * @param string $value 显示的代码内容，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 code 渲染器，默认 'code'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -621,15 +628,16 @@ function AmisChart(
  * @param string $editorTheme 主题，还有 'vs-dark'，默认 'vs'
  * @param bool $wordWrap 是否折行，默认 true
  * @param string|int $maxHeight 最大高度，超出滚动，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Code
  */
 function AmisCode(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -638,35 +646,35 @@ function AmisCode(
     mixed $tabSize = null,
     mixed $editorTheme = null,
     mixed $wordWrap = null,
-    mixed $maxHeight = null
+    mixed $maxHeight = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Code
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($language !== null) $args['language'] = $language;
-    if ($tabSize !== null) $args['tabSize'] = $tabSize;
-    if ($editorTheme !== null) $args['editorTheme'] = $editorTheme;
-    if ($wordWrap !== null) $args['wordWrap'] = $wordWrap;
-    if ($maxHeight !== null) $args['maxHeight'] = $maxHeight;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $language !== null && $args['language'] = $language;
+    $tabSize !== null && $args['tabSize'] = $tabSize;
+    $editorTheme !== null && $args['editorTheme'] = $editorTheme;
+    $wordWrap !== null && $args['wordWrap'] = $wordWrap;
+    $maxHeight !== null && $args['maxHeight'] = $maxHeight;
     return \AmisSchema\Widget\Display\Code::make($args);
 }
 
 /**
  * 创建 Color 组件
  * 
+ * @param string $type 指定为 color 渲染器，在 Table、Card 和 List 中为 "color"；在 Form 中用作静态展示为 "static-color"，默认 'color'
  * @param string $name 在其他组件中，时，用作变量映射，默认 ''
  * @param string $value 显示的颜色值，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 color 渲染器，在 Table、Card 和 List 中为 "color"；在 Form 中用作静态展示为 "static-color"，默认 'color'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -674,49 +682,50 @@ function AmisCode(
  * @param string $defaultColor 默认颜色值，默认 ''
  * @param bool $showValue 是否显示右边的颜色值，默认 true
  * @param string $popOverContainerSelector 弹层挂载位置选择器，会通过 querySelector 获取，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Color
  */
 function AmisColor(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $defaultColor = null,
     mixed $showValue = null,
-    mixed $popOverContainerSelector = null
+    mixed $popOverContainerSelector = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Color
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($defaultColor !== null) $args['defaultColor'] = $defaultColor;
-    if ($showValue !== null) $args['showValue'] = $showValue;
-    if ($popOverContainerSelector !== null) $args['popOverContainerSelector'] = $popOverContainerSelector;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $defaultColor !== null && $args['defaultColor'] = $defaultColor;
+    $showValue !== null && $args['showValue'] = $showValue;
+    $popOverContainerSelector !== null && $args['popOverContainerSelector'] = $popOverContainerSelector;
     return \AmisSchema\Widget\Display\Color::make($args);
 }
 
 /**
  * 创建 Date 组件
  * 
+ * @param string $type 指定为 date 渲染器，在 Table、Card 和 List 中为 "date"；在 Form 中用作静态展示为 "static-date"，默认 'date'
  * @param string $name 在其他组件中，时，用作变量映射，默认 ''
  * @param string $value 显示的日期数值，默认 ''
  * @param string $placeholder 占位内容，默认 '-'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 date 渲染器，在 Table、Card 和 List 中为 "date"；在 Form 中用作静态展示为 "static-date"，默认 'date'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -726,16 +735,17 @@ function AmisColor(
  * @param bool $fromNow 是否显示相对当前的时间描述，比如: 11 小时前、3 天前、1 年前等，fromNow 为 true 时，format 不生效，默认 false
  * @param int $updateFrequency 更新频率，默认为 1 分钟（60000 毫秒），默认 60000
  * @param string $displayTimeZone 设置日期展示时区，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Date
  */
 function AmisDate(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -744,37 +754,37 @@ function AmisDate(
     mixed $valueFormat = null,
     mixed $fromNow = null,
     mixed $updateFrequency = null,
-    mixed $displayTimeZone = null
+    mixed $displayTimeZone = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Date
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($displayFormat !== null) $args['displayFormat'] = $displayFormat;
-    if ($valueFormat !== null) $args['valueFormat'] = $valueFormat;
-    if ($fromNow !== null) $args['fromNow'] = $fromNow;
-    if ($updateFrequency !== null) $args['updateFrequency'] = $updateFrequency;
-    if ($displayTimeZone !== null) $args['displayTimeZone'] = $displayTimeZone;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $displayFormat !== null && $args['displayFormat'] = $displayFormat;
+    $valueFormat !== null && $args['valueFormat'] = $valueFormat;
+    $fromNow !== null && $args['fromNow'] = $fromNow;
+    $updateFrequency !== null && $args['updateFrequency'] = $updateFrequency;
+    $displayTimeZone !== null && $args['displayTimeZone'] = $displayTimeZone;
     return \AmisSchema\Widget\Display\Date::make($args);
 }
 
 /**
  * 创建 Each 组件
  * 
+ * @param string $type 指定为 Each 组件，默认 'each'
  * @param string $name 获取数据域中变量，默认 ''
  * @param array $value 用于循环的值，默认 []
  * @param string $placeholder 当 value 值不存在或为空数组时的占位文本，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 Each 组件，默认 'each'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -783,16 +793,17 @@ function AmisDate(
  * @param array $items 使用 value 中的数据，循环输出渲染器，默认 []
  * @param string $itemKeyName 获取循环当前数组成员的字段名，默认 'item'
  * @param string $indexKeyName 获取循环当前索引的字段名，默认 'index'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Each
  */
 function AmisEach(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -800,35 +811,35 @@ function AmisEach(
     mixed $source = null,
     mixed $items = null,
     mixed $itemKeyName = null,
-    mixed $indexKeyName = null
+    mixed $indexKeyName = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Each
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($items !== null) $args['items'] = $items;
-    if ($itemKeyName !== null) $args['itemKeyName'] = $itemKeyName;
-    if ($indexKeyName !== null) $args['indexKeyName'] = $indexKeyName;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $items !== null && $args['items'] = $items;
+    $itemKeyName !== null && $args['itemKeyName'] = $itemKeyName;
+    $indexKeyName !== null && $args['indexKeyName'] = $indexKeyName;
     return \AmisSchema\Widget\Display\Each::make($args);
 }
 
 /**
  * 创建 GridNav 组件
  * 
+ * @param string $type 指定为 GridNav 渲染器，默认 'grid-nav'
  * @param string $name 字段名，映射同名变量，默认 ''
  * @param array $value 宫格数据数组，默认 []
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 GridNav 渲染器，默认 'grid-nav'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -844,15 +855,16 @@ function AmisEach(
  * @param int $iconRatio 图标宽度占比，单位%，默认 60
  * @param string $direction 列表项内容排列的方向，可选值为 horizontal、vertical，默认 'vertical'
  * @param int $columnNum 列数，默认 4
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\GridNav
  */
 function AmisGridNav(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -867,117 +879,119 @@ function AmisGridNav(
     mixed $reverse = null,
     mixed $iconRatio = null,
     mixed $direction = null,
-    mixed $columnNum = null
+    mixed $columnNum = null,
+    ...$args
 ): \AmisSchema\Widget\Display\GridNav
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($contentClassName !== null) $args['contentClassName'] = $contentClassName;
-    if ($source !== null) $args['source'] = $source;
-    if ($square !== null) $args['square'] = $square;
-    if ($center !== null) $args['center'] = $center;
-    if ($border !== null) $args['border'] = $border;
-    if ($gutter !== null) $args['gutter'] = $gutter;
-    if ($reverse !== null) $args['reverse'] = $reverse;
-    if ($iconRatio !== null) $args['iconRatio'] = $iconRatio;
-    if ($direction !== null) $args['direction'] = $direction;
-    if ($columnNum !== null) $args['columnNum'] = $columnNum;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $contentClassName !== null && $args['contentClassName'] = $contentClassName;
+    $source !== null && $args['source'] = $source;
+    $square !== null && $args['square'] = $square;
+    $center !== null && $args['center'] = $center;
+    $border !== null && $args['border'] = $border;
+    $gutter !== null && $args['gutter'] = $gutter;
+    $reverse !== null && $args['reverse'] = $reverse;
+    $iconRatio !== null && $args['iconRatio'] = $iconRatio;
+    $direction !== null && $args['direction'] = $direction;
+    $columnNum !== null && $args['columnNum'] = $columnNum;
     return \AmisSchema\Widget\Display\GridNav::make($args);
 }
 
 /**
  * 创建 Html 组件
  * 
+ * @param string $type 指定为 html 渲染器，默认 'html'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 html 渲染器，默认 'html'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
  * @param string $html html 代码，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Html
  */
 function AmisHtml(
+    mixed $type = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
     mixed $data = null,
-    mixed $html = null
+    mixed $html = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Html
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($html !== null) $args['html'] = $html;
+    $type !== null && $args['type'] = $type;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $html !== null && $args['html'] = $html;
     return \AmisSchema\Widget\Display\Html::make($args);
 }
 
 /**
  * 创建 Icon 组件
  * 
+ * @param string $type 指定组件类型，默认 'icon'
  * @param string $icon icon 名称，支持 fontawesome v4 或通过 registerIcon 注册的 icon、或使用 url，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定组件类型，默认 'icon'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
  * @param string $vendor icon 类型，默认为 fa，表示 fontawesome v4。也支持 iconfont，如果是 fontawesome v5 以上版本或者其他框架可以设置为空字符串，默认 'fa'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Icon
  */
 function AmisIcon(
+    mixed $type = null,
     mixed $icon = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
     mixed $data = null,
-    mixed $vendor = null
+    mixed $vendor = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Icon
 {
-    $args = [];
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($vendor !== null) $args['vendor'] = $vendor;
+    $type !== null && $args['type'] = $type;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $vendor !== null && $args['vendor'] = $vendor;
     return \AmisSchema\Widget\Display\Icon::make($args);
 }
 
 /**
  * 创建 Iframe 组件
  * 
+ * @param string $type 指定为 iFrame 渲染器，默认 'iframe'
  * @param string $name iframe 名称，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 iFrame 渲染器，默认 'iframe'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -990,14 +1004,15 @@ function AmisIcon(
  * @param string|int $height iframe 高度，默认 '100%'
  * @param string|int $width iframe 宽度，默认 '100%'
  * @param array $events 事件配置，用于 iframe 向 amis 通信，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Iframe
  */
 function AmisIframe(
+    mixed $type = null,
     mixed $name = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1009,38 +1024,38 @@ function AmisIframe(
     mixed $referrerpolicy = null,
     mixed $height = null,
     mixed $width = null,
-    mixed $events = null
+    mixed $events = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Iframe
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($frameBorder !== null) $args['frameBorder'] = $frameBorder;
-    if ($allow !== null) $args['allow'] = $allow;
-    if ($sandbox !== null) $args['sandbox'] = $sandbox;
-    if ($referrerpolicy !== null) $args['referrerpolicy'] = $referrerpolicy;
-    if ($height !== null) $args['height'] = $height;
-    if ($width !== null) $args['width'] = $width;
-    if ($events !== null) $args['events'] = $events;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $frameBorder !== null && $args['frameBorder'] = $frameBorder;
+    $allow !== null && $args['allow'] = $allow;
+    $sandbox !== null && $args['sandbox'] = $sandbox;
+    $referrerpolicy !== null && $args['referrerpolicy'] = $referrerpolicy;
+    $height !== null && $args['height'] = $height;
+    $width !== null && $args['width'] = $width;
+    $events !== null && $args['events'] = $events;
     return \AmisSchema\Widget\Display\Iframe::make($args);
 }
 
 /**
  * 创建 Image 组件
  * 
- * @param string $title 标题，默认 ''
+ * @param string $type 指定为 image 渲染器，在 Table、Card 和 List 中为 "image"；在 Form 中用作静态展示为 "static-image"，默认 'image'
  * @param string $name 在其他组件中，时，用作变量映射，默认 ''
+ * @param string $title 标题，默认 ''
  * @param string $placeholder 占位文本，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 image 渲染器，在 Table、Card 和 List 中为 "image"；在 Form 中用作静态展示为 "static-image"，默认 'image'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1066,16 +1081,17 @@ function AmisIframe(
  * @param float|string $maxScale 执行调整图片比例动作时的最大百分比，默认 ''
  * @param float|string $minScale 执行调整图片比例动作时的最小百分比，默认 ''
  * @param array $clickAction 自定义点击行为，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Image
  */
 function AmisImage(
-    mixed $title = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $title = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1100,52 +1116,52 @@ function AmisImage(
     mixed $showToolbar = null,
     mixed $maxScale = null,
     mixed $minScale = null,
-    mixed $clickAction = null
+    mixed $clickAction = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Image
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($name !== null) $args['name'] = $name;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($innerClassName !== null) $args['innerClassName'] = $innerClassName;
-    if ($imageClassName !== null) $args['imageClassName'] = $imageClassName;
-    if ($thumbClassName !== null) $args['thumbClassName'] = $thumbClassName;
-    if ($imageCaption !== null) $args['imageCaption'] = $imageCaption;
-    if ($defaultImage !== null) $args['defaultImage'] = $defaultImage;
-    if ($src !== null) $args['src'] = $src;
-    if ($href !== null) $args['href'] = $href;
-    if ($originalSrc !== null) $args['originalSrc'] = $originalSrc;
-    if ($enlargeAble !== null) $args['enlargeAble'] = $enlargeAble;
-    if ($enlargeTitle !== null) $args['enlargeTitle'] = $enlargeTitle;
-    if ($enlargeCaption !== null) $args['enlargeCaption'] = $enlargeCaption;
-    if ($enlargeWithGallary !== null) $args['enlargeWithGallary'] = $enlargeWithGallary;
-    if ($thumbMode !== null) $args['thumbMode'] = $thumbMode;
-    if ($thumbRatio !== null) $args['thumbRatio'] = $thumbRatio;
-    if ($imageMode !== null) $args['imageMode'] = $imageMode;
-    if ($height !== null) $args['height'] = $height;
-    if ($width !== null) $args['width'] = $width;
-    if ($showToolbar !== null) $args['showToolbar'] = $showToolbar;
-    if ($maxScale !== null) $args['maxScale'] = $maxScale;
-    if ($minScale !== null) $args['minScale'] = $minScale;
-    if ($clickAction !== null) $args['clickAction'] = $clickAction;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $innerClassName !== null && $args['innerClassName'] = $innerClassName;
+    $imageClassName !== null && $args['imageClassName'] = $imageClassName;
+    $thumbClassName !== null && $args['thumbClassName'] = $thumbClassName;
+    $imageCaption !== null && $args['imageCaption'] = $imageCaption;
+    $defaultImage !== null && $args['defaultImage'] = $defaultImage;
+    $src !== null && $args['src'] = $src;
+    $href !== null && $args['href'] = $href;
+    $originalSrc !== null && $args['originalSrc'] = $originalSrc;
+    $enlargeAble !== null && $args['enlargeAble'] = $enlargeAble;
+    $enlargeTitle !== null && $args['enlargeTitle'] = $enlargeTitle;
+    $enlargeCaption !== null && $args['enlargeCaption'] = $enlargeCaption;
+    $enlargeWithGallary !== null && $args['enlargeWithGallary'] = $enlargeWithGallary;
+    $thumbMode !== null && $args['thumbMode'] = $thumbMode;
+    $thumbRatio !== null && $args['thumbRatio'] = $thumbRatio;
+    $imageMode !== null && $args['imageMode'] = $imageMode;
+    $height !== null && $args['height'] = $height;
+    $width !== null && $args['width'] = $width;
+    $showToolbar !== null && $args['showToolbar'] = $showToolbar;
+    $maxScale !== null && $args['maxScale'] = $maxScale;
+    $minScale !== null && $args['minScale'] = $minScale;
+    $clickAction !== null && $args['clickAction'] = $clickAction;
     return \AmisSchema\Widget\Display\Image::make($args);
 }
 
 /**
  * 创建 Images 组件
  * 
+ * @param string $type 如果在 Table、Card 和 List 中，为"images"；在 Form 中用作静态展示，为"static-images"，默认 'images'
  * @param string $name 字段名，映射同名变量，默认 ''
  * @param string|array $value 图片数组，支持字符串数组或对象数组，默认 []
  * @param string $className 外层 CSS 类名，默认 ''
  * @param mixed $style 
- * @param string $type 如果在 Table、Card 和 List 中，为"images"；在 Form 中用作静态展示，为"static-images"，默认 'images'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1165,15 +1181,16 @@ function AmisImage(
  * @param string $listClassName 图片集外层 CSS 类名，默认 ''
  * @param string $itemClassName 单个图片外层 CSS 类名，默认 ''
  * @param array $options 图片选项配置，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Images
  */
 function AmisImages(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1192,46 +1209,46 @@ function AmisImages(
     mixed $showToolbar = null,
     mixed $listClassName = null,
     mixed $itemClassName = null,
-    mixed $options = null
+    mixed $options = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Images
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($defaultImage !== null) $args['defaultImage'] = $defaultImage;
-    if ($source !== null) $args['source'] = $source;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($src !== null) $args['src'] = $src;
-    if ($originalSrc !== null) $args['originalSrc'] = $originalSrc;
-    if ($enlargeAble !== null) $args['enlargeAble'] = $enlargeAble;
-    if ($enlargeTitle !== null) $args['enlargeTitle'] = $enlargeTitle;
-    if ($enlargeCaption !== null) $args['enlargeCaption'] = $enlargeCaption;
-    if ($enlargeWithGallary !== null) $args['enlargeWithGallary'] = $enlargeWithGallary;
-    if ($thumbMode !== null) $args['thumbMode'] = $thumbMode;
-    if ($thumbRatio !== null) $args['thumbRatio'] = $thumbRatio;
-    if ($showToolbar !== null) $args['showToolbar'] = $showToolbar;
-    if ($listClassName !== null) $args['listClassName'] = $listClassName;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($options !== null) $args['options'] = $options;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $defaultImage !== null && $args['defaultImage'] = $defaultImage;
+    $source !== null && $args['source'] = $source;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $src !== null && $args['src'] = $src;
+    $originalSrc !== null && $args['originalSrc'] = $originalSrc;
+    $enlargeAble !== null && $args['enlargeAble'] = $enlargeAble;
+    $enlargeTitle !== null && $args['enlargeTitle'] = $enlargeTitle;
+    $enlargeCaption !== null && $args['enlargeCaption'] = $enlargeCaption;
+    $enlargeWithGallary !== null && $args['enlargeWithGallary'] = $enlargeWithGallary;
+    $thumbMode !== null && $args['thumbMode'] = $thumbMode;
+    $thumbRatio !== null && $args['thumbRatio'] = $thumbRatio;
+    $showToolbar !== null && $args['showToolbar'] = $showToolbar;
+    $listClassName !== null && $args['listClassName'] = $listClassName;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Display\Images::make($args);
 }
 
 /**
  * 创建 Json 组件
  * 
+ * @param string $type 如果在 Table、Card 和 List 中，为"json"；在 Form 中用作静态展示，为"static-json"，默认 'json'
  * @param string $name 字段名，映射同名变量，默认 ''
  * @param array|string $value json 值，如果是 string 会自动 parse，默认 null
  * @param string $placeholder 占位文本，默认 '-'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 如果在 Table、Card 和 List 中，为"json"；在 Form 中用作静态展示，为"static-json"，默认 'json'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1242,16 +1259,17 @@ function AmisImages(
  * @param bool $mutable 是否可修改（since 1.2.3），默认 false
  * @param bool $displayDataTypes 是否显示数据类型，默认 false
  * @param int|bool $ellipsisThreshold 设置字符串的最大展示长度，点击字符串可以切换全量/部分展示方式（2.0.0+），默认 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Json
  */
 function AmisJson(
+    mixed $type = null,
     mixed $name = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1261,39 +1279,39 @@ function AmisJson(
     mixed $jsonTheme = null,
     mixed $mutable = null,
     mixed $displayDataTypes = null,
-    mixed $ellipsisThreshold = null
+    mixed $ellipsisThreshold = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Json
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($levelExpand !== null) $args['levelExpand'] = $levelExpand;
-    if ($jsonTheme !== null) $args['jsonTheme'] = $jsonTheme;
-    if ($mutable !== null) $args['mutable'] = $mutable;
-    if ($displayDataTypes !== null) $args['displayDataTypes'] = $displayDataTypes;
-    if ($ellipsisThreshold !== null) $args['ellipsisThreshold'] = $ellipsisThreshold;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $levelExpand !== null && $args['levelExpand'] = $levelExpand;
+    $jsonTheme !== null && $args['jsonTheme'] = $jsonTheme;
+    $mutable !== null && $args['mutable'] = $mutable;
+    $displayDataTypes !== null && $args['displayDataTypes'] = $displayDataTypes;
+    $ellipsisThreshold !== null && $args['ellipsisThreshold'] = $ellipsisThreshold;
     return \AmisSchema\Widget\Display\Json::make($args);
 }
 
 /**
  * 创建 Link 组件
  * 
+ * @param string $type 如果在 Table、Card 和 List 中，为"link"；在 Form 中用作静态展示，为"static-link"，默认 'link'
  * @param string $title a 标签的 title，默认 ''
  * @param string $body 标签内文本，默认 ''
  * @param string $icon 超链接图标，以加强显示，默认 ''
  * @param bool $disabled 禁用超链接，默认 false
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 如果在 Table、Card 和 List 中，为"link"；在 Form 中用作静态展示，为"static-link"，默认 'link'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1302,17 +1320,18 @@ function AmisJson(
  * @param bool $blank 是否在新标签页打开，默认 false
  * @param string $htmlTarget a 标签的 target，优先于 blank 属性，默认 ''
  * @param string $rightIcon 右侧图标，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Link
  */
 function AmisLink(
+    mixed $type = null,
     mixed $title = null,
     mixed $body = null,
     mixed $icon = null,
     mixed $disabled = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1320,36 +1339,36 @@ function AmisLink(
     mixed $href = null,
     mixed $blank = null,
     mixed $htmlTarget = null,
-    mixed $rightIcon = null
+    mixed $rightIcon = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Link
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($href !== null) $args['href'] = $href;
-    if ($blank !== null) $args['blank'] = $blank;
-    if ($htmlTarget !== null) $args['htmlTarget'] = $htmlTarget;
-    if ($rightIcon !== null) $args['rightIcon'] = $rightIcon;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $icon !== null && $args['icon'] = $icon;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $href !== null && $args['href'] = $href;
+    $blank !== null && $args['blank'] = $blank;
+    $htmlTarget !== null && $args['htmlTarget'] = $htmlTarget;
+    $rightIcon !== null && $args['rightIcon'] = $rightIcon;
     return \AmisSchema\Widget\Display\Link::make($args);
 }
 
 /**
  * 创建 ListWidget 组件
  * 
+ * @param string $type 指定为列表展示，默认 'list'
  * @param string $title 标题，默认 ''
  * @param string $placeholder 当没数据的时候的文字提示，默认 '暂无数据'
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为列表展示，默认 'list'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1362,15 +1381,16 @@ function AmisLink(
  * @param bool $checkOnItemClick 点击列表项内容是否选中列表项，默认 false
  * @param array $itemAction 单行点击操作配置（1.4.0+），默认 []
  * @param string $innerClassName 内层组件的CSS类名，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\ListWidget
  */
 function AmisListWidget(
+    mixed $type = null,
     mixed $title = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1382,37 +1402,37 @@ function AmisListWidget(
     mixed $footerClassName = null,
     mixed $checkOnItemClick = null,
     mixed $itemAction = null,
-    mixed $innerClassName = null
+    mixed $innerClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Display\ListWidget
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($itemAction !== null) $args['itemAction'] = $itemAction;
-    if ($innerClassName !== null) $args['innerClassName'] = $innerClassName;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $itemAction !== null && $args['itemAction'] = $itemAction;
+    $innerClassName !== null && $args['innerClassName'] = $innerClassName;
     return \AmisSchema\Widget\Display\ListWidget::make($args);
 }
 
 /**
  * 创建 Log 组件
  * 
+ * @param string $type 指定为 Log 渲染器，默认 'log'
  * @param string $placeholder 加载中的文字，默认 ''
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 Log 渲染器，默认 'log'
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -1426,14 +1446,15 @@ function AmisListWidget(
  * @param int $rowHeight 设置每行高度，将会开启虚拟渲染（1.10.0+），默认 null
  * @param int $maxLength 最大显示行数（1.10.0+），默认 null
  * @param array $operation 可选日志操作：['stop','restart','clear','showLineNumber','filter']，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Log
  */
 function AmisLog(
+    mixed $type = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -1446,27 +1467,27 @@ function AmisLog(
     mixed $credentials = null,
     mixed $rowHeight = null,
     mixed $maxLength = null,
-    mixed $operation = null
+    mixed $operation = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Log
 {
-    $args = [];
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($height !== null) $args['height'] = $height;
-    if ($autoScroll !== null) $args['autoScroll'] = $autoScroll;
-    if ($disableColor !== null) $args['disableColor'] = $disableColor;
-    if ($encoding !== null) $args['encoding'] = $encoding;
-    if ($source !== null) $args['source'] = $source;
-    if ($credentials !== null) $args['credentials'] = $credentials;
-    if ($rowHeight !== null) $args['rowHeight'] = $rowHeight;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($operation !== null) $args['operation'] = $operation;
+    $type !== null && $args['type'] = $type;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $height !== null && $args['height'] = $height;
+    $autoScroll !== null && $args['autoScroll'] = $autoScroll;
+    $disableColor !== null && $args['disableColor'] = $disableColor;
+    $encoding !== null && $args['encoding'] = $encoding;
+    $source !== null && $args['source'] = $source;
+    $credentials !== null && $args['credentials'] = $credentials;
+    $rowHeight !== null && $args['rowHeight'] = $rowHeight;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $operation !== null && $args['operation'] = $operation;
     return \AmisSchema\Widget\Display\Log::make($args);
 }
 
@@ -1485,6 +1506,7 @@ function AmisLog(
  * @param string $valueField 映射匹配字段名(since 2.5.2)，默认 value
  * @param string $labelField 映射显示字段名(since 2.5.2)，配置后映射值无法作为schema渲染，默认 label
  * @param string|array|\AmisSchema\Widget\Widget $itemSchema 自定义渲染模板(since 2.5.2)，支持html或schema，非object使用${item}，object使用${xxx}，默认 null
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Mapping
  */
@@ -1500,22 +1522,22 @@ function AmisMapping(
     mixed $source = null,
     mixed $valueField = null,
     mixed $labelField = null,
-    mixed $itemSchema = null
+    mixed $itemSchema = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Mapping
 {
-    $args = [];
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($map !== null) $args['map'] = $map;
-    if ($source !== null) $args['source'] = $source;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($itemSchema !== null) $args['itemSchema'] = $itemSchema;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $map !== null && $args['map'] = $map;
+    $source !== null && $args['source'] = $source;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $itemSchema !== null && $args['itemSchema'] = $itemSchema;
     return \AmisSchema\Widget\Display\Mapping::make($args);
 }
 
@@ -1534,6 +1556,7 @@ function AmisMapping(
  * @param bool $html 是否支持html标签(since 1.8.1)，默认 false
  * @param bool $linkify 是否自动识别链接(since 1.8.1)，默认 true
  * @param bool $breaks 是否回车就是换行(since 1.8.1)，默认 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Markdown
  */
@@ -1549,22 +1572,22 @@ function AmisMarkdown(
     mixed $src = null,
     mixed $html = null,
     mixed $linkify = null,
-    mixed $breaks = null
+    mixed $breaks = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Markdown
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($html !== null) $args['html'] = $html;
-    if ($linkify !== null) $args['linkify'] = $linkify;
-    if ($breaks !== null) $args['breaks'] = $breaks;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $html !== null && $args['html'] = $html;
+    $linkify !== null && $args['linkify'] = $linkify;
+    $breaks !== null && $args['breaks'] = $breaks;
     return \AmisSchema\Widget\Display\Markdown::make($args);
 }
 
@@ -1585,6 +1608,7 @@ function AmisMarkdown(
  * @param bool|int $percent 百分比展示，为数字时控制百分比小数位数，默认 false
  * @param string $prefix 前缀，默认 ''
  * @param string $affix 后缀，默认 ''
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Number
  */
@@ -1602,24 +1626,24 @@ function AmisNumber(
     mixed $precision = null,
     mixed $percent = null,
     mixed $prefix = null,
-    mixed $affix = null
+    mixed $affix = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Number
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($kilobitSeparator !== null) $args['kilobitSeparator'] = $kilobitSeparator;
-    if ($precision !== null) $args['precision'] = $precision;
-    if ($percent !== null) $args['percent'] = $percent;
-    if ($prefix !== null) $args['prefix'] = $prefix;
-    if ($affix !== null) $args['affix'] = $affix;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $kilobitSeparator !== null && $args['kilobitSeparator'] = $kilobitSeparator;
+    $precision !== null && $args['precision'] = $precision;
+    $percent !== null && $args['percent'] = $percent;
+    $prefix !== null && $args['prefix'] = $prefix;
+    $affix !== null && $args['affix'] = $affix;
     return \AmisSchema\Widget\Display\Number::make($args);
 }
 
@@ -1637,6 +1661,7 @@ function AmisNumber(
  * @param bool $enableVar 是否开启变量替换功能，默认 true
  * @param array $wordOptions Word渲染配置选项，默认 []
  * @param array $excelOptions Excel渲染配置选项(since 6.3.0)，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\OfficeViewer
  */
@@ -1651,21 +1676,21 @@ function AmisOfficeViewer(
     mixed $src = null,
     mixed $enableVar = null,
     mixed $wordOptions = null,
-    mixed $excelOptions = null
+    mixed $excelOptions = null,
+    ...$args
 ): \AmisSchema\Widget\Display\OfficeViewer
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($enableVar !== null) $args['enableVar'] = $enableVar;
-    if ($wordOptions !== null) $args['wordOptions'] = $wordOptions;
-    if ($excelOptions !== null) $args['excelOptions'] = $excelOptions;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $enableVar !== null && $args['enableVar'] = $enableVar;
+    $wordOptions !== null && $args['wordOptions'] = $wordOptions;
+    $excelOptions !== null && $args['excelOptions'] = $excelOptions;
     return \AmisSchema\Widget\Display\OfficeViewer::make($args);
 }
 
@@ -1683,6 +1708,7 @@ function AmisOfficeViewer(
  * @param int $width 宽度，默认 null
  * @param int $height 高度，默认 null
  * @param string $background PDF背景色，默认 '#fff'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\PDFViewer
  */
@@ -1697,21 +1723,21 @@ function AmisPDFViewer(
     mixed $src = null,
     mixed $width = null,
     mixed $height = null,
-    mixed $background = null
+    mixed $background = null,
+    ...$args
 ): \AmisSchema\Widget\Display\PDFViewer
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($background !== null) $args['background'] = $background;
+    $name !== null && $args['name'] = $name;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $background !== null && $args['background'] = $background;
     return \AmisSchema\Widget\Display\PDFViewer::make($args);
 }
 
@@ -1737,6 +1763,7 @@ function AmisPDFViewer(
  * @param int $strokeWidth 进度条线宽度，line类型默认10，circle/dashboard类型默认6，默认 null
  * @param int $gapDegree 仪表盘缺角角度(0~295)，默认 75
  * @param string $gapPosition 仪表盘缺口位置，top/bottom/left/right，默认 'bottom'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Progress
  */
@@ -1759,29 +1786,29 @@ function AmisProgress(
     mixed $valueTpl = null,
     mixed $strokeWidth = null,
     mixed $gapDegree = null,
-    mixed $gapPosition = null
+    mixed $gapPosition = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Progress
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($showLabel !== null) $args['showLabel'] = $showLabel;
-    if ($stripe !== null) $args['stripe'] = $stripe;
-    if ($animate !== null) $args['animate'] = $animate;
-    if ($map !== null) $args['map'] = $map;
-    if ($showThresholdText !== null) $args['showThresholdText'] = $showThresholdText;
-    if ($valueTpl !== null) $args['valueTpl'] = $valueTpl;
-    if ($strokeWidth !== null) $args['strokeWidth'] = $strokeWidth;
-    if ($gapDegree !== null) $args['gapDegree'] = $gapDegree;
-    if ($gapPosition !== null) $args['gapPosition'] = $gapPosition;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $showLabel !== null && $args['showLabel'] = $showLabel;
+    $stripe !== null && $args['stripe'] = $stripe;
+    $animate !== null && $args['animate'] = $animate;
+    $map !== null && $args['map'] = $map;
+    $showThresholdText !== null && $args['showThresholdText'] = $showThresholdText;
+    $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $strokeWidth !== null && $args['strokeWidth'] = $strokeWidth;
+    $gapDegree !== null && $args['gapDegree'] = $gapDegree;
+    $gapPosition !== null && $args['gapPosition'] = $gapPosition;
     return \AmisSchema\Widget\Display\Progress::make($args);
 }
 
@@ -1801,6 +1828,7 @@ function AmisProgress(
  * @param int $column 每行几列，默认 3
  * @param array $labelStyle 属性名的样式，默认 []
  * @param array $contentStyle 属性值的样式，默认 []
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Property
  */
@@ -1817,23 +1845,23 @@ function AmisProperty(
     mixed $separator = null,
     mixed $column = null,
     mixed $labelStyle = null,
-    mixed $contentStyle = null
+    mixed $contentStyle = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Property
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($separator !== null) $args['separator'] = $separator;
-    if ($column !== null) $args['column'] = $column;
-    if ($labelStyle !== null) $args['labelStyle'] = $labelStyle;
-    if ($contentStyle !== null) $args['contentStyle'] = $contentStyle;
+    $title !== null && $args['title'] = $title;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $mode !== null && $args['mode'] = $mode;
+    $separator !== null && $args['separator'] = $separator;
+    $column !== null && $args['column'] = $column;
+    $labelStyle !== null && $args['labelStyle'] = $labelStyle;
+    $contentStyle !== null && $args['contentStyle'] = $contentStyle;
     return \AmisSchema\Widget\Display\Property::make($args);
 }
 
@@ -1852,6 +1880,7 @@ function AmisProperty(
  * @param int $codeSize 二维码的宽高大小
  * @param string $backgroundColor 二维码背景色
  * @param string $foregroundColor 二维码前景色
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\QRCode
  */
@@ -1867,22 +1896,22 @@ function AmisQRCode(
     mixed $qrcodeClassName = null,
     mixed $codeSize = null,
     mixed $backgroundColor = null,
-    mixed $foregroundColor = null
+    mixed $foregroundColor = null,
+    ...$args
 ): \AmisSchema\Widget\Display\QRCode
 {
-    $args = [];
-    if ($value !== null) $args['value'] = $value;
-    if ($level !== null) $args['level'] = $level;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($qrcodeClassName !== null) $args['qrcodeClassName'] = $qrcodeClassName;
-    if ($codeSize !== null) $args['codeSize'] = $codeSize;
-    if ($backgroundColor !== null) $args['backgroundColor'] = $backgroundColor;
-    if ($foregroundColor !== null) $args['foregroundColor'] = $foregroundColor;
+    $value !== null && $args['value'] = $value;
+    $level !== null && $args['level'] = $level;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $qrcodeClassName !== null && $args['qrcodeClassName'] = $qrcodeClassName;
+    $codeSize !== null && $args['codeSize'] = $codeSize;
+    $backgroundColor !== null && $args['backgroundColor'] = $backgroundColor;
+    $foregroundColor !== null && $args['foregroundColor'] = $foregroundColor;
     return \AmisSchema\Widget\Display\QRCode::make($args);
 }
 
@@ -1900,6 +1929,7 @@ function AmisQRCode(
  * @param string $placement 弹出位置
  * @param array|string $trigger 触发条件
  * @param string $shape 图标形状，可选 circle、square
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Remark
  */
@@ -1914,21 +1944,21 @@ function AmisRemark(
     mixed $content = null,
     mixed $placement = null,
     mixed $trigger = null,
-    mixed $shape = null
+    mixed $shape = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Remark
 {
-    $args = [];
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($content !== null) $args['content'] = $content;
-    if ($placement !== null) $args['placement'] = $placement;
-    if ($trigger !== null) $args['trigger'] = $trigger;
-    if ($shape !== null) $args['shape'] = $shape;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $content !== null && $args['content'] = $content;
+    $placement !== null && $args['placement'] = $placement;
+    $trigger !== null && $args['trigger'] = $trigger;
+    $shape !== null && $args['shape'] = $shape;
     return \AmisSchema\Widget\Display\Remark::make($args);
 }
 
@@ -1946,6 +1976,7 @@ function AmisRemark(
  * @param bool $mini 是否为 mini 模式
  * @param bool $searchImediately 是否立即搜索
  * @param bool $clearAndSubmit 清空搜索框内容后立即执行搜索
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\SearchBox
  */
@@ -1960,21 +1991,21 @@ function AmisSearchBox(
     mixed $data = null,
     mixed $mini = null,
     mixed $searchImediately = null,
-    mixed $clearAndSubmit = null
+    mixed $clearAndSubmit = null,
+    ...$args
 ): \AmisSchema\Widget\Display\SearchBox
 {
-    $args = [];
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mini !== null) $args['mini'] = $mini;
-    if ($searchImediately !== null) $args['searchImediately'] = $searchImediately;
-    if ($clearAndSubmit !== null) $args['clearAndSubmit'] = $clearAndSubmit;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mini !== null && $args['mini'] = $mini;
+    $searchImediately !== null && $args['searchImediately'] = $searchImediately;
+    $clearAndSubmit !== null && $args['clearAndSubmit'] = $clearAndSubmit;
     return \AmisSchema\Widget\Display\SearchBox::make($args);
 }
 
@@ -1996,6 +2027,7 @@ function AmisSearchBox(
  * @param int $borderWidth 边框宽度（像素）
  * @param string $borderStyle 边框样式：solid、dashed、dotted
  * @param string $path 自定义 SVG 路径
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Shape
  */
@@ -2014,25 +2046,25 @@ function AmisShape(
     mixed $borderColor = null,
     mixed $borderWidth = null,
     mixed $borderStyle = null,
-    mixed $path = null
+    mixed $path = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Shape
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($shapeType !== null) $args['shapeType'] = $shapeType;
-    if ($color !== null) $args['color'] = $color;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($radius !== null) $args['radius'] = $radius;
-    if ($borderColor !== null) $args['borderColor'] = $borderColor;
-    if ($borderWidth !== null) $args['borderWidth'] = $borderWidth;
-    if ($borderStyle !== null) $args['borderStyle'] = $borderStyle;
-    if ($path !== null) $args['path'] = $path;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $shapeType !== null && $args['shapeType'] = $shapeType;
+    $color !== null && $args['color'] = $color;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $radius !== null && $args['radius'] = $radius;
+    $borderColor !== null && $args['borderColor'] = $borderColor;
+    $borderWidth !== null && $args['borderWidth'] = $borderWidth;
+    $borderStyle !== null && $args['borderStyle'] = $borderStyle;
+    $path !== null && $args['path'] = $path;
     return \AmisSchema\Widget\Display\Shape::make($args);
 }
 
@@ -2051,6 +2083,7 @@ function AmisShape(
  * @param int $width 图表宽度
  * @param int $height 图表高度
  * @param array $clickAction 点击行为配置，支持 amis 的行为动作
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Sparkline
  */
@@ -2066,22 +2099,22 @@ function AmisSparkline(
     mixed $data = null,
     mixed $width = null,
     mixed $height = null,
-    mixed $clickAction = null
+    mixed $clickAction = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Sparkline
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($clickAction !== null) $args['clickAction'] = $clickAction;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $clickAction !== null && $args['clickAction'] = $clickAction;
     return \AmisSchema\Widget\Display\Sparkline::make($args);
 }
 
@@ -2097,6 +2130,7 @@ function AmisSparkline(
  * @param mixed $data 
  * @param array $map 映射图标配置
  * @param array $labelMap 映射文本配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Status
  */
@@ -2109,19 +2143,19 @@ function AmisStatus(
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $map = null,
-    mixed $labelMap = null
+    mixed $labelMap = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Status
 {
-    $args = [];
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($map !== null) $args['map'] = $map;
-    if ($labelMap !== null) $args['labelMap'] = $labelMap;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $map !== null && $args['map'] = $map;
+    $labelMap !== null && $args['labelMap'] = $labelMap;
     return \AmisSchema\Widget\Display\Status::make($args);
 }
 
@@ -2141,6 +2175,7 @@ function AmisStatus(
  * @param string $mode 步骤条模式，horizontal/vertical/simple，默认 'horizontal'
  * @param string $labelPlacement 标签放置位置，horizontal/vertical，默认 'horizontal'
  * @param bool $progressDot 点状步骤条，默认 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Steps
  */
@@ -2157,34 +2192,34 @@ function AmisSteps(
     mixed $source = null,
     mixed $mode = null,
     mixed $labelPlacement = null,
-    mixed $progressDot = null
+    mixed $progressDot = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Steps
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($steps !== null) $args['steps'] = $steps;
-    if ($source !== null) $args['source'] = $source;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($labelPlacement !== null) $args['labelPlacement'] = $labelPlacement;
-    if ($progressDot !== null) $args['progressDot'] = $progressDot;
+    $name !== null && $args['name'] = $name;
+    $value !== null && $args['value'] = $value;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $steps !== null && $args['steps'] = $steps;
+    $source !== null && $args['source'] = $source;
+    $mode !== null && $args['mode'] = $mode;
+    $labelPlacement !== null && $args['labelPlacement'] = $labelPlacement;
+    $progressDot !== null && $args['progressDot'] = $progressDot;
     return \AmisSchema\Widget\Display\Steps::make($args);
 }
 
 /**
  * 创建 Table 组件
  * 
+ * @param string $type 指定为 Table 渲染器
  * @param string $title 标题
  * @param string $placeholder 当没数据的时候的文字提示
  * @param string $className 外层 CSS 类名
  * @param mixed $style 
- * @param string $type 指定为 Table 渲染器
  * @param mixed $onEvent 
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -2228,15 +2263,16 @@ function AmisSteps(
  * @param string $prefixRowClassNameExpr 顶部总结行 CSS 类名表达式
  * @param string $affixRowClassName 底部总结行 CSS 类名
  * @param string $affixRowClassNameExpr 底部总结行 CSS 类名表达式
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Table
  */
 function AmisTable(
+    mixed $type = null,
     mixed $title = null,
     mixed $placeholder = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -2279,70 +2315,70 @@ function AmisTable(
     mixed $prefixRowClassName = null,
     mixed $prefixRowClassNameExpr = null,
     mixed $affixRowClassName = null,
-    mixed $affixRowClassNameExpr = null
+    mixed $affixRowClassNameExpr = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Table
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($deferApi !== null) $args['deferApi'] = $deferApi;
-    if ($affixHeader !== null) $args['affixHeader'] = $affixHeader;
-    if ($affixFooter !== null) $args['affixFooter'] = $affixFooter;
-    if ($columnsTogglable !== null) $args['columnsTogglable'] = $columnsTogglable;
-    if ($showIndex !== null) $args['showIndex'] = $showIndex;
-    if ($tableClassName !== null) $args['tableClassName'] = $tableClassName;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($combineNum !== null) $args['combineNum'] = $combineNum;
-    if ($combineFromIndex !== null) $args['combineFromIndex'] = $combineFromIndex;
-    if ($itemActions !== null) $args['itemActions'] = $itemActions;
-    if ($itemCheckableOn !== null) $args['itemCheckableOn'] = $itemCheckableOn;
-    if ($itemDraggableOn !== null) $args['itemDraggableOn'] = $itemDraggableOn;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($rowClassName !== null) $args['rowClassName'] = $rowClassName;
-    if ($rowClassNameExpr !== null) $args['rowClassNameExpr'] = $rowClassNameExpr;
-    if ($prefixRow !== null) $args['prefixRow'] = $prefixRow;
-    if ($affixRow !== null) $args['affixRow'] = $affixRow;
-    if ($itemBadge !== null) $args['itemBadge'] = $itemBadge;
-    if ($autoFillHeight !== null) $args['autoFillHeight'] = $autoFillHeight;
-    if ($resizable !== null) $args['resizable'] = $resizable;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($lazyRenderAfter !== null) $args['lazyRenderAfter'] = $lazyRenderAfter;
-    if ($tableLayout !== null) $args['tableLayout'] = $tableLayout;
-    if ($childrenColumnName !== null) $args['childrenColumnName'] = $childrenColumnName;
-    if ($expandConfig !== null) $args['expandConfig'] = $expandConfig;
-    if ($footable !== null) $args['footable'] = $footable;
-    if ($itemAction !== null) $args['itemAction'] = $itemAction;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
-    if ($reUseRow !== null) $args['reUseRow'] = $reUseRow;
-    if ($persistKey !== null) $args['persistKey'] = $persistKey;
-    if ($prefixRowClassName !== null) $args['prefixRowClassName'] = $prefixRowClassName;
-    if ($prefixRowClassNameExpr !== null) $args['prefixRowClassNameExpr'] = $prefixRowClassNameExpr;
-    if ($affixRowClassName !== null) $args['affixRowClassName'] = $affixRowClassName;
-    if ($affixRowClassNameExpr !== null) $args['affixRowClassNameExpr'] = $affixRowClassNameExpr;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $deferApi !== null && $args['deferApi'] = $deferApi;
+    $affixHeader !== null && $args['affixHeader'] = $affixHeader;
+    $affixFooter !== null && $args['affixFooter'] = $affixFooter;
+    $columnsTogglable !== null && $args['columnsTogglable'] = $columnsTogglable;
+    $showIndex !== null && $args['showIndex'] = $showIndex;
+    $tableClassName !== null && $args['tableClassName'] = $tableClassName;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $columns !== null && $args['columns'] = $columns;
+    $combineNum !== null && $args['combineNum'] = $combineNum;
+    $combineFromIndex !== null && $args['combineFromIndex'] = $combineFromIndex;
+    $itemActions !== null && $args['itemActions'] = $itemActions;
+    $itemCheckableOn !== null && $args['itemCheckableOn'] = $itemCheckableOn;
+    $itemDraggableOn !== null && $args['itemDraggableOn'] = $itemDraggableOn;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $rowClassName !== null && $args['rowClassName'] = $rowClassName;
+    $rowClassNameExpr !== null && $args['rowClassNameExpr'] = $rowClassNameExpr;
+    $prefixRow !== null && $args['prefixRow'] = $prefixRow;
+    $affixRow !== null && $args['affixRow'] = $affixRow;
+    $itemBadge !== null && $args['itemBadge'] = $itemBadge;
+    $autoFillHeight !== null && $args['autoFillHeight'] = $autoFillHeight;
+    $resizable !== null && $args['resizable'] = $resizable;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $lazyRenderAfter !== null && $args['lazyRenderAfter'] = $lazyRenderAfter;
+    $tableLayout !== null && $args['tableLayout'] = $tableLayout;
+    $childrenColumnName !== null && $args['childrenColumnName'] = $childrenColumnName;
+    $expandConfig !== null && $args['expandConfig'] = $expandConfig;
+    $footable !== null && $args['footable'] = $footable;
+    $itemAction !== null && $args['itemAction'] = $itemAction;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
+    $reUseRow !== null && $args['reUseRow'] = $reUseRow;
+    $persistKey !== null && $args['persistKey'] = $persistKey;
+    $prefixRowClassName !== null && $args['prefixRowClassName'] = $prefixRowClassName;
+    $prefixRowClassNameExpr !== null && $args['prefixRowClassNameExpr'] = $prefixRowClassNameExpr;
+    $affixRowClassName !== null && $args['affixRowClassName'] = $affixRowClassName;
+    $affixRowClassNameExpr !== null && $args['affixRowClassNameExpr'] = $affixRowClassNameExpr;
     return \AmisSchema\Widget\Display\Table::make($args);
 }
 
 /**
  * 创建 Table2 组件
  * 
+ * @param string $type 指定为 table2 渲染器
  * @param string $title 标题
  * @param string|array $placeholder 当没数据的时候的文字提示
  * @param string $size 表格尺寸
  * @param string $className CSS类名
  * @param mixed $style 
- * @param string $type 指定为 table2 渲染器
  * @param bool $loading 表格是否加载中
  * @param array $onEvent 事件
  * @param mixed $visibleOn 
@@ -2386,16 +2422,17 @@ function AmisTable(
  * @param \AmisSchema\Definition\API|string|array $quickSaveApi 快速保存接口
  * @param \AmisSchema\Definition\API|string|array $quickSaveItemApi 快速保存单项接口
  * @param bool $canAccessSuperData 是否可以访问父级数据
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Table2
  */
 function AmisTable2(
+    mixed $type = null,
     mixed $title = null,
     mixed $placeholder = null,
     mixed $size = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $loading = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
@@ -2438,69 +2475,69 @@ function AmisTable2(
     mixed $keyField = null,
     mixed $quickSaveApi = null,
     mixed $quickSaveItemApi = null,
-    mixed $canAccessSuperData = null
+    mixed $canAccessSuperData = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Table2
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($sticky !== null) $args['sticky'] = $sticky;
-    if ($footer !== null) $args['footer'] = $footer;
-    if ($columnsTogglable !== null) $args['columnsTogglable'] = $columnsTogglable;
-    if ($rowSelection !== null) $args['rowSelection'] = $rowSelection;
-    if ($rowClassNameExpr !== null) $args['rowClassNameExpr'] = $rowClassNameExpr;
-    if ($expandable !== null) $args['expandable'] = $expandable;
-    if ($lineHeight !== null) $args['lineHeight'] = $lineHeight;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($combineNum !== null) $args['combineNum'] = $combineNum;
-    if ($itemActions !== null) $args['itemActions'] = $itemActions;
-    if ($itemCheckableOn !== null) $args['itemCheckableOn'] = $itemCheckableOn;
-    if ($itemDraggableOn !== null) $args['itemDraggableOn'] = $itemDraggableOn;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($rowClassName !== null) $args['rowClassName'] = $rowClassName;
-    if ($prefixRow !== null) $args['prefixRow'] = $prefixRow;
-    if ($affixRow !== null) $args['affixRow'] = $affixRow;
-    if ($itemBadge !== null) $args['itemBadge'] = $itemBadge;
-    if ($autoFillHeight !== null) $args['autoFillHeight'] = $autoFillHeight;
-    if ($lazyRenderAfter !== null) $args['lazyRenderAfter'] = $lazyRenderAfter;
-    if ($bordered !== null) $args['bordered'] = $bordered;
-    if ($scroll !== null) $args['scroll'] = $scroll;
-    if ($resizable !== null) $args['resizable'] = $resizable;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($headSummary !== null) $args['headSummary'] = $headSummary;
-    if ($footSummary !== null) $args['footSummary'] = $footSummary;
-    if ($childrenColumnName !== null) $args['childrenColumnName'] = $childrenColumnName;
-    if ($indentSize !== null) $args['indentSize'] = $indentSize;
-    if ($selectable !== null) $args['selectable'] = $selectable;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($maxKeepItemSelectionLength !== null) $args['maxKeepItemSelectionLength'] = $maxKeepItemSelectionLength;
-    if ($primaryField !== null) $args['primaryField'] = $primaryField;
-    if ($keyField !== null) $args['keyField'] = $keyField;
-    if ($quickSaveApi !== null) $args['quickSaveApi'] = $quickSaveApi;
-    if ($quickSaveItemApi !== null) $args['quickSaveItemApi'] = $quickSaveItemApi;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
+    $type !== null && $args['type'] = $type;
+    $title !== null && $args['title'] = $title;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $sticky !== null && $args['sticky'] = $sticky;
+    $footer !== null && $args['footer'] = $footer;
+    $columnsTogglable !== null && $args['columnsTogglable'] = $columnsTogglable;
+    $rowSelection !== null && $args['rowSelection'] = $rowSelection;
+    $rowClassNameExpr !== null && $args['rowClassNameExpr'] = $rowClassNameExpr;
+    $expandable !== null && $args['expandable'] = $expandable;
+    $lineHeight !== null && $args['lineHeight'] = $lineHeight;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $columns !== null && $args['columns'] = $columns;
+    $combineNum !== null && $args['combineNum'] = $combineNum;
+    $itemActions !== null && $args['itemActions'] = $itemActions;
+    $itemCheckableOn !== null && $args['itemCheckableOn'] = $itemCheckableOn;
+    $itemDraggableOn !== null && $args['itemDraggableOn'] = $itemDraggableOn;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $rowClassName !== null && $args['rowClassName'] = $rowClassName;
+    $prefixRow !== null && $args['prefixRow'] = $prefixRow;
+    $affixRow !== null && $args['affixRow'] = $affixRow;
+    $itemBadge !== null && $args['itemBadge'] = $itemBadge;
+    $autoFillHeight !== null && $args['autoFillHeight'] = $autoFillHeight;
+    $lazyRenderAfter !== null && $args['lazyRenderAfter'] = $lazyRenderAfter;
+    $bordered !== null && $args['bordered'] = $bordered;
+    $scroll !== null && $args['scroll'] = $scroll;
+    $resizable !== null && $args['resizable'] = $resizable;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $headSummary !== null && $args['headSummary'] = $headSummary;
+    $footSummary !== null && $args['footSummary'] = $footSummary;
+    $childrenColumnName !== null && $args['childrenColumnName'] = $childrenColumnName;
+    $indentSize !== null && $args['indentSize'] = $indentSize;
+    $selectable !== null && $args['selectable'] = $selectable;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $maxKeepItemSelectionLength !== null && $args['maxKeepItemSelectionLength'] = $maxKeepItemSelectionLength;
+    $primaryField !== null && $args['primaryField'] = $primaryField;
+    $keyField !== null && $args['keyField'] = $keyField;
+    $quickSaveApi !== null && $args['quickSaveApi'] = $quickSaveApi;
+    $quickSaveItemApi !== null && $args['quickSaveItemApi'] = $quickSaveItemApi;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
     return \AmisSchema\Widget\Display\Table2::make($args);
 }
 
 /**
  * 创建 TableView 组件
  * 
+ * @param string $type 指定为 table-view 渲染器
  * @param bool $visible 是否显示
  * @param string $className 外层 CSS 类名
  * @param mixed $style 
- * @param string $type 指定为 table-view 渲染器
  * @param array $onEvent 事件
  * @param string $visibleOn 是否显示表达式
  * @param mixed $disabledOn 
@@ -2523,14 +2560,15 @@ function AmisTable2(
  * @param array $staticSchema 自定义静态展示 schema
  * @param bool $hidden 是否隐藏
  * @param string $hiddenOn 是否隐藏表达式
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\TableView
  */
 function AmisTableView(
+    mixed $type = null,
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -2552,36 +2590,36 @@ function AmisTableView(
     mixed $staticInputClassName = null,
     mixed $staticSchema = null,
     mixed $hidden = null,
-    mixed $hiddenOn = null
+    mixed $hiddenOn = null,
+    ...$args
 ): \AmisSchema\Widget\Display\TableView
 {
-    $args = [];
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($width !== null) $args['width'] = $width;
-    if ($padding !== null) $args['padding'] = $padding;
-    if ($border !== null) $args['border'] = $border;
-    if ($borderColor !== null) $args['borderColor'] = $borderColor;
-    if ($trs !== null) $args['trs'] = $trs;
-    if ($caption !== null) $args['caption'] = $caption;
-    if ($captionSide !== null) $args['captionSide'] = $captionSide;
-    if ($cols !== null) $args['cols'] = $cols;
-    if ($id !== null) $args['id'] = $id;
-    if ($static !== null) $args['static'] = $static;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
+    $type !== null && $args['type'] = $type;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $width !== null && $args['width'] = $width;
+    $padding !== null && $args['padding'] = $padding;
+    $border !== null && $args['border'] = $border;
+    $borderColor !== null && $args['borderColor'] = $borderColor;
+    $trs !== null && $args['trs'] = $trs;
+    $caption !== null && $args['caption'] = $caption;
+    $captionSide !== null && $args['captionSide'] = $captionSide;
+    $cols !== null && $args['cols'] = $cols;
+    $id !== null && $args['id'] = $id;
+    $static !== null && $args['static'] = $static;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
     return \AmisSchema\Widget\Display\TableView::make($args);
 }
 
@@ -2599,6 +2637,7 @@ function AmisTableView(
  * @param string $displayMode 展现模式，可选：normal、rounded、status
  * @param string $color 颜色主题，支持预设主题或自定义色值
  * @param bool $closable 是否展示关闭按钮
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Tag
  */
@@ -2613,21 +2652,21 @@ function AmisTag(
     mixed $data = null,
     mixed $displayMode = null,
     mixed $color = null,
-    mixed $closable = null
+    mixed $closable = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Tag
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($displayMode !== null) $args['displayMode'] = $displayMode;
-    if ($color !== null) $args['color'] = $color;
-    if ($closable !== null) $args['closable'] = $closable;
+    $label !== null && $args['label'] = $label;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $displayMode !== null && $args['displayMode'] = $displayMode;
+    $color !== null && $args['color'] = $color;
+    $closable !== null && $args['closable'] = $closable;
     return \AmisSchema\Widget\Display\Tag::make($args);
 }
 
@@ -2646,6 +2685,7 @@ function AmisTag(
  * @param bool $reverse 是否反向展示时间轴
  * @param string $itemTitleClassName 节点标题的类名
  * @param string $itemDetailClassName 节点详情的类名
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Timeline
  */
@@ -2661,22 +2701,22 @@ function AmisTimeline(
     mixed $direction = null,
     mixed $reverse = null,
     mixed $itemTitleClassName = null,
-    mixed $itemDetailClassName = null
+    mixed $itemDetailClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Timeline
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($source !== null) $args['source'] = $source;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($direction !== null) $args['direction'] = $direction;
-    if ($reverse !== null) $args['reverse'] = $reverse;
-    if ($itemTitleClassName !== null) $args['itemTitleClassName'] = $itemTitleClassName;
-    if ($itemDetailClassName !== null) $args['itemDetailClassName'] = $itemDetailClassName;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $source !== null && $args['source'] = $source;
+    $mode !== null && $args['mode'] = $mode;
+    $direction !== null && $args['direction'] = $direction;
+    $reverse !== null && $args['reverse'] = $reverse;
+    $itemTitleClassName !== null && $args['itemTitleClassName'] = $itemTitleClassName;
+    $itemDetailClassName !== null && $args['itemDetailClassName'] = $itemDetailClassName;
     return \AmisSchema\Widget\Display\Timeline::make($args);
 }
 
@@ -2691,6 +2731,7 @@ function AmisTimeline(
  * @param mixed $data 
  * @param string $tpl 配置模板内容，支持变量替换和表达式
  * @param bool $showNativeTitle 是否设置外层 DOM 节点的 title 属性为文本内容
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Tpl
  */
@@ -2702,18 +2743,18 @@ function AmisTpl(
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $tpl = null,
-    mixed $showNativeTitle = null
+    mixed $showNativeTitle = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Tpl
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($tpl !== null) $args['tpl'] = $tpl;
-    if ($showNativeTitle !== null) $args['showNativeTitle'] = $showNativeTitle;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $tpl !== null && $args['tpl'] = $tpl;
+    $showNativeTitle !== null && $args['showNativeTitle'] = $showNativeTitle;
     return \AmisSchema\Widget\Display\Tpl::make($args);
 }
 
@@ -2737,6 +2778,7 @@ function AmisTpl(
  * @param array $frames 视频帧配置，key 为时刻信息，value 为图片地址
  * @param int $jumpBufferDuration 点击帧时提前跳转的秒数
  * @param bool $stopOnNextFrame 到达下一帧时是否自动停止
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Display\Video
  */
@@ -2757,35 +2799,36 @@ function AmisVideo(
     mixed $rates = null,
     mixed $frames = null,
     mixed $jumpBufferDuration = null,
-    mixed $stopOnNextFrame = null
+    mixed $stopOnNextFrame = null,
+    ...$args
 ): \AmisSchema\Widget\Display\Video
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($isLive !== null) $args['isLive'] = $isLive;
-    if ($videoType !== null) $args['videoType'] = $videoType;
-    if ($poster !== null) $args['poster'] = $poster;
-    if ($muted !== null) $args['muted'] = $muted;
-    if ($loop !== null) $args['loop'] = $loop;
-    if ($autoPlay !== null) $args['autoPlay'] = $autoPlay;
-    if ($rates !== null) $args['rates'] = $rates;
-    if ($frames !== null) $args['frames'] = $frames;
-    if ($jumpBufferDuration !== null) $args['jumpBufferDuration'] = $jumpBufferDuration;
-    if ($stopOnNextFrame !== null) $args['stopOnNextFrame'] = $stopOnNextFrame;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $isLive !== null && $args['isLive'] = $isLive;
+    $videoType !== null && $args['videoType'] = $videoType;
+    $poster !== null && $args['poster'] = $poster;
+    $muted !== null && $args['muted'] = $muted;
+    $loop !== null && $args['loop'] = $loop;
+    $autoPlay !== null && $args['autoPlay'] = $autoPlay;
+    $rates !== null && $args['rates'] = $rates;
+    $frames !== null && $args['frames'] = $frames;
+    $jumpBufferDuration !== null && $args['jumpBufferDuration'] = $jumpBufferDuration;
+    $stopOnNextFrame !== null && $args['stopOnNextFrame'] = $stopOnNextFrame;
     return \AmisSchema\Widget\Display\Video::make($args);
 }
 
 /**
  * 创建 ButtonGroupSelect 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -2794,7 +2837,6 @@ function AmisVideo(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -2873,12 +2915,14 @@ function AmisVideo(
  * @param string $btnActiveLevel 设置选中按钮样式，配置同btnLevel，默认为 "default"
  * @param bool $clearable 设置是否可清空
  * @param string $resetValue 设置清除后设置此配置项给定的值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ButtonGroupSelect
  */
 function AmisButtonGroupSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -2887,7 +2931,6 @@ function AmisButtonGroupSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -2965,107 +3008,108 @@ function AmisButtonGroupSelect(
     mixed $btnLevel = null,
     mixed $btnActiveLevel = null,
     mixed $clearable = null,
-    mixed $resetValue = null
+    mixed $resetValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ButtonGroupSelect
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($vertical !== null) $args['vertical'] = $vertical;
-    if ($tiled !== null) $args['tiled'] = $tiled;
-    if ($btnLevel !== null) $args['btnLevel'] = $btnLevel;
-    if ($btnActiveLevel !== null) $args['btnActiveLevel'] = $btnActiveLevel;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $vertical !== null && $args['vertical'] = $vertical;
+    $tiled !== null && $args['tiled'] = $tiled;
+    $btnLevel !== null && $args['btnLevel'] = $btnLevel;
+    $btnActiveLevel !== null && $args['btnActiveLevel'] = $btnActiveLevel;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
     return \AmisSchema\Widget\Input\ButtonGroupSelect::make($args);
 }
 
 /**
  * 创建 ButtonToolbar 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -3074,7 +3118,6 @@ function AmisButtonGroupSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -3117,12 +3160,14 @@ function AmisButtonGroupSelect(
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param array|\AmisSchema\Widget\Function\Action[] $buttons 设置按钮组
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ButtonToolbar
  */
 function AmisButtonToolbar(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -3131,7 +3176,6 @@ function AmisButtonToolbar(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -3173,71 +3217,72 @@ function AmisButtonToolbar(
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
     mixed $unique = null,
-    mixed $buttons = null
+    mixed $buttons = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ButtonToolbar
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($buttons !== null) $args['buttons'] = $buttons;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $buttons !== null && $args['buttons'] = $buttons;
     return \AmisSchema\Widget\Input\ButtonToolbar::make($args);
 }
 
 /**
  * 创建 ChainedSelect 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -3246,7 +3291,6 @@ function AmisButtonToolbar(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -3319,12 +3363,14 @@ function AmisButtonToolbar(
  * @param string|array|\AmisSchema\Definition\API $deleteApi 设置删除选项接口
  * @param string|bool $initAutoFill 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
  * @param string $optionLabel 设置选项标识文字，用于新增、编辑等操作的标题显示
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ChainedSelect
  */
 function AmisChainedSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -3333,7 +3379,6 @@ function AmisChainedSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -3405,101 +3450,102 @@ function AmisChainedSelect(
     mixed $removable = null,
     mixed $deleteApi = null,
     mixed $initAutoFill = null,
-    mixed $optionLabel = null
+    mixed $optionLabel = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ChainedSelect
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
     return \AmisSchema\Widget\Input\ChainedSelect::make($args);
 }
 
 /**
  * 创建 ChartRadios 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -3508,7 +3554,6 @@ function AmisChainedSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -3553,12 +3598,14 @@ function AmisChainedSelect(
  * @param array $config echart 图表配置
  * @param bool $showTooltipOnHighlight 高亮的时候是否显示 tooltip
  * @param string $chartValueField 图表数值字段名
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ChartRadios
  */
 function AmisChartRadios(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -3567,7 +3614,6 @@ function AmisChartRadios(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -3611,73 +3657,74 @@ function AmisChartRadios(
     mixed $unique = null,
     mixed $config = null,
     mixed $showTooltipOnHighlight = null,
-    mixed $chartValueField = null
+    mixed $chartValueField = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ChartRadios
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($config !== null) $args['config'] = $config;
-    if ($showTooltipOnHighlight !== null) $args['showTooltipOnHighlight'] = $showTooltipOnHighlight;
-    if ($chartValueField !== null) $args['chartValueField'] = $chartValueField;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $config !== null && $args['config'] = $config;
+    $showTooltipOnHighlight !== null && $args['showTooltipOnHighlight'] = $showTooltipOnHighlight;
+    $chartValueField !== null && $args['chartValueField'] = $chartValueField;
     return \AmisSchema\Widget\Input\ChartRadios::make($args);
 }
 
 /**
  * 创建 Checkbox 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -3686,7 +3733,6 @@ function AmisChartRadios(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -3732,12 +3778,14 @@ function AmisChartRadios(
  * @param string|int|bool $trueValue 设置标识真值，默认为 true
  * @param string|int|bool $falseValue 设置标识假值，默认为 false
  * @param string $optionType 设置设置 option 类型，支持 default、button
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Checkbox
  */
 function AmisCheckbox(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -3746,7 +3794,6 @@ function AmisCheckbox(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -3791,74 +3838,75 @@ function AmisCheckbox(
     mixed $option = null,
     mixed $trueValue = null,
     mixed $falseValue = null,
-    mixed $optionType = null
+    mixed $optionType = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Checkbox
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($option !== null) $args['option'] = $option;
-    if ($trueValue !== null) $args['trueValue'] = $trueValue;
-    if ($falseValue !== null) $args['falseValue'] = $falseValue;
-    if ($optionType !== null) $args['optionType'] = $optionType;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $option !== null && $args['option'] = $option;
+    $trueValue !== null && $args['trueValue'] = $trueValue;
+    $falseValue !== null && $args['falseValue'] = $falseValue;
+    $optionType !== null && $args['optionType'] = $optionType;
     return \AmisSchema\Widget\Input\Checkbox::make($args);
 }
 
 /**
  * 创建 Checkboxes 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -3867,7 +3915,6 @@ function AmisCheckbox(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -3944,12 +3991,14 @@ function AmisCheckbox(
  * @param string $menuTpl 设置支持自定义选项渲染
  * @param string $optionType 设置按钮模式，支持 default、button，默认为 "default"
  * @param string $itemClassName 设置选项样式类名
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Checkboxes
  */
 function AmisCheckboxes(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -3958,7 +4007,6 @@ function AmisCheckboxes(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -4034,105 +4082,106 @@ function AmisCheckboxes(
     mixed $columnsCount = null,
     mixed $menuTpl = null,
     mixed $optionType = null,
-    mixed $itemClassName = null
+    mixed $itemClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Checkboxes
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($columnsCount !== null) $args['columnsCount'] = $columnsCount;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($optionType !== null) $args['optionType'] = $optionType;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $columnsCount !== null && $args['columnsCount'] = $columnsCount;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $optionType !== null && $args['optionType'] = $optionType;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
     return \AmisSchema\Widget\Input\Checkboxes::make($args);
 }
 
 /**
  * 创建 Combo 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -4141,7 +4190,6 @@ function AmisCheckboxes(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -4218,12 +4266,14 @@ function AmisCheckboxes(
  * @param string $subFormMode 设置子表单模式，可选normal、horizontal、inline，默认为 "normal"
  * @param string $itemClassName 设置单组 CSS 类
  * @param string $itemsWrapperClassName 设置组合区域 CSS 类
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Combo
  */
 function AmisCombo(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -4232,7 +4282,6 @@ function AmisCombo(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -4308,106 +4357,107 @@ function AmisCombo(
     mixed $lazyLoad = null,
     mixed $subFormMode = null,
     mixed $itemClassName = null,
-    mixed $itemsWrapperClassName = null
+    mixed $itemsWrapperClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Combo
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($formClassName !== null) $args['formClassName'] = $formClassName;
-    if ($items !== null) $args['items'] = $items;
-    if ($noBorder !== null) $args['noBorder'] = $noBorder;
-    if ($scaffold !== null) $args['scaffold'] = $scaffold;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($perPage !== null) $args['perPage'] = $perPage;
-    if ($multiLine !== null) $args['multiLine'] = $multiLine;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($flat !== null) $args['flat'] = $flat;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($addable !== null) $args['addable'] = $addable;
-    if ($addAtTop !== null) $args['addAtTop'] = $addAtTop;
-    if ($addButtonText !== null) $args['addButtonText'] = $addButtonText;
-    if ($addButtonClassName !== null) $args['addButtonClassName'] = $addButtonClassName;
-    if ($addBtn !== null) $args['addBtn'] = $addBtn;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($deleteConfirmText !== null) $args['deleteConfirmText'] = $deleteConfirmText;
-    if ($deleteBtn !== null) $args['deleteBtn'] = $deleteBtn;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($draggableTip !== null) $args['draggableTip'] = $draggableTip;
-    if ($nullable !== null) $args['nullable'] = $nullable;
-    if ($justify !== null) $args['justify'] = $justify;
-    if ($syncFields !== null) $args['syncFields'] = $syncFields;
-    if ($typeSwitchable !== null) $args['typeSwitchable'] = $typeSwitchable;
-    if ($tabsMode !== null) $args['tabsMode'] = $tabsMode;
-    if ($tabsStyle !== null) $args['tabsStyle'] = $tabsStyle;
-    if ($tabsLabelTpl !== null) $args['tabsLabelTpl'] = $tabsLabelTpl;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
-    if ($lazyLoad !== null) $args['lazyLoad'] = $lazyLoad;
-    if ($subFormMode !== null) $args['subFormMode'] = $subFormMode;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($itemsWrapperClassName !== null) $args['itemsWrapperClassName'] = $itemsWrapperClassName;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $formClassName !== null && $args['formClassName'] = $formClassName;
+    $items !== null && $args['items'] = $items;
+    $noBorder !== null && $args['noBorder'] = $noBorder;
+    $scaffold !== null && $args['scaffold'] = $scaffold;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $perPage !== null && $args['perPage'] = $perPage;
+    $multiLine !== null && $args['multiLine'] = $multiLine;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $flat !== null && $args['flat'] = $flat;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $addable !== null && $args['addable'] = $addable;
+    $addAtTop !== null && $args['addAtTop'] = $addAtTop;
+    $addButtonText !== null && $args['addButtonText'] = $addButtonText;
+    $addButtonClassName !== null && $args['addButtonClassName'] = $addButtonClassName;
+    $addBtn !== null && $args['addBtn'] = $addBtn;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $deleteConfirmText !== null && $args['deleteConfirmText'] = $deleteConfirmText;
+    $deleteBtn !== null && $args['deleteBtn'] = $deleteBtn;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $draggableTip !== null && $args['draggableTip'] = $draggableTip;
+    $nullable !== null && $args['nullable'] = $nullable;
+    $justify !== null && $args['justify'] = $justify;
+    $syncFields !== null && $args['syncFields'] = $syncFields;
+    $typeSwitchable !== null && $args['typeSwitchable'] = $typeSwitchable;
+    $tabsMode !== null && $args['tabsMode'] = $tabsMode;
+    $tabsStyle !== null && $args['tabsStyle'] = $tabsStyle;
+    $tabsLabelTpl !== null && $args['tabsLabelTpl'] = $tabsLabelTpl;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
+    $lazyLoad !== null && $args['lazyLoad'] = $lazyLoad;
+    $subFormMode !== null && $args['subFormMode'] = $subFormMode;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $itemsWrapperClassName !== null && $args['itemsWrapperClassName'] = $itemsWrapperClassName;
     return \AmisSchema\Widget\Input\Combo::make($args);
 }
 
 /**
  * 创建 ConditionBuilder 组件
  * 
+ * @param string $type 设置指定表单项类型。
+ * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param string $title 设置弹窗配置的顶部标题
  * @param string $label 设置表单项标签。
- * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -4416,7 +4466,6 @@ function AmisCombo(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -4472,13 +4521,15 @@ function AmisCombo(
  * @param array $formula 设置字段输入控件变成公式编辑器
  * @param bool $showIf 设置开启后条件中额外还能配置启动条件
  * @param array $formulaForIf 设置给 showIF 表达式用的公式信息
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ConditionBuilder
  */
 function AmisConditionBuilder(
+    mixed $type = null,
+    mixed $name = null,
     mixed $title = null,
     mixed $label = null,
-    mixed $name = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -4487,7 +4538,6 @@ function AmisConditionBuilder(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -4542,77 +4592,77 @@ function AmisConditionBuilder(
     mixed $addGroupBtnVisibleOn = null,
     mixed $formula = null,
     mixed $showIf = null,
-    mixed $formulaForIf = null
+    mixed $formulaForIf = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ConditionBuilder
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($fieldClassName !== null) $args['fieldClassName'] = $fieldClassName;
-    if ($source !== null) $args['source'] = $source;
-    if ($embed !== null) $args['embed'] = $embed;
-    if ($fields !== null) $args['fields'] = $fields;
-    if ($showANDOR !== null) $args['showANDOR'] = $showANDOR;
-    if ($showNot !== null) $args['showNot'] = $showNot;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($addBtnVisibleOn !== null) $args['addBtnVisibleOn'] = $addBtnVisibleOn;
-    if ($addGroupBtnVisibleOn !== null) $args['addGroupBtnVisibleOn'] = $addGroupBtnVisibleOn;
-    if ($formula !== null) $args['formula'] = $formula;
-    if ($showIf !== null) $args['showIf'] = $showIf;
-    if ($formulaForIf !== null) $args['formulaForIf'] = $formulaForIf;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $fieldClassName !== null && $args['fieldClassName'] = $fieldClassName;
+    $source !== null && $args['source'] = $source;
+    $embed !== null && $args['embed'] = $embed;
+    $fields !== null && $args['fields'] = $fields;
+    $showANDOR !== null && $args['showANDOR'] = $showANDOR;
+    $showNot !== null && $args['showNot'] = $showNot;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $addBtnVisibleOn !== null && $args['addBtnVisibleOn'] = $addBtnVisibleOn;
+    $addGroupBtnVisibleOn !== null && $args['addGroupBtnVisibleOn'] = $addGroupBtnVisibleOn;
+    $formula !== null && $args['formula'] = $formula;
+    $showIf !== null && $args['showIf'] = $showIf;
+    $formulaForIf !== null && $args['formulaForIf'] = $formulaForIf;
     return \AmisSchema\Widget\Input\ConditionBuilder::make($args);
 }
 
@@ -4628,6 +4678,7 @@ function AmisConditionBuilder(
  * @param mixed $disabledOn 
  * @param mixed $data 
  * @param string $description 
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Control
  */
@@ -4640,27 +4691,28 @@ function AmisControl(
     mixed $visibleOn = null,
     mixed $disabledOn = null,
     mixed $data = null,
-    mixed $description = null
+    mixed $description = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Control
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($description !== null) $args['description'] = $description;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $description !== null && $args['description'] = $description;
     return \AmisSchema\Widget\Input\Control::make($args);
 }
 
 /**
  * 创建 DiffEditor 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -4669,7 +4721,6 @@ function AmisControl(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -4714,12 +4765,14 @@ function AmisControl(
  * @param string $language 编辑器高亮的语言，默认为 'javascript'
  * @param string $diffValue 左侧值，用于对比的基础内容
  * @param array $options Monaco 编辑器的其它配置选项
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\DiffEditor
  */
 function AmisDiffEditor(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -4728,7 +4781,6 @@ function AmisDiffEditor(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -4772,73 +4824,74 @@ function AmisDiffEditor(
     mixed $unique = null,
     mixed $language = null,
     mixed $diffValue = null,
-    mixed $options = null
+    mixed $options = null,
+    ...$args
 ): \AmisSchema\Widget\Input\DiffEditor
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($language !== null) $args['language'] = $language;
-    if ($diffValue !== null) $args['diffValue'] = $diffValue;
-    if ($options !== null) $args['options'] = $options;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $language !== null && $args['language'] = $language;
+    $diffValue !== null && $args['diffValue'] = $diffValue;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Input\DiffEditor::make($args);
 }
 
 /**
  * 创建 Editor 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -4847,7 +4900,6 @@ function AmisDiffEditor(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -4893,12 +4945,14 @@ function AmisDiffEditor(
  * @param bool $allowFullscreen 是否显示全屏模式开关，默认为 false
  * @param array $options monaco 编辑器的其它配置，比如是否显示行号等
  * @param string $editorDidMount 编辑器挂载完成后的回调函数
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Editor
  */
 function AmisEditor(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -4907,7 +4961,6 @@ function AmisEditor(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -4952,75 +5005,76 @@ function AmisEditor(
     mixed $language = null,
     mixed $allowFullscreen = null,
     mixed $options = null,
-    mixed $editorDidMount = null
+    mixed $editorDidMount = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Editor
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($language !== null) $args['language'] = $language;
-    if ($allowFullscreen !== null) $args['allowFullscreen'] = $allowFullscreen;
-    if ($options !== null) $args['options'] = $options;
-    if ($editorDidMount !== null) $args['editorDidMount'] = $editorDidMount;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $language !== null && $args['language'] = $language;
+    $allowFullscreen !== null && $args['allowFullscreen'] = $allowFullscreen;
+    $options !== null && $args['options'] = $options;
+    $editorDidMount !== null && $args['editorDidMount'] = $editorDidMount;
     return \AmisSchema\Widget\Input\Editor::make($args);
 }
 
 /**
  * 创建 FieldSet 组件
  * 
+ * @param string $type 设置指定表单项类型。
+ * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param string|array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $title 标题
  * @param string $label 设置表单项标签。
- * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param array|\AmisSchema\Widget\Input\FormItem[] $body 表单项集合
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
@@ -5030,7 +5084,6 @@ function AmisEditor(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -5078,13 +5131,15 @@ function AmisEditor(
  * @param bool $collapsed 默认是否折叠，默认为 false
  * @param string|array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $collapseTitle 收起的标题，默认为 '收起'
  * @param string $titlePosition 标题位置，支持 'top'、'bottom'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\FieldSet
  */
 function AmisFieldSet(
+    mixed $type = null,
+    mixed $name = null,
     mixed $title = null,
     mixed $label = null,
-    mixed $name = null,
     mixed $body = null,
     mixed $value = null,
     mixed $placeholder = null,
@@ -5094,7 +5149,6 @@ function AmisFieldSet(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -5141,78 +5195,78 @@ function AmisFieldSet(
     mixed $collapsable = null,
     mixed $collapsed = null,
     mixed $collapseTitle = null,
-    mixed $titlePosition = null
+    mixed $titlePosition = null,
+    ...$args
 ): \AmisSchema\Widget\Input\FieldSet
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($headingClassName !== null) $args['headingClassName'] = $headingClassName;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($collapsable !== null) $args['collapsable'] = $collapsable;
-    if ($collapsed !== null) $args['collapsed'] = $collapsed;
-    if ($collapseTitle !== null) $args['collapseTitle'] = $collapseTitle;
-    if ($titlePosition !== null) $args['titlePosition'] = $titlePosition;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $headingClassName !== null && $args['headingClassName'] = $headingClassName;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $collapsable !== null && $args['collapsable'] = $collapsable;
+    $collapsed !== null && $args['collapsed'] = $collapsed;
+    $collapseTitle !== null && $args['collapseTitle'] = $collapseTitle;
+    $titlePosition !== null && $args['titlePosition'] = $titlePosition;
     return \AmisSchema\Widget\Input\FieldSet::make($args);
 }
 
 /**
  * 创建 Form 组件
  * 
- * @param string $title 设置表单标题。
  * @param string $name 设置表单名称，方便其他组件通信。
+ * @param string $title 设置表单标题。
  * @param \AmisSchema\Widget\Input\FormItem[]|\AmisSchema\Widget\Widget[] $body 设置表单项集合。
  * @param string|\AmisSchema\Definition\API $api 设置表单提交接口。
  * @param string $className 设置外层 dom 类名。
@@ -5267,12 +5321,13 @@ function AmisFieldSet(
  * @param string $labelAlign "right" | "left" 设置表单项标签对齐方式，仅在 horizontal 时生效。
  * @param int|string $labelWidth 设置表单项标签自定义宽度。
  * @param bool $inheritData 设置是否共用上层数据域。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Form
  */
 function AmisForm(
-    mixed $title = null,
     mixed $name = null,
+    mixed $title = null,
     mixed $body = null,
     mixed $api = null,
     mixed $className = null,
@@ -5326,74 +5381,75 @@ function AmisForm(
     mixed $closeDialogOnSubmit = null,
     mixed $labelAlign = null,
     mixed $labelWidth = null,
-    mixed $inheritData = null
+    mixed $inheritData = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Form
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($reload !== null) $args['reload'] = $reload;
-    if ($redirect !== null) $args['redirect'] = $redirect;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($actions !== null) $args['actions'] = $actions;
-    if ($wrapWithPanel !== null) $args['wrapWithPanel'] = $wrapWithPanel;
-    if ($panelClassName !== null) $args['panelClassName'] = $panelClassName;
-    if ($initApi !== null) $args['initApi'] = $initApi;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($silentPolling !== null) $args['silentPolling'] = $silentPolling;
-    if ($stopAutoRefreshWhen !== null) $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
-    if ($initAsyncApi !== null) $args['initAsyncApi'] = $initAsyncApi;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($initFetchOn !== null) $args['initFetchOn'] = $initFetchOn;
-    if ($initFinishedField !== null) $args['initFinishedField'] = $initFinishedField;
-    if ($initCheckInterval !== null) $args['initCheckInterval'] = $initCheckInterval;
-    if ($asyncApi !== null) $args['asyncApi'] = $asyncApi;
-    if ($checkInterval !== null) $args['checkInterval'] = $checkInterval;
-    if ($finishedField !== null) $args['finishedField'] = $finishedField;
-    if ($submitText !== null) $args['submitText'] = $submitText;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
-    if ($persistData !== null) $args['persistData'] = $persistData;
-    if ($clearPersistDataAfterSubmit !== null) $args['clearPersistDataAfterSubmit'] = $clearPersistDataAfterSubmit;
-    if ($preventEnterSubmit !== null) $args['preventEnterSubmit'] = $preventEnterSubmit;
-    if ($trimValues !== null) $args['trimValues'] = $trimValues;
-    if ($promptPageLeave !== null) $args['promptPageLeave'] = $promptPageLeave;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($submitOnInit !== null) $args['submitOnInit'] = $submitOnInit;
-    if ($resetAfterSubmit !== null) $args['resetAfterSubmit'] = $resetAfterSubmit;
-    if ($primaryField !== null) $args['primaryField'] = $primaryField;
-    if ($target !== null) $args['target'] = $target;
-    if ($columnCount !== null) $args['columnCount'] = $columnCount;
-    if ($inherit !== null) $args['inherit'] = $inherit;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($debug !== null) $args['debug'] = $debug;
-    if ($messagesFetchSuccess !== null) $args['messagesFetchSuccess'] = $messagesFetchSuccess;
-    if ($messagesFetchFailed !== null) $args['messagesFetchFailed'] = $messagesFetchFailed;
-    if ($messagesSaveSuccess !== null) $args['messagesSaveSuccess'] = $messagesSaveSuccess;
-    if ($messagesSaveFailed !== null) $args['messagesSaveFailed'] = $messagesSaveFailed;
-    if ($messagesValidateFailed !== null) $args['messagesValidateFailed'] = $messagesValidateFailed;
-    if ($persistDataKeys !== null) $args['persistDataKeys'] = $persistDataKeys;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($closeDialogOnSubmit !== null) $args['closeDialogOnSubmit'] = $closeDialogOnSubmit;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($inheritData !== null) $args['inheritData'] = $inheritData;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $reload !== null && $args['reload'] = $reload;
+    $redirect !== null && $args['redirect'] = $redirect;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $actions !== null && $args['actions'] = $actions;
+    $wrapWithPanel !== null && $args['wrapWithPanel'] = $wrapWithPanel;
+    $panelClassName !== null && $args['panelClassName'] = $panelClassName;
+    $initApi !== null && $args['initApi'] = $initApi;
+    $interval !== null && $args['interval'] = $interval;
+    $silentPolling !== null && $args['silentPolling'] = $silentPolling;
+    $stopAutoRefreshWhen !== null && $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
+    $initAsyncApi !== null && $args['initAsyncApi'] = $initAsyncApi;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $initFetchOn !== null && $args['initFetchOn'] = $initFetchOn;
+    $initFinishedField !== null && $args['initFinishedField'] = $initFinishedField;
+    $initCheckInterval !== null && $args['initCheckInterval'] = $initCheckInterval;
+    $asyncApi !== null && $args['asyncApi'] = $asyncApi;
+    $checkInterval !== null && $args['checkInterval'] = $checkInterval;
+    $finishedField !== null && $args['finishedField'] = $finishedField;
+    $submitText !== null && $args['submitText'] = $submitText;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
+    $persistData !== null && $args['persistData'] = $persistData;
+    $clearPersistDataAfterSubmit !== null && $args['clearPersistDataAfterSubmit'] = $clearPersistDataAfterSubmit;
+    $preventEnterSubmit !== null && $args['preventEnterSubmit'] = $preventEnterSubmit;
+    $trimValues !== null && $args['trimValues'] = $trimValues;
+    $promptPageLeave !== null && $args['promptPageLeave'] = $promptPageLeave;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $submitOnInit !== null && $args['submitOnInit'] = $submitOnInit;
+    $resetAfterSubmit !== null && $args['resetAfterSubmit'] = $resetAfterSubmit;
+    $primaryField !== null && $args['primaryField'] = $primaryField;
+    $target !== null && $args['target'] = $target;
+    $columnCount !== null && $args['columnCount'] = $columnCount;
+    $inherit !== null && $args['inherit'] = $inherit;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $debug !== null && $args['debug'] = $debug;
+    $messagesFetchSuccess !== null && $args['messagesFetchSuccess'] = $messagesFetchSuccess;
+    $messagesFetchFailed !== null && $args['messagesFetchFailed'] = $messagesFetchFailed;
+    $messagesSaveSuccess !== null && $args['messagesSaveSuccess'] = $messagesSaveSuccess;
+    $messagesSaveFailed !== null && $args['messagesSaveFailed'] = $messagesSaveFailed;
+    $messagesValidateFailed !== null && $args['messagesValidateFailed'] = $messagesValidateFailed;
+    $persistDataKeys !== null && $args['persistDataKeys'] = $persistDataKeys;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $closeDialogOnSubmit !== null && $args['closeDialogOnSubmit'] = $closeDialogOnSubmit;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $inheritData !== null && $args['inheritData'] = $inheritData;
     return \AmisSchema\Widget\Input\Form::make($args);
 }
 
 /**
  * 创建 FormItem 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -5402,7 +5458,6 @@ function AmisForm(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -5444,12 +5499,14 @@ function AmisForm(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\FormItem
  */
 function AmisFormItem(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -5458,7 +5515,6 @@ function AmisFormItem(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -5499,70 +5555,71 @@ function AmisFormItem(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\FormItem
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\FormItem::make($args);
 }
 
 /**
  * 创建 Formula 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -5571,7 +5628,6 @@ function AmisFormItem(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -5618,12 +5674,14 @@ function AmisFormItem(
  * @param bool $initSet 初始化时是否设置
  * @param bool $autoSet 观察公式结果，如果计算结果有变化，则自动应用到变量上
  * @param string $id 定义个名字，当某个按钮的目标指定为此值后，会触发一次公式应用。这个机制可以在 autoSet 为 false 时用来手动触发
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Formula
  */
 function AmisFormula(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -5632,7 +5690,6 @@ function AmisFormula(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -5678,75 +5735,76 @@ function AmisFormula(
     mixed $condition = null,
     mixed $initSet = null,
     mixed $autoSet = null,
-    mixed $id = null
+    mixed $id = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Formula
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($formula !== null) $args['formula'] = $formula;
-    if ($condition !== null) $args['condition'] = $condition;
-    if ($initSet !== null) $args['initSet'] = $initSet;
-    if ($autoSet !== null) $args['autoSet'] = $autoSet;
-    if ($id !== null) $args['id'] = $id;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $formula !== null && $args['formula'] = $formula;
+    $condition !== null && $args['condition'] = $condition;
+    $initSet !== null && $args['initSet'] = $initSet;
+    $autoSet !== null && $args['autoSet'] = $autoSet;
+    $id !== null && $args['id'] = $id;
     return \AmisSchema\Widget\Input\Formula::make($args);
 }
 
 /**
  * 创建 Group 组件
  * 
- * @param string $label group 的标签
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label group 的标签
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $body 表单项集合
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
@@ -5756,7 +5814,6 @@ function AmisFormula(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -5800,12 +5857,14 @@ function AmisFormula(
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param string $gap 表单项之间的间距，可选：xs、sm、normal
  * @param string $direction 可以配置水平展示还是垂直展示。对应的配置项分别是：vertical、horizontal
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Group
  */
 function AmisGroup(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $body = null,
     mixed $value = null,
     mixed $placeholder = null,
@@ -5815,7 +5874,6 @@ function AmisGroup(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -5858,73 +5916,74 @@ function AmisGroup(
     mixed $columnClassName = null,
     mixed $unique = null,
     mixed $gap = null,
-    mixed $direction = null
+    mixed $direction = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Group
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($gap !== null) $args['gap'] = $gap;
-    if ($direction !== null) $args['direction'] = $direction;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $gap !== null && $args['gap'] = $gap;
+    $direction !== null && $args['direction'] = $direction;
     return \AmisSchema\Widget\Input\Group::make($args);
 }
 
 /**
  * 创建 Hidden 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -5933,7 +5992,6 @@ function AmisGroup(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -5975,12 +6033,14 @@ function AmisGroup(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Hidden
  */
 function AmisHidden(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -5989,7 +6049,6 @@ function AmisHidden(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -6030,70 +6089,71 @@ function AmisHidden(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Hidden
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\Hidden::make($args);
 }
 
 /**
  * 创建 InputArray 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -6102,7 +6162,6 @@ function AmisHidden(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -6153,12 +6212,14 @@ function AmisHidden(
  * @param int $minLength 设置限制最小长度
  * @param int $maxLength 设置限制最大长度
  * @param mixed $scaffold 设置新增成员时的默认值，一般根据items的数据类型指定需要的默认值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputArray
  */
 function AmisInputArray(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -6167,7 +6228,6 @@ function AmisInputArray(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -6217,79 +6277,80 @@ function AmisInputArray(
     mixed $addButtonText = null,
     mixed $minLength = null,
     mixed $maxLength = null,
-    mixed $scaffold = null
+    mixed $scaffold = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputArray
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($items !== null) $args['items'] = $items;
-    if ($addable !== null) $args['addable'] = $addable;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($draggableTip !== null) $args['draggableTip'] = $draggableTip;
-    if ($addButtonText !== null) $args['addButtonText'] = $addButtonText;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($scaffold !== null) $args['scaffold'] = $scaffold;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $items !== null && $args['items'] = $items;
+    $addable !== null && $args['addable'] = $addable;
+    $removable !== null && $args['removable'] = $removable;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $draggableTip !== null && $args['draggableTip'] = $draggableTip;
+    $addButtonText !== null && $args['addButtonText'] = $addButtonText;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $scaffold !== null && $args['scaffold'] = $scaffold;
     return \AmisSchema\Widget\Input\InputArray::make($args);
 }
 
 /**
  * 创建 InputCity 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -6298,7 +6359,6 @@ function AmisInputArray(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -6373,12 +6433,14 @@ function AmisInputArray(
  * @param string $optionLabel 设置选项标识文字，用于新增、编辑等操作的标题显示
  * @param bool $allowCity 设置允许选择城市，默认为 true
  * @param bool $allowDistrict 设置允许选择区域，默认为 true
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputCity
  */
 function AmisInputCity(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -6387,7 +6449,6 @@ function AmisInputCity(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -6461,103 +6522,104 @@ function AmisInputCity(
     mixed $initAutoFill = null,
     mixed $optionLabel = null,
     mixed $allowCity = null,
-    mixed $allowDistrict = null
+    mixed $allowDistrict = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputCity
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($allowCity !== null) $args['allowCity'] = $allowCity;
-    if ($allowDistrict !== null) $args['allowDistrict'] = $allowDistrict;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $allowCity !== null && $args['allowCity'] = $allowCity;
+    $allowDistrict !== null && $args['allowDistrict'] = $allowDistrict;
     return \AmisSchema\Widget\Input\InputCity::make($args);
 }
 
 /**
  * 创建 InputColor 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -6566,7 +6628,6 @@ function AmisInputCity(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -6643,12 +6704,14 @@ function AmisInputCity(
  * @param bool $allowCustomColor 设置是否允许自定义颜色，为 false 时只能选择颜色
  * @param bool $clearable 设置是否显示清除按钮
  * @param string $resetValue 设置清除后表单项值调整成该值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputColor
  */
 function AmisInputColor(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -6657,7 +6720,6 @@ function AmisInputColor(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -6733,105 +6795,106 @@ function AmisInputColor(
     mixed $format = null,
     mixed $allowCustomColor = null,
     mixed $clearable = null,
-    mixed $resetValue = null
+    mixed $resetValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputColor
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($format !== null) $args['format'] = $format;
-    if ($allowCustomColor !== null) $args['allowCustomColor'] = $allowCustomColor;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $format !== null && $args['format'] = $format;
+    $allowCustomColor !== null && $args['allowCustomColor'] = $allowCustomColor;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
     return \AmisSchema\Widget\Input\InputColor::make($args);
 }
 
 /**
  * 创建 InputDate 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -6840,7 +6903,6 @@ function AmisInputColor(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -6882,12 +6944,14 @@ function AmisInputColor(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputDate
  */
 function AmisInputDate(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -6896,7 +6960,6 @@ function AmisInputDate(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -6937,70 +7000,71 @@ function AmisInputDate(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputDate
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputDate::make($args);
 }
 
 /**
  * 创建 InputDateRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -7009,7 +7073,6 @@ function AmisInputDate(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -7051,12 +7114,14 @@ function AmisInputDate(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputDateRange
  */
 function AmisInputDateRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -7065,7 +7130,6 @@ function AmisInputDateRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -7106,70 +7170,71 @@ function AmisInputDateRange(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputDateRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputDateRange::make($args);
 }
 
 /**
  * 创建 InputDatetime 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -7178,7 +7243,6 @@ function AmisInputDateRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -7220,12 +7284,14 @@ function AmisInputDateRange(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputDatetime
  */
 function AmisInputDatetime(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -7234,7 +7300,6 @@ function AmisInputDatetime(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -7275,70 +7340,71 @@ function AmisInputDatetime(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputDatetime
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputDatetime::make($args);
 }
 
 /**
  * 创建 InputDatetimeRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -7347,7 +7413,6 @@ function AmisInputDatetime(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -7389,12 +7454,14 @@ function AmisInputDatetime(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputDatetimeRange
  */
 function AmisInputDatetimeRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -7403,7 +7470,6 @@ function AmisInputDatetimeRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -7444,70 +7510,71 @@ function AmisInputDatetimeRange(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputDatetimeRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputDatetimeRange::make($args);
 }
 
 /**
  * 创建 InputExcel 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -7516,7 +7583,6 @@ function AmisInputDatetimeRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -7564,12 +7630,14 @@ function AmisInputDatetimeRange(
  * @param bool $plainText 设置是否解析为纯文本
  * @param bool $multiple 解析多个文件
  * @param int $maxLength 解析文件最大数
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputExcel
  */
 function AmisInputExcel(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -7578,7 +7646,6 @@ function AmisInputExcel(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -7625,76 +7692,77 @@ function AmisInputExcel(
     mixed $includeEmpty = null,
     mixed $plainText = null,
     mixed $multiple = null,
-    mixed $maxLength = null
+    mixed $maxLength = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputExcel
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($allSheets !== null) $args['allSheets'] = $allSheets;
-    if ($parseMode !== null) $args['parseMode'] = $parseMode;
-    if ($includeEmpty !== null) $args['includeEmpty'] = $includeEmpty;
-    if ($plainText !== null) $args['plainText'] = $plainText;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $allSheets !== null && $args['allSheets'] = $allSheets;
+    $parseMode !== null && $args['parseMode'] = $parseMode;
+    $includeEmpty !== null && $args['includeEmpty'] = $includeEmpty;
+    $plainText !== null && $args['plainText'] = $plainText;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
     return \AmisSchema\Widget\Input\InputExcel::make($args);
 }
 
 /**
  * 创建 InputFile 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -7703,7 +7771,6 @@ function AmisInputExcel(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -7776,12 +7843,14 @@ function AmisInputExcel(
  * @param bool $initAutoFill 初始表单反显时是否执行
  * @param string $invalidTypeMessage 校验格式失败后的提示信息
  * @param string $invalidSizeMessage 校验文件大小失败时显示的文字信息
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputFile
  */
 function AmisInputFile(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -7790,7 +7859,6 @@ function AmisInputFile(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -7862,102 +7930,103 @@ function AmisInputFile(
     mixed $documentLink = null,
     mixed $initAutoFill = null,
     mixed $invalidTypeMessage = null,
-    mixed $invalidSizeMessage = null
+    mixed $invalidSizeMessage = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputFile
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($receiver !== null) $args['receiver'] = $receiver;
-    if ($accept !== null) $args['accept'] = $accept;
-    if ($capture !== null) $args['capture'] = $capture;
-    if ($asBase64 !== null) $args['asBase64'] = $asBase64;
-    if ($asBlob !== null) $args['asBlob'] = $asBlob;
-    if ($maxSize !== null) $args['maxSize'] = $maxSize;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($drag !== null) $args['drag'] = $drag;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($autoUpload !== null) $args['autoUpload'] = $autoUpload;
-    if ($hideUploadButton !== null) $args['hideUploadButton'] = $hideUploadButton;
-    if ($fileField !== null) $args['fileField'] = $fileField;
-    if ($nameField !== null) $args['nameField'] = $nameField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($urlField !== null) $args['urlField'] = $urlField;
-    if ($btnLabel !== null) $args['btnLabel'] = $btnLabel;
-    if ($downloadUrl !== null) $args['downloadUrl'] = $downloadUrl;
-    if ($useChunk !== null) $args['useChunk'] = $useChunk;
-    if ($chunkSize !== null) $args['chunkSize'] = $chunkSize;
-    if ($startChunkApi !== null) $args['startChunkApi'] = $startChunkApi;
-    if ($chunkApi !== null) $args['chunkApi'] = $chunkApi;
-    if ($finishChunkApi !== null) $args['finishChunkApi'] = $finishChunkApi;
-    if ($concurrency !== null) $args['concurrency'] = $concurrency;
-    if ($documentation !== null) $args['documentation'] = $documentation;
-    if ($documentLink !== null) $args['documentLink'] = $documentLink;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($invalidTypeMessage !== null) $args['invalidTypeMessage'] = $invalidTypeMessage;
-    if ($invalidSizeMessage !== null) $args['invalidSizeMessage'] = $invalidSizeMessage;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $receiver !== null && $args['receiver'] = $receiver;
+    $accept !== null && $args['accept'] = $accept;
+    $capture !== null && $args['capture'] = $capture;
+    $asBase64 !== null && $args['asBase64'] = $asBase64;
+    $asBlob !== null && $args['asBlob'] = $asBlob;
+    $maxSize !== null && $args['maxSize'] = $maxSize;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $drag !== null && $args['drag'] = $drag;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $autoUpload !== null && $args['autoUpload'] = $autoUpload;
+    $hideUploadButton !== null && $args['hideUploadButton'] = $hideUploadButton;
+    $fileField !== null && $args['fileField'] = $fileField;
+    $nameField !== null && $args['nameField'] = $nameField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $urlField !== null && $args['urlField'] = $urlField;
+    $btnLabel !== null && $args['btnLabel'] = $btnLabel;
+    $downloadUrl !== null && $args['downloadUrl'] = $downloadUrl;
+    $useChunk !== null && $args['useChunk'] = $useChunk;
+    $chunkSize !== null && $args['chunkSize'] = $chunkSize;
+    $startChunkApi !== null && $args['startChunkApi'] = $startChunkApi;
+    $chunkApi !== null && $args['chunkApi'] = $chunkApi;
+    $finishChunkApi !== null && $args['finishChunkApi'] = $finishChunkApi;
+    $concurrency !== null && $args['concurrency'] = $concurrency;
+    $documentation !== null && $args['documentation'] = $documentation;
+    $documentLink !== null && $args['documentLink'] = $documentLink;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $invalidTypeMessage !== null && $args['invalidTypeMessage'] = $invalidTypeMessage;
+    $invalidSizeMessage !== null && $args['invalidSizeMessage'] = $invalidSizeMessage;
     return \AmisSchema\Widget\Input\InputFile::make($args);
 }
 
 /**
  * 创建 InputFormula 组件
  * 
+ * @param string $type 设置指定表单项类型。
+ * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param string $title 弹框标题，默认为 '公式编辑器'
  * @param string $label 设置表单项标签。
- * @param string $name 设置字段名，指定该表单项提交时的 key。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $level 按钮样式，默认为 'default'
@@ -7968,7 +8037,6 @@ function AmisInputFile(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -8022,13 +8090,15 @@ function AmisInputFile(
  * @param string $variableClassName 变量面板 CSS 样式类名
  * @param string $functionClassName 函数面板 CSS 样式类名
  * @param bool $mixedMode 是否启用混合模式，支持输入文本和输入公式
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputFormula
  */
 function AmisInputFormula(
+    mixed $type = null,
+    mixed $name = null,
     mixed $title = null,
     mixed $label = null,
-    mixed $name = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $level = null,
@@ -8039,7 +8109,6 @@ function AmisInputFormula(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -8092,85 +8161,86 @@ function AmisInputFormula(
     mixed $borderMode = null,
     mixed $variableClassName = null,
     mixed $functionClassName = null,
-    mixed $mixedMode = null
+    mixed $mixedMode = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputFormula
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($level !== null) $args['level'] = $level;
-    if ($size !== null) $args['size'] = $size;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($header !== null) $args['header'] = $header;
-    if ($evalMode !== null) $args['evalMode'] = $evalMode;
-    if ($variableMode !== null) $args['variableMode'] = $variableMode;
-    if ($functions !== null) $args['functions'] = $functions;
-    if ($inputMode !== null) $args['inputMode'] = $inputMode;
-    if ($btnLabel !== null) $args['btnLabel'] = $btnLabel;
-    if ($allowInput !== null) $args['allowInput'] = $allowInput;
-    if ($btnSize !== null) $args['btnSize'] = $btnSize;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($variableClassName !== null) $args['variableClassName'] = $variableClassName;
-    if ($functionClassName !== null) $args['functionClassName'] = $functionClassName;
-    if ($mixedMode !== null) $args['mixedMode'] = $mixedMode;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $level !== null && $args['level'] = $level;
+    $size !== null && $args['size'] = $size;
+    $icon !== null && $args['icon'] = $icon;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $header !== null && $args['header'] = $header;
+    $evalMode !== null && $args['evalMode'] = $evalMode;
+    $variableMode !== null && $args['variableMode'] = $variableMode;
+    $functions !== null && $args['functions'] = $functions;
+    $inputMode !== null && $args['inputMode'] = $inputMode;
+    $btnLabel !== null && $args['btnLabel'] = $btnLabel;
+    $allowInput !== null && $args['allowInput'] = $allowInput;
+    $btnSize !== null && $args['btnSize'] = $btnSize;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $variableClassName !== null && $args['variableClassName'] = $variableClassName;
+    $functionClassName !== null && $args['functionClassName'] = $functionClassName;
+    $mixedMode !== null && $args['mixedMode'] = $mixedMode;
     return \AmisSchema\Widget\Input\InputFormula::make($args);
 }
 
 /**
  * 创建 InputGroup 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param array|\AmisSchema\Widget\Widget[]|\AmisSchema\Widget\Widget $body 表单项集合
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
@@ -8180,7 +8250,6 @@ function AmisInputFormula(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -8222,12 +8291,14 @@ function AmisInputFormula(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputGroup
  */
 function AmisInputGroup(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $body = null,
     mixed $value = null,
     mixed $placeholder = null,
@@ -8237,7 +8308,6 @@ function AmisInputGroup(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -8278,71 +8348,72 @@ function AmisInputGroup(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputGroup
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputGroup::make($args);
 }
 
 /**
  * 创建 InputImage 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -8351,7 +8422,6 @@ function AmisInputGroup(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -8419,12 +8489,14 @@ function AmisInputGroup(
  * @param bool $showErrorModal 校验失败后是否弹窗提醒
  * @param string $invalidTypeMessage 校验格式失败后的提示信息
  * @param string $invalidSizeMessage 校验文件大小失败时显示的文字信息
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputImage
  */
 function AmisInputImage(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -8433,7 +8505,6 @@ function AmisInputImage(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -8500,96 +8571,97 @@ function AmisInputImage(
     mixed $draggableTip = null,
     mixed $showErrorModal = null,
     mixed $invalidTypeMessage = null,
-    mixed $invalidSizeMessage = null
+    mixed $invalidSizeMessage = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputImage
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($receiver !== null) $args['receiver'] = $receiver;
-    if ($accept !== null) $args['accept'] = $accept;
-    if ($capture !== null) $args['capture'] = $capture;
-    if ($maxSize !== null) $args['maxSize'] = $maxSize;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($autoUpload !== null) $args['autoUpload'] = $autoUpload;
-    if ($hideUploadButton !== null) $args['hideUploadButton'] = $hideUploadButton;
-    if ($fileField !== null) $args['fileField'] = $fileField;
-    if ($cropFormat !== null) $args['cropFormat'] = $cropFormat;
-    if ($cropQuality !== null) $args['cropQuality'] = $cropQuality;
-    if ($frameImage !== null) $args['frameImage'] = $frameImage;
-    if ($fixedSize !== null) $args['fixedSize'] = $fixedSize;
-    if ($fixedSizeClassName !== null) $args['fixedSizeClassName'] = $fixedSizeClassName;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($uploadBtnText !== null) $args['uploadBtnText'] = $uploadBtnText;
-    if ($dropCrop !== null) $args['dropCrop'] = $dropCrop;
-    if ($initCrop !== null) $args['initCrop'] = $initCrop;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($draggableTip !== null) $args['draggableTip'] = $draggableTip;
-    if ($showErrorModal !== null) $args['showErrorModal'] = $showErrorModal;
-    if ($invalidTypeMessage !== null) $args['invalidTypeMessage'] = $invalidTypeMessage;
-    if ($invalidSizeMessage !== null) $args['invalidSizeMessage'] = $invalidSizeMessage;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $receiver !== null && $args['receiver'] = $receiver;
+    $accept !== null && $args['accept'] = $accept;
+    $capture !== null && $args['capture'] = $capture;
+    $maxSize !== null && $args['maxSize'] = $maxSize;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $autoUpload !== null && $args['autoUpload'] = $autoUpload;
+    $hideUploadButton !== null && $args['hideUploadButton'] = $hideUploadButton;
+    $fileField !== null && $args['fileField'] = $fileField;
+    $cropFormat !== null && $args['cropFormat'] = $cropFormat;
+    $cropQuality !== null && $args['cropQuality'] = $cropQuality;
+    $frameImage !== null && $args['frameImage'] = $frameImage;
+    $fixedSize !== null && $args['fixedSize'] = $fixedSize;
+    $fixedSizeClassName !== null && $args['fixedSizeClassName'] = $fixedSizeClassName;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $uploadBtnText !== null && $args['uploadBtnText'] = $uploadBtnText;
+    $dropCrop !== null && $args['dropCrop'] = $dropCrop;
+    $initCrop !== null && $args['initCrop'] = $initCrop;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $draggableTip !== null && $args['draggableTip'] = $draggableTip;
+    $showErrorModal !== null && $args['showErrorModal'] = $showErrorModal;
+    $invalidTypeMessage !== null && $args['invalidTypeMessage'] = $invalidTypeMessage;
+    $invalidSizeMessage !== null && $args['invalidSizeMessage'] = $invalidSizeMessage;
     return \AmisSchema\Widget\Input\InputImage::make($args);
 }
 
 /**
  * 创建 InputKV 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -8598,7 +8670,6 @@ function AmisInputImage(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -8647,12 +8718,14 @@ function AmisInputImage(
  * @param bool $autoParseJSON 是否自动转换 json 对象字符串，默认为 true
  * @param array|\AmisSchema\Widget\Widget $valueSchema 自定义 value 的 schema 配置 (3.1.0+)
  * @param array|\AmisSchema\Widget\Widget $keySchema 自定义 key 的 schema 配置 (3.1.0+)
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputKV
  */
 function AmisInputKV(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -8661,7 +8734,6 @@ function AmisInputKV(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -8709,77 +8781,78 @@ function AmisInputKV(
     mixed $draggable = null,
     mixed $autoParseJSON = null,
     mixed $valueSchema = null,
-    mixed $keySchema = null
+    mixed $keySchema = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputKV
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($valueType !== null) $args['valueType'] = $valueType;
-    if ($keyPlaceholder !== null) $args['keyPlaceholder'] = $keyPlaceholder;
-    if ($valuePlaceholder !== null) $args['valuePlaceholder'] = $valuePlaceholder;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($autoParseJSON !== null) $args['autoParseJSON'] = $autoParseJSON;
-    if ($valueSchema !== null) $args['valueSchema'] = $valueSchema;
-    if ($keySchema !== null) $args['keySchema'] = $keySchema;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $valueType !== null && $args['valueType'] = $valueType;
+    $keyPlaceholder !== null && $args['keyPlaceholder'] = $keyPlaceholder;
+    $valuePlaceholder !== null && $args['valuePlaceholder'] = $valuePlaceholder;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $autoParseJSON !== null && $args['autoParseJSON'] = $autoParseJSON;
+    $valueSchema !== null && $args['valueSchema'] = $valueSchema;
+    $keySchema !== null && $args['keySchema'] = $keySchema;
     return \AmisSchema\Widget\Input\InputKV::make($args);
 }
 
 /**
  * 创建 InputKVS 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -8788,7 +8861,6 @@ function AmisInputKV(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -8835,12 +8907,14 @@ function AmisInputKV(
  * @param string $addButtonText 新增按钮文字，默认为"新增"
  * @param bool $draggable 是否可拖拽排序，默认为 true
  * @param bool $valueIsArray 值是否为数组类型，默认为 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputKVS
  */
 function AmisInputKVS(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -8849,7 +8923,6 @@ function AmisInputKVS(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -8895,75 +8968,76 @@ function AmisInputKVS(
     mixed $valueItems = null,
     mixed $addButtonText = null,
     mixed $draggable = null,
-    mixed $valueIsArray = null
+    mixed $valueIsArray = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputKVS
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($keyItem !== null) $args['keyItem'] = $keyItem;
-    if ($valueItems !== null) $args['valueItems'] = $valueItems;
-    if ($addButtonText !== null) $args['addButtonText'] = $addButtonText;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($valueIsArray !== null) $args['valueIsArray'] = $valueIsArray;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $keyItem !== null && $args['keyItem'] = $keyItem;
+    $valueItems !== null && $args['valueItems'] = $valueItems;
+    $addButtonText !== null && $args['addButtonText'] = $addButtonText;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $valueIsArray !== null && $args['valueIsArray'] = $valueIsArray;
     return \AmisSchema\Widget\Input\InputKVS::make($args);
 }
 
 /**
  * 创建 InputMonth 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -8972,7 +9046,6 @@ function AmisInputKVS(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9014,12 +9087,14 @@ function AmisInputKVS(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputMonth
  */
 function AmisInputMonth(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9028,7 +9103,6 @@ function AmisInputMonth(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -9069,70 +9143,71 @@ function AmisInputMonth(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputMonth
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputMonth::make($args);
 }
 
 /**
  * 创建 InputMonthRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -9141,7 +9216,6 @@ function AmisInputMonth(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9185,12 +9259,14 @@ function AmisInputMonth(
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param string $format 设置日期选择器值格式，默认为 "X"
  * @param string $inputFormat 设置日期选择器显示格式，默认为 "YYYY-DD"
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputMonthRange
  */
 function AmisInputMonthRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9199,7 +9275,6 @@ function AmisInputMonthRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -9242,72 +9317,73 @@ function AmisInputMonthRange(
     mixed $columnClassName = null,
     mixed $unique = null,
     mixed $format = null,
-    mixed $inputFormat = null
+    mixed $inputFormat = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputMonthRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($format !== null) $args['format'] = $format;
-    if ($inputFormat !== null) $args['inputFormat'] = $inputFormat;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $format !== null && $args['format'] = $format;
+    $inputFormat !== null && $args['inputFormat'] = $inputFormat;
     return \AmisSchema\Widget\Input\InputMonthRange::make($args);
 }
 
 /**
  * 创建 InputNumber 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -9316,7 +9392,6 @@ function AmisInputMonthRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9373,12 +9448,14 @@ function AmisInputMonthRange(
  * @param string $borderMode 边框模式，全边框，还是半边框，或者没边框
  * @param int|string $resetValue 清空输入内容时，组件值将设置为 resetValue
  * @param bool $clearValueOnEmpty 内容为空时从数据域中删除该表单项对应的值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputNumber
  */
 function AmisInputNumber(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9387,7 +9464,6 @@ function AmisInputNumber(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -9443,85 +9519,86 @@ function AmisInputNumber(
     mixed $displayMode = null,
     mixed $borderMode = null,
     mixed $resetValue = null,
-    mixed $clearValueOnEmpty = null
+    mixed $clearValueOnEmpty = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputNumber
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($min !== null) $args['min'] = $min;
-    if ($max !== null) $args['max'] = $max;
-    if ($step !== null) $args['step'] = $step;
-    if ($precision !== null) $args['precision'] = $precision;
-    if ($showSteps !== null) $args['showSteps'] = $showSteps;
-    if ($prefix !== null) $args['prefix'] = $prefix;
-    if ($suffix !== null) $args['suffix'] = $suffix;
-    if ($unitOptions !== null) $args['unitOptions'] = $unitOptions;
-    if ($kilobitSeparator !== null) $args['kilobitSeparator'] = $kilobitSeparator;
-    if ($keyboard !== null) $args['keyboard'] = $keyboard;
-    if ($big !== null) $args['big'] = $big;
-    if ($displayMode !== null) $args['displayMode'] = $displayMode;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
-    if ($clearValueOnEmpty !== null) $args['clearValueOnEmpty'] = $clearValueOnEmpty;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $min !== null && $args['min'] = $min;
+    $max !== null && $args['max'] = $max;
+    $step !== null && $args['step'] = $step;
+    $precision !== null && $args['precision'] = $precision;
+    $showSteps !== null && $args['showSteps'] = $showSteps;
+    $prefix !== null && $args['prefix'] = $prefix;
+    $suffix !== null && $args['suffix'] = $suffix;
+    $unitOptions !== null && $args['unitOptions'] = $unitOptions;
+    $kilobitSeparator !== null && $args['kilobitSeparator'] = $kilobitSeparator;
+    $keyboard !== null && $args['keyboard'] = $keyboard;
+    $big !== null && $args['big'] = $big;
+    $displayMode !== null && $args['displayMode'] = $displayMode;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
+    $clearValueOnEmpty !== null && $args['clearValueOnEmpty'] = $clearValueOnEmpty;
     return \AmisSchema\Widget\Input\InputNumber::make($args);
 }
 
 /**
  * 创建 InputPassword 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -9530,7 +9607,6 @@ function AmisInputNumber(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9586,12 +9662,14 @@ function AmisInputNumber(
  * @param string $nativeInputClassName 设置原生 input 标签的 CSS 类名
  * @param string $nativeAutoComplete 设置原生 input 标签的 autoComplete 属性
  * @param bool $revealPassword 是否展示密码显/隐按钮
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputPassword
  */
 function AmisInputPassword(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9600,7 +9678,6 @@ function AmisInputPassword(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -9655,84 +9732,85 @@ function AmisInputPassword(
     mixed $inputControlClassName = null,
     mixed $nativeInputClassName = null,
     mixed $nativeAutoComplete = null,
-    mixed $revealPassword = null
+    mixed $revealPassword = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputPassword
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($trimContents !== null) $args['trimContents'] = $trimContents;
-    if ($clearValueOnEmpty !== null) $args['clearValueOnEmpty'] = $clearValueOnEmpty;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
-    if ($prefix !== null) $args['prefix'] = $prefix;
-    if ($suffix !== null) $args['suffix'] = $suffix;
-    if ($showCounter !== null) $args['showCounter'] = $showCounter;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($inputControlClassName !== null) $args['inputControlClassName'] = $inputControlClassName;
-    if ($nativeInputClassName !== null) $args['nativeInputClassName'] = $nativeInputClassName;
-    if ($nativeAutoComplete !== null) $args['nativeAutoComplete'] = $nativeAutoComplete;
-    if ($revealPassword !== null) $args['revealPassword'] = $revealPassword;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $trimContents !== null && $args['trimContents'] = $trimContents;
+    $clearValueOnEmpty !== null && $args['clearValueOnEmpty'] = $clearValueOnEmpty;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
+    $prefix !== null && $args['prefix'] = $prefix;
+    $suffix !== null && $args['suffix'] = $suffix;
+    $showCounter !== null && $args['showCounter'] = $showCounter;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $inputControlClassName !== null && $args['inputControlClassName'] = $inputControlClassName;
+    $nativeInputClassName !== null && $args['nativeInputClassName'] = $nativeInputClassName;
+    $nativeAutoComplete !== null && $args['nativeAutoComplete'] = $nativeAutoComplete;
+    $revealPassword !== null && $args['revealPassword'] = $revealPassword;
     return \AmisSchema\Widget\Input\InputPassword::make($args);
 }
 
 /**
  * 创建 InputQuarter 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -9741,7 +9819,6 @@ function AmisInputPassword(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9783,12 +9860,14 @@ function AmisInputPassword(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputQuarter
  */
 function AmisInputQuarter(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9797,7 +9876,6 @@ function AmisInputQuarter(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -9838,70 +9916,71 @@ function AmisInputQuarter(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputQuarter
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputQuarter::make($args);
 }
 
 /**
  * 创建 InputQuarterRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -9910,7 +9989,6 @@ function AmisInputQuarter(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -9952,12 +10030,14 @@ function AmisInputQuarter(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputQuarterRange
  */
 function AmisInputQuarterRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -9966,7 +10046,6 @@ function AmisInputQuarterRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -10007,70 +10086,71 @@ function AmisInputQuarterRange(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputQuarterRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputQuarterRange::make($args);
 }
 
 /**
  * 创建 InputRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -10079,7 +10159,6 @@ function AmisInputQuarterRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -10163,12 +10242,14 @@ function AmisInputQuarterRange(
  * @param bool $clearable 设置是否可清除
  * @param bool $showInput 设置是否显示输入框
  * @param bool $showInputUnit 设置是否显示输入框单位
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputRange
  */
 function AmisInputRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -10177,7 +10258,6 @@ function AmisInputRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -10260,112 +10340,113 @@ function AmisInputRange(
     mixed $unit = null,
     mixed $clearable = null,
     mixed $showInput = null,
-    mixed $showInputUnit = null
+    mixed $showInputUnit = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($min !== null) $args['min'] = $min;
-    if ($max !== null) $args['max'] = $max;
-    if ($step !== null) $args['step'] = $step;
-    if ($showSteps !== null) $args['showSteps'] = $showSteps;
-    if ($parts !== null) $args['parts'] = $parts;
-    if ($tooltipVisible !== null) $args['tooltipVisible'] = $tooltipVisible;
-    if ($tooltipPlacement !== null) $args['tooltipPlacement'] = $tooltipPlacement;
-    if ($unit !== null) $args['unit'] = $unit;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($showInput !== null) $args['showInput'] = $showInput;
-    if ($showInputUnit !== null) $args['showInputUnit'] = $showInputUnit;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $min !== null && $args['min'] = $min;
+    $max !== null && $args['max'] = $max;
+    $step !== null && $args['step'] = $step;
+    $showSteps !== null && $args['showSteps'] = $showSteps;
+    $parts !== null && $args['parts'] = $parts;
+    $tooltipVisible !== null && $args['tooltipVisible'] = $tooltipVisible;
+    $tooltipPlacement !== null && $args['tooltipPlacement'] = $tooltipPlacement;
+    $unit !== null && $args['unit'] = $unit;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $showInput !== null && $args['showInput'] = $showInput;
+    $showInputUnit !== null && $args['showInputUnit'] = $showInputUnit;
     return \AmisSchema\Widget\Input\InputRange::make($args);
 }
 
 /**
  * 创建 InputRating 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -10374,7 +10455,6 @@ function AmisInputRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -10426,12 +10506,14 @@ function AmisInputRange(
  * @param string $textClassName 自定义文字类名
  * @param array $colors 星星被选中的颜色。 若传入字符串，则只有一种颜色。若传入对象，可自定义分段，键名为分段的界限值，键值为对应的类名
  * @param array|string $texts 星星被选中时的提示文字。可自定义分段，键名为分段的界限值，键值为对应的类名
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputRating
  */
 function AmisInputRating(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -10440,7 +10522,6 @@ function AmisInputRating(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -10491,80 +10572,81 @@ function AmisInputRating(
     mixed $charClassName = null,
     mixed $textClassName = null,
     mixed $colors = null,
-    mixed $texts = null
+    mixed $texts = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputRating
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($half !== null) $args['half'] = $half;
-    if ($count !== null) $args['count'] = $count;
-    if ($allowClear !== null) $args['allowClear'] = $allowClear;
-    if ($inactiveColor !== null) $args['inactiveColor'] = $inactiveColor;
-    if ($textPosition !== null) $args['textPosition'] = $textPosition;
-    if ($char !== null) $args['char'] = $char;
-    if ($charClassName !== null) $args['charClassName'] = $charClassName;
-    if ($textClassName !== null) $args['textClassName'] = $textClassName;
-    if ($colors !== null) $args['colors'] = $colors;
-    if ($texts !== null) $args['texts'] = $texts;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $half !== null && $args['half'] = $half;
+    $count !== null && $args['count'] = $count;
+    $allowClear !== null && $args['allowClear'] = $allowClear;
+    $inactiveColor !== null && $args['inactiveColor'] = $inactiveColor;
+    $textPosition !== null && $args['textPosition'] = $textPosition;
+    $char !== null && $args['char'] = $char;
+    $charClassName !== null && $args['charClassName'] = $charClassName;
+    $textClassName !== null && $args['textClassName'] = $textClassName;
+    $colors !== null && $args['colors'] = $colors;
+    $texts !== null && $args['texts'] = $texts;
     return \AmisSchema\Widget\Input\InputRating::make($args);
 }
 
 /**
  * 创建 InputRepeat 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置当不指定值时的说明，默认为 不重复
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -10573,7 +10655,6 @@ function AmisInputRating(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -10616,12 +10697,14 @@ function AmisInputRating(
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param string $options 设置可用配置，默认为 hourly,daily,weekly,monthly，可用配置 secondly,minutely,hourly,daily,weekdays,weekly,monthly,yearly
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputRepeat
  */
 function AmisInputRepeat(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -10630,7 +10713,6 @@ function AmisInputRepeat(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -10672,71 +10754,72 @@ function AmisInputRepeat(
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
     mixed $unique = null,
-    mixed $options = null
+    mixed $options = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputRepeat
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
     return \AmisSchema\Widget\Input\InputRepeat::make($args);
 }
 
 /**
  * 创建 InputRichText 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -10745,7 +10828,6 @@ function AmisInputRepeat(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -10793,12 +10875,14 @@ function AmisInputRepeat(
  * @param string $fileField 设置上传文件时的字段名
  * @param array $options 设置 tinymce 或 froala 的配置选项
  * @param string[] $buttons 设置 froala 专用按钮配置，配置显示的按钮，tinymce 可以通过 options 设置 toolbar 字符串
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputRichText
  */
 function AmisInputRichText(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -10807,7 +10891,6 @@ function AmisInputRichText(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -10854,76 +10937,77 @@ function AmisInputRichText(
     mixed $videoReceiver = null,
     mixed $fileField = null,
     mixed $options = null,
-    mixed $buttons = null
+    mixed $buttons = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputRichText
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($saveAsUbb !== null) $args['saveAsUbb'] = $saveAsUbb;
-    if ($receiver !== null) $args['receiver'] = $receiver;
-    if ($videoReceiver !== null) $args['videoReceiver'] = $videoReceiver;
-    if ($fileField !== null) $args['fileField'] = $fileField;
-    if ($options !== null) $args['options'] = $options;
-    if ($buttons !== null) $args['buttons'] = $buttons;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $saveAsUbb !== null && $args['saveAsUbb'] = $saveAsUbb;
+    $receiver !== null && $args['receiver'] = $receiver;
+    $videoReceiver !== null && $args['videoReceiver'] = $videoReceiver;
+    $fileField !== null && $args['fileField'] = $fileField;
+    $options !== null && $args['options'] = $options;
+    $buttons !== null && $args['buttons'] = $buttons;
     return \AmisSchema\Widget\Input\InputRichText::make($args);
 }
 
 /**
  * 创建 InputSignature 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -10932,7 +11016,6 @@ function AmisInputRichText(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -10987,12 +11070,14 @@ function AmisInputRichText(
  * @param string $embedBtnIcon 设置内嵌按钮图标
  * @param string $embedBtnLabel 设置内嵌按钮文案
  * @param \AmisSchema\Definition\API|array|string $uploadApi 设置上传签名图片接口，仅在内嵌模式下生效
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputSignature
  */
 function AmisInputSignature(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -11001,7 +11086,6 @@ function AmisInputSignature(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -11055,83 +11139,84 @@ function AmisInputSignature(
     mixed $ebmedCancelLabel = null,
     mixed $embedBtnIcon = null,
     mixed $embedBtnLabel = null,
-    mixed $uploadApi = null
+    mixed $uploadApi = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputSignature
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($color !== null) $args['color'] = $color;
-    if ($bgColor !== null) $args['bgColor'] = $bgColor;
-    if ($clearBtnLabel !== null) $args['clearBtnLabel'] = $clearBtnLabel;
-    if ($undoBtnLabel !== null) $args['undoBtnLabel'] = $undoBtnLabel;
-    if ($confirmBtnLabel !== null) $args['confirmBtnLabel'] = $confirmBtnLabel;
-    if ($embed !== null) $args['embed'] = $embed;
-    if ($embedConfirmLabel !== null) $args['embedConfirmLabel'] = $embedConfirmLabel;
-    if ($ebmedCancelLabel !== null) $args['ebmedCancelLabel'] = $ebmedCancelLabel;
-    if ($embedBtnIcon !== null) $args['embedBtnIcon'] = $embedBtnIcon;
-    if ($embedBtnLabel !== null) $args['embedBtnLabel'] = $embedBtnLabel;
-    if ($uploadApi !== null) $args['uploadApi'] = $uploadApi;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $color !== null && $args['color'] = $color;
+    $bgColor !== null && $args['bgColor'] = $bgColor;
+    $clearBtnLabel !== null && $args['clearBtnLabel'] = $clearBtnLabel;
+    $undoBtnLabel !== null && $args['undoBtnLabel'] = $undoBtnLabel;
+    $confirmBtnLabel !== null && $args['confirmBtnLabel'] = $confirmBtnLabel;
+    $embed !== null && $args['embed'] = $embed;
+    $embedConfirmLabel !== null && $args['embedConfirmLabel'] = $embedConfirmLabel;
+    $ebmedCancelLabel !== null && $args['ebmedCancelLabel'] = $ebmedCancelLabel;
+    $embedBtnIcon !== null && $args['embedBtnIcon'] = $embedBtnIcon;
+    $embedBtnLabel !== null && $args['embedBtnLabel'] = $embedBtnLabel;
+    $uploadApi !== null && $args['uploadApi'] = $uploadApi;
     return \AmisSchema\Widget\Input\InputSignature::make($args);
 }
 
 /**
  * 创建 InputSubForm 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -11140,7 +11225,6 @@ function AmisInputSignature(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -11195,12 +11279,14 @@ function AmisInputSignature(
  * @param string $itemsClassName 设置值包裹元素 CSS 类名
  * @param array|\AmisSchema\Widget\Input\Form $form 设置子表单配置，同 Form
  * @param string $addButtonText 设置自定义新增一项的文本
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputSubForm
  */
 function AmisInputSubForm(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -11209,7 +11295,6 @@ function AmisInputSubForm(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -11263,83 +11348,84 @@ function AmisInputSubForm(
     mixed $itemClassName = null,
     mixed $itemsClassName = null,
     mixed $form = null,
-    mixed $addButtonText = null
+    mixed $addButtonText = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputSubForm
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($btnLabel !== null) $args['btnLabel'] = $btnLabel;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($addable !== null) $args['addable'] = $addable;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($addButtonClassName !== null) $args['addButtonClassName'] = $addButtonClassName;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($itemsClassName !== null) $args['itemsClassName'] = $itemsClassName;
-    if ($form !== null) $args['form'] = $form;
-    if ($addButtonText !== null) $args['addButtonText'] = $addButtonText;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $btnLabel !== null && $args['btnLabel'] = $btnLabel;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $addable !== null && $args['addable'] = $addable;
+    $removable !== null && $args['removable'] = $removable;
+    $addButtonClassName !== null && $args['addButtonClassName'] = $addButtonClassName;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $itemsClassName !== null && $args['itemsClassName'] = $itemsClassName;
+    $form !== null && $args['form'] = $form;
+    $addButtonText !== null && $args['addButtonText'] = $addButtonText;
     return \AmisSchema\Widget\Input\InputSubForm::make($args);
 }
 
 /**
  * 创建 InputTable 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 指定为 Table 渲染器
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置当没有数据的时候的文字提示
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -11348,7 +11434,6 @@ function AmisInputSubForm(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 指定为 Table 渲染器
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -11428,12 +11513,14 @@ function AmisInputSubForm(
  * @param string $deleteConfirmText 设置删除确认文字
  * @param string $valueField 设置可以用来设置在什么字段上保存数组信息
  * @param string $subAddBtnIcon 
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTable
  */
 function AmisInputTable(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -11442,7 +11529,6 @@ function AmisInputTable(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -11521,108 +11607,109 @@ function AmisInputTable(
     mixed $scaffold = null,
     mixed $deleteConfirmText = null,
     mixed $valueField = null,
-    mixed $subAddBtnIcon = null
+    mixed $subAddBtnIcon = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputTable
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($addable !== null) $args['addable'] = $addable;
-    if ($copyable !== null) $args['copyable'] = $copyable;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($showTableAddBtn !== null) $args['showTableAddBtn'] = $showTableAddBtn;
-    if ($showFooterAddBtn !== null) $args['showFooterAddBtn'] = $showFooterAddBtn;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($updateApi !== null) $args['updateApi'] = $updateApi;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($addBtnLabel !== null) $args['addBtnLabel'] = $addBtnLabel;
-    if ($addBtnIcon !== null) $args['addBtnIcon'] = $addBtnIcon;
-    if ($copyBtnLabel !== null) $args['copyBtnLabel'] = $copyBtnLabel;
-    if ($copyBtnIcon !== null) $args['copyBtnIcon'] = $copyBtnIcon;
-    if ($editBtnLabel !== null) $args['editBtnLabel'] = $editBtnLabel;
-    if ($editBtnIcon !== null) $args['editBtnIcon'] = $editBtnIcon;
-    if ($deleteBtnLabel !== null) $args['deleteBtnLabel'] = $deleteBtnLabel;
-    if ($deleteBtnIcon !== null) $args['deleteBtnIcon'] = $deleteBtnIcon;
-    if ($confirmBtnLabel !== null) $args['confirmBtnLabel'] = $confirmBtnLabel;
-    if ($confirmBtnIcon !== null) $args['confirmBtnIcon'] = $confirmBtnIcon;
-    if ($cancelBtnLabel !== null) $args['cancelBtnLabel'] = $cancelBtnLabel;
-    if ($cancelBtnIcon !== null) $args['cancelBtnIcon'] = $cancelBtnIcon;
-    if ($needConfirm !== null) $args['needConfirm'] = $needConfirm;
-    if ($canAccessSuperData !== null) $args['canAccessSuperData'] = $canAccessSuperData;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($perPage !== null) $args['perPage'] = $perPage;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($itemCheckableOn !== null) $args['itemCheckableOn'] = $itemCheckableOn;
-    if ($itemDraggableOn !== null) $args['itemDraggableOn'] = $itemDraggableOn;
-    if ($checkOnItemClick !== null) $args['checkOnItemClick'] = $checkOnItemClick;
-    if ($hideCheckToggler !== null) $args['hideCheckToggler'] = $hideCheckToggler;
-    if ($combineNum !== null) $args['combineNum'] = $combineNum;
-    if ($combineFromIndex !== null) $args['combineFromIndex'] = $combineFromIndex;
-    if ($footerAddBtn !== null) $args['footerAddBtn'] = $footerAddBtn;
-    if ($scaffold !== null) $args['scaffold'] = $scaffold;
-    if ($deleteConfirmText !== null) $args['deleteConfirmText'] = $deleteConfirmText;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($subAddBtnIcon !== null) $args['subAddBtnIcon'] = $subAddBtnIcon;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $addable !== null && $args['addable'] = $addable;
+    $copyable !== null && $args['copyable'] = $copyable;
+    $editable !== null && $args['editable'] = $editable;
+    $removable !== null && $args['removable'] = $removable;
+    $showTableAddBtn !== null && $args['showTableAddBtn'] = $showTableAddBtn;
+    $showFooterAddBtn !== null && $args['showFooterAddBtn'] = $showFooterAddBtn;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $updateApi !== null && $args['updateApi'] = $updateApi;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $addBtnLabel !== null && $args['addBtnLabel'] = $addBtnLabel;
+    $addBtnIcon !== null && $args['addBtnIcon'] = $addBtnIcon;
+    $copyBtnLabel !== null && $args['copyBtnLabel'] = $copyBtnLabel;
+    $copyBtnIcon !== null && $args['copyBtnIcon'] = $copyBtnIcon;
+    $editBtnLabel !== null && $args['editBtnLabel'] = $editBtnLabel;
+    $editBtnIcon !== null && $args['editBtnIcon'] = $editBtnIcon;
+    $deleteBtnLabel !== null && $args['deleteBtnLabel'] = $deleteBtnLabel;
+    $deleteBtnIcon !== null && $args['deleteBtnIcon'] = $deleteBtnIcon;
+    $confirmBtnLabel !== null && $args['confirmBtnLabel'] = $confirmBtnLabel;
+    $confirmBtnIcon !== null && $args['confirmBtnIcon'] = $confirmBtnIcon;
+    $cancelBtnLabel !== null && $args['cancelBtnLabel'] = $cancelBtnLabel;
+    $cancelBtnIcon !== null && $args['cancelBtnIcon'] = $cancelBtnIcon;
+    $needConfirm !== null && $args['needConfirm'] = $needConfirm;
+    $canAccessSuperData !== null && $args['canAccessSuperData'] = $canAccessSuperData;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $perPage !== null && $args['perPage'] = $perPage;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $itemCheckableOn !== null && $args['itemCheckableOn'] = $itemCheckableOn;
+    $itemDraggableOn !== null && $args['itemDraggableOn'] = $itemDraggableOn;
+    $checkOnItemClick !== null && $args['checkOnItemClick'] = $checkOnItemClick;
+    $hideCheckToggler !== null && $args['hideCheckToggler'] = $hideCheckToggler;
+    $combineNum !== null && $args['combineNum'] = $combineNum;
+    $combineFromIndex !== null && $args['combineFromIndex'] = $combineFromIndex;
+    $footerAddBtn !== null && $args['footerAddBtn'] = $footerAddBtn;
+    $scaffold !== null && $args['scaffold'] = $scaffold;
+    $deleteConfirmText !== null && $args['deleteConfirmText'] = $deleteConfirmText;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $subAddBtnIcon !== null && $args['subAddBtnIcon'] = $subAddBtnIcon;
     return \AmisSchema\Widget\Input\InputTable::make($args);
 }
 
 /**
  * 创建 InputTag 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -11631,7 +11718,6 @@ function AmisInputTable(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -11712,12 +11798,14 @@ function AmisInputTable(
  * @param int $maxTagCount 设置标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
  * @param bool $enableBatchAdd 设置是否开启批量添加模式
  * @param string $separator 设置开启批量添加后，输入多个标签的分隔符，支持传入多个符号
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTag
  */
 function AmisInputTag(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -11726,7 +11814,6 @@ function AmisInputTag(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -11806,109 +11893,110 @@ function AmisInputTag(
     mixed $maxTagLength = null,
     mixed $maxTagCount = null,
     mixed $enableBatchAdd = null,
-    mixed $separator = null
+    mixed $separator = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputTag
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($optionsTip !== null) $args['optionsTip'] = $optionsTip;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
-    if ($max !== null) $args['max'] = $max;
-    if ($maxTagLength !== null) $args['maxTagLength'] = $maxTagLength;
-    if ($maxTagCount !== null) $args['maxTagCount'] = $maxTagCount;
-    if ($enableBatchAdd !== null) $args['enableBatchAdd'] = $enableBatchAdd;
-    if ($separator !== null) $args['separator'] = $separator;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $optionsTip !== null && $args['optionsTip'] = $optionsTip;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
+    $max !== null && $args['max'] = $max;
+    $maxTagLength !== null && $args['maxTagLength'] = $maxTagLength;
+    $maxTagCount !== null && $args['maxTagCount'] = $maxTagCount;
+    $enableBatchAdd !== null && $args['enableBatchAdd'] = $enableBatchAdd;
+    $separator !== null && $args['separator'] = $separator;
     return \AmisSchema\Widget\Input\InputTag::make($args);
 }
 
 /**
  * 创建 InputText 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -11917,7 +12005,6 @@ function AmisInputTag(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -11972,12 +12059,14 @@ function AmisInputTag(
  * @param string $inputControlClassName 设置 control 节点的 CSS 类名
  * @param string $nativeInputClassName 设置原生 input 标签的 CSS 类名
  * @param string $nativeAutoComplete 设置原生 input 标签的 autoComplete 属性
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputText
  */
 function AmisInputText(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -11986,7 +12075,6 @@ function AmisInputText(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -12040,83 +12128,84 @@ function AmisInputText(
     mixed $borderMode = null,
     mixed $inputControlClassName = null,
     mixed $nativeInputClassName = null,
-    mixed $nativeAutoComplete = null
+    mixed $nativeAutoComplete = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputText
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($trimContents !== null) $args['trimContents'] = $trimContents;
-    if ($clearValueOnEmpty !== null) $args['clearValueOnEmpty'] = $clearValueOnEmpty;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
-    if ($prefix !== null) $args['prefix'] = $prefix;
-    if ($suffix !== null) $args['suffix'] = $suffix;
-    if ($showCounter !== null) $args['showCounter'] = $showCounter;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($inputControlClassName !== null) $args['inputControlClassName'] = $inputControlClassName;
-    if ($nativeInputClassName !== null) $args['nativeInputClassName'] = $nativeInputClassName;
-    if ($nativeAutoComplete !== null) $args['nativeAutoComplete'] = $nativeAutoComplete;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $trimContents !== null && $args['trimContents'] = $trimContents;
+    $clearValueOnEmpty !== null && $args['clearValueOnEmpty'] = $clearValueOnEmpty;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
+    $prefix !== null && $args['prefix'] = $prefix;
+    $suffix !== null && $args['suffix'] = $suffix;
+    $showCounter !== null && $args['showCounter'] = $showCounter;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $inputControlClassName !== null && $args['inputControlClassName'] = $inputControlClassName;
+    $nativeInputClassName !== null && $args['nativeInputClassName'] = $nativeInputClassName;
+    $nativeAutoComplete !== null && $args['nativeAutoComplete'] = $nativeAutoComplete;
     return \AmisSchema\Widget\Input\InputText::make($args);
 }
 
 /**
  * 创建 InputTime 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -12125,7 +12214,6 @@ function AmisInputText(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -12167,12 +12255,14 @@ function AmisInputText(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTime
  */
 function AmisInputTime(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -12181,7 +12271,6 @@ function AmisInputTime(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -12222,70 +12311,71 @@ function AmisInputTime(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputTime
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputTime::make($args);
 }
 
 /**
  * 创建 InputTimeRange 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -12294,7 +12384,6 @@ function AmisInputTime(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -12336,12 +12425,14 @@ function AmisInputTime(
  * @param bool $validateOnChange 设置表单项值发生变化时就校验。
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTimeRange
  */
 function AmisInputTimeRange(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -12350,7 +12441,6 @@ function AmisInputTimeRange(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -12391,70 +12481,71 @@ function AmisInputTimeRange(
     mixed $staticSchema = null,
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
-    mixed $unique = null
+    mixed $unique = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputTimeRange
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
     return \AmisSchema\Widget\Input\InputTimeRange::make($args);
 }
 
 /**
  * 创建 InputTree 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -12463,7 +12554,6 @@ function AmisInputTimeRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -12540,12 +12630,14 @@ function AmisInputTimeRange(
  * @param mixed $itemActions 设置节点操作栏区域
  * @param array|\AmisSchema\Definition\API|string $deferApi 
  * @param bool $clearable 设置单选模式下是否支持清空
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputTree
  */
 function AmisInputTree(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -12554,7 +12646,6 @@ function AmisInputTree(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -12630,105 +12721,106 @@ function AmisInputTree(
     mixed $toolbarClassName = null,
     mixed $itemActions = null,
     mixed $deferApi = null,
-    mixed $clearable = null
+    mixed $clearable = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputTree
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($iconField !== null) $args['iconField'] = $iconField;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($hideRoot !== null) $args['hideRoot'] = $hideRoot;
-    if ($rootLabel !== null) $args['rootLabel'] = $rootLabel;
-    if ($showIcon !== null) $args['showIcon'] = $showIcon;
-    if ($showRadio !== null) $args['showRadio'] = $showRadio;
-    if ($showOutline !== null) $args['showOutline'] = $showOutline;
-    if ($initiallyOpen !== null) $args['initiallyOpen'] = $initiallyOpen;
-    if ($unfoldedLevel !== null) $args['unfoldedLevel'] = $unfoldedLevel;
-    if ($autoCheckChildren !== null) $args['autoCheckChildren'] = $autoCheckChildren;
-    if ($cascade !== null) $args['cascade'] = $cascade;
-    if ($withChildren !== null) $args['withChildren'] = $withChildren;
-    if ($onlyChildren !== null) $args['onlyChildren'] = $onlyChildren;
-    if ($onlyLeaf !== null) $args['onlyLeaf'] = $onlyLeaf;
-    if ($rootCreatable !== null) $args['rootCreatable'] = $rootCreatable;
-    if ($rootCreateTip !== null) $args['rootCreateTip'] = $rootCreateTip;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($treeContainerClassName !== null) $args['treeContainerClassName'] = $treeContainerClassName;
-    if ($treeClassName !== null) $args['treeClassName'] = $treeClassName;
-    if ($enableNodePath !== null) $args['enableNodePath'] = $enableNodePath;
-    if ($pathSeparator !== null) $args['pathSeparator'] = $pathSeparator;
-    if ($highlightTxt !== null) $args['highlightTxt'] = $highlightTxt;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($enableDefaultIcon !== null) $args['enableDefaultIcon'] = $enableDefaultIcon;
-    if ($heightAuto !== null) $args['heightAuto'] = $heightAuto;
-    if ($nodeBehavior !== null) $args['nodeBehavior'] = $nodeBehavior;
-    if ($autoCancelParent !== null) $args['autoCancelParent'] = $autoCancelParent;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($itemActions !== null) $args['itemActions'] = $itemActions;
-    if ($deferApi !== null) $args['deferApi'] = $deferApi;
-    if ($clearable !== null) $args['clearable'] = $clearable;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $iconField !== null && $args['iconField'] = $iconField;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $hideRoot !== null && $args['hideRoot'] = $hideRoot;
+    $rootLabel !== null && $args['rootLabel'] = $rootLabel;
+    $showIcon !== null && $args['showIcon'] = $showIcon;
+    $showRadio !== null && $args['showRadio'] = $showRadio;
+    $showOutline !== null && $args['showOutline'] = $showOutline;
+    $initiallyOpen !== null && $args['initiallyOpen'] = $initiallyOpen;
+    $unfoldedLevel !== null && $args['unfoldedLevel'] = $unfoldedLevel;
+    $autoCheckChildren !== null && $args['autoCheckChildren'] = $autoCheckChildren;
+    $cascade !== null && $args['cascade'] = $cascade;
+    $withChildren !== null && $args['withChildren'] = $withChildren;
+    $onlyChildren !== null && $args['onlyChildren'] = $onlyChildren;
+    $onlyLeaf !== null && $args['onlyLeaf'] = $onlyLeaf;
+    $rootCreatable !== null && $args['rootCreatable'] = $rootCreatable;
+    $rootCreateTip !== null && $args['rootCreateTip'] = $rootCreateTip;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $treeContainerClassName !== null && $args['treeContainerClassName'] = $treeContainerClassName;
+    $treeClassName !== null && $args['treeClassName'] = $treeClassName;
+    $enableNodePath !== null && $args['enableNodePath'] = $enableNodePath;
+    $pathSeparator !== null && $args['pathSeparator'] = $pathSeparator;
+    $highlightTxt !== null && $args['highlightTxt'] = $highlightTxt;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $enableDefaultIcon !== null && $args['enableDefaultIcon'] = $enableDefaultIcon;
+    $heightAuto !== null && $args['heightAuto'] = $heightAuto;
+    $nodeBehavior !== null && $args['nodeBehavior'] = $nodeBehavior;
+    $autoCancelParent !== null && $args['autoCancelParent'] = $autoCancelParent;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $itemActions !== null && $args['itemActions'] = $itemActions;
+    $deferApi !== null && $args['deferApi'] = $deferApi;
+    $clearable !== null && $args['clearable'] = $clearable;
     return \AmisSchema\Widget\Input\InputTree::make($args);
 }
 
 /**
  * 创建 InputVerificationCode 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -12737,7 +12829,6 @@ function AmisInputTree(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -12782,12 +12873,14 @@ function AmisInputTree(
  * @param int $length 设置验证码的长度，根据长度渲染对应个数的输入框
  * @param bool $masked 设置是否是密码模式
  * @param string $separator 设置分隔符，支持表达式, 表达式只可以访问 index、character 变量
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputVerificationCode
  */
 function AmisInputVerificationCode(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -12796,7 +12889,6 @@ function AmisInputVerificationCode(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -12840,65 +12932,65 @@ function AmisInputVerificationCode(
     mixed $unique = null,
     mixed $length = null,
     mixed $masked = null,
-    mixed $separator = null
+    mixed $separator = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputVerificationCode
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($length !== null) $args['length'] = $length;
-    if ($masked !== null) $args['masked'] = $masked;
-    if ($separator !== null) $args['separator'] = $separator;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $length !== null && $args['length'] = $length;
+    $masked !== null && $args['masked'] = $masked;
+    $separator !== null && $args['separator'] = $separator;
     return \AmisSchema\Widget\Input\InputVerificationCode::make($args);
 }
 
@@ -12921,6 +13013,7 @@ function AmisInputVerificationCode(
  * @param string $minDate 设置限制最小年份
  * @param string $maxDate 设置限制最大年份
  * @param string $popOverContainerSelector 设置弹层挂载位置参考，主要用于确保弹层菜单不会被其他元素遮挡
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputYear
  */
@@ -12940,26 +13033,26 @@ function AmisInputYear(
     mixed $embed = null,
     mixed $minDate = null,
     mixed $maxDate = null,
-    mixed $popOverContainerSelector = null
+    mixed $popOverContainerSelector = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputYear
 {
-    $args = [];
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($format !== null) $args['format'] = $format;
-    if ($inputFormat !== null) $args['inputFormat'] = $inputFormat;
-    if ($displayFormat !== null) $args['displayFormat'] = $displayFormat;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($embed !== null) $args['embed'] = $embed;
-    if ($minDate !== null) $args['minDate'] = $minDate;
-    if ($maxDate !== null) $args['maxDate'] = $maxDate;
-    if ($popOverContainerSelector !== null) $args['popOverContainerSelector'] = $popOverContainerSelector;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $format !== null && $args['format'] = $format;
+    $inputFormat !== null && $args['inputFormat'] = $inputFormat;
+    $displayFormat !== null && $args['displayFormat'] = $displayFormat;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $embed !== null && $args['embed'] = $embed;
+    $minDate !== null && $args['minDate'] = $minDate;
+    $maxDate !== null && $args['maxDate'] = $maxDate;
+    $popOverContainerSelector !== null && $args['popOverContainerSelector'] = $popOverContainerSelector;
     return \AmisSchema\Widget\Input\InputYear::make($args);
 }
 
@@ -12987,6 +13080,7 @@ function AmisInputYear(
  * @param bool $animation 设置是否启用游标动画，默认开启
  * @param string $extraName 设置范围内的结束年份的字段名
  * @param string $popOverContainerSelector 设置弹层挂载位置参考，主要用于确保弹层菜单不会被其他元素遮挡
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\InputYearRange
  */
@@ -13011,39 +13105,40 @@ function AmisInputYearRange(
     mixed $embed = null,
     mixed $animation = null,
     mixed $extraName = null,
-    mixed $popOverContainerSelector = null
+    mixed $popOverContainerSelector = null,
+    ...$args
 ): \AmisSchema\Widget\Input\InputYearRange
 {
-    $args = [];
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($format !== null) $args['format'] = $format;
-    if ($inputFormat !== null) $args['inputFormat'] = $inputFormat;
-    if ($displayFormat !== null) $args['displayFormat'] = $displayFormat;
-    if ($startPlaceholder !== null) $args['startPlaceholder'] = $startPlaceholder;
-    if ($endPlaceholder !== null) $args['endPlaceholder'] = $endPlaceholder;
-    if ($minDate !== null) $args['minDate'] = $minDate;
-    if ($maxDate !== null) $args['maxDate'] = $maxDate;
-    if ($minDuration !== null) $args['minDuration'] = $minDuration;
-    if ($maxDuration !== null) $args['maxDuration'] = $maxDuration;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($embed !== null) $args['embed'] = $embed;
-    if ($animation !== null) $args['animation'] = $animation;
-    if ($extraName !== null) $args['extraName'] = $extraName;
-    if ($popOverContainerSelector !== null) $args['popOverContainerSelector'] = $popOverContainerSelector;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $format !== null && $args['format'] = $format;
+    $inputFormat !== null && $args['inputFormat'] = $inputFormat;
+    $displayFormat !== null && $args['displayFormat'] = $displayFormat;
+    $startPlaceholder !== null && $args['startPlaceholder'] = $startPlaceholder;
+    $endPlaceholder !== null && $args['endPlaceholder'] = $endPlaceholder;
+    $minDate !== null && $args['minDate'] = $minDate;
+    $maxDate !== null && $args['maxDate'] = $maxDate;
+    $minDuration !== null && $args['minDuration'] = $minDuration;
+    $maxDuration !== null && $args['maxDuration'] = $maxDuration;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $embed !== null && $args['embed'] = $embed;
+    $animation !== null && $args['animation'] = $animation;
+    $extraName !== null && $args['extraName'] = $extraName;
+    $popOverContainerSelector !== null && $args['popOverContainerSelector'] = $popOverContainerSelector;
     return \AmisSchema\Widget\Input\InputYearRange::make($args);
 }
 
 /**
  * 创建 JsonSchema 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -13052,7 +13147,6 @@ function AmisInputYearRange(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -13097,12 +13191,14 @@ function AmisInputYearRange(
  * @param array|string|\AmisSchema\Widget\Widget $schema 设置指定 json-schema
  * @param \AmisSchema\Definition\API|string|array $schemaApi 设置远程获取 schema 的接口
  * @param string $formula 设置公式配置，可以配合公式使用
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\JsonSchema
  */
 function AmisJsonSchema(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -13111,7 +13207,6 @@ function AmisJsonSchema(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -13155,73 +13250,74 @@ function AmisJsonSchema(
     mixed $unique = null,
     mixed $schema = null,
     mixed $schemaApi = null,
-    mixed $formula = null
+    mixed $formula = null,
+    ...$args
 ): \AmisSchema\Widget\Input\JsonSchema
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($schema !== null) $args['schema'] = $schema;
-    if ($schemaApi !== null) $args['schemaApi'] = $schemaApi;
-    if ($formula !== null) $args['formula'] = $formula;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $schema !== null && $args['schema'] = $schema;
+    $schemaApi !== null && $args['schemaApi'] = $schemaApi;
+    $formula !== null && $args['formula'] = $formula;
     return \AmisSchema\Widget\Input\JsonSchema::make($args);
 }
 
 /**
  * 创建 JsonSchemaEditor 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param array $placeholder 设置属性输入控件的占位提示文本
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -13230,7 +13326,6 @@ function AmisJsonSchema(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -13279,12 +13374,14 @@ function AmisJsonSchema(
  * @param bool $mini 设置用来开启迷你模式，适应于边栏面板，宽度较低的情况
  * @param bool $enableAdvancedSetting 设置是否开启高级配置
  * @param array $advancedSettings 设置高级配置面板的配置项
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\JsonSchemaEditor
  */
 function AmisJsonSchemaEditor(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -13293,7 +13390,6 @@ function AmisJsonSchemaEditor(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -13341,77 +13437,78 @@ function AmisJsonSchemaEditor(
     mixed $definitions = null,
     mixed $mini = null,
     mixed $enableAdvancedSetting = null,
-    mixed $advancedSettings = null
+    mixed $advancedSettings = null,
+    ...$args
 ): \AmisSchema\Widget\Input\JsonSchemaEditor
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($rootTypeMutable !== null) $args['rootTypeMutable'] = $rootTypeMutable;
-    if ($showRootInfo !== null) $args['showRootInfo'] = $showRootInfo;
-    if ($disabledTypes !== null) $args['disabledTypes'] = $disabledTypes;
-    if ($definitions !== null) $args['definitions'] = $definitions;
-    if ($mini !== null) $args['mini'] = $mini;
-    if ($enableAdvancedSetting !== null) $args['enableAdvancedSetting'] = $enableAdvancedSetting;
-    if ($advancedSettings !== null) $args['advancedSettings'] = $advancedSettings;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $rootTypeMutable !== null && $args['rootTypeMutable'] = $rootTypeMutable;
+    $showRootInfo !== null && $args['showRootInfo'] = $showRootInfo;
+    $disabledTypes !== null && $args['disabledTypes'] = $disabledTypes;
+    $definitions !== null && $args['definitions'] = $definitions;
+    $mini !== null && $args['mini'] = $mini;
+    $enableAdvancedSetting !== null && $args['enableAdvancedSetting'] = $enableAdvancedSetting;
+    $advancedSettings !== null && $args['advancedSettings'] = $advancedSettings;
     return \AmisSchema\Widget\Input\JsonSchemaEditor::make($args);
 }
 
 /**
  * 创建 ListSelect 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -13420,7 +13517,6 @@ function AmisJsonSchemaEditor(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -13494,12 +13590,14 @@ function AmisJsonSchemaEditor(
  * @param string|bool $initAutoFill 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
  * @param string $optionLabel 设置选项标识文字，用于新增、编辑等操作的标题显示
  * @param string $listClassName 支持配置 list div 的 css 类名。比如: flex justify-between
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\ListSelect
  */
 function AmisListSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -13508,7 +13606,6 @@ function AmisListSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -13581,102 +13678,103 @@ function AmisListSelect(
     mixed $deleteApi = null,
     mixed $initAutoFill = null,
     mixed $optionLabel = null,
-    mixed $listClassName = null
+    mixed $listClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Input\ListSelect
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($listClassName !== null) $args['listClassName'] = $listClassName;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $listClassName !== null && $args['listClassName'] = $listClassName;
     return \AmisSchema\Widget\Input\ListSelect::make($args);
 }
 
 /**
  * 创建 LocationPicker 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -13685,7 +13783,6 @@ function AmisListSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -13733,12 +13830,14 @@ function AmisListSelect(
  * @param bool $autoSelectCurrentLoc 是否自动选中当前地理位置
  * @param bool $onlySelectCurrentLoc 是否限制只能选中当前地理位置，设置为 true 后，可用于充当定位组件
  * @param string $coordinatesType 坐标系类型，默认百度坐标，使用高德地图时应设置为'gcj02'， 高德地图不支持坐标转换
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\LocationPicker
  */
 function AmisLocationPicker(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -13747,7 +13846,6 @@ function AmisLocationPicker(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -13794,76 +13892,77 @@ function AmisLocationPicker(
     mixed $clearable = null,
     mixed $autoSelectCurrentLoc = null,
     mixed $onlySelectCurrentLoc = null,
-    mixed $coordinatesType = null
+    mixed $coordinatesType = null,
+    ...$args
 ): \AmisSchema\Widget\Input\LocationPicker
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($vendor !== null) $args['vendor'] = $vendor;
-    if ($ak !== null) $args['ak'] = $ak;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($autoSelectCurrentLoc !== null) $args['autoSelectCurrentLoc'] = $autoSelectCurrentLoc;
-    if ($onlySelectCurrentLoc !== null) $args['onlySelectCurrentLoc'] = $onlySelectCurrentLoc;
-    if ($coordinatesType !== null) $args['coordinatesType'] = $coordinatesType;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $vendor !== null && $args['vendor'] = $vendor;
+    $ak !== null && $args['ak'] = $ak;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $autoSelectCurrentLoc !== null && $args['autoSelectCurrentLoc'] = $autoSelectCurrentLoc;
+    $onlySelectCurrentLoc !== null && $args['onlySelectCurrentLoc'] = $onlySelectCurrentLoc;
+    $coordinatesType !== null && $args['coordinatesType'] = $coordinatesType;
     return \AmisSchema\Widget\Input\LocationPicker::make($args);
 }
 
 /**
  * 创建 MatrixCheckboxes 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -13872,7 +13971,6 @@ function AmisLocationPicker(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -13923,12 +14021,14 @@ function AmisLocationPicker(
  * @param string $textAlign 当开启多选+全选时，默认为'left'
  * @param bool $yCheckAll 列上的全选
  * @param bool $xCheckAll 行上的全选
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\MatrixCheckboxes
  */
 function AmisMatrixCheckboxes(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -13937,7 +14037,6 @@ function AmisMatrixCheckboxes(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -13987,79 +14086,80 @@ function AmisMatrixCheckboxes(
     mixed $singleSelectMode = null,
     mixed $textAlign = null,
     mixed $yCheckAll = null,
-    mixed $xCheckAll = null
+    mixed $xCheckAll = null,
+    ...$args
 ): \AmisSchema\Widget\Input\MatrixCheckboxes
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($rows !== null) $args['rows'] = $rows;
-    if ($rowLabel !== null) $args['rowLabel'] = $rowLabel;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($singleSelectMode !== null) $args['singleSelectMode'] = $singleSelectMode;
-    if ($textAlign !== null) $args['textAlign'] = $textAlign;
-    if ($yCheckAll !== null) $args['yCheckAll'] = $yCheckAll;
-    if ($xCheckAll !== null) $args['xCheckAll'] = $xCheckAll;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $columns !== null && $args['columns'] = $columns;
+    $rows !== null && $args['rows'] = $rows;
+    $rowLabel !== null && $args['rowLabel'] = $rowLabel;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $singleSelectMode !== null && $args['singleSelectMode'] = $singleSelectMode;
+    $textAlign !== null && $args['textAlign'] = $textAlign;
+    $yCheckAll !== null && $args['yCheckAll'] = $yCheckAll;
+    $xCheckAll !== null && $args['xCheckAll'] = $xCheckAll;
     return \AmisSchema\Widget\Input\MatrixCheckboxes::make($args);
 }
 
 /**
  * 创建 NestedSelect 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -14068,7 +14168,6 @@ function AmisMatrixCheckboxes(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -14149,12 +14248,14 @@ function AmisMatrixCheckboxes(
  * @param bool $hideNodePathLabel 是否隐藏选择框中已选择节点的路径 label 信息
  * @param bool $onlyLeaf 只允许选择叶子节点
  * @param int $maxTagCount 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\NestedSelect
  */
 function AmisNestedSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -14163,7 +14264,6 @@ function AmisNestedSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -14243,109 +14343,110 @@ function AmisNestedSelect(
     mixed $noResultsText = null,
     mixed $hideNodePathLabel = null,
     mixed $onlyLeaf = null,
-    mixed $maxTagCount = null
+    mixed $maxTagCount = null,
+    ...$args
 ): \AmisSchema\Widget\Input\NestedSelect
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($cascade !== null) $args['cascade'] = $cascade;
-    if ($withChildren !== null) $args['withChildren'] = $withChildren;
-    if ($onlyChildren !== null) $args['onlyChildren'] = $onlyChildren;
-    if ($searchPromptText !== null) $args['searchPromptText'] = $searchPromptText;
-    if ($noResultsText !== null) $args['noResultsText'] = $noResultsText;
-    if ($hideNodePathLabel !== null) $args['hideNodePathLabel'] = $hideNodePathLabel;
-    if ($onlyLeaf !== null) $args['onlyLeaf'] = $onlyLeaf;
-    if ($maxTagCount !== null) $args['maxTagCount'] = $maxTagCount;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $cascade !== null && $args['cascade'] = $cascade;
+    $withChildren !== null && $args['withChildren'] = $withChildren;
+    $onlyChildren !== null && $args['onlyChildren'] = $onlyChildren;
+    $searchPromptText !== null && $args['searchPromptText'] = $searchPromptText;
+    $noResultsText !== null && $args['noResultsText'] = $noResultsText;
+    $hideNodePathLabel !== null && $args['hideNodePathLabel'] = $hideNodePathLabel;
+    $onlyLeaf !== null && $args['onlyLeaf'] = $onlyLeaf;
+    $maxTagCount !== null && $args['maxTagCount'] = $maxTagCount;
     return \AmisSchema\Widget\Input\NestedSelect::make($args);
 }
 
 /**
  * 创建 Options 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -14354,7 +14455,6 @@ function AmisNestedSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -14427,12 +14527,14 @@ function AmisNestedSelect(
  * @param string|array|\AmisSchema\Definition\API $deleteApi 设置删除选项接口
  * @param string|bool $initAutoFill 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
  * @param string $optionLabel 设置选项标识文字，用于新增、编辑等操作的标题显示
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Options
  */
 function AmisOptions(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -14441,7 +14543,6 @@ function AmisOptions(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -14513,101 +14614,102 @@ function AmisOptions(
     mixed $removable = null,
     mixed $deleteApi = null,
     mixed $initAutoFill = null,
-    mixed $optionLabel = null
+    mixed $optionLabel = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Options
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
     return \AmisSchema\Widget\Input\Options::make($args);
 }
 
 /**
  * 创建 Picker 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -14616,7 +14718,6 @@ function AmisOptions(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -14695,12 +14796,14 @@ function AmisOptions(
  * @param array $pickerSchema 即用 List 类型的渲染，来展示列表信息。更多配置参考 CRUD
  * @param bool $embed 是否使用内嵌模式
  * @param bool $itemClearable 用于控制是否显示选中项的删除图标
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Picker
  */
 function AmisPicker(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -14709,7 +14812,6 @@ function AmisPicker(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -14787,107 +14889,108 @@ function AmisPicker(
     mixed $modalSize = null,
     mixed $pickerSchema = null,
     mixed $embed = null,
-    mixed $itemClearable = null
+    mixed $itemClearable = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Picker
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($modalTitle !== null) $args['modalTitle'] = $modalTitle;
-    if ($modalMode !== null) $args['modalMode'] = $modalMode;
-    if ($modalSize !== null) $args['modalSize'] = $modalSize;
-    if ($pickerSchema !== null) $args['pickerSchema'] = $pickerSchema;
-    if ($embed !== null) $args['embed'] = $embed;
-    if ($itemClearable !== null) $args['itemClearable'] = $itemClearable;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $modalTitle !== null && $args['modalTitle'] = $modalTitle;
+    $modalMode !== null && $args['modalMode'] = $modalMode;
+    $modalSize !== null && $args['modalSize'] = $modalSize;
+    $pickerSchema !== null && $args['pickerSchema'] = $pickerSchema;
+    $embed !== null && $args['embed'] = $embed;
+    $itemClearable !== null && $args['itemClearable'] = $itemClearable;
     return \AmisSchema\Widget\Input\Picker::make($args);
 }
 
 /**
  * 创建 Radio 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -14896,7 +14999,6 @@ function AmisPicker(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -14941,12 +15043,14 @@ function AmisPicker(
  * @param string $option 设置选项说明
  * @param string|int|bool $trueValue 设置标识真值，默认为 true
  * @param string|int|bool $falseValue 设置标识假值，默认为 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Radio
  */
 function AmisRadio(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -14955,7 +15059,6 @@ function AmisRadio(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -14999,73 +15102,74 @@ function AmisRadio(
     mixed $unique = null,
     mixed $option = null,
     mixed $trueValue = null,
-    mixed $falseValue = null
+    mixed $falseValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Radio
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($option !== null) $args['option'] = $option;
-    if ($trueValue !== null) $args['trueValue'] = $trueValue;
-    if ($falseValue !== null) $args['falseValue'] = $falseValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $option !== null && $args['option'] = $option;
+    $trueValue !== null && $args['trueValue'] = $trueValue;
+    $falseValue !== null && $args['falseValue'] = $falseValue;
     return \AmisSchema\Widget\Input\Radio::make($args);
 }
 
 /**
  * 创建 Radios 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -15074,7 +15178,6 @@ function AmisRadio(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -15148,12 +15251,14 @@ function AmisRadio(
  * @param string|bool $initAutoFill 设置初始化时是否执行自动填充，可选：fillIfNotSet、true、false，默认为 fillIfNotSet
  * @param string $optionLabel 设置选项标识文字，用于新增、编辑等操作的标题显示
  * @param int $columnsCount 设置选项按几列来排列，默认为一列
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Radios
  */
 function AmisRadios(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -15162,7 +15267,6 @@ function AmisRadios(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -15235,102 +15339,103 @@ function AmisRadios(
     mixed $deleteApi = null,
     mixed $initAutoFill = null,
     mixed $optionLabel = null,
-    mixed $columnsCount = null
+    mixed $columnsCount = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Radios
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($columnsCount !== null) $args['columnsCount'] = $columnsCount;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $columnsCount !== null && $args['columnsCount'] = $columnsCount;
     return \AmisSchema\Widget\Input\Radios::make($args);
 }
 
 /**
  * 创建 Select 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -15339,7 +15444,6 @@ function AmisRadios(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -15430,12 +15534,14 @@ function AmisRadios(
  * @param string $popOverContainerSelector 设置弹层挂载位置选择器，会通过querySelector获取
  * @param bool $showInvalidMatch 设置选项值与选项组不匹配时选项值是否飘红，默认为 false
  * @param string $noResultsText 设置无结果时的文本，默认为 未找到任何结果
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Select
  */
 function AmisSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -15444,7 +15550,6 @@ function AmisSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -15534,119 +15639,120 @@ function AmisSelect(
     mixed $optionClassName = null,
     mixed $popOverContainerSelector = null,
     mixed $showInvalidMatch = null,
-    mixed $noResultsText = null
+    mixed $noResultsText = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Select
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($options !== null) $args['options'] = $options;
-    if ($source !== null) $args['source'] = $source;
-    if ($multiple !== null) $args['multiple'] = $multiple;
-    if ($labelField !== null) $args['labelField'] = $labelField;
-    if ($valueField !== null) $args['valueField'] = $valueField;
-    if ($deferField !== null) $args['deferField'] = $deferField;
-    if ($joinValues !== null) $args['joinValues'] = $joinValues;
-    if ($extractValue !== null) $args['extractValue'] = $extractValue;
-    if ($delimiter !== null) $args['delimiter'] = $delimiter;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($valuesNoWrap !== null) $args['valuesNoWrap'] = $valuesNoWrap;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($autoComplete !== null) $args['autoComplete'] = $autoComplete;
-    if ($selectFirst !== null) $args['selectFirst'] = $selectFirst;
-    if ($checkAll !== null) $args['checkAll'] = $checkAll;
-    if ($checkAllLabel !== null) $args['checkAllLabel'] = $checkAllLabel;
-    if ($defaultCheckAll !== null) $args['defaultCheckAll'] = $defaultCheckAll;
-    if ($creatable !== null) $args['creatable'] = $creatable;
-    if ($createBtnLabel !== null) $args['createBtnLabel'] = $createBtnLabel;
-    if ($addControls !== null) $args['addControls'] = $addControls;
-    if ($addApi !== null) $args['addApi'] = $addApi;
-    if ($addDialog !== null) $args['addDialog'] = $addDialog;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($editControls !== null) $args['editControls'] = $editControls;
-    if ($editApi !== null) $args['editApi'] = $editApi;
-    if ($editDialog !== null) $args['editDialog'] = $editDialog;
-    if ($removable !== null) $args['removable'] = $removable;
-    if ($deleteApi !== null) $args['deleteApi'] = $deleteApi;
-    if ($initAutoFill !== null) $args['initAutoFill'] = $initAutoFill;
-    if ($optionLabel !== null) $args['optionLabel'] = $optionLabel;
-    if ($checkAllBySearch !== null) $args['checkAllBySearch'] = $checkAllBySearch;
-    if ($filterOption !== null) $args['filterOption'] = $filterOption;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($hideSelected !== null) $args['hideSelected'] = $hideSelected;
-    if ($mobileClassName !== null) $args['mobileClassName'] = $mobileClassName;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($searchResultMode !== null) $args['searchResultMode'] = $searchResultMode;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($leftOptions !== null) $args['leftOptions'] = $leftOptions;
-    if ($leftMode !== null) $args['leftMode'] = $leftMode;
-    if ($rightMode !== null) $args['rightMode'] = $rightMode;
-    if ($maxTagCount !== null) $args['maxTagCount'] = $maxTagCount;
-    if ($overflowTagPopover !== null) $args['overflowTagPopover'] = $overflowTagPopover;
-    if ($optionClassName !== null) $args['optionClassName'] = $optionClassName;
-    if ($popOverContainerSelector !== null) $args['popOverContainerSelector'] = $popOverContainerSelector;
-    if ($showInvalidMatch !== null) $args['showInvalidMatch'] = $showInvalidMatch;
-    if ($noResultsText !== null) $args['noResultsText'] = $noResultsText;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $options !== null && $args['options'] = $options;
+    $source !== null && $args['source'] = $source;
+    $multiple !== null && $args['multiple'] = $multiple;
+    $labelField !== null && $args['labelField'] = $labelField;
+    $valueField !== null && $args['valueField'] = $valueField;
+    $deferField !== null && $args['deferField'] = $deferField;
+    $joinValues !== null && $args['joinValues'] = $joinValues;
+    $extractValue !== null && $args['extractValue'] = $extractValue;
+    $delimiter !== null && $args['delimiter'] = $delimiter;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $valuesNoWrap !== null && $args['valuesNoWrap'] = $valuesNoWrap;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $autoComplete !== null && $args['autoComplete'] = $autoComplete;
+    $selectFirst !== null && $args['selectFirst'] = $selectFirst;
+    $checkAll !== null && $args['checkAll'] = $checkAll;
+    $checkAllLabel !== null && $args['checkAllLabel'] = $checkAllLabel;
+    $defaultCheckAll !== null && $args['defaultCheckAll'] = $defaultCheckAll;
+    $creatable !== null && $args['creatable'] = $creatable;
+    $createBtnLabel !== null && $args['createBtnLabel'] = $createBtnLabel;
+    $addControls !== null && $args['addControls'] = $addControls;
+    $addApi !== null && $args['addApi'] = $addApi;
+    $addDialog !== null && $args['addDialog'] = $addDialog;
+    $editable !== null && $args['editable'] = $editable;
+    $editControls !== null && $args['editControls'] = $editControls;
+    $editApi !== null && $args['editApi'] = $editApi;
+    $editDialog !== null && $args['editDialog'] = $editDialog;
+    $removable !== null && $args['removable'] = $removable;
+    $deleteApi !== null && $args['deleteApi'] = $deleteApi;
+    $initAutoFill !== null && $args['initAutoFill'] = $initAutoFill;
+    $optionLabel !== null && $args['optionLabel'] = $optionLabel;
+    $checkAllBySearch !== null && $args['checkAllBySearch'] = $checkAllBySearch;
+    $filterOption !== null && $args['filterOption'] = $filterOption;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $hideSelected !== null && $args['hideSelected'] = $hideSelected;
+    $mobileClassName !== null && $args['mobileClassName'] = $mobileClassName;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $searchResultMode !== null && $args['searchResultMode'] = $searchResultMode;
+    $columns !== null && $args['columns'] = $columns;
+    $leftOptions !== null && $args['leftOptions'] = $leftOptions;
+    $leftMode !== null && $args['leftMode'] = $leftMode;
+    $rightMode !== null && $args['rightMode'] = $rightMode;
+    $maxTagCount !== null && $args['maxTagCount'] = $maxTagCount;
+    $overflowTagPopover !== null && $args['overflowTagPopover'] = $overflowTagPopover;
+    $optionClassName !== null && $args['optionClassName'] = $optionClassName;
+    $popOverContainerSelector !== null && $args['popOverContainerSelector'] = $popOverContainerSelector;
+    $showInvalidMatch !== null && $args['showInvalidMatch'] = $showInvalidMatch;
+    $noResultsText !== null && $args['noResultsText'] = $noResultsText;
     return \AmisSchema\Widget\Input\Select::make($args);
 }
 
 /**
  * 创建 StaticWidget 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 支持通过配置type为static-xxx的形式，展示其他非表单项组件
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置显示的静态值
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -15655,7 +15761,6 @@ function AmisSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 支持通过配置type为static-xxx的形式，展示其他非表单项组件
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -15700,12 +15805,14 @@ function AmisSelect(
  * @param string $tpl 设置如果想显示成其他文字，请设置此字段。支持模板语法如: $xxx
  * @param bool|array $quickEdit 设置快速编辑，支持布尔值或配置对象
  * @param bool|array|\AmisSchema\Definition\PopOver $popOver 设置弹出框配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\StaticWidget
  */
 function AmisStaticWidget(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -15714,7 +15821,6 @@ function AmisStaticWidget(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -15758,73 +15864,74 @@ function AmisStaticWidget(
     mixed $unique = null,
     mixed $tpl = null,
     mixed $quickEdit = null,
-    mixed $popOver = null
+    mixed $popOver = null,
+    ...$args
 ): \AmisSchema\Widget\Input\StaticWidget
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($tpl !== null) $args['tpl'] = $tpl;
-    if ($quickEdit !== null) $args['quickEdit'] = $quickEdit;
-    if ($popOver !== null) $args['popOver'] = $popOver;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $tpl !== null && $args['tpl'] = $tpl;
+    $quickEdit !== null && $args['quickEdit'] = $quickEdit;
+    $popOver !== null && $args['popOver'] = $popOver;
     return \AmisSchema\Widget\Input\StaticWidget::make($args);
 }
 
 /**
  * 创建 SwitchWidget 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置开关大小，默认为 md
@@ -15833,7 +15940,6 @@ function AmisStaticWidget(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param bool $loading 设置是否处于加载状态，默认为 false
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
@@ -15881,12 +15987,14 @@ function AmisStaticWidget(
  * @param string|array|\AmisSchema\Widget\Widget $offText 设置关闭时开关显示的内容，3.6.0支持 Schema
  * @param bool|string|int $trueValue 设置标识真值，默认为 true
  * @param bool|string|int $falseValue 设置标识假值，默认为 false
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\SwitchWidget
  */
 function AmisSwitchWidget(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -15895,7 +16003,6 @@ function AmisSwitchWidget(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $loading = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
@@ -15942,76 +16049,77 @@ function AmisSwitchWidget(
     mixed $onText = null,
     mixed $offText = null,
     mixed $trueValue = null,
-    mixed $falseValue = null
+    mixed $falseValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\SwitchWidget
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($option !== null) $args['option'] = $option;
-    if ($onText !== null) $args['onText'] = $onText;
-    if ($offText !== null) $args['offText'] = $offText;
-    if ($trueValue !== null) $args['trueValue'] = $trueValue;
-    if ($falseValue !== null) $args['falseValue'] = $falseValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $option !== null && $args['option'] = $option;
+    $onText !== null && $args['onText'] = $onText;
+    $offText !== null && $args['offText'] = $offText;
+    $trueValue !== null && $args['trueValue'] = $trueValue;
+    $falseValue !== null && $args['falseValue'] = $falseValue;
     return \AmisSchema\Widget\Input\SwitchWidget::make($args);
 }
 
 /**
  * 创建 TabsTransfer 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -16020,7 +16128,6 @@ function AmisSwitchWidget(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -16080,12 +16187,14 @@ function AmisSwitchWidget(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\TabsTransfer
  */
 function AmisTabsTransfer(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -16094,7 +16203,6 @@ function AmisTabsTransfer(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -16153,88 +16261,89 @@ function AmisTabsTransfer(
     mixed $resultSearchable = null,
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
-    mixed $valueTpl = null
+    mixed $valueTpl = null,
+    ...$args
 ): \AmisSchema\Widget\Input\TabsTransfer
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($delimeter !== null) $args['delimeter'] = $delimeter;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($resultListModeFollowSelect !== null) $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
-    if ($statistics !== null) $args['statistics'] = $statistics;
-    if ($selectTitle !== null) $args['selectTitle'] = $selectTitle;
-    if ($resultTitle !== null) $args['resultTitle'] = $resultTitle;
-    if ($sortable !== null) $args['sortable'] = $sortable;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($searchResultMode !== null) $args['searchResultMode'] = $searchResultMode;
-    if ($searchPlaceholder !== null) $args['searchPlaceholder'] = $searchPlaceholder;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($leftOptions !== null) $args['leftOptions'] = $leftOptions;
-    if ($leftMode !== null) $args['leftMode'] = $leftMode;
-    if ($rightMode !== null) $args['rightMode'] = $rightMode;
-    if ($resultSearchable !== null) $args['resultSearchable'] = $resultSearchable;
-    if ($resultSearchPlaceholder !== null) $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($valueTpl !== null) $args['valueTpl'] = $valueTpl;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $delimeter !== null && $args['delimeter'] = $delimeter;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $resultListModeFollowSelect !== null && $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
+    $statistics !== null && $args['statistics'] = $statistics;
+    $selectTitle !== null && $args['selectTitle'] = $selectTitle;
+    $resultTitle !== null && $args['resultTitle'] = $resultTitle;
+    $sortable !== null && $args['sortable'] = $sortable;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $searchResultMode !== null && $args['searchResultMode'] = $searchResultMode;
+    $searchPlaceholder !== null && $args['searchPlaceholder'] = $searchPlaceholder;
+    $columns !== null && $args['columns'] = $columns;
+    $leftOptions !== null && $args['leftOptions'] = $leftOptions;
+    $leftMode !== null && $args['leftMode'] = $leftMode;
+    $rightMode !== null && $args['rightMode'] = $rightMode;
+    $resultSearchable !== null && $args['resultSearchable'] = $resultSearchable;
+    $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $valueTpl !== null && $args['valueTpl'] = $valueTpl;
     return \AmisSchema\Widget\Input\TabsTransfer::make($args);
 }
 
 /**
  * 创建 TabsTransferPicker 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -16243,7 +16352,6 @@ function AmisTabsTransfer(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -16309,12 +16417,14 @@ function AmisTabsTransfer(
  * @param string $modalSize 设置弹窗大小，当 modalMode 为 dialog 时有用
  * @param string $pickerIcon 设置选择器按钮图标
  * @param string $resetValue 设置清除后设置此配置项给定的值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\TabsTransferPicker
  */
 function AmisTabsTransferPicker(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -16323,7 +16433,6 @@ function AmisTabsTransferPicker(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -16388,94 +16497,95 @@ function AmisTabsTransferPicker(
     mixed $modalTitle = null,
     mixed $modalSize = null,
     mixed $pickerIcon = null,
-    mixed $resetValue = null
+    mixed $resetValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\TabsTransferPicker
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($delimeter !== null) $args['delimeter'] = $delimeter;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($resultListModeFollowSelect !== null) $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
-    if ($statistics !== null) $args['statistics'] = $statistics;
-    if ($selectTitle !== null) $args['selectTitle'] = $selectTitle;
-    if ($resultTitle !== null) $args['resultTitle'] = $resultTitle;
-    if ($sortable !== null) $args['sortable'] = $sortable;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($searchResultMode !== null) $args['searchResultMode'] = $searchResultMode;
-    if ($searchPlaceholder !== null) $args['searchPlaceholder'] = $searchPlaceholder;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($leftOptions !== null) $args['leftOptions'] = $leftOptions;
-    if ($leftMode !== null) $args['leftMode'] = $leftMode;
-    if ($rightMode !== null) $args['rightMode'] = $rightMode;
-    if ($resultSearchable !== null) $args['resultSearchable'] = $resultSearchable;
-    if ($resultSearchPlaceholder !== null) $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($valueTpl !== null) $args['valueTpl'] = $valueTpl;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($modalMode !== null) $args['modalMode'] = $modalMode;
-    if ($modalTitle !== null) $args['modalTitle'] = $modalTitle;
-    if ($modalSize !== null) $args['modalSize'] = $modalSize;
-    if ($pickerIcon !== null) $args['pickerIcon'] = $pickerIcon;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $delimeter !== null && $args['delimeter'] = $delimeter;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $resultListModeFollowSelect !== null && $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
+    $statistics !== null && $args['statistics'] = $statistics;
+    $selectTitle !== null && $args['selectTitle'] = $selectTitle;
+    $resultTitle !== null && $args['resultTitle'] = $resultTitle;
+    $sortable !== null && $args['sortable'] = $sortable;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $searchResultMode !== null && $args['searchResultMode'] = $searchResultMode;
+    $searchPlaceholder !== null && $args['searchPlaceholder'] = $searchPlaceholder;
+    $columns !== null && $args['columns'] = $columns;
+    $leftOptions !== null && $args['leftOptions'] = $leftOptions;
+    $leftMode !== null && $args['leftMode'] = $leftMode;
+    $rightMode !== null && $args['rightMode'] = $rightMode;
+    $resultSearchable !== null && $args['resultSearchable'] = $resultSearchable;
+    $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $modalMode !== null && $args['modalMode'] = $modalMode;
+    $modalTitle !== null && $args['modalTitle'] = $modalTitle;
+    $modalSize !== null && $args['modalSize'] = $modalSize;
+    $pickerIcon !== null && $args['pickerIcon'] = $pickerIcon;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
     return \AmisSchema\Widget\Input\TabsTransferPicker::make($args);
 }
 
 /**
  * 创建 Textarea 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -16484,7 +16594,6 @@ function AmisTabsTransferPicker(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -16533,12 +16642,14 @@ function AmisTabsTransferPicker(
  * @param int $maxLength 设置限制最大字数
  * @param bool $clearable 设置是否可清除
  * @param string $resetValue 设置清除后设置此配置项给定的值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Textarea
  */
 function AmisTextarea(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -16547,7 +16658,6 @@ function AmisTextarea(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -16595,77 +16705,78 @@ function AmisTextarea(
     mixed $showCounter = null,
     mixed $maxLength = null,
     mixed $clearable = null,
-    mixed $resetValue = null
+    mixed $resetValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Textarea
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($minRows !== null) $args['minRows'] = $minRows;
-    if ($maxRows !== null) $args['maxRows'] = $maxRows;
-    if ($trimContents !== null) $args['trimContents'] = $trimContents;
-    if ($showCounter !== null) $args['showCounter'] = $showCounter;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($clearable !== null) $args['clearable'] = $clearable;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $minRows !== null && $args['minRows'] = $minRows;
+    $maxRows !== null && $args['maxRows'] = $maxRows;
+    $trimContents !== null && $args['trimContents'] = $trimContents;
+    $showCounter !== null && $args['showCounter'] = $showCounter;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $clearable !== null && $args['clearable'] = $clearable;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
     return \AmisSchema\Widget\Input\Textarea::make($args);
 }
 
 /**
  * 创建 Transfer 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -16674,7 +16785,6 @@ function AmisTextarea(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -16734,12 +16844,14 @@ function AmisTextarea(
  * @param string $resultSearchPlaceholder 设置右侧列表搜索框提示
  * @param string $menuTpl 设置用来自定义选项展示
  * @param string $valueTpl 设置用来自定义值的展示
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\Transfer
  */
 function AmisTransfer(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -16748,7 +16860,6 @@ function AmisTransfer(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -16807,88 +16918,89 @@ function AmisTransfer(
     mixed $resultSearchable = null,
     mixed $resultSearchPlaceholder = null,
     mixed $menuTpl = null,
-    mixed $valueTpl = null
+    mixed $valueTpl = null,
+    ...$args
 ): \AmisSchema\Widget\Input\Transfer
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($delimeter !== null) $args['delimeter'] = $delimeter;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($resultListModeFollowSelect !== null) $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
-    if ($statistics !== null) $args['statistics'] = $statistics;
-    if ($selectTitle !== null) $args['selectTitle'] = $selectTitle;
-    if ($resultTitle !== null) $args['resultTitle'] = $resultTitle;
-    if ($sortable !== null) $args['sortable'] = $sortable;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($searchResultMode !== null) $args['searchResultMode'] = $searchResultMode;
-    if ($searchPlaceholder !== null) $args['searchPlaceholder'] = $searchPlaceholder;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($leftOptions !== null) $args['leftOptions'] = $leftOptions;
-    if ($leftMode !== null) $args['leftMode'] = $leftMode;
-    if ($rightMode !== null) $args['rightMode'] = $rightMode;
-    if ($resultSearchable !== null) $args['resultSearchable'] = $resultSearchable;
-    if ($resultSearchPlaceholder !== null) $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($valueTpl !== null) $args['valueTpl'] = $valueTpl;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $delimeter !== null && $args['delimeter'] = $delimeter;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $resultListModeFollowSelect !== null && $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
+    $statistics !== null && $args['statistics'] = $statistics;
+    $selectTitle !== null && $args['selectTitle'] = $selectTitle;
+    $resultTitle !== null && $args['resultTitle'] = $resultTitle;
+    $sortable !== null && $args['sortable'] = $sortable;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $searchResultMode !== null && $args['searchResultMode'] = $searchResultMode;
+    $searchPlaceholder !== null && $args['searchPlaceholder'] = $searchPlaceholder;
+    $columns !== null && $args['columns'] = $columns;
+    $leftOptions !== null && $args['leftOptions'] = $leftOptions;
+    $leftMode !== null && $args['leftMode'] = $leftMode;
+    $rightMode !== null && $args['rightMode'] = $rightMode;
+    $resultSearchable !== null && $args['resultSearchable'] = $resultSearchable;
+    $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $valueTpl !== null && $args['valueTpl'] = $valueTpl;
     return \AmisSchema\Widget\Input\Transfer::make($args);
 }
 
 /**
  * 创建 TransferPicker 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -16897,7 +17009,6 @@ function AmisTransfer(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -16963,12 +17074,14 @@ function AmisTransfer(
  * @param string $modalSize 设置弹窗大小，当 modalMode 为 dialog 时有用
  * @param string $pickerIcon 设置选择器按钮图标
  * @param string $resetValue 设置清除后设置此配置项给定的值
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\TransferPicker
  */
 function AmisTransferPicker(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -16977,7 +17090,6 @@ function AmisTransferPicker(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -17042,94 +17154,95 @@ function AmisTransferPicker(
     mixed $modalTitle = null,
     mixed $modalSize = null,
     mixed $pickerIcon = null,
-    mixed $resetValue = null
+    mixed $resetValue = null,
+    ...$args
 ): \AmisSchema\Widget\Input\TransferPicker
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($delimeter !== null) $args['delimeter'] = $delimeter;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($resultListModeFollowSelect !== null) $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
-    if ($statistics !== null) $args['statistics'] = $statistics;
-    if ($selectTitle !== null) $args['selectTitle'] = $selectTitle;
-    if ($resultTitle !== null) $args['resultTitle'] = $resultTitle;
-    if ($sortable !== null) $args['sortable'] = $sortable;
-    if ($selectMode !== null) $args['selectMode'] = $selectMode;
-    if ($searchResultMode !== null) $args['searchResultMode'] = $searchResultMode;
-    if ($searchPlaceholder !== null) $args['searchPlaceholder'] = $searchPlaceholder;
-    if ($columns !== null) $args['columns'] = $columns;
-    if ($leftOptions !== null) $args['leftOptions'] = $leftOptions;
-    if ($leftMode !== null) $args['leftMode'] = $leftMode;
-    if ($rightMode !== null) $args['rightMode'] = $rightMode;
-    if ($resultSearchable !== null) $args['resultSearchable'] = $resultSearchable;
-    if ($resultSearchPlaceholder !== null) $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($valueTpl !== null) $args['valueTpl'] = $valueTpl;
-    if ($borderMode !== null) $args['borderMode'] = $borderMode;
-    if ($modalMode !== null) $args['modalMode'] = $modalMode;
-    if ($modalTitle !== null) $args['modalTitle'] = $modalTitle;
-    if ($modalSize !== null) $args['modalSize'] = $modalSize;
-    if ($pickerIcon !== null) $args['pickerIcon'] = $pickerIcon;
-    if ($resetValue !== null) $args['resetValue'] = $resetValue;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $delimeter !== null && $args['delimeter'] = $delimeter;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $resultListModeFollowSelect !== null && $args['resultListModeFollowSelect'] = $resultListModeFollowSelect;
+    $statistics !== null && $args['statistics'] = $statistics;
+    $selectTitle !== null && $args['selectTitle'] = $selectTitle;
+    $resultTitle !== null && $args['resultTitle'] = $resultTitle;
+    $sortable !== null && $args['sortable'] = $sortable;
+    $selectMode !== null && $args['selectMode'] = $selectMode;
+    $searchResultMode !== null && $args['searchResultMode'] = $searchResultMode;
+    $searchPlaceholder !== null && $args['searchPlaceholder'] = $searchPlaceholder;
+    $columns !== null && $args['columns'] = $columns;
+    $leftOptions !== null && $args['leftOptions'] = $leftOptions;
+    $leftMode !== null && $args['leftMode'] = $leftMode;
+    $rightMode !== null && $args['rightMode'] = $rightMode;
+    $resultSearchable !== null && $args['resultSearchable'] = $resultSearchable;
+    $resultSearchPlaceholder !== null && $args['resultSearchPlaceholder'] = $resultSearchPlaceholder;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $valueTpl !== null && $args['valueTpl'] = $valueTpl;
+    $borderMode !== null && $args['borderMode'] = $borderMode;
+    $modalMode !== null && $args['modalMode'] = $modalMode;
+    $modalTitle !== null && $args['modalTitle'] = $modalTitle;
+    $modalSize !== null && $args['modalSize'] = $modalSize;
+    $pickerIcon !== null && $args['pickerIcon'] = $pickerIcon;
+    $resetValue !== null && $args['resetValue'] = $resetValue;
     return \AmisSchema\Widget\Input\TransferPicker::make($args);
 }
 
 /**
  * 创建 TreeSelect 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -17138,7 +17251,6 @@ function AmisTransferPicker(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -17215,12 +17327,14 @@ function AmisTransferPicker(
  * @param mixed $itemActions 设置节点操作栏区域
  * @param array|\AmisSchema\Definition\API|string $deferApi 
  * @param bool $clearable 设置单选模式下是否支持清空
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\TreeSelect
  */
 function AmisTreeSelect(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -17229,7 +17343,6 @@ function AmisTreeSelect(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -17305,105 +17418,106 @@ function AmisTreeSelect(
     mixed $toolbarClassName = null,
     mixed $itemActions = null,
     mixed $deferApi = null,
-    mixed $clearable = null
+    mixed $clearable = null,
+    ...$args
 ): \AmisSchema\Widget\Input\TreeSelect
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($iconField !== null) $args['iconField'] = $iconField;
-    if ($searchApi !== null) $args['searchApi'] = $searchApi;
-    if ($hideRoot !== null) $args['hideRoot'] = $hideRoot;
-    if ($rootLabel !== null) $args['rootLabel'] = $rootLabel;
-    if ($showIcon !== null) $args['showIcon'] = $showIcon;
-    if ($showRadio !== null) $args['showRadio'] = $showRadio;
-    if ($showOutline !== null) $args['showOutline'] = $showOutline;
-    if ($initiallyOpen !== null) $args['initiallyOpen'] = $initiallyOpen;
-    if ($unfoldedLevel !== null) $args['unfoldedLevel'] = $unfoldedLevel;
-    if ($autoCheckChildren !== null) $args['autoCheckChildren'] = $autoCheckChildren;
-    if ($cascade !== null) $args['cascade'] = $cascade;
-    if ($withChildren !== null) $args['withChildren'] = $withChildren;
-    if ($onlyChildren !== null) $args['onlyChildren'] = $onlyChildren;
-    if ($onlyLeaf !== null) $args['onlyLeaf'] = $onlyLeaf;
-    if ($rootCreatable !== null) $args['rootCreatable'] = $rootCreatable;
-    if ($rootCreateTip !== null) $args['rootCreateTip'] = $rootCreateTip;
-    if ($minLength !== null) $args['minLength'] = $minLength;
-    if ($maxLength !== null) $args['maxLength'] = $maxLength;
-    if ($treeContainerClassName !== null) $args['treeContainerClassName'] = $treeContainerClassName;
-    if ($treeClassName !== null) $args['treeClassName'] = $treeClassName;
-    if ($enableNodePath !== null) $args['enableNodePath'] = $enableNodePath;
-    if ($pathSeparator !== null) $args['pathSeparator'] = $pathSeparator;
-    if ($highlightTxt !== null) $args['highlightTxt'] = $highlightTxt;
-    if ($itemHeight !== null) $args['itemHeight'] = $itemHeight;
-    if ($virtualThreshold !== null) $args['virtualThreshold'] = $virtualThreshold;
-    if ($menuTpl !== null) $args['menuTpl'] = $menuTpl;
-    if ($enableDefaultIcon !== null) $args['enableDefaultIcon'] = $enableDefaultIcon;
-    if ($heightAuto !== null) $args['heightAuto'] = $heightAuto;
-    if ($nodeBehavior !== null) $args['nodeBehavior'] = $nodeBehavior;
-    if ($autoCancelParent !== null) $args['autoCancelParent'] = $autoCancelParent;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($itemActions !== null) $args['itemActions'] = $itemActions;
-    if ($deferApi !== null) $args['deferApi'] = $deferApi;
-    if ($clearable !== null) $args['clearable'] = $clearable;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $iconField !== null && $args['iconField'] = $iconField;
+    $searchApi !== null && $args['searchApi'] = $searchApi;
+    $hideRoot !== null && $args['hideRoot'] = $hideRoot;
+    $rootLabel !== null && $args['rootLabel'] = $rootLabel;
+    $showIcon !== null && $args['showIcon'] = $showIcon;
+    $showRadio !== null && $args['showRadio'] = $showRadio;
+    $showOutline !== null && $args['showOutline'] = $showOutline;
+    $initiallyOpen !== null && $args['initiallyOpen'] = $initiallyOpen;
+    $unfoldedLevel !== null && $args['unfoldedLevel'] = $unfoldedLevel;
+    $autoCheckChildren !== null && $args['autoCheckChildren'] = $autoCheckChildren;
+    $cascade !== null && $args['cascade'] = $cascade;
+    $withChildren !== null && $args['withChildren'] = $withChildren;
+    $onlyChildren !== null && $args['onlyChildren'] = $onlyChildren;
+    $onlyLeaf !== null && $args['onlyLeaf'] = $onlyLeaf;
+    $rootCreatable !== null && $args['rootCreatable'] = $rootCreatable;
+    $rootCreateTip !== null && $args['rootCreateTip'] = $rootCreateTip;
+    $minLength !== null && $args['minLength'] = $minLength;
+    $maxLength !== null && $args['maxLength'] = $maxLength;
+    $treeContainerClassName !== null && $args['treeContainerClassName'] = $treeContainerClassName;
+    $treeClassName !== null && $args['treeClassName'] = $treeClassName;
+    $enableNodePath !== null && $args['enableNodePath'] = $enableNodePath;
+    $pathSeparator !== null && $args['pathSeparator'] = $pathSeparator;
+    $highlightTxt !== null && $args['highlightTxt'] = $highlightTxt;
+    $itemHeight !== null && $args['itemHeight'] = $itemHeight;
+    $virtualThreshold !== null && $args['virtualThreshold'] = $virtualThreshold;
+    $menuTpl !== null && $args['menuTpl'] = $menuTpl;
+    $enableDefaultIcon !== null && $args['enableDefaultIcon'] = $enableDefaultIcon;
+    $heightAuto !== null && $args['heightAuto'] = $heightAuto;
+    $nodeBehavior !== null && $args['nodeBehavior'] = $nodeBehavior;
+    $autoCancelParent !== null && $args['autoCancelParent'] = $autoCancelParent;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $itemActions !== null && $args['itemActions'] = $itemActions;
+    $deferApi !== null && $args['deferApi'] = $deferApi;
+    $clearable !== null && $args['clearable'] = $clearable;
     return \AmisSchema\Widget\Input\TreeSelect::make($args);
 }
 
 /**
  * 创建 UUID 组件
  * 
- * @param string $label 设置表单项标签。
+ * @param string $type 设置指定表单项类型。
  * @param string $name 设置字段名，指定该表单项提交时的 key。
+ * @param string $label 设置表单项标签。
  * @param mixed $value 设置默认值。
  * @param string $placeholder 设置表单项占位符。
  * @param string $size 设置表单项大小，可选值：'xs'、'sm'、'md'、'lg'、'full'。
@@ -17412,7 +17526,6 @@ function AmisTreeSelect(
  * @param bool $visible 设置当前表单项是否可见。
  * @param string $className 设置表单最外层类名。
  * @param mixed $style 
- * @param string $type 设置指定表单项类型。
  * @param mixed $onEvent 
  * @param string $visibleOn 设置当前表单项是否显示的条件。
  * @param string $disabledOn 设置当前表单项是否禁用的条件。
@@ -17455,12 +17568,14 @@ function AmisTreeSelect(
  * @param string $columnClassName 列的类名，可以用它配置列宽度。默认平均分配。
  * @param bool $unique 设置当前列值是否唯一，即不允许重复选择。
  * @param int $length 设置长度，用于生成短随机数
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Input\UUID
  */
 function AmisUUID(
-    mixed $label = null,
+    mixed $type = null,
     mixed $name = null,
+    mixed $label = null,
     mixed $value = null,
     mixed $placeholder = null,
     mixed $size = null,
@@ -17469,7 +17584,6 @@ function AmisUUID(
     mixed $visible = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -17511,63 +17625,63 @@ function AmisUUID(
     mixed $validateOnChange = null,
     mixed $columnClassName = null,
     mixed $unique = null,
-    mixed $length = null
+    mixed $length = null,
+    ...$args
 ): \AmisSchema\Widget\Input\UUID
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($name !== null) $args['name'] = $name;
-    if ($value !== null) $args['value'] = $value;
-    if ($placeholder !== null) $args['placeholder'] = $placeholder;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($visible !== null) $args['visible'] = $visible;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($inputClassName !== null) $args['inputClassName'] = $inputClassName;
-    if ($labelClassName !== null) $args['labelClassName'] = $labelClassName;
-    if ($labelAlign !== null) $args['labelAlign'] = $labelAlign;
-    if ($labelWidth !== null) $args['labelWidth'] = $labelWidth;
-    if ($description !== null) $args['description'] = $description;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($submitOnChange !== null) $args['submitOnChange'] = $submitOnChange;
-    if ($readOnly !== null) $args['readOnly'] = $readOnly;
-    if ($readOnlyOn !== null) $args['readOnlyOn'] = $readOnlyOn;
-    if ($requiredOn !== null) $args['requiredOn'] = $requiredOn;
-    if ($validations !== null) $args['validations'] = $validations;
-    if ($validationErrors !== null) $args['validationErrors'] = $validationErrors;
-    if ($validateApi !== null) $args['validateApi'] = $validateApi;
-    if ($clearValueOnHidden !== null) $args['clearValueOnHidden'] = $clearValueOnHidden;
-    if ($autoFocus !== null) $args['autoFocus'] = $autoFocus;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($horizontal !== null) $args['horizontal'] = $horizontal;
-    if ($hint !== null) $args['hint'] = $hint;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($labelRemark !== null) $args['labelRemark'] = $labelRemark;
-    if ($inputGroupClassName !== null) $args['inputGroupClassName'] = $inputGroupClassName;
-    if ($defaultValue !== null) $args['defaultValue'] = $defaultValue;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($hidden !== null) $args['hidden'] = $hidden;
-    if ($hiddenOn !== null) $args['hiddenOn'] = $hiddenOn;
-    if ($row !== null) $args['row'] = $row;
-    if ($staticOn !== null) $args['staticOn'] = $staticOn;
-    if ($staticPlaceholder !== null) $args['staticPlaceholder'] = $staticPlaceholder;
-    if ($strictMode !== null) $args['strictMode'] = $strictMode;
-    if ($autoFill !== null) $args['autoFill'] = $autoFill;
-    if ($staticClassName !== null) $args['staticClassName'] = $staticClassName;
-    if ($staticLabelClassName !== null) $args['staticLabelClassName'] = $staticLabelClassName;
-    if ($staticInputClassName !== null) $args['staticInputClassName'] = $staticInputClassName;
-    if ($staticSchema !== null) $args['staticSchema'] = $staticSchema;
-    if ($validateOnChange !== null) $args['validateOnChange'] = $validateOnChange;
-    if ($columnClassName !== null) $args['columnClassName'] = $columnClassName;
-    if ($unique !== null) $args['unique'] = $unique;
-    if ($length !== null) $args['length'] = $length;
+    $type !== null && $args['type'] = $type;
+    $name !== null && $args['name'] = $name;
+    $label !== null && $args['label'] = $label;
+    $value !== null && $args['value'] = $value;
+    $placeholder !== null && $args['placeholder'] = $placeholder;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $visible !== null && $args['visible'] = $visible;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $inputClassName !== null && $args['inputClassName'] = $inputClassName;
+    $labelClassName !== null && $args['labelClassName'] = $labelClassName;
+    $labelAlign !== null && $args['labelAlign'] = $labelAlign;
+    $labelWidth !== null && $args['labelWidth'] = $labelWidth;
+    $description !== null && $args['description'] = $description;
+    $inline !== null && $args['inline'] = $inline;
+    $submitOnChange !== null && $args['submitOnChange'] = $submitOnChange;
+    $readOnly !== null && $args['readOnly'] = $readOnly;
+    $readOnlyOn !== null && $args['readOnlyOn'] = $readOnlyOn;
+    $requiredOn !== null && $args['requiredOn'] = $requiredOn;
+    $validations !== null && $args['validations'] = $validations;
+    $validationErrors !== null && $args['validationErrors'] = $validationErrors;
+    $validateApi !== null && $args['validateApi'] = $validateApi;
+    $clearValueOnHidden !== null && $args['clearValueOnHidden'] = $clearValueOnHidden;
+    $autoFocus !== null && $args['autoFocus'] = $autoFocus;
+    $mode !== null && $args['mode'] = $mode;
+    $horizontal !== null && $args['horizontal'] = $horizontal;
+    $hint !== null && $args['hint'] = $hint;
+    $remark !== null && $args['remark'] = $remark;
+    $labelRemark !== null && $args['labelRemark'] = $labelRemark;
+    $inputGroupClassName !== null && $args['inputGroupClassName'] = $inputGroupClassName;
+    $defaultValue !== null && $args['defaultValue'] = $defaultValue;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $hidden !== null && $args['hidden'] = $hidden;
+    $hiddenOn !== null && $args['hiddenOn'] = $hiddenOn;
+    $row !== null && $args['row'] = $row;
+    $staticOn !== null && $args['staticOn'] = $staticOn;
+    $staticPlaceholder !== null && $args['staticPlaceholder'] = $staticPlaceholder;
+    $strictMode !== null && $args['strictMode'] = $strictMode;
+    $autoFill !== null && $args['autoFill'] = $autoFill;
+    $staticClassName !== null && $args['staticClassName'] = $staticClassName;
+    $staticLabelClassName !== null && $args['staticLabelClassName'] = $staticLabelClassName;
+    $staticInputClassName !== null && $args['staticInputClassName'] = $staticInputClassName;
+    $staticSchema !== null && $args['staticSchema'] = $staticSchema;
+    $validateOnChange !== null && $args['validateOnChange'] = $validateOnChange;
+    $columnClassName !== null && $args['columnClassName'] = $columnClassName;
+    $unique !== null && $args['unique'] = $unique;
+    $length !== null && $args['length'] = $length;
     return \AmisSchema\Widget\Input\UUID::make($args);
 }
 
@@ -17586,6 +17700,7 @@ function AmisUUID(
  * @param string|int $key 标识
  * @param string|array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $header 标题
  * @param bool $showArrow 是否展示图标，默认为 true
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Collapse
  */
@@ -17601,22 +17716,22 @@ function AmisCollapse(
     mixed $collapsed = null,
     mixed $key = null,
     mixed $header = null,
-    mixed $showArrow = null
+    mixed $showArrow = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Collapse
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($collapsed !== null) $args['collapsed'] = $collapsed;
-    if ($key !== null) $args['key'] = $key;
-    if ($header !== null) $args['header'] = $header;
-    if ($showArrow !== null) $args['showArrow'] = $showArrow;
+    $body !== null && $args['body'] = $body;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $collapsed !== null && $args['collapsed'] = $collapsed;
+    $key !== null && $args['key'] = $key;
+    $header !== null && $args['header'] = $header;
+    $showArrow !== null && $args['showArrow'] = $showArrow;
     return \AmisSchema\Widget\Layout\Collapse::make($args);
 }
 
@@ -17632,6 +17747,7 @@ function AmisCollapse(
  * @param mixed $data 
  * @param string $bodyClassName 容器内容区的类名
  * @param string $wrapperComponent 容器标签名，默认为 'div'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Container
  */
@@ -17644,19 +17760,19 @@ function AmisContainer(
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $bodyClassName = null,
-    mixed $wrapperComponent = null
+    mixed $wrapperComponent = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Container
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($wrapperComponent !== null) $args['wrapperComponent'] = $wrapperComponent;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $wrapperComponent !== null && $args['wrapperComponent'] = $wrapperComponent;
     return \AmisSchema\Widget\Layout\Container::make($args);
 }
 
@@ -17676,6 +17792,7 @@ function AmisContainer(
  * @param int|float $rotate 分割线的旋转角度
  * @param string $titleClassName 分割线的标题类名
  * @param string $titlePosition 分割线的标题位置，支持 left、center 和 right
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Divider
  */
@@ -17692,23 +17809,23 @@ function AmisDivider(
     mixed $color = null,
     mixed $rotate = null,
     mixed $titleClassName = null,
-    mixed $titlePosition = null
+    mixed $titlePosition = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Divider
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($lineStyle !== null) $args['lineStyle'] = $lineStyle;
-    if ($direction !== null) $args['direction'] = $direction;
-    if ($color !== null) $args['color'] = $color;
-    if ($rotate !== null) $args['rotate'] = $rotate;
-    if ($titleClassName !== null) $args['titleClassName'] = $titleClassName;
-    if ($titlePosition !== null) $args['titlePosition'] = $titlePosition;
+    $title !== null && $args['title'] = $title;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $lineStyle !== null && $args['lineStyle'] = $lineStyle;
+    $direction !== null && $args['direction'] = $direction;
+    $color !== null && $args['color'] = $color;
+    $rotate !== null && $args['rotate'] = $rotate;
+    $titleClassName !== null && $args['titleClassName'] = $titleClassName;
+    $titlePosition !== null && $args['titlePosition'] = $titlePosition;
     return \AmisSchema\Widget\Layout\Divider::make($args);
 }
 
@@ -17724,6 +17841,7 @@ function AmisDivider(
  * @param string $justify 主轴对齐方式，支持: start、flex-start、center、end、flex-end、space-around、space-between、space-evenly
  * @param string $alignItems 交叉轴对齐方式，支持: stretch、start、flex-start、flex-end、end、center、baseline
  * @param array|\AmisSchema\Widget\Widget[] $items Flex 子项
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Flex
  */
@@ -17736,19 +17854,19 @@ function AmisFlex(
     mixed $data = null,
     mixed $justify = null,
     mixed $alignItems = null,
-    mixed $items = null
+    mixed $items = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Flex
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($justify !== null) $args['justify'] = $justify;
-    if ($alignItems !== null) $args['alignItems'] = $alignItems;
-    if ($items !== null) $args['items'] = $items;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $justify !== null && $args['justify'] = $justify;
+    $alignItems !== null && $args['alignItems'] = $alignItems;
+    $items !== null && $args['items'] = $items;
     return \AmisSchema\Widget\Layout\Flex::make($args);
 }
 
@@ -17765,6 +17883,7 @@ function AmisFlex(
  * @param string $valign 垂直对齐方式，支持: top、middle、bottom、between
  * @param string $align 水平对齐方式，支持: left、right、between、center
  * @param array|\AmisSchema\Widget\Widget[] $columns 列集合
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Grid
  */
@@ -17778,20 +17897,20 @@ function AmisGrid(
     mixed $gap = null,
     mixed $valign = null,
     mixed $align = null,
-    mixed $columns = null
+    mixed $columns = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Grid
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($gap !== null) $args['gap'] = $gap;
-    if ($valign !== null) $args['valign'] = $valign;
-    if ($align !== null) $args['align'] = $align;
-    if ($columns !== null) $args['columns'] = $columns;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $gap !== null && $args['gap'] = $gap;
+    $valign !== null && $args['valign'] = $valign;
+    $align !== null && $args['align'] = $align;
+    $columns !== null && $args['columns'] = $columns;
     return \AmisSchema\Widget\Layout\Grid::make($args);
 }
 
@@ -17810,6 +17929,7 @@ function AmisGrid(
  * @param int $rowHeight 每个格子默认垂直高度
  * @param int|string $rowGap 格子垂直间距
  * @param array|\AmisSchema\Widget\Widget[] $grids 格子集合
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Grid2D
  */
@@ -17825,22 +17945,22 @@ function AmisGrid2D(
     mixed $cols = null,
     mixed $rowHeight = null,
     mixed $rowGap = null,
-    mixed $grids = null
+    mixed $grids = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Grid2D
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($gridClassName !== null) $args['gridClassName'] = $gridClassName;
-    if ($gap !== null) $args['gap'] = $gap;
-    if ($cols !== null) $args['cols'] = $cols;
-    if ($rowHeight !== null) $args['rowHeight'] = $rowHeight;
-    if ($rowGap !== null) $args['rowGap'] = $rowGap;
-    if ($grids !== null) $args['grids'] = $grids;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $gridClassName !== null && $args['gridClassName'] = $gridClassName;
+    $gap !== null && $args['gap'] = $gap;
+    $cols !== null && $args['cols'] = $cols;
+    $rowHeight !== null && $args['rowHeight'] = $rowHeight;
+    $rowGap !== null && $args['rowGap'] = $rowGap;
+    $grids !== null && $args['grids'] = $grids;
     return \AmisSchema\Widget\Layout\Grid2D::make($args);
 }
 
@@ -17857,6 +17977,7 @@ function AmisGrid2D(
  * @param string $valign 垂直对齐方式，可选值：'top'、'middle'、'bottom'、'between'
  * @param string $align 水平对齐方式，可选值：'left'、'right'、'between'、'center'
  * @param array|\AmisSchema\Widget\Widget[] $columns 列集合
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\HBox
  */
@@ -17870,20 +17991,20 @@ function AmisHBox(
     mixed $gap = null,
     mixed $valign = null,
     mixed $align = null,
-    mixed $columns = null
+    mixed $columns = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\HBox
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($gap !== null) $args['gap'] = $gap;
-    if ($valign !== null) $args['valign'] = $valign;
-    if ($align !== null) $args['align'] = $align;
-    if ($columns !== null) $args['columns'] = $columns;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $gap !== null && $args['gap'] = $gap;
+    $valign !== null && $args['valign'] = $valign;
+    $align !== null && $args['align'] = $align;
+    $columns !== null && $args['columns'] = $columns;
     return \AmisSchema\Widget\Layout\HBox::make($args);
 }
 
@@ -17919,6 +18040,7 @@ function AmisHBox(
  * @param bool $silentPolling 设置刷新时是否静默
  * @param string $stopAutoRefreshWhen 设置停止自动刷新的表达式
  * @param array $pullRefresh 设置下拉刷新配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Page
  */
@@ -17951,39 +18073,39 @@ function AmisPage(
     mixed $interval = null,
     mixed $silentPolling = null,
     mixed $stopAutoRefreshWhen = null,
-    mixed $pullRefresh = null
+    mixed $pullRefresh = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Page
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($subTitle !== null) $args['subTitle'] = $subTitle;
-    if ($remark !== null) $args['remark'] = $remark;
-    if ($aside !== null) $args['aside'] = $aside;
-    if ($asideResizor !== null) $args['asideResizor'] = $asideResizor;
-    if ($asideMinWidth !== null) $args['asideMinWidth'] = $asideMinWidth;
-    if ($asideMaxWidth !== null) $args['asideMaxWidth'] = $asideMaxWidth;
-    if ($asideSticky !== null) $args['asideSticky'] = $asideSticky;
-    if ($asidePosition !== null) $args['asidePosition'] = $asidePosition;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($cssVars !== null) $args['cssVars'] = $cssVars;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($asideClassName !== null) $args['asideClassName'] = $asideClassName;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($initApi !== null) $args['initApi'] = $initApi;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($initFetchOn !== null) $args['initFetchOn'] = $initFetchOn;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($silentPolling !== null) $args['silentPolling'] = $silentPolling;
-    if ($stopAutoRefreshWhen !== null) $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
-    if ($pullRefresh !== null) $args['pullRefresh'] = $pullRefresh;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $subTitle !== null && $args['subTitle'] = $subTitle;
+    $remark !== null && $args['remark'] = $remark;
+    $aside !== null && $args['aside'] = $aside;
+    $asideResizor !== null && $args['asideResizor'] = $asideResizor;
+    $asideMinWidth !== null && $args['asideMinWidth'] = $asideMinWidth;
+    $asideMaxWidth !== null && $args['asideMaxWidth'] = $asideMaxWidth;
+    $asideSticky !== null && $args['asideSticky'] = $asideSticky;
+    $asidePosition !== null && $args['asidePosition'] = $asidePosition;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $cssVars !== null && $args['cssVars'] = $cssVars;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $asideClassName !== null && $args['asideClassName'] = $asideClassName;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $initApi !== null && $args['initApi'] = $initApi;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $initFetchOn !== null && $args['initFetchOn'] = $initFetchOn;
+    $interval !== null && $args['interval'] = $interval;
+    $silentPolling !== null && $args['silentPolling'] = $silentPolling;
+    $stopAutoRefreshWhen !== null && $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
+    $pullRefresh !== null && $args['pullRefresh'] = $pullRefresh;
     return \AmisSchema\Widget\Layout\Page::make($args);
 }
 
@@ -18009,6 +18131,7 @@ function AmisPage(
  * @param int[] $perPageAvailable 指定每页可以显示多少条
  * @param bool $showPageInput 是否显示快速跳转输入框
  * @param string $onPageChange 分页改变触发, (page: number, perPage: number) => void
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Pagination
  */
@@ -18031,29 +18154,29 @@ function AmisPagination(
     mixed $ellipsisPageGap = null,
     mixed $perPageAvailable = null,
     mixed $showPageInput = null,
-    mixed $onPageChange = null
+    mixed $onPageChange = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Pagination
 {
-    $args = [];
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($layout !== null) $args['layout'] = $layout;
-    if ($maxButtons !== null) $args['maxButtons'] = $maxButtons;
-    if ($total !== null) $args['total'] = $total;
-    if ($activePage !== null) $args['activePage'] = $activePage;
-    if ($perPage !== null) $args['perPage'] = $perPage;
-    if ($showPerPage !== null) $args['showPerPage'] = $showPerPage;
-    if ($ellipsisPageGap !== null) $args['ellipsisPageGap'] = $ellipsisPageGap;
-    if ($perPageAvailable !== null) $args['perPageAvailable'] = $perPageAvailable;
-    if ($showPageInput !== null) $args['showPageInput'] = $showPageInput;
-    if ($onPageChange !== null) $args['onPageChange'] = $onPageChange;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $layout !== null && $args['layout'] = $layout;
+    $maxButtons !== null && $args['maxButtons'] = $maxButtons;
+    $total !== null && $args['total'] = $total;
+    $activePage !== null && $args['activePage'] = $activePage;
+    $perPage !== null && $args['perPage'] = $perPage;
+    $showPerPage !== null && $args['showPerPage'] = $showPerPage;
+    $ellipsisPageGap !== null && $args['ellipsisPageGap'] = $ellipsisPageGap;
+    $perPageAvailable !== null && $args['perPageAvailable'] = $perPageAvailable;
+    $showPageInput !== null && $args['showPageInput'] = $showPageInput;
+    $onPageChange !== null && $args['onPageChange'] = $onPageChange;
     return \AmisSchema\Widget\Layout\Pagination::make($args);
 }
 
@@ -18073,6 +18196,7 @@ function AmisPagination(
  * @param string $outputName 输出字段名
  * @param int $perPage 每页显示多条数据
  * @param string $position 分页显示位置，可选值：'top'、'bottom'、'none'
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\PaginationWrapper
  */
@@ -18089,23 +18213,23 @@ function AmisPaginationWrapper(
     mixed $inputName = null,
     mixed $outputName = null,
     mixed $perPage = null,
-    mixed $position = null
+    mixed $position = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\PaginationWrapper
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($showPageInput !== null) $args['showPageInput'] = $showPageInput;
-    if ($maxButtons !== null) $args['maxButtons'] = $maxButtons;
-    if ($inputName !== null) $args['inputName'] = $inputName;
-    if ($outputName !== null) $args['outputName'] = $outputName;
-    if ($perPage !== null) $args['perPage'] = $perPage;
-    if ($position !== null) $args['position'] = $position;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $showPageInput !== null && $args['showPageInput'] = $showPageInput;
+    $maxButtons !== null && $args['maxButtons'] = $maxButtons;
+    $inputName !== null && $args['inputName'] = $inputName;
+    $outputName !== null && $args['outputName'] = $outputName;
+    $perPage !== null && $args['perPage'] = $perPage;
+    $position !== null && $args['position'] = $position;
     return \AmisSchema\Widget\Layout\PaginationWrapper::make($args);
 }
 
@@ -18128,6 +18252,7 @@ function AmisPaginationWrapper(
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[]|string $footer 底部容器
  * @param bool $affixFooter 是否固定底部容器
  * @param \AmisSchema\Widget\Function\Action[]|array $actions 按钮区域
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Panel
  */
@@ -18147,26 +18272,26 @@ function AmisPanel(
     mixed $header = null,
     mixed $footer = null,
     mixed $affixFooter = null,
-    mixed $actions = null
+    mixed $actions = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Panel
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($actionsClassName !== null) $args['actionsClassName'] = $actionsClassName;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($header !== null) $args['header'] = $header;
-    if ($footer !== null) $args['footer'] = $footer;
-    if ($affixFooter !== null) $args['affixFooter'] = $affixFooter;
-    if ($actions !== null) $args['actions'] = $actions;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $actionsClassName !== null && $args['actionsClassName'] = $actionsClassName;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $header !== null && $args['header'] = $header;
+    $footer !== null && $args['footer'] = $footer;
+    $affixFooter !== null && $args['affixFooter'] = $affixFooter;
+    $actions !== null && $args['actions'] = $actions;
     return \AmisSchema\Widget\Layout\Panel::make($args);
 }
 
@@ -18190,6 +18315,7 @@ function AmisPanel(
  * @param bool $mountOnEnter 只有在点中 tab 的时候才渲染
  * @param bool $unmountOnExit 切换 tab 的时候销毁
  * @param bool $scrollable 是否导航支持内容溢出滚动
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Portlet
  */
@@ -18210,27 +18336,27 @@ function AmisPortlet(
     mixed $divider = null,
     mixed $mountOnEnter = null,
     mixed $unmountOnExit = null,
-    mixed $scrollable = null
+    mixed $scrollable = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Portlet
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($tabsClassName !== null) $args['tabsClassName'] = $tabsClassName;
-    if ($contentClassName !== null) $args['contentClassName'] = $contentClassName;
-    if ($tabs !== null) $args['tabs'] = $tabs;
-    if ($source !== null) $args['source'] = $source;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($description !== null) $args['description'] = $description;
-    if ($hideHeader !== null) $args['hideHeader'] = $hideHeader;
-    if ($divider !== null) $args['divider'] = $divider;
-    if ($mountOnEnter !== null) $args['mountOnEnter'] = $mountOnEnter;
-    if ($unmountOnExit !== null) $args['unmountOnExit'] = $unmountOnExit;
-    if ($scrollable !== null) $args['scrollable'] = $scrollable;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $tabsClassName !== null && $args['tabsClassName'] = $tabsClassName;
+    $contentClassName !== null && $args['contentClassName'] = $contentClassName;
+    $tabs !== null && $args['tabs'] = $tabs;
+    $source !== null && $args['source'] = $source;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $description !== null && $args['description'] = $description;
+    $hideHeader !== null && $args['hideHeader'] = $hideHeader;
+    $divider !== null && $args['divider'] = $divider;
+    $mountOnEnter !== null && $args['mountOnEnter'] = $mountOnEnter;
+    $unmountOnExit !== null && $args['unmountOnExit'] = $unmountOnExit;
+    $scrollable !== null && $args['scrollable'] = $scrollable;
     return \AmisSchema\Widget\Layout\Portlet::make($args);
 }
 
@@ -18266,6 +18392,7 @@ function AmisPortlet(
  * @param int $collapseOnExceed 当 tabs 超出多少个时开始折叠
  * @param string $collapseBtnLabel 用来设置折叠按钮的文字
  * @param bool $swipeable 是否开启手势滑动切换（移动端生效）
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Tabs
  */
@@ -18298,39 +18425,39 @@ function AmisTabs(
     mixed $sidePosition = null,
     mixed $collapseOnExceed = null,
     mixed $collapseBtnLabel = null,
-    mixed $swipeable = null
+    mixed $swipeable = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Tabs
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($defaultKey !== null) $args['defaultKey'] = $defaultKey;
-    if ($activeKey !== null) $args['activeKey'] = $activeKey;
-    if ($linksClassName !== null) $args['linksClassName'] = $linksClassName;
-    if ($contentClassName !== null) $args['contentClassName'] = $contentClassName;
-    if ($tabsMode !== null) $args['tabsMode'] = $tabsMode;
-    if ($tabs !== null) $args['tabs'] = $tabs;
-    if ($source !== null) $args['source'] = $source;
-    if ($toolbar !== null) $args['toolbar'] = $toolbar;
-    if ($toolbarClassName !== null) $args['toolbarClassName'] = $toolbarClassName;
-    if ($mountOnEnter !== null) $args['mountOnEnter'] = $mountOnEnter;
-    if ($unmountOnExit !== null) $args['unmountOnExit'] = $unmountOnExit;
-    if ($addable !== null) $args['addable'] = $addable;
-    if ($addBtnText !== null) $args['addBtnText'] = $addBtnText;
-    if ($closable !== null) $args['closable'] = $closable;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($showTip !== null) $args['showTip'] = $showTip;
-    if ($showTipClassName !== null) $args['showTipClassName'] = $showTipClassName;
-    if ($editable !== null) $args['editable'] = $editable;
-    if ($scrollable !== null) $args['scrollable'] = $scrollable;
-    if ($sidePosition !== null) $args['sidePosition'] = $sidePosition;
-    if ($collapseOnExceed !== null) $args['collapseOnExceed'] = $collapseOnExceed;
-    if ($collapseBtnLabel !== null) $args['collapseBtnLabel'] = $collapseBtnLabel;
-    if ($swipeable !== null) $args['swipeable'] = $swipeable;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $defaultKey !== null && $args['defaultKey'] = $defaultKey;
+    $activeKey !== null && $args['activeKey'] = $activeKey;
+    $linksClassName !== null && $args['linksClassName'] = $linksClassName;
+    $contentClassName !== null && $args['contentClassName'] = $contentClassName;
+    $tabsMode !== null && $args['tabsMode'] = $tabsMode;
+    $tabs !== null && $args['tabs'] = $tabs;
+    $source !== null && $args['source'] = $source;
+    $toolbar !== null && $args['toolbar'] = $toolbar;
+    $toolbarClassName !== null && $args['toolbarClassName'] = $toolbarClassName;
+    $mountOnEnter !== null && $args['mountOnEnter'] = $mountOnEnter;
+    $unmountOnExit !== null && $args['unmountOnExit'] = $unmountOnExit;
+    $addable !== null && $args['addable'] = $addable;
+    $addBtnText !== null && $args['addBtnText'] = $addBtnText;
+    $closable !== null && $args['closable'] = $closable;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $showTip !== null && $args['showTip'] = $showTip;
+    $showTipClassName !== null && $args['showTipClassName'] = $showTipClassName;
+    $editable !== null && $args['editable'] = $editable;
+    $scrollable !== null && $args['scrollable'] = $scrollable;
+    $sidePosition !== null && $args['sidePosition'] = $sidePosition;
+    $collapseOnExceed !== null && $args['collapseOnExceed'] = $collapseOnExceed;
+    $collapseBtnLabel !== null && $args['collapseBtnLabel'] = $collapseBtnLabel;
+    $swipeable !== null && $args['swipeable'] = $swipeable;
     return \AmisSchema\Widget\Layout\Tabs::make($args);
 }
 
@@ -18345,6 +18472,7 @@ function AmisTabs(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Layout\Wrapper
  */
@@ -18356,18 +18484,18 @@ function AmisWrapper(
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
-    mixed $data = null
+    mixed $data = null,
+    ...$args
 ): \AmisSchema\Widget\Layout\Wrapper
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($size !== null) $args['size'] = $size;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
+    $body !== null && $args['body'] = $body;
+    $size !== null && $args['size'] = $size;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
     return \AmisSchema\Widget\Layout\Wrapper::make($args);
 }
 
@@ -18424,6 +18552,7 @@ function AmisWrapper(
  * @param string $subject 邮件主题
  * @param string $tooltipTrigger 触发 tooltip
  * @param string $loadingOn 显示按钮 loading 表达式
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Action
  */
@@ -18477,60 +18606,60 @@ function AmisAction(
     mixed $bcc = null,
     mixed $subject = null,
     mixed $tooltipTrigger = null,
-    mixed $loadingOn = null
+    mixed $loadingOn = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Action
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($body !== null) $args['body'] = $body;
-    if ($actionType !== null) $args['actionType'] = $actionType;
-    if ($api !== null) $args['api'] = $api;
-    if ($url !== null) $args['url'] = $url;
-    if ($link !== null) $args['link'] = $link;
-    if ($level !== null) $args['level'] = $level;
-    if ($size !== null) $args['size'] = $size;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($tooltip !== null) $args['tooltip'] = $tooltip;
-    if ($confirmText !== null) $args['confirmText'] = $confirmText;
-    if ($reload !== null) $args['reload'] = $reload;
-    if ($close !== null) $args['close'] = $close;
-    if ($redirect !== null) $args['redirect'] = $redirect;
-    if ($dialog !== null) $args['dialog'] = $dialog;
-    if ($drawer !== null) $args['drawer'] = $drawer;
-    if ($feedback !== null) $args['feedback'] = $feedback;
-    if ($messages !== null) $args['messages'] = $messages;
-    if ($block !== null) $args['block'] = $block;
-    if ($active !== null) $args['active'] = $active;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($iconClassName !== null) $args['iconClassName'] = $iconClassName;
-    if ($rightIcon !== null) $args['rightIcon'] = $rightIcon;
-    if ($rightIconClassName !== null) $args['rightIconClassName'] = $rightIconClassName;
-    if ($activeLevel !== null) $args['activeLevel'] = $activeLevel;
-    if ($activeClassName !== null) $args['activeClassName'] = $activeClassName;
-    if ($confirmTitle !== null) $args['confirmTitle'] = $confirmTitle;
-    if ($disabledTip !== null) $args['disabledTip'] = $disabledTip;
-    if ($tooltipPlacement !== null) $args['tooltipPlacement'] = $tooltipPlacement;
-    if ($blank !== null) $args['blank'] = $blank;
-    if ($content !== null) $args['content'] = $content;
-    if ($target !== null) $args['target'] = $target;
-    if ($countDown !== null) $args['countDown'] = $countDown;
-    if ($countDownTpl !== null) $args['countDownTpl'] = $countDownTpl;
-    if ($hotKey !== null) $args['hotKey'] = $hotKey;
-    if ($downloadFileName !== null) $args['downloadFileName'] = $downloadFileName;
-    if ($to !== null) $args['to'] = $to;
-    if ($cc !== null) $args['cc'] = $cc;
-    if ($bcc !== null) $args['bcc'] = $bcc;
-    if ($subject !== null) $args['subject'] = $subject;
-    if ($tooltipTrigger !== null) $args['tooltipTrigger'] = $tooltipTrigger;
-    if ($loadingOn !== null) $args['loadingOn'] = $loadingOn;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $actionType !== null && $args['actionType'] = $actionType;
+    $api !== null && $args['api'] = $api;
+    $url !== null && $args['url'] = $url;
+    $link !== null && $args['link'] = $link;
+    $level !== null && $args['level'] = $level;
+    $size !== null && $args['size'] = $size;
+    $icon !== null && $args['icon'] = $icon;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $tooltip !== null && $args['tooltip'] = $tooltip;
+    $confirmText !== null && $args['confirmText'] = $confirmText;
+    $reload !== null && $args['reload'] = $reload;
+    $close !== null && $args['close'] = $close;
+    $redirect !== null && $args['redirect'] = $redirect;
+    $dialog !== null && $args['dialog'] = $dialog;
+    $drawer !== null && $args['drawer'] = $drawer;
+    $feedback !== null && $args['feedback'] = $feedback;
+    $messages !== null && $args['messages'] = $messages;
+    $block !== null && $args['block'] = $block;
+    $active !== null && $args['active'] = $active;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $iconClassName !== null && $args['iconClassName'] = $iconClassName;
+    $rightIcon !== null && $args['rightIcon'] = $rightIcon;
+    $rightIconClassName !== null && $args['rightIconClassName'] = $rightIconClassName;
+    $activeLevel !== null && $args['activeLevel'] = $activeLevel;
+    $activeClassName !== null && $args['activeClassName'] = $activeClassName;
+    $confirmTitle !== null && $args['confirmTitle'] = $confirmTitle;
+    $disabledTip !== null && $args['disabledTip'] = $disabledTip;
+    $tooltipPlacement !== null && $args['tooltipPlacement'] = $tooltipPlacement;
+    $blank !== null && $args['blank'] = $blank;
+    $content !== null && $args['content'] = $content;
+    $target !== null && $args['target'] = $target;
+    $countDown !== null && $args['countDown'] = $countDown;
+    $countDownTpl !== null && $args['countDownTpl'] = $countDownTpl;
+    $hotKey !== null && $args['hotKey'] = $hotKey;
+    $downloadFileName !== null && $args['downloadFileName'] = $downloadFileName;
+    $to !== null && $args['to'] = $to;
+    $cc !== null && $args['cc'] = $cc;
+    $bcc !== null && $args['bcc'] = $bcc;
+    $subject !== null && $args['subject'] = $subject;
+    $tooltipTrigger !== null && $args['tooltipTrigger'] = $tooltipTrigger;
+    $loadingOn !== null && $args['loadingOn'] = $loadingOn;
     return \AmisSchema\Widget\Function\Action::make($args);
 }
 
@@ -18547,6 +18676,7 @@ function AmisAction(
  * @param string $linkClassName 导航 Dom 的类名
  * @param string $sectionClassName 锚点区域 Dom 的类名
  * @param string $direction 可以配置导航水平展示还是垂直展示。对应的配置项分别是：vertical、horizontal
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\AnchorNav
  */
@@ -18560,20 +18690,20 @@ function AmisAnchorNav(
     mixed $data = null,
     mixed $linkClassName = null,
     mixed $sectionClassName = null,
-    mixed $direction = null
+    mixed $direction = null,
+    ...$args
 ): \AmisSchema\Widget\Function\AnchorNav
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($active !== null) $args['active'] = $active;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($linkClassName !== null) $args['linkClassName'] = $linkClassName;
-    if ($sectionClassName !== null) $args['sectionClassName'] = $sectionClassName;
-    if ($direction !== null) $args['direction'] = $direction;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $active !== null && $args['active'] = $active;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $linkClassName !== null && $args['linkClassName'] = $linkClassName;
+    $sectionClassName !== null && $args['sectionClassName'] = $sectionClassName;
+    $direction !== null && $args['direction'] = $direction;
     return \AmisSchema\Widget\Function\AnchorNav::make($args);
 }
 
@@ -18594,6 +18724,7 @@ function AmisAnchorNav(
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[]|string $asideAfter 页面菜单下前面区域
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[]|string $footer 页面底部区域
  * @param array|\AmisSchema\Definition\AppPage[] $pages 具体的页面配置，通常为数组，数组第一层为分组
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\App
  */
@@ -18611,24 +18742,24 @@ function AmisApp(
     mixed $asideBefore = null,
     mixed $asideAfter = null,
     mixed $footer = null,
-    mixed $pages = null
+    mixed $pages = null,
+    ...$args
 ): \AmisSchema\Widget\Function\App
 {
-    $args = [];
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($brandName !== null) $args['brandName'] = $brandName;
-    if ($logo !== null) $args['logo'] = $logo;
-    if ($header !== null) $args['header'] = $header;
-    if ($asideBefore !== null) $args['asideBefore'] = $asideBefore;
-    if ($asideAfter !== null) $args['asideAfter'] = $asideAfter;
-    if ($footer !== null) $args['footer'] = $footer;
-    if ($pages !== null) $args['pages'] = $pages;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $brandName !== null && $args['brandName'] = $brandName;
+    $logo !== null && $args['logo'] = $logo;
+    $header !== null && $args['header'] = $header;
+    $asideBefore !== null && $args['asideBefore'] = $asideBefore;
+    $asideAfter !== null && $args['asideAfter'] = $asideAfter;
+    $footer !== null && $args['footer'] = $footer;
+    $pages !== null && $args['pages'] = $pages;
     return \AmisSchema\Widget\Function\App::make($args);
 }
 
@@ -18649,6 +18780,7 @@ function AmisApp(
  * @param int $labelMaxLength 最大展示长度
  * @param string $tooltipPosition 浮窗提示位置
  * @param string|\AmisSchema\Definition\API|array $source 动态数据
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Breadcrumb
  */
@@ -18666,24 +18798,24 @@ function AmisBreadcrumb(
     mixed $separator = null,
     mixed $labelMaxLength = null,
     mixed $tooltipPosition = null,
-    mixed $source = null
+    mixed $source = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Breadcrumb
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($itemClassName !== null) $args['itemClassName'] = $itemClassName;
-    if ($separatorClassName !== null) $args['separatorClassName'] = $separatorClassName;
-    if ($dropdownClassName !== null) $args['dropdownClassName'] = $dropdownClassName;
-    if ($dropdownItemClassName !== null) $args['dropdownItemClassName'] = $dropdownItemClassName;
-    if ($separator !== null) $args['separator'] = $separator;
-    if ($labelMaxLength !== null) $args['labelMaxLength'] = $labelMaxLength;
-    if ($tooltipPosition !== null) $args['tooltipPosition'] = $tooltipPosition;
-    if ($source !== null) $args['source'] = $source;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $itemClassName !== null && $args['itemClassName'] = $itemClassName;
+    $separatorClassName !== null && $args['separatorClassName'] = $separatorClassName;
+    $dropdownClassName !== null && $args['dropdownClassName'] = $dropdownClassName;
+    $dropdownItemClassName !== null && $args['dropdownItemClassName'] = $dropdownItemClassName;
+    $separator !== null && $args['separator'] = $separator;
+    $labelMaxLength !== null && $args['labelMaxLength'] = $labelMaxLength;
+    $tooltipPosition !== null && $args['tooltipPosition'] = $tooltipPosition;
+    $source !== null && $args['source'] = $source;
     return \AmisSchema\Widget\Function\Breadcrumb::make($args);
 }
 
@@ -18740,6 +18872,7 @@ function AmisBreadcrumb(
  * @param string $subject 邮件主题
  * @param string $tooltipTrigger 触发 tooltip
  * @param string $loadingOn 显示按钮 loading 表达式
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Button
  */
@@ -18793,60 +18926,60 @@ function AmisButton(
     mixed $bcc = null,
     mixed $subject = null,
     mixed $tooltipTrigger = null,
-    mixed $loadingOn = null
+    mixed $loadingOn = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Button
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($body !== null) $args['body'] = $body;
-    if ($actionType !== null) $args['actionType'] = $actionType;
-    if ($api !== null) $args['api'] = $api;
-    if ($url !== null) $args['url'] = $url;
-    if ($link !== null) $args['link'] = $link;
-    if ($level !== null) $args['level'] = $level;
-    if ($size !== null) $args['size'] = $size;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($required !== null) $args['required'] = $required;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($tooltip !== null) $args['tooltip'] = $tooltip;
-    if ($confirmText !== null) $args['confirmText'] = $confirmText;
-    if ($reload !== null) $args['reload'] = $reload;
-    if ($close !== null) $args['close'] = $close;
-    if ($redirect !== null) $args['redirect'] = $redirect;
-    if ($dialog !== null) $args['dialog'] = $dialog;
-    if ($drawer !== null) $args['drawer'] = $drawer;
-    if ($feedback !== null) $args['feedback'] = $feedback;
-    if ($messages !== null) $args['messages'] = $messages;
-    if ($block !== null) $args['block'] = $block;
-    if ($active !== null) $args['active'] = $active;
-    if ($loading !== null) $args['loading'] = $loading;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($iconClassName !== null) $args['iconClassName'] = $iconClassName;
-    if ($rightIcon !== null) $args['rightIcon'] = $rightIcon;
-    if ($rightIconClassName !== null) $args['rightIconClassName'] = $rightIconClassName;
-    if ($activeLevel !== null) $args['activeLevel'] = $activeLevel;
-    if ($activeClassName !== null) $args['activeClassName'] = $activeClassName;
-    if ($confirmTitle !== null) $args['confirmTitle'] = $confirmTitle;
-    if ($disabledTip !== null) $args['disabledTip'] = $disabledTip;
-    if ($tooltipPlacement !== null) $args['tooltipPlacement'] = $tooltipPlacement;
-    if ($blank !== null) $args['blank'] = $blank;
-    if ($content !== null) $args['content'] = $content;
-    if ($target !== null) $args['target'] = $target;
-    if ($countDown !== null) $args['countDown'] = $countDown;
-    if ($countDownTpl !== null) $args['countDownTpl'] = $countDownTpl;
-    if ($hotKey !== null) $args['hotKey'] = $hotKey;
-    if ($downloadFileName !== null) $args['downloadFileName'] = $downloadFileName;
-    if ($to !== null) $args['to'] = $to;
-    if ($cc !== null) $args['cc'] = $cc;
-    if ($bcc !== null) $args['bcc'] = $bcc;
-    if ($subject !== null) $args['subject'] = $subject;
-    if ($tooltipTrigger !== null) $args['tooltipTrigger'] = $tooltipTrigger;
-    if ($loadingOn !== null) $args['loadingOn'] = $loadingOn;
+    $label !== null && $args['label'] = $label;
+    $body !== null && $args['body'] = $body;
+    $actionType !== null && $args['actionType'] = $actionType;
+    $api !== null && $args['api'] = $api;
+    $url !== null && $args['url'] = $url;
+    $link !== null && $args['link'] = $link;
+    $level !== null && $args['level'] = $level;
+    $size !== null && $args['size'] = $size;
+    $icon !== null && $args['icon'] = $icon;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $required !== null && $args['required'] = $required;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $tooltip !== null && $args['tooltip'] = $tooltip;
+    $confirmText !== null && $args['confirmText'] = $confirmText;
+    $reload !== null && $args['reload'] = $reload;
+    $close !== null && $args['close'] = $close;
+    $redirect !== null && $args['redirect'] = $redirect;
+    $dialog !== null && $args['dialog'] = $dialog;
+    $drawer !== null && $args['drawer'] = $drawer;
+    $feedback !== null && $args['feedback'] = $feedback;
+    $messages !== null && $args['messages'] = $messages;
+    $block !== null && $args['block'] = $block;
+    $active !== null && $args['active'] = $active;
+    $loading !== null && $args['loading'] = $loading;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $iconClassName !== null && $args['iconClassName'] = $iconClassName;
+    $rightIcon !== null && $args['rightIcon'] = $rightIcon;
+    $rightIconClassName !== null && $args['rightIconClassName'] = $rightIconClassName;
+    $activeLevel !== null && $args['activeLevel'] = $activeLevel;
+    $activeClassName !== null && $args['activeClassName'] = $activeClassName;
+    $confirmTitle !== null && $args['confirmTitle'] = $confirmTitle;
+    $disabledTip !== null && $args['disabledTip'] = $disabledTip;
+    $tooltipPlacement !== null && $args['tooltipPlacement'] = $tooltipPlacement;
+    $blank !== null && $args['blank'] = $blank;
+    $content !== null && $args['content'] = $content;
+    $target !== null && $args['target'] = $target;
+    $countDown !== null && $args['countDown'] = $countDown;
+    $countDownTpl !== null && $args['countDownTpl'] = $countDownTpl;
+    $hotKey !== null && $args['hotKey'] = $hotKey;
+    $downloadFileName !== null && $args['downloadFileName'] = $downloadFileName;
+    $to !== null && $args['to'] = $to;
+    $cc !== null && $args['cc'] = $cc;
+    $bcc !== null && $args['bcc'] = $bcc;
+    $subject !== null && $args['subject'] = $subject;
+    $tooltipTrigger !== null && $args['tooltipTrigger'] = $tooltipTrigger;
+    $loadingOn !== null && $args['loadingOn'] = $loadingOn;
     return \AmisSchema\Widget\Function\Button::make($args);
 }
 
@@ -18864,6 +18997,7 @@ function AmisButton(
  * @param string $btnLevel 按钮样式
  * @param string $btnActiveLevel 选中按钮样式
  * @param array|\AmisSchema\Widget\Function\Action[] $buttons 按钮配置数组
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\ButtonGroup
  */
@@ -18878,21 +19012,21 @@ function AmisButtonGroup(
     mixed $tiled = null,
     mixed $btnLevel = null,
     mixed $btnActiveLevel = null,
-    mixed $buttons = null
+    mixed $buttons = null,
+    ...$args
 ): \AmisSchema\Widget\Function\ButtonGroup
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($vertical !== null) $args['vertical'] = $vertical;
-    if ($tiled !== null) $args['tiled'] = $tiled;
-    if ($btnLevel !== null) $args['btnLevel'] = $btnLevel;
-    if ($btnActiveLevel !== null) $args['btnActiveLevel'] = $btnActiveLevel;
-    if ($buttons !== null) $args['buttons'] = $buttons;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $vertical !== null && $args['vertical'] = $vertical;
+    $tiled !== null && $args['tiled'] = $tiled;
+    $btnLevel !== null && $args['btnLevel'] = $btnLevel;
+    $btnActiveLevel !== null && $args['btnActiveLevel'] = $btnActiveLevel;
+    $buttons !== null && $args['buttons'] = $buttons;
     return \AmisSchema\Widget\Function\ButtonGroup::make($args);
 }
 
@@ -18912,6 +19046,7 @@ function AmisButtonGroup(
  * @param string $onMount 节点初始化之后调用的函数
  * @param string $onUpdate 数据有更新的时候调用的函数
  * @param string $onUnmount 节点销毁的时候调用的函数
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Custom
  */
@@ -18928,23 +19063,23 @@ function AmisCustom(
     mixed $html = null,
     mixed $onMount = null,
     mixed $onUpdate = null,
-    mixed $onUnmount = null
+    mixed $onUnmount = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Custom
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($id !== null) $args['id'] = $id;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($html !== null) $args['html'] = $html;
-    if ($onMount !== null) $args['onMount'] = $onMount;
-    if ($onUpdate !== null) $args['onUpdate'] = $onUpdate;
-    if ($onUnmount !== null) $args['onUnmount'] = $onUnmount;
+    $name !== null && $args['name'] = $name;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $id !== null && $args['id'] = $id;
+    $inline !== null && $args['inline'] = $inline;
+    $html !== null && $args['html'] = $html;
+    $onMount !== null && $args['onMount'] = $onMount;
+    $onUpdate !== null && $args['onUpdate'] = $onUpdate;
+    $onUnmount !== null && $args['onUnmount'] = $onUnmount;
     return \AmisSchema\Widget\Function\Custom::make($args);
 }
 
@@ -18970,6 +19105,7 @@ function AmisCustom(
  * @param bool $closeOnClick 点击按钮后自动关闭下拉菜单
  * @param string $trigger 触发方式，可选值："click" | "hover"
  * @param bool $hideCaret 隐藏下拉图标
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\DropDownButton
  */
@@ -18992,29 +19128,29 @@ function AmisDropDownButton(
     mixed $closeOnOutside = null,
     mixed $closeOnClick = null,
     mixed $trigger = null,
-    mixed $hideCaret = null
+    mixed $hideCaret = null,
+    ...$args
 ): \AmisSchema\Widget\Function\DropDownButton
 {
-    $args = [];
-    if ($label !== null) $args['label'] = $label;
-    if ($size !== null) $args['size'] = $size;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($block !== null) $args['block'] = $block;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($btnClassName !== null) $args['btnClassName'] = $btnClassName;
-    if ($menuClassName !== null) $args['menuClassName'] = $menuClassName;
-    if ($align !== null) $args['align'] = $align;
-    if ($buttons !== null) $args['buttons'] = $buttons;
-    if ($iconOnly !== null) $args['iconOnly'] = $iconOnly;
-    if ($defaultIsOpened !== null) $args['defaultIsOpened'] = $defaultIsOpened;
-    if ($closeOnOutside !== null) $args['closeOnOutside'] = $closeOnOutside;
-    if ($closeOnClick !== null) $args['closeOnClick'] = $closeOnClick;
-    if ($trigger !== null) $args['trigger'] = $trigger;
-    if ($hideCaret !== null) $args['hideCaret'] = $hideCaret;
+    $label !== null && $args['label'] = $label;
+    $size !== null && $args['size'] = $size;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $block !== null && $args['block'] = $block;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $btnClassName !== null && $args['btnClassName'] = $btnClassName;
+    $menuClassName !== null && $args['menuClassName'] = $menuClassName;
+    $align !== null && $args['align'] = $align;
+    $buttons !== null && $args['buttons'] = $buttons;
+    $iconOnly !== null && $args['iconOnly'] = $iconOnly;
+    $defaultIsOpened !== null && $args['defaultIsOpened'] = $defaultIsOpened;
+    $closeOnOutside !== null && $args['closeOnOutside'] = $closeOnOutside;
+    $closeOnClick !== null && $args['closeOnClick'] = $closeOnClick;
+    $trigger !== null && $args['trigger'] = $trigger;
+    $hideCaret !== null && $args['hideCaret'] = $hideCaret;
     return \AmisSchema\Widget\Function\DropDownButton::make($args);
 }
 
@@ -19048,6 +19184,7 @@ function AmisDropDownButton(
  * @param array|\AmisSchema\Definition\NavOverflow $overflow 响应式收纳配置
  * @param bool $searchable 是否开启搜索
  * @param array|\AmisSchema\Definition\NavSearchConfig $searchConfig 搜索配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Nav
  */
@@ -19078,37 +19215,37 @@ function AmisNav(
     mixed $links = null,
     mixed $overflow = null,
     mixed $searchable = null,
-    mixed $searchConfig = null
+    mixed $searchConfig = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Nav
 {
-    $args = [];
-    if ($level !== null) $args['level'] = $level;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($collapsed !== null) $args['collapsed'] = $collapsed;
-    if ($indentSize !== null) $args['indentSize'] = $indentSize;
-    if ($defaultOpenLevel !== null) $args['defaultOpenLevel'] = $defaultOpenLevel;
-    if ($popupClassName !== null) $args['popupClassName'] = $popupClassName;
-    if ($expandIcon !== null) $args['expandIcon'] = $expandIcon;
-    if ($expandPosition !== null) $args['expandPosition'] = $expandPosition;
-    if ($stacked !== null) $args['stacked'] = $stacked;
-    if ($accordion !== null) $args['accordion'] = $accordion;
-    if ($source !== null) $args['source'] = $source;
-    if ($deferApi !== null) $args['deferApi'] = $deferApi;
-    if ($itemActions !== null) $args['itemActions'] = $itemActions;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($dragOnSameLevel !== null) $args['dragOnSameLevel'] = $dragOnSameLevel;
-    if ($saveOrderApi !== null) $args['saveOrderApi'] = $saveOrderApi;
-    if ($itemBadge !== null) $args['itemBadge'] = $itemBadge;
-    if ($links !== null) $args['links'] = $links;
-    if ($overflow !== null) $args['overflow'] = $overflow;
-    if ($searchable !== null) $args['searchable'] = $searchable;
-    if ($searchConfig !== null) $args['searchConfig'] = $searchConfig;
+    $level !== null && $args['level'] = $level;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $collapsed !== null && $args['collapsed'] = $collapsed;
+    $indentSize !== null && $args['indentSize'] = $indentSize;
+    $defaultOpenLevel !== null && $args['defaultOpenLevel'] = $defaultOpenLevel;
+    $popupClassName !== null && $args['popupClassName'] = $popupClassName;
+    $expandIcon !== null && $args['expandIcon'] = $expandIcon;
+    $expandPosition !== null && $args['expandPosition'] = $expandPosition;
+    $stacked !== null && $args['stacked'] = $stacked;
+    $accordion !== null && $args['accordion'] = $accordion;
+    $source !== null && $args['source'] = $source;
+    $deferApi !== null && $args['deferApi'] = $deferApi;
+    $itemActions !== null && $args['itemActions'] = $itemActions;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $dragOnSameLevel !== null && $args['dragOnSameLevel'] = $dragOnSameLevel;
+    $saveOrderApi !== null && $args['saveOrderApi'] = $saveOrderApi;
+    $itemBadge !== null && $args['itemBadge'] = $itemBadge;
+    $links !== null && $args['links'] = $links;
+    $overflow !== null && $args['overflow'] = $overflow;
+    $searchable !== null && $args['searchable'] = $searchable;
+    $searchConfig !== null && $args['searchConfig'] = $searchConfig;
     return \AmisSchema\Widget\Function\Nav::make($args);
 }
 
@@ -19132,6 +19269,7 @@ function AmisNav(
  * @param bool $silentPolling 配置轮询时是否显示加载动画
  * @param string $stopAutoRefreshWhen 配置停止轮询的条件
  * @param bool $showErrorMsg 是否以 Alert 的形式显示 api 接口响应的错误信息
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\Service
  */
@@ -19152,27 +19290,27 @@ function AmisService(
     mixed $interval = null,
     mixed $silentPolling = null,
     mixed $stopAutoRefreshWhen = null,
-    mixed $showErrorMsg = null
+    mixed $showErrorMsg = null,
+    ...$args
 ): \AmisSchema\Widget\Function\Service
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($ws !== null) $args['ws'] = $ws;
-    if ($dataProvider !== null) $args['dataProvider'] = $dataProvider;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($schemaApi !== null) $args['schemaApi'] = $schemaApi;
-    if ($initFetchSchema !== null) $args['initFetchSchema'] = $initFetchSchema;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($silentPolling !== null) $args['silentPolling'] = $silentPolling;
-    if ($stopAutoRefreshWhen !== null) $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
+    $body !== null && $args['body'] = $body;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $ws !== null && $args['ws'] = $ws;
+    $dataProvider !== null && $args['dataProvider'] = $dataProvider;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $schemaApi !== null && $args['schemaApi'] = $schemaApi;
+    $initFetchSchema !== null && $args['initFetchSchema'] = $initFetchSchema;
+    $interval !== null && $args['interval'] = $interval;
+    $silentPolling !== null && $args['silentPolling'] = $silentPolling;
+    $stopAutoRefreshWhen !== null && $args['stopAutoRefreshWhen'] = $stopAutoRefreshWhen;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
     return \AmisSchema\Widget\Function\Service::make($args);
 }
 
@@ -19203,6 +19341,7 @@ function AmisService(
  * @param string|array $tooltipStyle 浮层自定义样式
  * @param string $tooltipClassName 文字提示浮层类名
  * @param string $tooltipArrowClassName 箭头类名
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Function\TooltipWrapper
  */
@@ -19230,34 +19369,34 @@ function AmisTooltipWrapper(
     mixed $wrapperComponent = null,
     mixed $tooltipStyle = null,
     mixed $tooltipClassName = null,
-    mixed $tooltipArrowClassName = null
+    mixed $tooltipArrowClassName = null,
+    ...$args
 ): \AmisSchema\Widget\Function\TooltipWrapper
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($content !== null) $args['content'] = $content;
-    if ($placement !== null) $args['placement'] = $placement;
-    if ($tooltipTheme !== null) $args['tooltipTheme'] = $tooltipTheme;
-    if ($offset !== null) $args['offset'] = $offset;
-    if ($showArrow !== null) $args['showArrow'] = $showArrow;
-    if ($enterable !== null) $args['enterable'] = $enterable;
-    if ($trigger !== null) $args['trigger'] = $trigger;
-    if ($mouseEnterDelay !== null) $args['mouseEnterDelay'] = $mouseEnterDelay;
-    if ($mouseLeaveDelay !== null) $args['mouseLeaveDelay'] = $mouseLeaveDelay;
-    if ($rootClose !== null) $args['rootClose'] = $rootClose;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($wrapperComponent !== null) $args['wrapperComponent'] = $wrapperComponent;
-    if ($tooltipStyle !== null) $args['tooltipStyle'] = $tooltipStyle;
-    if ($tooltipClassName !== null) $args['tooltipClassName'] = $tooltipClassName;
-    if ($tooltipArrowClassName !== null) $args['tooltipArrowClassName'] = $tooltipArrowClassName;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $content !== null && $args['content'] = $content;
+    $placement !== null && $args['placement'] = $placement;
+    $tooltipTheme !== null && $args['tooltipTheme'] = $tooltipTheme;
+    $offset !== null && $args['offset'] = $offset;
+    $showArrow !== null && $args['showArrow'] = $showArrow;
+    $enterable !== null && $args['enterable'] = $enterable;
+    $trigger !== null && $args['trigger'] = $trigger;
+    $mouseEnterDelay !== null && $args['mouseEnterDelay'] = $mouseEnterDelay;
+    $mouseLeaveDelay !== null && $args['mouseLeaveDelay'] = $mouseLeaveDelay;
+    $rootClose !== null && $args['rootClose'] = $rootClose;
+    $inline !== null && $args['inline'] = $inline;
+    $wrapperComponent !== null && $args['wrapperComponent'] = $wrapperComponent;
+    $tooltipStyle !== null && $args['tooltipStyle'] = $tooltipStyle;
+    $tooltipClassName !== null && $args['tooltipClassName'] = $tooltipClassName;
+    $tooltipArrowClassName !== null && $args['tooltipArrowClassName'] = $tooltipArrowClassName;
     return \AmisSchema\Widget\Function\TooltipWrapper::make($args);
 }
 
@@ -19279,6 +19418,7 @@ function AmisTooltipWrapper(
  * @param bool $showIcon 是否显示图标
  * @param string $iconClassName 图标的 CSS 类名
  * @param array $actions 操作区域配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Alert
  */
@@ -19297,33 +19437,33 @@ function AmisAlert(
     mixed $closeButtonClassName = null,
     mixed $showIcon = null,
     mixed $iconClassName = null,
-    mixed $actions = null
+    mixed $actions = null,
+    ...$args
 ): \AmisSchema\Widget\Feedback\Alert
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($level !== null) $args['level'] = $level;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($showCloseButton !== null) $args['showCloseButton'] = $showCloseButton;
-    if ($closeButtonClassName !== null) $args['closeButtonClassName'] = $closeButtonClassName;
-    if ($showIcon !== null) $args['showIcon'] = $showIcon;
-    if ($iconClassName !== null) $args['iconClassName'] = $iconClassName;
-    if ($actions !== null) $args['actions'] = $actions;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $level !== null && $args['level'] = $level;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $showCloseButton !== null && $args['showCloseButton'] = $showCloseButton;
+    $closeButtonClassName !== null && $args['closeButtonClassName'] = $closeButtonClassName;
+    $showIcon !== null && $args['showIcon'] = $showIcon;
+    $iconClassName !== null && $args['iconClassName'] = $iconClassName;
+    $actions !== null && $args['actions'] = $actions;
     return \AmisSchema\Widget\Feedback\Alert::make($args);
 }
 
 /**
  * 创建 Dialog 组件
  * 
- * @param string|\AmisSchema\Widget\Widget $title 弹出层标题，支持 SchemaNode
  * @param string $name 弹框名称，用于动作控制
+ * @param string|\AmisSchema\Widget\Widget $title 弹出层标题，支持 SchemaNode
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $body 往 Dialog 内容区加内容，支持 SchemaNode
  * @param string $size 指定 dialog 大小：xs、sm、md、lg、xl、full
  * @param bool $disabled 如果设置此属性，则该 Dialog 只读没有提交操作
@@ -19348,12 +19488,13 @@ function AmisAlert(
  * @param string $position 决定弹框的位置
  * @param bool $resizable 是否可调整大小
  * @param bool $overlay 是否显示蒙层
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Dialog
  */
 function AmisDialog(
-    mixed $title = null,
     mixed $name = null,
+    mixed $title = null,
     mixed $body = null,
     mixed $size = null,
     mixed $disabled = null,
@@ -19377,44 +19518,44 @@ function AmisDialog(
     mixed $draggable = null,
     mixed $position = null,
     mixed $resizable = null,
-    mixed $overlay = null
+    mixed $overlay = null,
+    ...$args
 ): \AmisSchema\Widget\Feedback\Dialog
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($size !== null) $args['size'] = $size;
-    if ($disabled !== null) $args['disabled'] = $disabled;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($closeOnEsc !== null) $args['closeOnEsc'] = $closeOnEsc;
-    if ($closeOnOutside !== null) $args['closeOnOutside'] = $closeOnOutside;
-    if ($showCloseButton !== null) $args['showCloseButton'] = $showCloseButton;
-    if ($showErrorMsg !== null) $args['showErrorMsg'] = $showErrorMsg;
-    if ($showLoading !== null) $args['showLoading'] = $showLoading;
-    if ($actions !== null) $args['actions'] = $actions;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($bodyStyle !== null) $args['bodyStyle'] = $bodyStyle;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($position !== null) $args['position'] = $position;
-    if ($resizable !== null) $args['resizable'] = $resizable;
-    if ($overlay !== null) $args['overlay'] = $overlay;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $size !== null && $args['size'] = $size;
+    $disabled !== null && $args['disabled'] = $disabled;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $closeOnEsc !== null && $args['closeOnEsc'] = $closeOnEsc;
+    $closeOnOutside !== null && $args['closeOnOutside'] = $closeOnOutside;
+    $showCloseButton !== null && $args['showCloseButton'] = $showCloseButton;
+    $showErrorMsg !== null && $args['showErrorMsg'] = $showErrorMsg;
+    $showLoading !== null && $args['showLoading'] = $showLoading;
+    $actions !== null && $args['actions'] = $actions;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $bodyStyle !== null && $args['bodyStyle'] = $bodyStyle;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $position !== null && $args['position'] = $position;
+    $resizable !== null && $args['resizable'] = $resizable;
+    $overlay !== null && $args['overlay'] = $overlay;
     return \AmisSchema\Widget\Feedback\Dialog::make($args);
 }
 
 /**
  * 创建 Drawer 组件
  * 
- * @param string|\AmisSchema\Widget\Widget $title 弹出层标题，支持 SchemaNode
  * @param string $name 抽屉名称，用于动作控制
+ * @param string|\AmisSchema\Widget\Widget $title 弹出层标题，支持 SchemaNode
  * @param array|\AmisSchema\Widget\Widget|\AmisSchema\Widget\Widget[] $body 往 Drawer 内容区加内容，支持 SchemaNode
  * @param string $size 指定 Drawer 大小：xs、sm、md、lg、xl
  * @param string $className CSS类名
@@ -19435,12 +19576,13 @@ function AmisDialog(
  * @param string|int $width 容器的宽度，在 position 为 left 或 right 时生效
  * @param string|int $height 容器的高度，在 position 为 top 或 bottom 时生效
  * @param array $actions 自定义按钮配置，默认为【确认】和【取消】
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Drawer
  */
 function AmisDrawer(
-    mixed $title = null,
     mixed $name = null,
+    mixed $title = null,
     mixed $body = null,
     mixed $size = null,
     mixed $className = null,
@@ -19460,43 +19602,43 @@ function AmisDrawer(
     mixed $resizable = null,
     mixed $width = null,
     mixed $height = null,
-    mixed $actions = null
+    mixed $actions = null,
+    ...$args
 ): \AmisSchema\Widget\Feedback\Drawer
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($name !== null) $args['name'] = $name;
-    if ($body !== null) $args['body'] = $body;
-    if ($size !== null) $args['size'] = $size;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($position !== null) $args['position'] = $position;
-    if ($headerClassName !== null) $args['headerClassName'] = $headerClassName;
-    if ($bodyClassName !== null) $args['bodyClassName'] = $bodyClassName;
-    if ($footerClassName !== null) $args['footerClassName'] = $footerClassName;
-    if ($showCloseButton !== null) $args['showCloseButton'] = $showCloseButton;
-    if ($closeOnEsc !== null) $args['closeOnEsc'] = $closeOnEsc;
-    if ($closeOnOutside !== null) $args['closeOnOutside'] = $closeOnOutside;
-    if ($overlay !== null) $args['overlay'] = $overlay;
-    if ($resizable !== null) $args['resizable'] = $resizable;
-    if ($width !== null) $args['width'] = $width;
-    if ($height !== null) $args['height'] = $height;
-    if ($actions !== null) $args['actions'] = $actions;
+    $name !== null && $args['name'] = $name;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $size !== null && $args['size'] = $size;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $position !== null && $args['position'] = $position;
+    $headerClassName !== null && $args['headerClassName'] = $headerClassName;
+    $bodyClassName !== null && $args['bodyClassName'] = $bodyClassName;
+    $footerClassName !== null && $args['footerClassName'] = $footerClassName;
+    $showCloseButton !== null && $args['showCloseButton'] = $showCloseButton;
+    $closeOnEsc !== null && $args['closeOnEsc'] = $closeOnEsc;
+    $closeOnOutside !== null && $args['closeOnOutside'] = $closeOnOutside;
+    $overlay !== null && $args['overlay'] = $overlay;
+    $resizable !== null && $args['resizable'] = $resizable;
+    $width !== null && $args['width'] = $width;
+    $height !== null && $args['height'] = $height;
+    $actions !== null && $args['actions'] = $actions;
     return \AmisSchema\Widget\Feedback\Drawer::make($args);
 }
 
 /**
  * 创建 Spinner 组件
  * 
+ * @param string $type 指定为 Spinner 渲染器
  * @param string $size 大小 sm、lg
  * @param string $icon 自定义图标
  * @param string $className 外层CSS类名
  * @param mixed $style 
- * @param string $type 指定为 Spinner 渲染器
  * @param mixed $onEvent 事件
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
@@ -19505,15 +19647,16 @@ function AmisDrawer(
  * @param string $tipPlacement 文案位置 top、right、bottom、left
  * @param int $delay 延迟显示
  * @param bool $overlay 是否显示遮罩
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Spinner
  */
 function AmisSpinner(
+    mixed $type = null,
     mixed $size = null,
     mixed $icon = null,
     mixed $className = null,
     mixed $style = null,
-    mixed $type = null,
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
@@ -19521,23 +19664,23 @@ function AmisSpinner(
     mixed $tip = null,
     mixed $tipPlacement = null,
     mixed $delay = null,
-    mixed $overlay = null
+    mixed $overlay = null,
+    ...$args
 ): \AmisSchema\Widget\Feedback\Spinner
 {
-    $args = [];
-    if ($size !== null) $args['size'] = $size;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($type !== null) $args['type'] = $type;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($tip !== null) $args['tip'] = $tip;
-    if ($tipPlacement !== null) $args['tipPlacement'] = $tipPlacement;
-    if ($delay !== null) $args['delay'] = $delay;
-    if ($overlay !== null) $args['overlay'] = $overlay;
+    $type !== null && $args['type'] = $type;
+    $size !== null && $args['size'] = $size;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $tip !== null && $args['tip'] = $tip;
+    $tipPlacement !== null && $args['tipPlacement'] = $tipPlacement;
+    $delay !== null && $args['delay'] = $delay;
+    $overlay !== null && $args['overlay'] = $overlay;
     return \AmisSchema\Widget\Feedback\Spinner::make($args);
 }
 
@@ -19558,6 +19701,7 @@ function AmisSpinner(
  * @param bool $showIcon 是否展示图标
  * @param int $timeout 持续时间，error类型为6000，移动端为3000
  * @param bool $allowHtml 是否会被当作 HTML 片段处理
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Feedback\Toast
  */
@@ -19575,24 +19719,24 @@ function AmisToast(
     mixed $closeButton = null,
     mixed $showIcon = null,
     mixed $timeout = null,
-    mixed $allowHtml = null
+    mixed $allowHtml = null,
+    ...$args
 ): \AmisSchema\Widget\Feedback\Toast
 {
-    $args = [];
-    if ($title !== null) $args['title'] = $title;
-    if ($body !== null) $args['body'] = $body;
-    if ($level !== null) $args['level'] = $level;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($position !== null) $args['position'] = $position;
-    if ($closeButton !== null) $args['closeButton'] = $closeButton;
-    if ($showIcon !== null) $args['showIcon'] = $showIcon;
-    if ($timeout !== null) $args['timeout'] = $timeout;
-    if ($allowHtml !== null) $args['allowHtml'] = $allowHtml;
+    $title !== null && $args['title'] = $title;
+    $body !== null && $args['body'] = $body;
+    $level !== null && $args['level'] = $level;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $position !== null && $args['position'] = $position;
+    $closeButton !== null && $args['closeButton'] = $closeButton;
+    $showIcon !== null && $args['showIcon'] = $showIcon;
+    $timeout !== null && $args['timeout'] = $timeout;
+    $allowHtml !== null && $args['allowHtml'] = $allowHtml;
     return \AmisSchema\Widget\Feedback\Toast::make($args);
 }
 
@@ -19608,6 +19752,7 @@ function AmisToast(
  * @param mixed $data 
  * @param array $props 向下传递的 props，会作为默认值
  * @param \AmisSchema\Schema|array|string $schema amis 配置，可以是 JSON 对象或字符串的 JSON
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Amis
  */
@@ -19620,19 +19765,19 @@ function AmisAmis(
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $props = null,
-    mixed $schema = null
+    mixed $schema = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Amis
 {
-    $args = [];
-    if ($name !== null) $args['name'] = $name;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($props !== null) $args['props'] = $props;
-    if ($schema !== null) $args['schema'] = $schema;
+    $name !== null && $args['name'] = $name;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $props !== null && $args['props'] = $props;
+    $schema !== null && $args['schema'] = $schema;
     return \AmisSchema\Widget\Extra\Amis::make($args);
 }
 
@@ -19645,6 +19790,7 @@ function AmisAmis(
  * @param mixed $visibleOn 
  * @param mixed $disabledOn 
  * @param mixed $data 
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\AmisRenderer
  */
@@ -19654,16 +19800,16 @@ function AmisAmisRenderer(
     mixed $onEvent = null,
     mixed $visibleOn = null,
     mixed $disabledOn = null,
-    mixed $data = null
+    mixed $data = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\AmisRenderer
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
     return \AmisSchema\Widget\Extra\AmisRenderer::make($args);
 }
 
@@ -19682,6 +19828,7 @@ function AmisAmisRenderer(
  * @param bool $autoPlay 是否自动播放
  * @param array $rates 可配置音频播放倍速，如：[1.0, 1.5, 2.0]
  * @param array $controls 内部模块定制化，控制显示哪些功能模块
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Audio
  */
@@ -19697,22 +19844,22 @@ function AmisAudio(
     mixed $loop = null,
     mixed $autoPlay = null,
     mixed $rates = null,
-    mixed $controls = null
+    mixed $controls = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Audio
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($inline !== null) $args['inline'] = $inline;
-    if ($loop !== null) $args['loop'] = $loop;
-    if ($autoPlay !== null) $args['autoPlay'] = $autoPlay;
-    if ($rates !== null) $args['rates'] = $rates;
-    if ($controls !== null) $args['controls'] = $controls;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $inline !== null && $args['inline'] = $inline;
+    $loop !== null && $args['loop'] = $loop;
+    $autoPlay !== null && $args['autoPlay'] = $autoPlay;
+    $rates !== null && $args['rates'] = $rates;
+    $controls !== null && $args['controls'] = $controls;
     return \AmisSchema\Widget\Extra\Audio::make($args);
 }
 
@@ -19737,6 +19884,7 @@ function AmisAudio(
  * @param bool $draggable 图片是否允许拖动
  * @param string $crossOrigin 图片的 CORS 属性设置：anonymous、use-credentials
  * @param string $onError 图片加载失败的处理函数，返回 true 则进行 text/icon 置换
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Avatar
  */
@@ -19758,28 +19906,28 @@ function AmisAvatar(
     mixed $alt = null,
     mixed $draggable = null,
     mixed $crossOrigin = null,
-    mixed $onError = null
+    mixed $onError = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Avatar
 {
-    $args = [];
-    if ($size !== null) $args['size'] = $size;
-    if ($icon !== null) $args['icon'] = $icon;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($src !== null) $args['src'] = $src;
-    if ($defaultAvatar !== null) $args['defaultAvatar'] = $defaultAvatar;
-    if ($text !== null) $args['text'] = $text;
-    if ($fit !== null) $args['fit'] = $fit;
-    if ($shape !== null) $args['shape'] = $shape;
-    if ($gap !== null) $args['gap'] = $gap;
-    if ($alt !== null) $args['alt'] = $alt;
-    if ($draggable !== null) $args['draggable'] = $draggable;
-    if ($crossOrigin !== null) $args['crossOrigin'] = $crossOrigin;
-    if ($onError !== null) $args['onError'] = $onError;
+    $size !== null && $args['size'] = $size;
+    $icon !== null && $args['icon'] = $icon;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $src !== null && $args['src'] = $src;
+    $defaultAvatar !== null && $args['defaultAvatar'] = $defaultAvatar;
+    $text !== null && $args['text'] = $text;
+    $fit !== null && $args['fit'] = $fit;
+    $shape !== null && $args['shape'] = $shape;
+    $gap !== null && $args['gap'] = $gap;
+    $alt !== null && $args['alt'] = $alt;
+    $draggable !== null && $args['draggable'] = $draggable;
+    $crossOrigin !== null && $args['crossOrigin'] = $crossOrigin;
+    $onError !== null && $args['onError'] = $onError;
     return \AmisSchema\Widget\Extra\Avatar::make($args);
 }
 
@@ -19800,6 +19948,7 @@ function AmisAvatar(
  * @param string $position 角标位置：top-right、top-left、bottom-right、bottom-left
  * @param array $offset 角标位置偏移，格式为 [top, left]，相对于 position 位置进行偏移
  * @param bool $animation 角标是否显示动画，在 mode='dot' 状态下生效
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Badge
  */
@@ -19817,24 +19966,24 @@ function AmisBadge(
     mixed $overflowCount = null,
     mixed $position = null,
     mixed $offset = null,
-    mixed $animation = null
+    mixed $animation = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Badge
 {
-    $args = [];
-    if ($level !== null) $args['level'] = $level;
-    if ($size !== null) $args['size'] = $size;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($text !== null) $args['text'] = $text;
-    if ($overflowCount !== null) $args['overflowCount'] = $overflowCount;
-    if ($position !== null) $args['position'] = $position;
-    if ($offset !== null) $args['offset'] = $offset;
-    if ($animation !== null) $args['animation'] = $animation;
+    $level !== null && $args['level'] = $level;
+    $size !== null && $args['size'] = $size;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $text !== null && $args['text'] = $text;
+    $overflowCount !== null && $args['overflowCount'] = $overflowCount;
+    $position !== null && $args['position'] = $position;
+    $offset !== null && $args['offset'] = $offset;
+    $animation !== null && $args['animation'] = $animation;
     return \AmisSchema\Widget\Extra\Badge::make($args);
 }
 
@@ -19862,6 +20011,7 @@ function AmisBadge(
  * @param string $retryBtnClassName 配置容器重试按钮 className
  * @param array $statusLabelMap 状态显示对应的类名配置
  * @param array $statusTextMap 状态显示对应的文字显示配置
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Tasks
  */
@@ -19886,31 +20036,31 @@ function AmisTasks(
     mixed $btnClassName = null,
     mixed $retryBtnClassName = null,
     mixed $statusLabelMap = null,
-    mixed $statusTextMap = null
+    mixed $statusTextMap = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Tasks
 {
-    $args = [];
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($tableClassName !== null) $args['tableClassName'] = $tableClassName;
-    if ($checkApi !== null) $args['checkApi'] = $checkApi;
-    if ($submitApi !== null) $args['submitApi'] = $submitApi;
-    if ($reSubmitApi !== null) $args['reSubmitApi'] = $reSubmitApi;
-    if ($interval !== null) $args['interval'] = $interval;
-    if ($taskNameLabel !== null) $args['taskNameLabel'] = $taskNameLabel;
-    if ($operationLabel !== null) $args['operationLabel'] = $operationLabel;
-    if ($statusLabel !== null) $args['statusLabel'] = $statusLabel;
-    if ($remarkLabel !== null) $args['remarkLabel'] = $remarkLabel;
-    if ($btnText !== null) $args['btnText'] = $btnText;
-    if ($retryBtnText !== null) $args['retryBtnText'] = $retryBtnText;
-    if ($btnClassName !== null) $args['btnClassName'] = $btnClassName;
-    if ($retryBtnClassName !== null) $args['retryBtnClassName'] = $retryBtnClassName;
-    if ($statusLabelMap !== null) $args['statusLabelMap'] = $statusLabelMap;
-    if ($statusTextMap !== null) $args['statusTextMap'] = $statusTextMap;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $tableClassName !== null && $args['tableClassName'] = $tableClassName;
+    $checkApi !== null && $args['checkApi'] = $checkApi;
+    $submitApi !== null && $args['submitApi'] = $submitApi;
+    $reSubmitApi !== null && $args['reSubmitApi'] = $reSubmitApi;
+    $interval !== null && $args['interval'] = $interval;
+    $taskNameLabel !== null && $args['taskNameLabel'] = $taskNameLabel;
+    $operationLabel !== null && $args['operationLabel'] = $operationLabel;
+    $statusLabel !== null && $args['statusLabel'] = $statusLabel;
+    $remarkLabel !== null && $args['remarkLabel'] = $remarkLabel;
+    $btnText !== null && $args['btnText'] = $btnText;
+    $retryBtnText !== null && $args['retryBtnText'] = $retryBtnText;
+    $btnClassName !== null && $args['btnClassName'] = $btnClassName;
+    $retryBtnClassName !== null && $args['retryBtnClassName'] = $retryBtnClassName;
+    $statusLabelMap !== null && $args['statusLabelMap'] = $statusLabelMap;
+    $statusTextMap !== null && $args['statusTextMap'] = $statusTextMap;
     return \AmisSchema\Widget\Extra\Tasks::make($args);
 }
 
@@ -19926,6 +20076,7 @@ function AmisTasks(
  * @param mixed $data 
  * @param string $tag 具体使用的 web-component 标签
  * @param array $props 标签上的属性，props 里的值支持变量替换
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\WebComponent
  */
@@ -19938,19 +20089,19 @@ function AmisWebComponent(
     mixed $disabledOn = null,
     mixed $data = null,
     mixed $tag = null,
-    mixed $props = null
+    mixed $props = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\WebComponent
 {
-    $args = [];
-    if ($body !== null) $args['body'] = $body;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($tag !== null) $args['tag'] = $tag;
-    if ($props !== null) $args['props'] = $props;
+    $body !== null && $args['body'] = $body;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $tag !== null && $args['tag'] = $tag;
+    $props !== null && $args['props'] = $props;
     return \AmisSchema\Widget\Extra\WebComponent::make($args);
 }
 
@@ -19978,6 +20129,7 @@ function AmisWebComponent(
  * @param string $target 可以把数据提交给别的组件而不是自己保存
  * @param array $steps 数组，配置步骤信息
  * @param string|int $startStep 起始默认值，从第几步开始，支持模版
+ * @param mixed ...$args 其他参数
  * 
  * @return \AmisSchema\Widget\Extra\Wizard
  */
@@ -20002,31 +20154,31 @@ function AmisWizard(
     mixed $actionClassName = null,
     mixed $target = null,
     mixed $steps = null,
-    mixed $startStep = null
+    mixed $startStep = null,
+    ...$args
 ): \AmisSchema\Widget\Extra\Wizard
 {
-    $args = [];
-    if ($api !== null) $args['api'] = $api;
-    if ($className !== null) $args['className'] = $className;
-    if ($style !== null) $args['style'] = $style;
-    if ($reload !== null) $args['reload'] = $reload;
-    if ($redirect !== null) $args['redirect'] = $redirect;
-    if ($onEvent !== null) $args['onEvent'] = $onEvent;
-    if ($visibleOn !== null) $args['visibleOn'] = $visibleOn;
-    if ($disabledOn !== null) $args['disabledOn'] = $disabledOn;
-    if ($data !== null) $args['data'] = $data;
-    if ($mode !== null) $args['mode'] = $mode;
-    if ($initApi !== null) $args['initApi'] = $initApi;
-    if ($initFetch !== null) $args['initFetch'] = $initFetch;
-    if ($initFetchOn !== null) $args['initFetchOn'] = $initFetchOn;
-    if ($actionPrevLabel !== null) $args['actionPrevLabel'] = $actionPrevLabel;
-    if ($actionNextLabel !== null) $args['actionNextLabel'] = $actionNextLabel;
-    if ($actionNextSaveLabel !== null) $args['actionNextSaveLabel'] = $actionNextSaveLabel;
-    if ($actionFinishLabel !== null) $args['actionFinishLabel'] = $actionFinishLabel;
-    if ($actionClassName !== null) $args['actionClassName'] = $actionClassName;
-    if ($target !== null) $args['target'] = $target;
-    if ($steps !== null) $args['steps'] = $steps;
-    if ($startStep !== null) $args['startStep'] = $startStep;
+    $api !== null && $args['api'] = $api;
+    $className !== null && $args['className'] = $className;
+    $style !== null && $args['style'] = $style;
+    $reload !== null && $args['reload'] = $reload;
+    $redirect !== null && $args['redirect'] = $redirect;
+    $onEvent !== null && $args['onEvent'] = $onEvent;
+    $visibleOn !== null && $args['visibleOn'] = $visibleOn;
+    $disabledOn !== null && $args['disabledOn'] = $disabledOn;
+    $data !== null && $args['data'] = $data;
+    $mode !== null && $args['mode'] = $mode;
+    $initApi !== null && $args['initApi'] = $initApi;
+    $initFetch !== null && $args['initFetch'] = $initFetch;
+    $initFetchOn !== null && $args['initFetchOn'] = $initFetchOn;
+    $actionPrevLabel !== null && $args['actionPrevLabel'] = $actionPrevLabel;
+    $actionNextLabel !== null && $args['actionNextLabel'] = $actionNextLabel;
+    $actionNextSaveLabel !== null && $args['actionNextSaveLabel'] = $actionNextSaveLabel;
+    $actionFinishLabel !== null && $args['actionFinishLabel'] = $actionFinishLabel;
+    $actionClassName !== null && $args['actionClassName'] = $actionClassName;
+    $target !== null && $args['target'] = $target;
+    $steps !== null && $args['steps'] = $steps;
+    $startStep !== null && $args['startStep'] = $startStep;
     return \AmisSchema\Widget\Extra\Wizard::make($args);
 }
 
