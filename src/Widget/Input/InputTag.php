@@ -20,23 +20,9 @@ use AmisSchema\Widget\Function\TooltipWrapper;
  * @method $this maxTagCount(int $value) 设置标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
  * @method $this enableBatchAdd(bool $value = false) 设置是否开启批量添加模式
  * @method $this separator(string $value = "-") 设置开启批量添加后，输入多个标签的分隔符，支持传入多个符号
+ * @method $this overflowTagPopover(array|\AmisSchema\Definition\InputTagOverflowTagPopover|TooltipWrapper $value) InputTag 标签溢出弹窗配置
  */
 class InputTag extends Options
 {
     protected string $type = 'input-tag';
-
-    /**
-     * 收纳浮层的配置属性，详细配置参考Tooltip
-     * @param array{
-     *     placement?: string,
-     *     trigger?: string,
-     *     showArrow?: bool,
-     *     offset?: array
-     * }|TooltipWrapper $value
-     * @return self
-     */
-    public function overflowTagPopover(array|TooltipWrapper $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

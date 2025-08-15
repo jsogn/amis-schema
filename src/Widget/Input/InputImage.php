@@ -39,41 +39,10 @@ use AmisSchema\Widget\Widget;
  * @method $this showErrorModal(bool $showErrorModal = true) 校验失败后是否弹窗提醒
  * @method $this invalidTypeMessage(string $invalidTypeMessage = '文件格式不正确') 校验格式失败后的提示信息
  * @method $this invalidSizeMessage(string $invalidSizeMessage = '文件大小超出限制') 校验文件大小失败时显示的文字信息
+ * @method $this crop(bool|array|\AmisSchema\Definition\InputImageCrop $value) InputImage 图片裁剪配置
+ * @method $this limit(array|\AmisSchema\Definition\InputImageLimit $value) 限制图片大小，超出不让上传
  */
 class InputImage extends FormItem
 {
     protected string $type = 'input-image';
-
-    /**
-     * 用来设置是否支持裁剪
-     * @param bool|array{
-     *     aspectRatio?: float,
-     *     rotatable?: bool,
-     *     scalable?: bool,
-     *     viewMode?: int
-     * } $value
-     * @return self
-     */
-    public function crop($value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 限制图片大小，超出不让上传
-     * @param array{
-     *     width?: int,
-     *     height?: int,
-     *     minWidth?: int,
-     *     minHeight?: int,
-     *     maxWidth?: int,
-     *     maxHeight?: int,
-     *     aspectRatio?: float
-     * } $value
-     * @return self
-     */
-    public function limit(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

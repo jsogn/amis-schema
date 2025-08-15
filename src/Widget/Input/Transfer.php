@@ -31,27 +31,11 @@ use AmisSchema\Trait\OptionsWidgetTrait;
  * @method $this resultSearchPlaceholder(string $value) 设置右侧列表搜索框提示
  * @method $this menuTpl(string $value) 设置用来自定义选项展示
  * @method $this valueTpl(string $value) 设置用来自定义值的展示
+ * @method $this pagination(array|\AmisSchema\Definition\TransferPagination $value) Transfer 穿梭器分页配置
  */
 class Transfer extends FormItem
 {
     use OptionsWidgetTrait;
 
     protected string $type = 'transfer';
-
-    /**
-     * 分页配置
-     * @param array{
-     *     className?: string,
-     *     enable?: bool,
-     *     layout?: string|array,
-     *     perPageAvailable?: array,
-     *     maxButtons?: int,
-     *     popOverContainerSelector?: string
-     * } $value
-     * @return self
-     */
-    public function pagination(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

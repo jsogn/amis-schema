@@ -25,23 +25,9 @@ namespace AmisSchema\Widget\Input;
  * @method $this variableClassName(string $value) 变量面板 CSS 样式类名
  * @method $this functionClassName(string $value) 函数面板 CSS 样式类名
  * @method $this mixedMode(bool $value) 是否启用混合模式，支持输入文本和输入公式
+ * @method $this variables(array|\AmisSchema\Definition\InputFormulaVariable[] $value) InputFormula 公式编辑器变量配置
  */
 class InputFormula extends FormItem
 {
     protected string $type = 'input-formula';
-
-    /**
-     * 可用变量，默认为 []
-     * @param array|array<array{
-     *     label: string,
-     *     value: string,
-     *     children?: array,
-     *     tag?: string
-     * }> $value
-     * @return self
-     */
-    public function variables(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

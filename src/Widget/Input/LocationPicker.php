@@ -16,38 +16,10 @@ namespace AmisSchema\Widget\Input;
  * @method $this autoSelectCurrentLoc(bool $autoSelectCurrentLoc = false) 是否自动选中当前地理位置
  * @method $this onlySelectCurrentLoc(bool $onlySelectCurrentLoc = false) 是否限制只能选中当前地理位置，设置为 true 后，可用于充当定位组件
  * @method $this coordinatesType(string $coordinatesType = 'bd09') 坐标系类型，默认百度坐标，使用高德地图时应设置为'gcj02'， 高德地图不支持坐标转换
+ * @method $this value(array|\AmisSchema\Definition\LocationPickerValue $value) LocationPicker 地理位置值配置
+ * @method $this staticSchema(array|\AmisSchema\Definition\LocationPickerStaticSchema $value) 静态展示，内嵌模式时的额外配置
  */
 class LocationPicker extends FormItem
 {
     protected string $type = 'location-picker';
-
-    /**
-     * 地理位置值
-     * @param array{
-     *     address: string,
-     *     lng: float,
-     *     lat: float,
-     *     vendor?: string
-     * } $value
-     * @return self
-     */
-    public function value(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 静态展示，内嵌模式时的额外配置
-     * @param array{
-     *     embed?: bool,
-     *     showAddress?: bool,
-     *     showGeoLoc?: bool,
-     *     mapStyle?: array
-     * } $value
-     * @return self
-     */
-    public function staticSchema(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

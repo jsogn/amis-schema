@@ -27,32 +27,9 @@ use AmisSchema\Definition\API;
  * @method $this formula(array $value) 设置字段输入控件变成公式编辑器
  * @method $this showIf(bool $value) 设置开启后条件中额外还能配置启动条件
  * @method $this formulaForIf(array $value) 设置给 showIF 表达式用的公式信息
+ * @method $this inputSettings(array|\AmisSchema\Definition\ConditionBuilderInputSettings $value) ConditionBuilder 条件组合组件输入设置
  */
 class ConditionBuilder extends FormItem
 {
     protected string $type = 'condition-builder';
-
-    /**
-     * 设置开启公式编辑模式时的输入控件类型
-     * @param array{
-     *     type: 'text'|'number'|'boolean'|'date'|'time'|'datetime'|'select',
-     *     step?: int,
-     *     min?: int,
-     *     max?: int,
-     *     precision?: int,
-     *     format?: string,
-     *     inputFormat?: string,
-     *     timeFormat?: string,
-     *     options?: array<array{label: string, value: mixed}>,
-     *     multiple?: bool,
-     *     trueLabel?: string,
-     *     falseLabel?: string,
-     *     defaultValue?: mixed
-     * } $value
-     * @return self
-     */
-    public function inputSettings(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

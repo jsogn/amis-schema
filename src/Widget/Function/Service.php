@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace AmisSchema\Widget\Function;
 
 use AmisSchema\Definition\API;
-use AmisSchema\Definition\ServiceMessage;
 use AmisSchema\Widget\Widget;
 
 /**
@@ -27,21 +26,9 @@ use AmisSchema\Widget\Widget;
  * @method $this silentPolling(bool $silentPolling = false) 配置轮询时是否显示加载动画
  * @method $this stopAutoRefreshWhen(string $stopAutoRefreshWhen) 配置停止轮询的条件
  * @method $this showErrorMsg(bool $showErrorMsg = true) 是否以 Alert 的形式显示 api 接口响应的错误信息
+ * @method $this messages(\AmisSchema\Definition\ServiceMessages $value) Service 功能型容器消息配置
  */
 class Service extends Widget
 {
     protected string $type = 'service';
-
-    /**
-     * 消息提示覆写，默认消息读取的是接口返回的 toast 提示文字，但是在此可以覆写它
-     * @param array{
-     *     fetchSuccess: string,
-     *     fetchFailed: string
-     * } $value
-     * @return self
-     */
-    public function messages(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

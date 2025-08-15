@@ -13,21 +13,9 @@ use AmisSchema\Widget\Widget;
  * @link https://baidu.github.io/amis/zh-CN/components/form/input-group
  *
  * @method $this body(array|Widget[]|Widget $body) 表单项集合
+ * @method $this validationConfig(array|\AmisSchema\Definition\InputGroupValidationConfig $value) InputGroup 输入框组合验证配置
  */
 class InputGroup extends FormItem
 {
     protected string $type = 'input-group';
-
-    /**
-     * 校验相关配置
-     * @param array{
-     *     errorMode?: 'full'|'partial',
-     *     delimiter?: string
-     * } $value
-     * @return self
-     */
-    public function validationConfig(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

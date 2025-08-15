@@ -18,34 +18,10 @@ namespace AmisSchema\Trait;
  * @method $this isEndDate(bool $value = false) 设置如果配置为 true，会自动默认为 23:59:59 秒，默认为 false
  * @method $this format(string $value) 更多格式类型请参考 moment
  * @method $this inputFormat(string $value) 更多格式类型请参考 moment
- *
- * @phpstan-type timeConstraintsItem array{min: int, max: int, step: int}
+ * @method $this shortcuts(array|string[]|\AmisSchema\Definition\InputTimeShortcutsItem[] $value) 设置日期快捷键，字符串格式为预设值，对象格式支持写表达式（3.1.0版本后支持表达式）
+ * @method $this timeConstraints(array|\AmisSchema\Definition\InputTimeConstraints $value) 设置时间输入范围限制
  */
 trait InputTimeWidgetTrait
 {
-    /**
-     * 设置日期快捷键，字符串格式为预设值，对象格式支持写表达式（3.1.0版本后支持表达式）
-     * @param string|string[]|array<array{
-     *     label: string,
-     *     date: string,
-     * }> $value
-     */
-    public function shortcuts(array|string $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 
-    /**
-     * 设置时间输入范围限制
-     * @param bool|array{
-     *     hours: timeConstraintsItem,
-     *     minutes: timeConstraintsItem,
-     *     seconds: timeConstraintsItem,
-     *     milliseconds: timeConstraintsItem
-     * } $value
-     */
-    public function timeConstraints(array|bool $value = true): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

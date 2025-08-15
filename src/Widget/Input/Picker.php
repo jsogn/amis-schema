@@ -18,22 +18,9 @@ use AmisSchema\Definition\API;
  * @method $this pickerSchema(array $value) 即用 List 类型的渲染，来展示列表信息。更多配置参考 CRUD
  * @method $this embed(bool $value = false) 是否使用内嵌模式
  * @method $this itemClearable(bool $value = true) 用于控制是否显示选中项的删除图标
+ * @method $this overflowConfig(array|\AmisSchema\Definition\PickerOverflowConfig $value) Picker 列表选择器溢出配置
  */
 class Picker extends Options
 {
     protected string $type = 'picker';
-
-    /**
-     * @param array{
-     *     maxTagCount: int,
-     *     displayPosition: array,
-     *     overflowTagPopover: array,
-     *     overflowTagPopoverInCRUD: array,
-     * } $value
-     * 开启最大标签展示数量的相关配置
-     */
-    public function overflowConfig(array $value): static
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

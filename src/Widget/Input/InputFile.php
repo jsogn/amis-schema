@@ -43,25 +43,9 @@ use AmisSchema\Definition\API;
  * @method $this initAutoFill(bool $initAutoFill = true) 初始表单反显时是否执行
  * @method $this invalidTypeMessage(string $invalidTypeMessage) 校验格式失败后的提示信息
  * @method $this invalidSizeMessage(string $invalidSizeMessage) 校验文件大小失败时显示的文字信息
+ * @method $this stateTextMap(array|\AmisSchema\Definition\InputFileStateTextMap $value) InputFile 文件上传状态文本映射
  */
 class InputFile extends FormItem
 {
     protected string $type = 'input-file';
-
-    /**
-     * 上传状态文案
-     * @param array{
-     *     init: string,
-     *     pending: string,
-     *     uploading: string,
-     *     error: string,
-     *     uploaded: string,
-     *     ready: string
-     * } $value
-     * @return self
-     */
-    public function stateTextMap(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

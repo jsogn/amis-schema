@@ -21,23 +21,9 @@ use AmisSchema\Widget\Widget;
  * @method $this labelMaxLength(int $labelMaxLength = 16) 最大展示长度
  * @method $this tooltipPosition(string $tooltipPosition = 'top') 浮窗提示位置
  * @method $this source(string|array|API $source) 动态数据
+ * @method $this items(\AmisSchema\Definition\BreadcrumbItem $value) Breadcrumb 面包屑项配置
  */
 class Breadcrumb extends Widget
 {
     protected string $type = 'breadcrumb';
-
-    /**
-     * 面包屑项数组，每个项包含 label、href、icon、dropdown 属性
-     * @param array<array{
-     *     label: string,
-     *     href: string,
-     *     icon: string,
-     *     dropdown: array|DropDownButton[]
-     * }> $value
-     * @return self
-     */
-    public function items(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

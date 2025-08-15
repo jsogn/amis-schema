@@ -25,37 +25,12 @@ use AmisSchema\Trait\OptionsWidgetTrait;
  * @method $this inputControlClassName(string $value) 设置 control 节点的 CSS 类名
  * @method $this nativeInputClassName(string $value) 设置原生 input 标签的 CSS 类名
  * @method $this nativeAutoComplete(string $value = "off") 设置原生 input 标签的 autoComplete 属性
+ * @method $this addOn(array|\AmisSchema\Definition\InputTextAddOn $value) InputText 文本输入框附加组件配置
+ * @method $this transform(array|\AmisSchema\Definition\InputTextTransform $value) 设置自动转换值
  */
 class InputText extends FormItem
 {
     use OptionsWidgetTrait;
 
     protected string $type = 'input-text';
-
-    /**
-     * 输入框附加组件，比如附带一个提示文字，或者附带一个提交按钮。
-     * @param array{
-     *     type: 'text'|'button'|'submit',
-     *     label: string,
-     *     position?: 'left'|'right'
-     * } $value
-     * @return self
-     */
-    public function addOn(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 设置自动转换值
-     * @param array{
-     *     lowerCase: bool,
-     *     upperCase: bool
-     * } $value
-     * @return self
-     */
-    public function transform(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

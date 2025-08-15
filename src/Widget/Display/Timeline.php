@@ -16,33 +16,9 @@ use AmisSchema\Widget\Widget;
  * @method $this reverse(bool $value = false) 是否反向展示时间轴
  * @method $this itemTitleClassName(string $value = '') 节点标题的类名
  * @method $this itemDetailClassName(string $value = '') 节点详情的类名
- *
- * @version 3.4.0 支持 CSS 类名定制功能
+ * @method $this items(array|\AmisSchema\Definition\TimelineItem[] $value) Timeline 时间轴项配置
  */
 class Timeline extends Widget
 {
     protected string $type = 'timeline';
-
-    /**
-     * 设置时间轴节点配置
-     *
-     * @param array<int, array{
-     *     time?: string,
-     *     title?: string,
-     *     detail?: string,
-     *     detailCollapsedText?: string,
-     *     detailExpandedText?: string,
-     *     color?: string,
-     *     icon?: string,
-     *     iconClassName?: string,
-     *     titleClassName?: string,
-     *     detailClassName?: string,
-     *     timeClassName?: string
-     * }> $value 时间轴节点配置数组
-     * @return $this
-     */
-    public function items(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

@@ -16,24 +16,9 @@ use AmisSchema\Widget\Widget;
  * @method $this column(int $value = 3) 每行几列，默认 3
  * @method $this labelStyle(array $value = []) 属性名的样式，默认 []
  * @method $this contentStyle(array $value = []) 属性值的样式，默认 []
+ * @method $this items(array|\AmisSchema\Definition\PropertyItem[] $value) 属性项配置
  */
 class Property extends Widget
 {
     protected string $type = 'property';
-
-    /**
-     * 属性项配置
-     * @param array<array{
-     *     label: string,
-     *     content: string,
-     *     span: string,
-     *     visibleOn: string,
-     *     hiddenOn: string
-     * }> $value
-     * @return self
-     */
-    public function items(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

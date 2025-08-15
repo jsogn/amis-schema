@@ -32,24 +32,9 @@ use AmisSchema\Widget\Widget;
  * @method $this maxScale(float|string $value = '') 执行调整图片比例动作时的最大百分比，默认 ''
  * @method $this minScale(float|string $value = '') 执行调整图片比例动作时的最小百分比，默认 ''
  * @method $this clickAction(array $value = []) 自定义点击行为，默认 []
+ * @method $this toolbarActions(array|\AmisSchema\Definition\ImageToolbarActionsItem[] $value) Image 图片工具栏动作配置
  */
 class Image extends Widget
 {
     protected string $type = 'image';
-
-    /**
-     * 图片工具栏配置
-     * @param array<array{
-     *     key: 'rotateRight'|'rotateLeft'|'zoomIn'|'zoomOut'|'scaleOrigin',
-     *     label?: string,
-     *     icon?: string,
-     *     iconClassName?: string,
-     *     disabled?: bool
-     * }> $value
-     * @return self
-     */
-    public function toolbarActions(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

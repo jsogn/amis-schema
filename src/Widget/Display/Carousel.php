@@ -21,27 +21,9 @@ use AmisSchema\Widget\Widget;
  * @method $this multiple(array $value = ['count' => 1]) 多图展示，默认 ['count' => 1]
  * @method $this alwaysShowArrow(bool $value = false) 是否一直显示箭头，默认 false
  * @method $this icons(array $value = []) 自定义箭头图标，默认 []
+ * @method $this options(array|\AmisSchema\Definition\CarouselOptions $value) Carousel 轮播图选项配置
  */
 class Carousel extends Widget
 {
     protected string $type = 'carousel';
-
-    /**
-     * 轮播面板数据
-     * @param array<array{
-     *     image?: string,
-     *     href?: string,
-     *     imageClassName?: string,
-     *     title?: string,
-     *     titleClassName?: string,
-     *     description?: string,
-     *     descriptionClassName?: string,
-     *     html?: string
-     * }> $value
-     * @return self
-     */
-    public function options(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

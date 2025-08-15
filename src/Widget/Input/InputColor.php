@@ -14,18 +14,9 @@ namespace AmisSchema\Widget\Input;
  * @method $this allowCustomColor(bool $value = true) 设置是否允许自定义颜色，为 false 时只能选择颜色
  * @method $this clearable(bool $value = false) 设置是否显示清除按钮
  * @method $this resetValue(string $value = '') 设置清除后表单项值调整成该值
+ * @method $this presetColors(array|string[]|\AmisSchema\Definition\InputColorPresetColor[] $value) InputColor 颜色选择器预设颜色配置
  */
 class InputColor extends Options
 {
     protected string $type = 'input-color';
-
-    /**
-     * 设置选择器底部的预设颜色值，数组内为字符串或者对象格式，数组内为空则不显示默认颜色
-     * @param array<string|array{color: string, title: string}> $value
-     * @return self
-     */
-    public function presetColors(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

@@ -53,21 +53,9 @@ use AmisSchema\Definition\API;
  * @method $this deleteConfirmText(string $value) 设置删除确认文字
  * @method $this valueField(string $value) 设置可以用来设置在什么字段上保存数组信息
  * @method $this subAddBtnIcon(string $value = "sub-plus")
+ * @method $this columns(array|\AmisSchema\Definition\InputTableColumn[] $value) InputTable 表格列配置
  */
 class InputTable extends FormItem
 {
     protected string $type = 'input-table';
-
-    /**
-     * 列信息
-     * @param array<array{
-     *     quickEdit: bool|array,
-     *     quickEditOnUpdate: bool|array
-     * }> $value
-     * @return InputTable
-     */
-    public function columns(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

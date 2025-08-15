@@ -27,24 +27,9 @@ use AmisSchema\Widget\Widget;
  * @method $this retryBtnClassName(string $value = 'btn-sm btn-danger') 配置容器重试按钮 className
  * @method $this statusLabelMap(array $value = ['label-warning', 'label-info', 'label-success', 'label-danger', 'label-default', 'label-danger']) 状态显示对应的类名配置
  * @method $this statusTextMap(array $value = ['未开始', '就绪', '进行中', '出错', '已完成', '出错']) 状态显示对应的文字显示配置
+ * @method $this items(array|\AmisSchema\Definition\TasksItem[] $value) Tasks 任务项配置
  */
 class Tasks extends Widget
 {
     protected string $type = 'tasks';
-
-    /**
-     * 任务列表，每个项目包含 label、key、remark、status 属性
-     *
-     * @param array<array{
-     *     label: string,
-     *     key: string,
-     *     remark: string,
-     *     status: string
-     * }> $value 任务项数组
-     * @return $this
-     */
-    public function items(array $value = []): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

@@ -23,56 +23,10 @@ use AmisSchema\Widget\Widget;
  * @method $this hideCheckToggler(bool $value = false) 卡片选择按钮是否隐藏，默认 false
  * @method $this multiple(bool $value = false) 卡片是否为多选，默认 false
  * @method $this useCardLabel(bool $value = true) 卡片内容区的表单项 label 是否使用 Card 内部的样式，默认 true
+ * @method $this header(array|\AmisSchema\Definition\CardHeader $value) Card 卡片头部配置
+ * @method $this media(array|\AmisSchema\Definition\CardMedia $value) Card 多媒体部内容设置
  */
 class Card extends Widget
 {
     protected string $type = 'card';
-
-    /**
-     * Card 头部内容设置
-     * @param array{
-     *     className?: string,
-     *     title?: string,
-     *     titleClassName?: string,
-     *     subTitle?: string,
-     *     subTitleClassName?: string,
-     *     subTitlePlaceholder?: string,
-     *     description?: string,
-     *     descriptionClassName?: string,
-     *     descriptionPlaceholder?: string,
-     *     avatar?: string,
-     *     avatarClassName?: string,
-     *     imageClassName?: string,
-     *     avatarText?: string,
-     *     avatarTextBackground?: array,
-     *     avatarTextClassName?: string,
-     *     highlight?: bool,
-     *     highlightClassName?: string,
-     *     href?: string,
-     *     blank?: bool
-     * } $value
-     * @return self
-     */
-    public function header(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * Card 多媒体部内容设置
-     * @param array{
-     *     type?: 'image'|'video',
-     *     url?: string,
-     *     position?: 'left'|'right'|'top'|'bottom',
-     *     className?: string,
-     *     isLive?: bool,
-     *     autoPlay?: bool,
-     *     poster?: string
-     * } $value
-     * @return self
-     */
-    public function media(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

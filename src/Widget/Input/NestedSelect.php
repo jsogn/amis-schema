@@ -20,22 +20,9 @@ use AmisSchema\Widget\Function\TooltipWrapper;
  * @method $this hideNodePathLabel(bool $value = false) 是否隐藏选择框中已选择节点的路径 label 信息
  * @method $this onlyLeaf(bool $value = false) 只允许选择叶子节点
  * @method $this maxTagCount(int $value) 标签的最大展示数量，超出数量后以收纳浮层的方式展示，仅在多选模式开启后生效
+ * @method $this overflowTagPopover(array|\AmisSchema\Definition\NestedSelectOverflowTagPopover $value) NestedSelect 级联选择器溢出标签弹窗配置
  */
 class NestedSelect extends Options
 {
     protected string $type = 'nested-select';
-
-    /**
-     * @param array{
-     *     placement: string,
-     *     trigger: string,
-     *     showArrow: bool,
-     *     offset: array
-     * } $value
-     * 收纳浮层的配置属性，详细配置参考Tooltip
-     */
-    public function overflowTagPopover(array $value): static
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

@@ -48,37 +48,10 @@ use AmisSchema\Widget\Function\Button;
  * @method $this subFormMode(string $value = 'normal') 设置子表单模式，可选normal、horizontal、inline，默认为 "normal"
  * @method $this itemClassName(string $value) 设置单组 CSS 类
  * @method $this itemsWrapperClassName(string $value) 设置组合区域 CSS 类
+ * @method $this conditions(array|\AmisSchema\Definition\ComboConditions $value) Combo 组合组件条件配置
+ * @method $this subFormHorizontal(array|\AmisSchema\Definition\ComboSubFormHorizontal $value) 设置当 subFormMode 为 horizontal 时有用，用来控制 label 的展示占比
  */
 class Combo extends FormItem
 {
     protected string $type = 'combo';
-
-    /**
-     * 设置数组的形式包含所有条件的渲染类型，单个数组内的test为判断条件，数组内的items为符合该条件后渲染的schema
-     * @param array{
-     *     label: string,
-     *     test: string,
-     *     scaffold: array|FormItem,
-     *     items: FormItem[]|array
-     * } $value
-     * @return self
-     */
-    public function conditions(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 设置当 subFormMode 为 horizontal 时有用，用来控制 label 的展示占比，默认为 {"left":2, "right":10, "justify": false}
-     * @param array{
-     *     left: int,
-     *     right: int,
-     *     justify: bool
-     * } $value
-     * @return self
-     */
-    public function subFormHorizontal(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

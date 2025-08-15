@@ -66,52 +66,11 @@ use AmisSchema\Widget\Widget;
  * @method $this labelAlign(string $value) "right" | "left" 设置表单项标签对齐方式，仅在 horizontal 时生效。
  * @method $this labelWidth(int|string $value) 设置表单项标签自定义宽度。
  * @method $this inheritData(bool $value) 设置是否共用上层数据域。
+ * @method $this horizontal(array|\AmisSchema\Definition\FormHorizontal $value) 当 mode 为 horizontal 时有用，用来控制 label 的展示占比
+ * @method $this messages(array|\AmisSchema\Definition\FormMessages $value) 消息提示覆写，默认消息读取的是 API 返回的消息，但是在此可以覆写它
+ * @method $this rules(array|\AmisSchema\Definition\FormRule[] $value) 设置组合校验规则
  */
 class Form extends Widget
 {
     protected string $type = 'form';
-
-    /**
-     * 当 mode 为 horizontal 时有用，用来控制 label 的展示占比
-     * @param array{
-     *     left: int,
-     *     right: int,
-     *     justify: bool
-     * } $value
-     * @return self
-     */
-    public function horizontal(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 消息提示覆写，默认消息读取的是 API 返回的消息，但是在此可以覆写它。
-     * @param array{
-     *     fetchSuccess?: string,
-     *     fetchFailed?: string,
-     *     saveSuccess?: string,
-     *     saveFailed?: string,
-     *     validateFailed?: string
-     * } $value
-     * @return self
-     */
-    public function messages(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
-
-    /**
-     * 设置组合校验规则
-     * @param array<array{
-     *     rule: string,
-     *     message: string,
-     *     name: array
-     * }> $value
-     * @return self
-     */
-    public function rules(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

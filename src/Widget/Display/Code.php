@@ -15,26 +15,9 @@ use AmisSchema\Widget\Widget;
  * @method $this editorTheme(string $value = 'vs') 主题，还有 'vs-dark'，默认 'vs'
  * @method $this wordWrap(bool $value = true) 是否折行，默认 true
  * @method $this maxHeight(string|int $value = '') 最大高度，超出滚动，默认 ''
+ * @method $this customLang(array|\AmisSchema\Definition\CodeCustomLang $value) Code 代码高亮自定义语言配置
  */
 class Code extends Widget
 {
     protected string $type = 'code';
-
-    /**
-     * 自定义语言高亮配置
-     * @param array{
-     *     tokens?: array<array{
-     *         name: string,
-     *         regex: string,
-     *         regexFlags?: string,
-     *         color: string,
-     *         fontStyle?: string
-     *     }>
-     * } $value
-     * @return self
-     */
-    public function customLang(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

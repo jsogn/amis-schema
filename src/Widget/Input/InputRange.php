@@ -18,25 +18,15 @@ namespace AmisSchema\Widget\Input;
  * @method $this tooltipVisible(bool $value) 设置是否显示滑块标签
  * @method $this tooltipPlacement(string $value) 设置滑块标签的位置，默认bottom，可选top、bottom、left、right
  * @method $this multiple(bool $value) 设置支持选择范围
- * @method $this joinValues(bool $value) 设置默认为 true，选择的 value 会通过 delimiter 连接起来，否则直接将以{ * min: 1, max: 100 * }的形式提交
+ * @method $this joinValues(bool $value) 设置默认为 true，选择的 value 会通过 delimiter 连接起来，否则直接将以{ min: 1, max: 100 }的形式提交
  * @method $this delimiter(string $value) 设置分隔符，默认为,
  * @method $this unit(string $value) 设置单位
  * @method $this clearable(bool $value) 设置是否可清除
  * @method $this showInput(bool $value) 设置是否显示输入框
  * @method $this showInputUnit(bool $value) 设置是否显示输入框单位
+ * @method $this marks(array|\AmisSchema\Definition\InputRangeMark[] $value) InputRange 滑块标记配置
  */
 class InputRange extends Options
 {
     protected string $type = 'input-range';
-
-    /**
-     * 设置 marks 刻度标记
-     *
-     * @param array<string|int, string|int|array{style?: array, label?: string}> $value
-     * @return self
-     */
-    public function marks(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

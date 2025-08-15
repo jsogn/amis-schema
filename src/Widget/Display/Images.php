@@ -28,24 +28,9 @@ use AmisSchema\Widget\Widget;
  * @method $this listClassName(string $value = '') 图片集外层 CSS 类名，默认 ''
  * @method $this itemClassName(string $value = '') 单个图片外层 CSS 类名，默认 ''
  * @method $this options(array $value = []) 图片选项配置，默认 []
+ * @method $this toolbarActions(array|\AmisSchema\Definition\ImageToolbarActionsItem[] $value) Images 图片集工具栏动作配置
  */
 class Images extends Widget
 {
     protected string $type = 'images';
-
-    /**
-     * 图片工具栏配置
-     * @param array<array{
-     *     key: 'rotateRight'|'rotateLeft'|'zoomIn'|'zoomOut'|'scaleOrigin',
-     *     label?: string,
-     *     icon?: string,
-     *     iconClassName?: string,
-     *     disabled?: bool
-     * }> $value
-     * @return $this
-     */
-    public function toolbarActions(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

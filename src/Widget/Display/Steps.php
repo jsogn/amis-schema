@@ -17,24 +17,9 @@ use AmisSchema\Widget\Widget;
  * @method $this mode(string $value = 'horizontal') 步骤条模式，horizontal/vertical/simple，默认 'horizontal'
  * @method $this labelPlacement(string $value = 'horizontal') 标签放置位置，horizontal/vertical，默认 'horizontal'
  * @method $this progressDot(bool $value = false) 点状步骤条，默认 false
+ * @method $this status(string|array|\AmisSchema\Definition\StepsStatus $value) Steps 步骤状态配置
  */
 class Steps extends Widget
 {
     protected string $type = 'steps';
-
-    /**
-     * 步骤状态配置
-     *
-     * @param string|array{
-     *     wait?: string,
-     *     process?: string,
-     *     finish?: string,
-     *     error?: string
-     * } $value 状态配置，可以是单一状态或状态映射对象
-     * @return self
-     */
-    public function status(string|array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

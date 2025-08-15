@@ -30,21 +30,9 @@ use AmisSchema\Widget\Function\TooltipWrapper;
  * @method $this popOverContainerSelector(string $value) 设置弹层挂载位置选择器，会通过querySelector获取
  * @method $this showInvalidMatch(bool $value = false) 设置选项值与选项组不匹配时选项值是否飘红，默认为 false
  * @method $this noResultsText(string $value = '未找到任何结果') 设置无结果时的文本，默认为 未找到任何结果
+ * @method $this overlay(array|\AmisSchema\Definition\SelectOverlay $value) Select 下拉框覆盖层配置
  */
 class Select extends Options
 {
     protected string $type = 'select';
-
-    /**
-     * 弹层宽度与对齐方式 2.8.0 以上版本
-     * @param array{
-     *     width: string|int,
-     *     align: 'left'|'right'|'center',
-     * } $value
-     * @return self
-     */
-    public function overlay(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }

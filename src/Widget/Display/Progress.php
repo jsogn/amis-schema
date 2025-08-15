@@ -22,23 +22,9 @@ use AmisSchema\Widget\Widget;
  * @method $this strokeWidth(int $value = null) 进度条线宽度，line类型默认10，circle/dashboard类型默认6，默认 null
  * @method $this gapDegree(int $value = 75) 仪表盘缺角角度(0~295)，默认 75
  * @method $this gapPosition(string $value = 'bottom') 仪表盘缺口位置，top/bottom/left/right，默认 'bottom'
+ * @method $this threshold(array|\AmisSchema\Definition\ProgressThreshold|\AmisSchema\Definition\ProgressThreshold[] $value) Progress 进度条阈值配置
  */
 class Progress extends Widget
 {
     protected string $type = 'progress';
-
-    /**
-     * @param array{
-     *     value: string,
-     *     color: string
-     * } | array<array{
-     *     value: string,
-     *     color: string
-     * }> $value
-     * @return self
-     */
-    public function threshold(array $value): self
-    {
-        return $this->setAttribute(__FUNCTION__, $value);
-    }
 }
